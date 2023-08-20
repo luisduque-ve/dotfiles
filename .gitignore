@@ -1,0 +1,7 @@
+.DS_Store
+.pre-commit-config.yaml
+**/lazy-lock.json
+
+**/fish_variables
+**/secrets.fish
+**/ranger/plugins/**
