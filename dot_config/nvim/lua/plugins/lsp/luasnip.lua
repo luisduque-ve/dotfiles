@@ -4,7 +4,7 @@ return {
 	event = "InsertEnter",
 	config = function()
 		local ls = require("luasnip")
-		require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.dotfiles/nvim/.config/nvim/snippets/vscode" })
+		require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.local/share/chezmoi/dot_config/nvim/snippets/vscode" })
 		ls.config.set_config({
 			history = true,
 			updateevents = "TextChanged, TextChangedI",
