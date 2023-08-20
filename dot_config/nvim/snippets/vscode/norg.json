@@ -1,0 +1,12 @@
+{
+  "todo": {
+    "prefix": "t",
+    "body": "- ( ) ${1}",
+    "description": "adds a todo item"
+  },
+    "url": {
+    "prefix": "u",
+    "body": "[${1:description}]{${2:url}}",
+    "description": "adds an URL"
+  }
+}

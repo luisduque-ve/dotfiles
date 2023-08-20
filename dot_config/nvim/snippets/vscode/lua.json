@@ -1,0 +1,26 @@
+{
+  "lazy_event": {
+    "prefix": "le",
+    "description": "adds a lazy.nvim event = \"VeryLazy\",",
+    "body": "event = \"${1:VeryLazy}\",${0}"
+  },
+  "lazy_config": {
+    "prefix": "lc",
+    "description": "adds a lazy.nvim config = function() end",
+    "body": [
+      "config = function()",
+      "  ${1}",
+      "end,${0}"
+    ]
+  },
+  "lazy_opts": {
+    "prefix": "lo",
+    "description": "adds a lazy.nvim opts = {}",
+    "body": "opts = {${1}},${0}"
+  },
+  "vim_cmd": {
+    "prefix": "cmd",
+    "description": "<CMD> block",
+    "body": "\"<cmd>${1}<cr>\"${0}"
+  }
+}

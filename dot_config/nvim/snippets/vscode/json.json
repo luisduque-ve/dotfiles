@@ -1,0 +1,75 @@
+{
+  "connector_raw_response": {
+    "prefix": "scr",
+    "description": "Connector raw response",
+    "body": [
+      "{",
+      "  \"status_code\": 200,",
+      "  \"response_headers\": {},",
+      "  \"reason\": \"OK\",",
+      "  \"json_body\": {}",
+      "}"
+    ]
+  },
+  "string": {
+    "prefix": "s",
+    "description": "String",
+    "body": "\"${1:key}\": \"${2:value}\"${0}"
+  },
+  "field": {
+    "prefix": "f",
+    "description": "Field",
+    "body": "\"${1:key}\": ${0}"
+  },
+  "number": {
+    "prefix": "n",
+    "description": "Number",
+    "body": "\"${1:key}\": ${2:value}${0}"
+  },
+  "null": {
+    "prefix": "null",
+    "description": "Null",
+    "body": "\"${1:key}\": null"
+  },
+  "array": {
+    "prefix": "a",
+    "description": "Array",
+    "body": [
+      "[",
+      "  ${1:value}",
+      "]"
+    ]
+  },
+  "named_array": {
+    "prefix": "na",
+    "description": "Named array",
+    "body": [
+      "\"${1:name}\": [",
+      "  ${2:value}",
+      "]"
+    ]
+  },
+  "object": {
+    "prefix": "o",
+    "description": "Object",
+    "body": [
+      "{",
+      "  \"${1:key}\": ${2}",
+      "}"
+    ]
+  },
+  "named_object": {
+    "prefix": "no",
+    "description": "Named object",
+    "body": [
+      "\"${1:name}\": {",
+      "  \"${2:key}\": ${3}",
+      "}"
+    ]
+  },
+  "bool": {
+    "prefix": "b",
+    "description": "Bool",
+    "body": "\"${1:key}\": ${2|true,false|}${0}"
+  }
+}
