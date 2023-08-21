@@ -2,3 +2,6 @@
   yabai
   skhd
 {{- end }}
+
+pre-commit-config.yaml
+requirements.txt

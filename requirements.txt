@@ -1,0 +1,6 @@
+black
+darker
+debugpy
+pre-commit
+pynvim
+requests
