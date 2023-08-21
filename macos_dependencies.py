@@ -6,6 +6,7 @@ import subprocess
 
 # List of dependencies to be installed
 formulaes = [
+    "anki",
     "bat",
     "bitwarden",
     "chezmoi",
