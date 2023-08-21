@@ -3,5 +3,6 @@
   skhd
 {{- end }}
 
+macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
