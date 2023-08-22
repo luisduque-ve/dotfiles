@@ -6,3 +6,5 @@
 macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
+
+**/lazy-lock.json
