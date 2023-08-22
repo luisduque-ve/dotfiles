@@ -9,6 +9,7 @@ formulaes = [
     "anki",
     "bat",
     "bitwarden",
+    "calibre",
     "chezmoi",
     "cmake",
     "curl",
@@ -47,4 +48,3 @@ for package in formulaes:
         subprocess.run(["brew", "install", package])
     else:
         print(f"{package} is already installed, force reinstall if needed")
-
