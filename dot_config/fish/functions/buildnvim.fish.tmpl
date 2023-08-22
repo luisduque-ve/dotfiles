@@ -8,11 +8,11 @@ function buildnvim -d "Build neovim from source and install it"
     echo "Making a distclean..."
     make distclean
     echo "Running make..."
-    {{ if eq .chezmoi.arch "arm64"}}
+    {{- if eq .chezmoi.arch "arm64" }}
     make CMAKE_BUILD_TYPE=Release CMAKE_OSX_ARCHITECTURES=arm64 CMAKE_INSTALL_PREFIX=$HOME/.src/builds
-    {{ else }}
+    {{- else }}
     make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/.src/builds
-    {{ end }}
+    {{- end }}
     echo "Running make install ..."
     make install
     set NEW_VERSION ($HOME/.src/builds/bin/nvim --version | grep NVIM)

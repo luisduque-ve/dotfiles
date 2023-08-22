@@ -4,9 +4,9 @@ return {
 	version = "*",
 	opts = {
 		direction = "float",
-    {{ if eq .chezmoi.hostname "CrazySquirrel"}}
+    {{- if eq .chezmoi.hostname "CrazySquirrel" }}
 		shell = "/opt/homebrew/bin/fish",
-    {{ end }}
+    {{- end }}
 	},
 	keys = {
 		{ "<C-t>", "<CMD>ToggleTerm<CR>", mode = { "n", "v", "t", "i" }, desc = "toggleterm" },

@@ -1,7 +1,15 @@
-{{- if ne .chezmoi.os "darwin" }}
+# This ensures that only the wezterm config is set up on Windows systems.
+# With this configuration, the wezterm config is also deployed in WSL environments.
+# Although it may not be ideal, I prefer to keep this configuration as simple as possible,
+# using as few conditions as necessary.
+{{ if eq .chezmoi.os "windows" }}
+.*
+!/.wezterm.lua
+# yabai and skhd are only needed in macOS
+{{ else if ne .chezmoi.os "darwin" }}
   yabai
   skhd
-{{- end }}
+{{ end }}
 
 macos_dependencies.py
 pre-commit-config.yaml
