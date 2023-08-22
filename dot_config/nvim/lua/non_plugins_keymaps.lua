@@ -48,12 +48,7 @@ map({ "n" }, "<leader>un", "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:t'))<CR
 
 -- others
 map({ "n" }, "<leader>l", "<CMD>Lazy<CR>", "lazy")
-map(
-	{ "n" },
-	"<leader>gh",
-	"<CMD>!" .. string.gsub(vim.g.python3_host_prog, "python", "pre-commit run<CR>"),
-	"pre_commit"
-)
+map({ "n" }, "<leader>gh", "<CMD>!pre-commit run<CR>", "pre_commit")
 map({ "n" }, "<leader>ss", ":grep ", ":grep ")
 map({ "n" }, ",,", ",", ",")
 

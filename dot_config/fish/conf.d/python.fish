@@ -20,8 +20,8 @@ abbr --add workon "pyenv activate"
 
 function prepy -d "Install custom pre-commit config and related Python packages"
     # install my custom pre-commit config
-    ln -sv $HOME/.local/share/chezmoi/pre-commit-config.yaml ./.pre-commit-config.yaml
-    $HOME/.pyenv/versions/3.11.4/envs/provider/bin/pre-commit install
+    ln -svf $HOME/.local/share/chezmoi/pre-commit-config.yaml ./.pre-commit-config.yaml
+    pre-commit install
     echo '.pre-commit-config.yaml' >> ".git/info/exclude"
 end
 
