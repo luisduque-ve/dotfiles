@@ -14,7 +14,7 @@ return {
 		configs.setup({
 			ensure_installed = {
 				"bash",
-        "cpp",
+				"cpp",
 				"fish",
 				"gitcommit",
 				"gitignore",
@@ -45,6 +45,18 @@ return {
 					scope_incremental = "<CR>",
 					node_incremental = "<TAB>",
 					node_decremental = "<S-TAB>",
+				},
+			},
+			fold = {
+				enable = true,
+				custom = {
+					python = function()
+						return {
+							-- I use this for my personal Space Repetition System
+							-- is sometimes buggy but works for me
+							{ "comment", '/\\*\\*\\|"""', '\\*/\\|"""', "fold" },
+						}
+					end,
 				},
 			},
 		})

@@ -54,6 +54,12 @@ vim.o.grepformat = "%f:%l:%c:%m"
 vim.o.timeout = true
 vim.o.timeoutlen = 200
 
+-- folding
+vim.cmd([[
+  autocmd FileType python setlocal foldmethod=expr
+  autocmd FileType python setlocal foldexpr=nvim_treesitter#foldexpr()
+]])
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
