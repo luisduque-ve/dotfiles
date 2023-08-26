@@ -45,18 +45,6 @@ return {
 					node_decremental = "<S-TAB>",
 				},
 			},
-			fold = {
-				enable = true,
-				custom = {
-					python = function()
-						return {
-							-- I use this for my personal Space Repetition System
-							-- is sometimes buggy but works for me
-							{ "comment", '/\\*\\*\\|"""', '\\*/\\|"""', "fold" },
-						}
-					end,
-				},
-			},
 		})
 	end,
 	keys = {
