@@ -1,19 +1,33 @@
 {
-  "sw_python_context": {
-    "prefix": "spc",
+  "drill_template": {
+    "prefix": "drill_template",
     "body": [
-      "class Context:",
-      "    inputs = {",
-      "        ",
-      "    }",
-      "    asset = {",
-      "        ",
-      "    }",
-      "",
-      "",
-      "import pprint",
-      "pprint.pprint(SwMain(Context).execute())"
-    ]
+      "# Description foldin",
+      "\"\"\"",
+      "\"\"\"",
+      "# foldout",
+      "# Implementation foldin",
+      "\"\"\"",
+      "\"\"\"",
+      "# foldout",
+      "# Hints foldin",
+      "\"\"\"",
+      "\"\"\"",
+      "# foldout",
+      "# Mnemonic foldin",
+      "\"\"\"",
+      "\"\"\"",
+      "# foldout",
+      "class Exercise:",
+      "    # TEST_CASES foldin",
+      "    TEST_CASES = [",
+      "        {\"name\": \"no args\", \"input\": (), \"expected_output\": \"\"},",
+      "    ]",
+      "    # foldout",
+      "    def execute(self):",
+      "        return None"
+    ],
+    "description": "Template for creating a new Exercise class"
   },
   "assert_false": {
     "prefix": "asf",
