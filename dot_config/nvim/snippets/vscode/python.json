@@ -2,10 +2,10 @@
   "drill_template": {
     "prefix": "drill_template",
     "body": [
-      "# Description foldin",
       "\"\"\"",
+      "Description:",
+      "",
       "\"\"\"",
-      "# foldout",
       "# Implementation foldin",
       "\"\"\"",
       "\"\"\"",
