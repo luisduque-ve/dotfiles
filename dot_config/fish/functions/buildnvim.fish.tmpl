@@ -1,4 +1,5 @@
 function buildnvim -d "Build neovim from source and install it"
+    ssh-add-fzf
     echo "Saving current version"
     set OLD_VERSION (nvim --version | grep NVIM)
     echo "Entering in neovim source folder..."
