@@ -9,6 +9,12 @@ set -g fish_greeting
 alias fzf="fzf -m --query \"'\""
 alias f="fzf -m --query \"'\""
 
+# ls replacement
+abbr --add ls "exa -l -h"
+
+# chezmoi
+abbr --add c "chezmoi"
+
 # I like to use zoxide like this more than just the vanilla z
 function a
   set query $argv[1]
@@ -41,4 +47,3 @@ fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 
 # initializations
 zoxide init fish | source
-

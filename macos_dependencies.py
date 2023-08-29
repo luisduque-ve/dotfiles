@@ -14,6 +14,7 @@ formulaes = [
     "cmake",
     "curl",
     "doll",
+    "exa",
     "firefox",
     "fish",
     "fzf",
