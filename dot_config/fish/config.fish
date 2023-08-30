@@ -10,7 +10,7 @@ alias fzf="fzf -m --query \"'\""
 alias f="fzf -m --query \"'\""
 
 # ls replacement
-abbr --add ls "exa -l -h"
+abbr --add ls "exa -l -h --git"
 
 # chezmoi
 abbr --add c "chezmoi"
