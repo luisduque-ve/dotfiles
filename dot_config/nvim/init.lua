@@ -39,6 +39,7 @@ set.autoread = true
 set.nrformats = "bin,hex,alpha"
 
 set.shortmess = "atI"
+
 -- Format python files on change
 vim.cmd([[au BufWritePost *.py silent :!darker %]])
 
@@ -58,6 +59,7 @@ vim.o.timeoutlen = 200
 set.foldmethod = "marker"
 set.foldmarker = "foldin,foldout"
 set.foldlevel = 1
+vim.cmd([[au BufEnter *.py set foldlevel=0]])
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
