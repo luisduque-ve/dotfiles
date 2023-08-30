@@ -57,6 +57,7 @@ vim.o.timeoutlen = 200
 -- folding
 set.foldmethod = "marker"
 set.foldmarker = "foldin,foldout"
+set.foldlevel = 1
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

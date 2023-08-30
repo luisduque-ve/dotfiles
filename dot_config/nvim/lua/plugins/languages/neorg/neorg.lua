@@ -26,7 +26,7 @@ return {
       autocmd FileType norg setlocal conceallevel=3
       augroup END
       ]])
-		-- this render which-key descriptions only for norg files
+		-- this render which-key descriptions only for norg files foldin
 		-- I'm also redefining some keybindings to keep
 		-- consistent with snake_case in which_key
 		vim.cmd("autocmd FileType norg lua SetKeybinds()")
@@ -74,7 +74,7 @@ return {
 						["u"] = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_undone<cr>", "mark_undone" },
 					},
 				}, opts)
-			end
+			end -- foldout
 		end
 	end,
 	keys = {
