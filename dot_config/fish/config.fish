@@ -18,6 +18,9 @@ abbr --add g "git"
 # chezmoi
 abbr --add c "chezmoi"
 
+# crazy_squirrel
+abbr --add cr "python run.py"
+
 # I like to use zoxide like this more than just the vanilla z
 function a
   set query $argv[1]
