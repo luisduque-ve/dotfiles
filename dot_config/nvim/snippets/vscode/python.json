@@ -29,6 +29,10 @@
     ],
     "description": "Template for creating a new Exercise class"
   },
+  "drill_debug": {
+    "prefix": "drill_debug",
+    "body": "print(Exercise().execute(*Exercise().TEST_CASES[0][\"input\"]))"
+  },
   "assert_false": {
     "prefix": "asf",
     "body": "self.assertFalse(${1:actual}${2:, '${3:message}'})$0"
