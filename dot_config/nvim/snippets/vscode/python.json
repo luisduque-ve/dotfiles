@@ -11,12 +11,8 @@
       "\"\"\"",
       "# foldout",
       "# Hints foldin",
-      "\"\"\"",
-      "\"\"\"",
       "# foldout",
       "# Mnemonic foldin",
-      "\"\"\"",
-      "\"\"\"",
       "# foldout",
       "class Exercise:",
       "    # TEST_CASES foldin",
@@ -25,7 +21,7 @@
       "    ]",
       "    # foldout",
       "    def execute(self):",
-      "        return None"
+      "        pass"
     ],
     "description": "Template for creating a new Exercise class"
   },
