@@ -1,4 +1,4 @@
-# homebrew must be installed before running this script
+# Homebrew must be installed before running this script
 # yabai and skhd installations are not handle in this
 # script, you must manually install them
 
@@ -29,6 +29,8 @@ formulaes = [
     "ranger",
     "raycast",
     "thunderbird",
+    "tmux",
+    "tpm",
     "tree",
     "wezterm",
     "zoxide",
