@@ -19,10 +19,6 @@ return {
 		bottom = 0,
 	},
 	tab_bar_at_bottom = true,
-	-- To ensure that the term attribute functions properly, follow the steps in:
-	-- https://wezfurlong.org/wezterm/config/lua/config/term.html
-	term = "wezterm",
-
 	keys = {
 		-- tab navigation
 		{ key = "n", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
