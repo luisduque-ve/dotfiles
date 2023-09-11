@@ -10,7 +10,7 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	window_close_confirmation = "NeverPrompt",
   {{- if eq .chezmoi.hostname "CrazySquirrel" }}
-	default_prog = { "/opt/homebrew/bin/fish", "-l" },
+	default_prog = { "/opt/homebrew/bin/fish", "-c", "tmux" },
   {{- end }}
 	window_padding = {
 		left = 0,
@@ -19,26 +19,4 @@ return {
 		bottom = 0,
 	},
 	tab_bar_at_bottom = true,
-	keys = {
-		-- tab navigation
-		{ key = "n", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
-		{ key = "p", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-		-- New key mappings for splits
-		{ key = "i", mods = "ALT", action = wezterm.action({ SplitVertical = {} }) },
-		{ key = "w", mods = "ALT", action = wezterm.action({ SplitHorizontal = {} }) },
-		-- panes resize
-		{ key = "h", mods = "ALT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
-		{ key = "l", mods = "ALT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
-		{ key = "k", mods = "ALT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
-		{ key = "j", mods = "ALT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
-
-		{ key = "s", mods = "ALT", action = wezterm.action.PaneSelect({ alphabet = "asonetuhid" }) },
-		{
-			key = "c",
-			mods = "ALT",
-			action = wezterm.action.PaneSelect({ alphabet = "asonetuhid", mode = "SwapWithActive" }),
-		},
-		{ key = "m", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
-		{ key = "q", mods = "ALT", action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
-	},
 }

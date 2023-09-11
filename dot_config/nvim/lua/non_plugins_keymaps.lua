@@ -23,8 +23,8 @@ map({ "n" }, "N", "Nzz")
 map({ "n" }, "G", "Gzz")
 
 -- Windows mappings
-map({ "n" }, "<leader>-", "<CMD>split<CR>", "split")
-map({ "n" }, "<leader>|", "<CMD>vsplit<CR>", "vsplit")
+map({ "n" }, '<leader>"', "<CMD>split<CR>", "split")
+map({ "n" }, "<leader>%", "<CMD>vsplit<CR>", "vsplit")
 
 -- Resize window using <ctrl> arrow keys
 map({ "n" }, "<leader>uwk", "<cmd>resize +5<cr>", "height+")
