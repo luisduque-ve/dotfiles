@@ -1,6 +1,10 @@
 return {
 	"nvim-telescope/telescope-fzf-native.nvim",
-	build = "arch --arm64 make",
+  {{- if eq .chezmoi.arch "arm64" }}
+    build = "arch --arm64 make",
+  {{- else }}
+    build = "make",
+  {{- end }}
 	dependencies = { "nvim-telescope/telescope.nvim" },
 	event = "VeryLazy",
 	config = function()
