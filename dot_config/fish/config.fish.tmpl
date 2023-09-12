@@ -55,3 +55,10 @@ fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 
 # initializations
 zoxide init fish | source
+
+{{- if eq .chezmoi.os "linux" }}
+{{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# WSL-specific code
+tmux
+{{   end }}
+{{ end }}
