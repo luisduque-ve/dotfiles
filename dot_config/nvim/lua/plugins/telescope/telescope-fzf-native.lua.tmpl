@@ -1,9 +1,9 @@
 return {
 	"nvim-telescope/telescope-fzf-native.nvim",
   {{- if eq .chezmoi.arch "arm64" }}
-    build = "arch --arm64 make",
+  build = "arch --arm64 make",
   {{- else }}
-    build = "make",
+  build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   {{- end }}
 	dependencies = { "nvim-telescope/telescope.nvim" },
 	event = "VeryLazy",
