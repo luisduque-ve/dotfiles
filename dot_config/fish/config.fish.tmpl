@@ -41,9 +41,11 @@ function ssh-add-fzf
     end
 end
 
-# if I don't set this treesitter parser are not installed as
-# arm64
-alias nvim="arch -arm64 nvim"
+{{- if eq .chezmoi.arch "arm64" }}
+  # if I don't set this treesitter parser are not installed as
+  # arm64
+  alias nvim="arch -arm64 nvim"
+{{- end }}
 
 set -g fish_key_bindings fish_vi_key_bindings
 
