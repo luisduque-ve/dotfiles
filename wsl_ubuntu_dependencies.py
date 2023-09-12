@@ -10,8 +10,13 @@ packages = [
     "fzf",
     "gettext",
     "jq",
+    "ninja-build",
+    "nodejs",
+    "npm",
+    "pyenv",
     "ranger",
     "tmux",
+    "unzip",
     "zoxide",
 ]
 
