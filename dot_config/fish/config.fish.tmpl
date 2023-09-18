@@ -32,7 +32,9 @@ function a
   cd $selected_dir
 end
 
+# start ssh-agent and fuzzy find key
 function ssh-add-fzf
+    eval (ssh-agent -c)
     set key_file (find ~/.ssh -type f -name "id_*" -not -name "*.pub" | fzf)
     if test -n "$key_file"
         ssh-add $key_file
