@@ -13,7 +13,7 @@ bind-key C-a send-prefix
 {{- if eq .chezmoi.hostname "CrazySquirrel" }}
 set-option -g default-shell /opt/homebrew/bin/fish
 {{- else }}
-set-option -g default-shell /usr/bin/fish
+set-option -g default-shell /usr/local/bin/fish
 {{- end }}
 
 # True color support
