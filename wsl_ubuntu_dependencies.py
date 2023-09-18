@@ -1,12 +1,15 @@
 import subprocess
 
+# install fish from source the latest version on
+# ubuntu is old and it the root cause of issues related with
+# the fish fzf plugin
+
 # List of dependencies to be installed
 packages = [
     "bat",
     "cmake",
     "curl",
     "exa",
-    "fish",
     "fzf",
     "gettext",
     "jq",
