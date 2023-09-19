@@ -1,45 +1,45 @@
 import subprocess
 
-# install fish from source the latest version on
-# ubuntu is old and it the root cause of issues related with
-# the fish fzf plugin
+# this dependes on brew being installed
+
 
 # List of dependencies to be installed
-packages = [
+formulaes = [
     "bat",
+    "chezmoi",
     "cmake",
     "curl",
     "exa",
+    "fish",
     "fzf",
     "gettext",
     "jq",
-    "ninja-build",
-    "nodejs",
-    "npm",
+    "ninja",
     "pyenv",
+    "pyenv-virtualenv",
     "ranger",
-    "ripgrep",
     "tmux",
-    "unzip",
+    "tpm",
+    "tree",
     "zoxide",
 ]
 
-# Update package list and system
-subprocess.run(["sudo", "apt", "update"])
-subprocess.run(["sudo", "apt", "autoremove"])
-subprocess.run(["sudo", "apt", "dist-upgrade"])
 
-# Upgrade existing packages
-subprocess.run(["sudo", "apt", "upgrade", "-y"])
+# Function to check if package is installed
+def is_package_installed(package):
+    result = subprocess.run(
+        ["brew", "list", "--versions", package],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    return result.returncode == 0
 
-# Install new packages
-for package in packages:
-    subprocess.run(["sudo", "apt", "install", package, "-y"])
 
-# Install pyenv
-# subprocess.run(["curl", "https://pyenv.run", "|", "bash"])
-
-# Install tmux tpm
-subprocess.run(["git", "clone", "http://github.com/tmux-plugins/tpm", "~/.tmux/plugins/tmp"])
+for package in formulaes:
+    if not is_package_installed(package):
+        subprocess.run(["brew", "install", package])
+    else:
+        print(f"{package} is already installed, force reinstall if needed")
 
 print("Ubuntu setup complete.")
