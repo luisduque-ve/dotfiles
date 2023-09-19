@@ -47,4 +47,8 @@ set-option -g status-right ""
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of
 # tmux.conf)
+{{- if eq .chezmoi.hostname "CrazySquirrel" }}
 run '/opt/homebrew/opt/tpm/share/tpm/tpm'
+{{- else }}
+run '/home/linuxbrew/.linuxbrew/opt/tpm/share/tpm/tpm'
+{{- end }}
