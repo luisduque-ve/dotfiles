@@ -5,7 +5,7 @@ g.mapleader = " "
 g.maplocalleader = ","
 
 -- providers
-g.python3_host_prog = "$HOME/.pyenv/versions/3.11.4/envs/provider/bin/python"
+g.python3_host_prog = "$HOME/anaconda3/envs/provider/bin/python"
 -- for node run npm install -g neovim
 g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0

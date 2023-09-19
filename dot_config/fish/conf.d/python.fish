@@ -1,23 +1,11 @@
-# Set PYENV_ROOT and PYENV_VIRTUALENV_DISABLE_PROMPT
-set -gx PYENV_ROOT "$HOME/.pyenv"
-set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
-
-# Update PATH using fish_add_path
-fish_add_path $PYENV_ROOT/shims
-fish_add_path $PYENV_ROOT/bin
-
-# inizialite pyenv
-pyenv init - | source
-
-abbr --add deactivate "pyenv deactivate"
+abbr --add deactivate "conda deactivate"
 abbr --add fastapi "python -m uvicorn main:app --reload"
-abbr --add mkvirtualenv "pyenv virtualenv"
+abbr --add mkvirtualenv "conda create --no-default-packages python -n "
 abbr --add pi "python -m pip install"
-abbr --add pylist "pyenv install --list"
+abbr --add pylist "conda env list"
 abbr --add pytest "python -m pytest"
-abbr --add rmvirtualenv "pyenv virtualenv-delete"
-abbr --add virtualenvs "pyenv virtualenvs"
-abbr --add workon "pyenv activate"
+abbr --add rmvirtualenv "conda remove --all --name"
+abbr --add workon "conda activate"
 
 function prepy -d "Install custom pre-commit config and related Python packages"
     # install my custom pre-commit config
