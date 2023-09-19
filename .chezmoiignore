@@ -1,6 +1,6 @@
 {{ if ne .chezmoi.os "darwin" }}
-  yabai
-  skhd
+yabairc
+skhdrc
 {{ end }}
 
 macos_dependencies.py
