@@ -1,3 +1,7 @@
+#
+# WARNING: run conda config --set changeps1 False after a fresh install
+#
+
 abbr --add deactivate "conda deactivate"
 abbr --add fastapi "python -m uvicorn main:app --reload"
 abbr --add mkvirtualenv "conda create --no-default-packages python -n "
