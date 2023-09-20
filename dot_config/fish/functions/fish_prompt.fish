@@ -27,6 +27,9 @@ function fish_prompt
     if set -q VIRTUAL_ENV
         set venv_name (basename $VIRTUAL_ENV)
         printf " %s%s%s %s%s" $fg_prefix "via" $reset_color $fg_venv $venv_name $reset_color
+    else if set -q CONDA_DEFAULT_ENV
+        set venv_name $CONDA_DEFAULT_ENV
+        printf " %s%s%s %s%s" $fg_prefix "via" $reset_color $fg_venv $venv_name $reset_color
     end
 
     # Newline and arrow sign
