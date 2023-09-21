@@ -29,53 +29,10 @@
     "prefix": "drill_debug",
     "body": "print(Exercise().execute(*Exercise().TEST_CASES[0][\"input\"]))"
   },
-  "assert_false": {
-    "prefix": "asf",
-    "body": "self.assertFalse(${1:actual}${2:, '${3:message}'})$0"
-  },
-  "assert_true": {
-    "prefix": "ast",
-    "body": "self.assertTrue(${1:actual}${2:, '${3:message}'})$0"
-  },
-  "assert_equal": {
-    "prefix": "ase",
-    "body": "self.assertEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$0"
-  },
-  "assert_in": {
-    "prefix": "asin",
-    "body": "self.assertIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0"
-  },
-  "assert_is_none": {
-    "prefix": "asino",
-    "body": "self.assertIsNone(${1:actual}${2:, '${3:message}'})$0"
-  },
-  "assert_is_not_none": {
-    "prefix": "asinno",
-    "body": "self.assertIsNotNone(${1:actual}${2:, '${3:message}'})$0"
-  },
-  "assert_is_not": {
-    "prefix": "asint",
-    "body": "self.assertIsNot(${1:expected}, ${2:actual}${3:, '${4:message}'})$0"
-  },
-  "assert_is": {
-    "prefix": "asi",
-    "body": "self.assertIs(${1:expected}, ${2:actual}${3:, '${4:message}'})$0"
-  },
-  "assert_not_equal": {
-    "prefix": "asne",
-    "body": "self.assertNotEqual(${1:expected}, ${2:actual}${3:, '${4:message}'})$0"
-  },
-  "assert_not_in": {
-    "prefix": "asni",
-    "body": "self.assertNotIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0"
-  },
-  "assert_raises": {
-    "prefix": "asr",
-    "body": "self.assertRaises(${1:exception}, ${2:callable}, ${3:args})$0"
-  },
-  "assert": {
-    "prefix": "as",
-    "body": "self.assert_(${1:boolean expression}${2:, '${3:message}'})$0"
+  "from_import_": {
+    "prefix": "fim",
+    "body": "from ${1:package/module} import ${2:names}$0",
+    "description": "Import statement that allows individual objects from the module to be imported directly into the caller’s symbol table."
   },
   "dictionary_comprehension_if_filter": {
     "prefix": "dci",
@@ -96,10 +53,6 @@
       "debugpy.wait_for_client()"
     ],
     "description": "adds a debugpy remote attach breakpoint"
-  },
-  "fail_a_test_": {
-    "prefix": "fail",
-    "body": "self.fail('${1:message}')$0"
   },
   "generator_comprehension_if_filter": {
     "prefix": "gci",
@@ -126,36 +79,6 @@
     "body": "[${1:value} for ${2:value} in ${3:iterable}]$0",
     "description": "List comprehension for creating a list based on existing lists."
   },
-  "new_async_function": {
-    "prefix": "adef",
-    "body": "async def ${1:fname}(${2:arg}):\n\t${3:pass}$0",
-    "description": "Code snippet for async function definition."
-  },
-  "new_class": {
-    "prefix": "classi",
-    "body": "class ${1:ClassName}(${2:object}):\n\t\"\"\"${3:docstring for $1.}\"\"\"\n\tdef __init__(self, ${4:arg}):\n\t\t${5:super($1, self).__init__()}\n\t\tself.arg = arg\n\t\t$0",
-    "description": "Code snippet for a class definition."
-  },
-  "new_function_w_return": {
-    "prefix": "deft",
-    "body": "def ${1:fname}(${2:arg}) -> ${3:return_type}:\n\t${4:pass}$0",
-    "description": "Code snippet for function definition."
-  },
-  "new_function": {
-    "prefix": "def",
-    "body": "def ${1:fname}(${2:arg}):\n\t${3:pass}$0",
-    "description": "Code snippet for function definition."
-  },
-  "new_method_w_return": {
-    "prefix": "defst",
-    "body": "def ${1:mname}(self, ${2:arg}) -> ${3:return_type}:\n\t${4:pass}$0",
-    "description": "Code snippet for a class method definition."
-  },
-  "new_method": {
-    "prefix": "defs",
-    "body": "def ${1:mname}(self, ${2:arg}):\n\t${3:pass}$0",
-    "description": "Code snippet for a class method definition."
-  },
   "set_comprehension_if_filter": {
     "prefix": "sci",
     "body": "{${1:value} for ${2:value} in ${3:iterable} if ${4:condition}}$0",
@@ -165,80 +88,6 @@
     "prefix": "sc",
     "body": "{${1:value} for ${2:value} in ${3:iterable}}$0",
     "description": "Create a set based on existing iterables."
-  },
-  "class": {
-    "prefix": "class",
-    "body": [
-      "class ${1:classname}(${2:object}):",
-      "\t${3:pass}"
-    ],
-    "description": "Code snippet for a class definition"
-  },
-  "elif": {
-    "prefix": "elif",
-    "body": [
-      "elif ${1:expression}:",
-      "\t${2:pass}"
-    ],
-    "description": "Code snippet for an elif"
-  },
-  "else": {
-    "prefix": "else",
-    "body": [
-      "else:",
-      "\t${1:pass}"
-    ],
-    "description": "Code snippet for an else"
-  },
-  "for": {
-    "prefix": "for",
-    "body": "for ${1:value} in ${2:iterable}:\n\t${3:pass}$0",
-    "description": "Code snippet to create a for loop structure."
-  },
-  "for_else": {
-    "prefix": "for/else",
-    "body": [
-      "for ${1:target_list} in ${2:expression_list}:",
-      "\t${3:pass}",
-      "else:",
-      "\t${4:pass}"
-    ],
-    "description": "Code snippet for a for loop with else"
-  },
-  "from_import_": {
-    "prefix": "fim",
-    "body": "from ${1:package/module} import ${2:names}$0",
-    "description": "Import statement that allows individual objects from the module to be imported directly into the caller’s symbol table."
-  },
-  "if_name_main_": {
-    "prefix": "ifmain",
-    "body": "if __name__ == \"__main__\":\n\t${1:main()}$0",
-    "description": "Create implicitly all the code at the top level using the __name__ special variable."
-  },
-  "if": {
-    "prefix": "if",
-    "body": "if ${1:condition}:\n\t${2:pass}$0",
-    "description": "Code snippet for the if statement."
-  },
-  "if_else": {
-    "prefix": "if/else",
-    "body": [
-      "if ${1:condition}:",
-      "\t${2:pass}",
-      "else:",
-      "\t${3:pass}"
-    ],
-    "description": "Code snippet for an if statement with else"
-  },
-  "import": {
-    "prefix": "im",
-    "body": "import ${1:package/module}$0",
-    "description": "Import a package or module"
-  },
-  "self": {
-    "prefix": "s",
-    "body": "self.$0",
-    "description": "Shortend snippet to reference the self property in an object."
   },
   "try_except_": {
     "prefix": "try",
@@ -259,28 +108,5 @@
     "prefix": "tryf",
     "body": "try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nfinally:\n\t${5:pass}$0",
     "description": "Code Snippet for a try/except/finally."
-  },
-  "while": {
-    "prefix": "while",
-    "body": "while ${1:condition}:\n\t${2:pass}$0",
-    "description": "Code snippet to create a while loop structure."
-  },
-  "while/else": {
-    "prefix": "while/else",
-    "body": [
-      "while ${1:expression}:",
-      "\t${2:pass}",
-      "else:",
-      "\t${3:pass}"
-    ],
-    "description": "Code snippet for a while loop with else"
-  },
-  "with": {
-    "prefix": "with",
-    "body": [
-      "with ${1:expression} as ${2:target}:",
-      "\t${3:pass}"
-    ],
-    "description": "Code snippet for a with statement"
   }
 }
