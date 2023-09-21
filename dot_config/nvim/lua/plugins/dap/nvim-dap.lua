@@ -12,7 +12,7 @@ return {
 		{ "<F11>", "<CMD>lua require('dap').step_into()<CR>", desc = "into" },
 		{ "<S-F5>", "<CMD>lua require('dap').terminate()<CR>", desc = "terminate" },
 
-		{ "<leader>dc", "<CMD>lua require('dap').run_to_cursor()<CR>", desc = "run_to_cursor" },
+		{ "<leader>dC", "<CMD>lua require('dap').run_to_cursor()<CR>", desc = "run_to_cursor" },
 		{ "<leader>dl", "<CMD>lua require('dap').run_last()<CR>", desc = "run_last" },
 		{ "<leader>dr", "<CMD>lua require('dap').restart()<CR>", desc = "restart" },
 		{
