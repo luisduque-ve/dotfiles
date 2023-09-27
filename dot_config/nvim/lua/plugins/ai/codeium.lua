@@ -6,13 +6,13 @@ return {
 		return os.rename(filename, filename) and false or true
 	end,
 	config = function()
-		vim.keymap.set("i", "<C-h>", function()
+		vim.keymap.set("i", "<Tab>", function()
 			return vim.fn["codeium#Accept"]()
 		end, { expr = true })
-		vim.keymap.set("i", "<c-k>", function()
+		vim.keymap.set("i", "<c-;>", function()
 			return vim.fn["codeium#CycleCompletions"](1)
 		end, { expr = true })
-		vim.keymap.set("i", "<c-j>", function()
+		vim.keymap.set("i", "<c-,>", function()
 			return vim.fn["codeium#CycleCompletions"](-1)
 		end, { expr = true })
 		vim.keymap.set("i", "<c-x>", function()
