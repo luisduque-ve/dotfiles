@@ -20,9 +20,6 @@ return {
 			},
 			["<leader>g"] = {
 				name = "+git",
-				["o"] = {
-					name = "+github",
-				},
 			},
 			["<leader>s"] = {
 				name = "+search",
