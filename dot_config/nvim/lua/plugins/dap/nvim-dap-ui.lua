@@ -1,7 +1,7 @@
 return {
 	"rcarriga/nvim-dap-ui",
 	-- I'm mostly debugging python at the moment
-	event = "BufEnter *.py",
+	ft = "python",
 	dependencies = {
 		"mfussenegger/nvim-dap",
 		"rcarriga/cmp-dap",

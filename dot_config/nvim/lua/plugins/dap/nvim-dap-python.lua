@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-dap-python",
-	event = "BufEnter *.py", -- this is a python specific plugin
+	ft = "python",
 	dependencies = {
 		"mfussenegger/nvim-dap",
 	},
