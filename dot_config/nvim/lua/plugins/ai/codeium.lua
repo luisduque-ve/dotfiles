@@ -1,10 +1,7 @@
 return {
 	"Exafunction/codeium.vim",
 	event = "BufEnter",
-	cond = function()
-		local filename = ".ignoreai"
-		return os.rename(filename, filename) and false or true
-	end,
+	cond = false,
 	config = function()
 		vim.keymap.set("i", "<Tab>", function()
 			return vim.fn["codeium#Accept"]()
