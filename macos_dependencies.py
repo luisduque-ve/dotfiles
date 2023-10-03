@@ -8,7 +8,6 @@ import subprocess
 formulaes = [
     "anki",
     "bat",
-    "bitwarden",
     "brave-browser",
     "calibre",
     "chezmoi",
