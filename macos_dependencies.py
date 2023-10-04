@@ -6,30 +6,30 @@ import subprocess
 
 # List of dependencies to be installed
 formulaes = [
-    "anki",
-    "bat",
-    "brave-browser",
-    "calibre",
-    "chezmoi",
-    "cmake",
-    "curl",
-    "doll",
-    "exa",
-    "fish",
-    "fzf",
-    "gettext",
-    "grammarly-desktop",
-    "jq",
-    "krisp",
-    "ninja",
-    "ranger",
-    "raycast",
-    "thunderbird",
-    "tmux",
-    "tpm",
-    "tree",
-    "wezterm",
-    "zoxide",
+    "anki",  # study
+    "bat",  # cat alternative
+    "brave-browser",  # default browser
+    "calibre",  # local library
+    "chezmoi",  # dotfiles manager
+    "cmake",  # neovim build requirement
+    "curl",  # http client
+    "doll",  # show notifications on status bar
+    "exa",  # ls replacement
+    "fish",  # shell
+    "fzf",  # fuzzy finder
+    "gettext",  # neovim build requirement
+    "grammarly-desktop",  # grammar tool
+    "jq",  # cli json utility
+    "krisp",  # noise reduction
+    "ninja",  # neovim build requirement
+    "ranger",  # cli file manager
+    "raycast",  # spootlight alternative
+    "rg",  # ripgrep
+    "tmux",  # terminal multiplexer
+    "tpm",  # tmux package manager
+    "tree",  # show tree like folder representation
+    "wezterm",  # terminal emulator
+    "zoxide",  # better current dir changing
 ]
 
 # Function to check if package is installed
