@@ -29,6 +29,7 @@ formulaes = [
     "tpm",  # tmux package manager
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
+    "zoom",  # video calling
     "zoxide",  # better current dir changing
 ]
 
