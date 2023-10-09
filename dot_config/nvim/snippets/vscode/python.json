@@ -79,6 +79,14 @@
     "body": "[${1:value} for ${2:value} in ${3:iterable}]$0",
     "description": "List comprehension for creating a list based on existing lists."
   },
+  "range": {
+    "prefix": "range",
+    "body": [
+      "for ${1:_} in range(${2}):",
+      "    $0"
+    ],
+    "description": "for range iteration"
+  },
   "set_comprehension_if_filter": {
     "prefix": "sci",
     "body": "{${1:value} for ${2:value} in ${3:iterable} if ${4:condition}}$0",
