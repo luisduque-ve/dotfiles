@@ -10,10 +10,12 @@ return {
 		table.insert(dap_configurations, {
 			type = "python",
 			request = "attach",
-			name = "Swimlane Plugin",
+			name = "Attach to a docker container",
 			host = "localhost",
 			port = 5678,
 			pathMappings = {
+				-- both local and remote root are just templates here
+				-- you must change according your project structure
 				{ ["localRoot"] = "${workspaceFolder}", ["remoteRoot"] = "./src" },
 			},
 		})
