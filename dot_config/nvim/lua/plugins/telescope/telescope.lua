@@ -74,24 +74,6 @@ return {
 						},
 					},
 				},
-				project = {
-					base_dirs = {
-						{
-							path = "~/code",
-							max_depth = 4,
-						},
-						{
-							path = "~/.dotfiles",
-						},
-					},
-					hidden_files = false, -- default: false
-					theme = "dropdown",
-					order_by = "asc",
-					on_project_selected = function(prompt_bufnr)
-						-- just change directory on project change
-						require("telescope._extensions.project.actions").change_working_directory(prompt_bufnr, false)
-					end,
-				},
 			},
 		})
 	end,
