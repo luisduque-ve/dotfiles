@@ -15,10 +15,5 @@ return {
 		{ "<leader>dC", "<CMD>lua require('dap').run_to_cursor()<CR>", desc = "run_to_cursor" },
 		{ "<leader>dl", "<CMD>lua require('dap').run_last()<CR>", desc = "run_last" },
 		{ "<leader>dr", "<CMD>lua require('dap').restart()<CR>", desc = "restart" },
-		{
-			"<leader>ds",
-			"<CMD>lua require('dap.ui.widgets').centered_float(require('dap.ui.widgets').scopes)<CR>",
-			desc = "scopes",
-		},
 	},
 }

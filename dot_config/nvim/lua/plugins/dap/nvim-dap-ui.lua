@@ -13,25 +13,11 @@ return {
 			controls = {
 				enabled = false,
 			},
-			element_mappings = {},
-			expand_lines = true,
-			floating = {
-				border = "single",
-				mappings = {
-					close = { "q", "<Esc>" },
-				},
-			},
-			force_buffers = true,
-			icons = {
-				collapsed = "",
-				current_frame = "",
-				expanded = "",
-			},
 			layouts = {
 				{
 					elements = {
 						{
-							id = "console",
+							id = "stacks",
 							size = 0.30,
 						},
 						{
@@ -42,18 +28,6 @@ return {
 					position = "right",
 					size = 60,
 				},
-			},
-			mappings = {
-				edit = "e",
-				expand = { "<CR>", "<2-LeftMouse>" },
-				open = "o",
-				remove = "d",
-				repl = "r",
-				toggle = "t",
-			},
-			render = {
-				indent = 1,
-				max_value_lines = 100,
 			},
 		})
 
@@ -67,4 +41,21 @@ return {
 			dapui.close()
 		end
 	end,
+	keys = {
+		{
+			"<leader>do",
+			"<CMD>lua require('dapui').float_element('console', {enter=true, width=45, height=30})<CR>",
+			desc = "console_output",
+		},
+		{
+			"<leader>dw",
+			"<CMD>lua require('dapui').float_element('watches', {enter=true, width=45, height=30})<CR>",
+			desc = "watches",
+		},
+		{
+			"<leader>ds",
+			"<CMD>lua require('dapui').float_element('scopes', {enter=true, width=45, height=30})<CR>",
+			desc = "scopes",
+		},
+	},
 }
