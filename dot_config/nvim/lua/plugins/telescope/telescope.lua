@@ -1,10 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.1",
+	tag = "0.1.4",
 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- at 10-09-2023 the commit after this one
-	-- is breaking the plugin for me
-	commit = "205f469244916716c49cc2b9026566749425c5ba",
 	event = "VeryLazy",
 	config = function()
 		-- this function dinamycally select the correct
