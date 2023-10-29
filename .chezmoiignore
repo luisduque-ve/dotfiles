@@ -1,6 +1,13 @@
 {{ if ne .chezmoi.os "darwin" }}
-yabairc
-skhdrc
+.config/yabai
+.config/skhd
+{{ end }}
+
+
+{{ if eq .chezmoi.os "windows" }}
+.config/fish
+.config/tmux
+.gitconfig
 {{ end }}
 
 macos_dependencies.py
