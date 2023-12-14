@@ -12,6 +12,15 @@ g.loaded_perl_provider = 0
 
 require("non_plugins_keymaps")
 
+{{- if eq .chezmoi.hostname "tree" }}
+-- Non work related config
+-- folding
+set.foldmethod = "marker"
+set.foldmarker = "foldin,foldout"
+set.foldlevel = 1
+vim.cmd([[au BufEnter *.py set foldlevel=0]])
+{{- end }}
+
 -- Indentation
 -- tabstop controls how many spaces a tab character (\t) appears as. In this case, every time you press the tab key or insert a tab character, it will be displayed as if it's 2 spaces wide in the editor. However, it's still a tab character in the file itself
 set.tabstop = 2
@@ -55,11 +64,6 @@ vim.o.grepformat = "%f:%l:%c:%m"
 vim.o.timeout = true
 vim.o.timeoutlen = 200
 
--- folding
-set.foldmethod = "marker"
-set.foldmarker = "foldin,foldout"
-set.foldlevel = 1
-vim.cmd([[au BufEnter *.py set foldlevel=0]])
 
 set.colorcolumn = "70"
 
