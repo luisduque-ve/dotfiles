@@ -62,7 +62,6 @@ set.foldlevel = 1
 vim.cmd([[au BufEnter *.py set foldlevel=0]])
 
 set.colorcolumn = "70"
-set.textwidth = 70
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
