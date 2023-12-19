@@ -8,6 +8,14 @@ return {
 		require("dap-python").setup(vim.g.python3_host_prog)
 		local dap_configurations = require("dap").configurations.python
 		table.insert(dap_configurations, {
+			name = "FastAPI",
+			type = "python",
+			request = "launch",
+			module = "uvicorn",
+			args = { "main:app", "--port", "8000" },
+			justMyCode = false,
+		})
+		table.insert(dap_configurations, {
 			type = "python",
 			request = "attach",
 			name = "Attach to a docker container",
