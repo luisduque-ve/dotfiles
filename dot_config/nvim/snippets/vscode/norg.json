@@ -1,8 +1,18 @@
 {
-  "todo": {
+  "first_level_todo": {
     "prefix": "t",
     "body": "- ( ) ${1}",
     "description": "adds a todo item"
+  },
+  "second_level_todo": {
+    "prefix": "tt",
+    "body": "-- ( ) ${1}",
+    "description": "adds a second level todo item"
+  },
+  "third_level_todo": {
+    "prefix": "ttt",
+    "body": "--- ( ) ${1}",
+    "description": "adds a third todo item"
   },
     "url": {
     "prefix": "u",
