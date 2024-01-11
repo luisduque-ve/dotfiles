@@ -84,6 +84,7 @@ return {
 			desc = "find_files",
 		},
 		{ "<Leader>sc", "<CMD>Telescope commands<CR>", desc = "command" },
+		{ "<Leader>gb", "<CMD>Telescope git_branches<CR>", desc = "branch" },
 		{ "<Leader>sr", "<CMD>Telescope oldfiles<CR>", desc = "recent_files" },
 		{ "<leader>sb", "<CMD>Telescope buffers<CR>", desc = "buffers" },
 		{ "<leader>sh", "<CMD>Telescope help_tags<CR>", desc = "help" },

@@ -10,6 +10,7 @@ abbr --add pylist "conda env list"
 abbr --add pytest "python -m pytest"
 abbr --add rmvirtualenv "conda remove --all --name"
 abbr --add workon "conda activate"
+abbr --add p "python"
 
 function prepy -d "Install custom pre-commit config and related Python packages"
     # install my custom pre-commit config
