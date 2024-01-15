@@ -7,9 +7,9 @@ return {
 	end,
 	keys = {
 		{ "<leader>dc", "<CMD>lua require('dap').continue()<CR>", desc = "continue" },
-		{ "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", desc = "breakpoint" },
-		{ "<leader>do", "<CMD>lua require('dap').step_over()<CR>", desc = "step_over" },
-		{ "<leader>di", "<CMD>lua require('dap').step_into()<CR>", desc = "into" },
+		{ "<C-;>", "<CMD>lua require('dap').toggle_breakpoint()<CR>", desc = "breakpoint" },
+		{ "<C-,>", "<CMD>lua require('dap').step_over()<CR>", desc = "step_over" },
+		{ "<C-.>", "<CMD>lua require('dap').step_into()<CR>", desc = "into" },
 		{ "<leader>du", "<CMD>lua require('dap').run_to_cursor()<CR>", desc = "run_to_cursor" },
 		{ "<leader>dl", "<CMD>lua require('dap').run_last()<CR>", desc = "run_last" },
 	},
