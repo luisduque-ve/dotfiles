@@ -22,6 +22,11 @@ map({ "n" }, "n", "nzz")
 map({ "n" }, "N", "Nzz")
 map({ "n" }, "G", "Gzz")
 
+-- Tabs mappings
+map({ "n" }, "<leader>.", "<CMD>tabnext<CR>", "tab_next")
+map({ "n" }, "<leader>,", "<CMD>tabprevious<CR>", "tab_previous")
+map({ "n" }, "<leader>T", "<CMD>tabnew<CR>", "tab_new")
+
 -- Windows mappings
 map({ "n" }, '<leader>"', "<CMD>split<CR>", "split")
 map({ "n" }, "<leader>%", "<CMD>vsplit<CR>", "vsplit")
@@ -31,9 +36,6 @@ map({ "n" }, "<leader>uwk", "<cmd>resize +5<cr>", "height+")
 map({ "n" }, "<leader>uwj", "<cmd>resize -5<cr>", "height-")
 map({ "n" }, "<leader>uwh", "<cmd>vertical resize -5<cr>", "width-")
 map({ "n" }, "<leader>uwl", "<cmd>vertical resize +5<cr>", "width+")
-
--- change to previous directory
-map({ "n" }, "<leader>p", "<CMD>cd -<CR><CMD>pwd<CR>", "cd-")
 
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
