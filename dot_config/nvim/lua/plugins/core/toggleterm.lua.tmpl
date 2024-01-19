@@ -1,0 +1,17 @@
+return {
+  "akinsho/toggleterm.nvim",
+  event = "VeryLazy",
+  version = "*",
+  opts = {
+      direction = "float",
+      hide_numbers = true,
+      {{- if eq .chezmoi.os "darwin" }}
+      shell = "/opt/homebrew/bin/fish",
+      {{- else }}
+      shell = "/usr/bin/fish",
+      {{- end }}
+    },
+  keys = {
+    { "<C-t>", "<CMD>ToggleTerm<CR>", mode = { "n", "v", "t", "i" }, desc = "toggleterm" },
+  },
+}
