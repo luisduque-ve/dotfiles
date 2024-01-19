@@ -17,7 +17,7 @@ return {
 				{
 					elements = {
 						{
-							id = "stacks",
+							id = "watches",
 							size = 0.30,
 						},
 						{
