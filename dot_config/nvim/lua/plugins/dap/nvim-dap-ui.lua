@@ -57,16 +57,6 @@ return {
 	end,
 	keys = {
 		{
-			"<leader>dO",
-			"<CMD>lua require('dapui').float_element('console', {enter=true, width=45, height=30})<CR>",
-			desc = "console_output",
-		},
-		{
-			"<leader>df",
-			"<CMD>lua require('dapui').float_element('stacks', {enter=true, width=45, height=30})<CR>",
-			desc = "stacks",
-		},
-		{
 			"<leader>ds",
 			"<CMD>lua require('dapui').float_element('scopes', {enter=true, width=45, height=30})<CR>",
 			desc = "scopes",
