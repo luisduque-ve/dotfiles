@@ -48,7 +48,7 @@ return {
 			desc = "console_output",
 		},
 		{
-			"<leader>dw",
+			"<leader>df",
 			"<CMD>lua require('dapui').float_element('stacks', {enter=true, width=45, height=30})<CR>",
 			desc = "stacks",
 		},
