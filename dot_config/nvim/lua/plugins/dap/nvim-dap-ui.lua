@@ -21,7 +21,7 @@ return {
 							size = 0.30,
 						},
 						{
-							id = "stack",
+							id = "stacks",
 							size = 0.70,
 						},
 					},
