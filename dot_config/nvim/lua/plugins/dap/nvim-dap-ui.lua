@@ -49,8 +49,8 @@ return {
 		},
 		{
 			"<leader>dw",
-			"<CMD>lua require('dapui').float_element('watches', {enter=true, width=45, height=30})<CR>",
-			desc = "watches",
+			"<CMD>lua require('dapui').float_element('stacks', {enter=true, width=45, height=30})<CR>",
+			desc = "stacks",
 		},
 		{
 			"<leader>ds",
