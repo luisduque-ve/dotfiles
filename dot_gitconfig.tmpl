@@ -1,8 +1,6 @@
 [user]
   name = Luis Duque
-{{- if eq .chezmoi.os "darwin" }}
-  email = luisfpetrucci@gmail.com
-{{- end }}
+  email = {{ .email | quote }}
 [core]
   editor = vim
 [merge]
