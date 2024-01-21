@@ -8,7 +8,13 @@
 .config/fish
 .config/nvim
 .config/tmux
+.config/neovide
 .gitconfig
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+AppData/
+AppData/**
 {{ end }}
 
 macos_dependencies.py
