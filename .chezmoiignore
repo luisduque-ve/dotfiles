@@ -6,9 +6,8 @@
 
 {{ if eq .chezmoi.os "windows" }}
 .config/fish
+.config/nvim
 .config/tmux
-.config/nvim/
-.config/nvim/**
 .gitconfig
 {{ end }}
 
