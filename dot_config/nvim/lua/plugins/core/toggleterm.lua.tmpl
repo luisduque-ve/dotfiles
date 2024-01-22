@@ -3,11 +3,9 @@ return {
   event = "VeryLazy",
   version = "*",
   opts = {
+      open_mapping = [[<c-t>]],
       direction = "float",
       hide_numbers = true,
       shell = {{ .fish_path | quote }}
     },
-  keys = {
-    { "<C-t>", "<CMD>ToggleTerm<CR>", mode = { "n", "v", "t", "i" }, desc = "toggleterm" },
-  },
 }

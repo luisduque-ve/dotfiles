@@ -13,7 +13,7 @@ end
 -- home rows and a tumb cluster, if you're
 -- reading this and has an standard keyboard
 -- avoid this mapping
-map({ "t" }, "<C-esc>", "<C-\\><C-n>")
+map({ "t" }, "<C-;>", "<C-\\><C-n>")
 
 -- Scroll without loosing the cursor
 map({ "n" }, "<C-d>", "<C-d>zz")
