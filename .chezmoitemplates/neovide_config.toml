@@ -1,3 +1,5 @@
+no-multigrid = true
+
 [font]
 normal = ["FiraCode Nerd Font Mono"]
 size = 19
