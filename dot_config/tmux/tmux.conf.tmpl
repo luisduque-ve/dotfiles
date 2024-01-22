@@ -10,11 +10,7 @@ set-option -g prefix C-a
 bind-key C-a send-prefix
 
 # Update default
-{{- if eq .chezmoi.hostname "tree" }}
-set-option -g default-shell /opt/homebrew/bin/fish
-{{- else }}
-set-option -g default-shell /usr/bin/fish
-{{- end }}
+set-option -g default-shell {{ .fish_path | quote }}
 
 # True color support
 set-option -sa terminal-features ',xterm-256color:RGB'
