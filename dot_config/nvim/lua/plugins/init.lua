@@ -4,7 +4,6 @@ return {
 	{ import = "plugins.dap" },
 	{ import = "plugins.git" },
 	{ import = "plugins.languages.markdown" },
-	{ import = "plugins.languages.neorg" },
 	{ import = "plugins.lsp" },
 	{ import = "plugins.telescope" },
 	{ import = "plugins.testing" },
