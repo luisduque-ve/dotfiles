@@ -12,9 +12,15 @@ g.loaded_perl_provider = 0
 
 require("non_plugins_keymaps")
 
-if vim.g.neovide then
-  require("neovide")
-end
+-- Why not loading neovide's configs as follow?
+-- if vim.g.neovide then
+--   require("neovide")
+-- end
+-- Because this doesn't work when you call
+-- neovide from windows as a client
+-- to a WSL nvim server instance
+
+require("neovide")
 
 {{- if eq .chezmoi.hostname "tree" }}
 -- Non work related config
