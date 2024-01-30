@@ -32,11 +32,7 @@ return {
 					elements = {
 						{
 							id = "repl",
-							size = 0.5,
-						},
-						{
-							id = "console",
-							size = 0.5,
+							size = 1,
 						},
 					},
 					position = "bottom",
@@ -56,6 +52,11 @@ return {
 		end
 	end,
 	keys = {
+		{
+			"<leader>dC",
+			"<CMD>lua require('dapui').float_element('console', {enter=true, width=45, height=30})<CR>",
+			desc = "console",
+		},
 		{
 			"<leader>ds",
 			"<CMD>lua require('dapui').float_element('scopes', {enter=true, width=45, height=30})<CR>",
