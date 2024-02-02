@@ -25,6 +25,7 @@ formulaes = [
     "ranger",  # cli file manager
     "raycast",  # spootlight alternative
     "rg",  # ripgrep
+    "starship",  # shell prompt
     "tmux",  # terminal multiplexer
     "tpm",  # tmux package manager
     "tree",  # show tree like folder representation
