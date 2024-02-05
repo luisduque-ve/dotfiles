@@ -20,7 +20,7 @@ AppData/**
 macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
-wsl_ubuntu_dependencies.py
+wsl_arch_dependencies.py
 README.md
 
 **/lazy-lock.json
