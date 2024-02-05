@@ -11,6 +11,7 @@ packages = [
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
     "jq",  # cli json utility
+    "neovim",  # editor
     "ninja",  # neovim build requirement
     "ranger",  # cli file manager
     "ripgrep",  # ripgrep, package name 'rg' in Arch is 'ripgrep'
