@@ -79,7 +79,7 @@ return {
 	end,
 	keys = {
 		{
-			"<Leader><Leader>",
+			"<C-p>",
 			"<CMD>lua TelescopeFindOrGitFiles()<CR>",
 			desc = "find_files",
 		},
