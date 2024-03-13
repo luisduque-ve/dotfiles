@@ -51,16 +51,4 @@ return {
 			dapui.close()
 		end
 	end,
-	keys = {
-		{
-			"<leader>dC",
-			"<CMD>lua require('dapui').float_element('console', {enter=true, width=45, height=30})<CR>",
-			desc = "console",
-		},
-		{
-			"<leader>ds",
-			"<CMD>lua require('dapui').float_element('scopes', {enter=true, width=45, height=30})<CR>",
-			desc = "scopes",
-		},
-	},
 }

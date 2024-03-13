@@ -6,6 +6,6 @@ return {
 		require("telescope").load_extension("dap")
 	end,
 	keys = {
-		{ "<leader>dx", "<CMD>Telescope dap commands<CR>", desc = "commands" },
+		{ "<leader>sd", "<CMD>Telescope dap commands<CR>", desc = "DAP" },
 	},
 }
