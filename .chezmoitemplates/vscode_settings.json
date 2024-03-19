@@ -1,5 +1,6 @@
 {
     "editor.fontSize": 20,
+    "editor.rulers": [80],
     "editor.hideCursorInOverviewRuler": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
