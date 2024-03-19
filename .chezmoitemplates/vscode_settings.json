@@ -1,6 +1,9 @@
 {
     "editor.fontSize": 20,
     "editor.rulers": [80],
+    "window.restoreWindows": "none",
+    "window.hotExit": "off",
+    "wowrkbench.editor.restoreViewState": false,
     "editor.hideCursorInOverviewRuler": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
