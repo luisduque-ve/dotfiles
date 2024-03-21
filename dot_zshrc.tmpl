@@ -24,7 +24,7 @@ export DOCKER_HOST=tcp://localhost:2375
 {{ if eq .chezmoi.os "darwin" }}
 export PATH="/opt/homebrew/bin:$PATH"
 {{ end }}
-export PATH="$HOME/.src/builds:$PATH"
+export PATH="$HOME/.src/builds/bin:$PATH"
 
 # Oh-my-zsh config
 
