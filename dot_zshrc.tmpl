@@ -13,8 +13,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Path insertions
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# WSL-specific
+export DOCKER_HOST=tcp://localhost:2375
+{{   end }}
+{{ end }}
 
+# Path insertions
 {{ if eq .chezmoi.os "darwin" }}
 export PATH="/opt/homebrew/bin:$PATH"
 {{ end }}
