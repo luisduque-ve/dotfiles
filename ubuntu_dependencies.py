@@ -13,7 +13,6 @@ packages = [
     "ninja-build",  # neovim build requirement, package name 'ninja-build' in Ubuntu
     "ranger",  # cli file manager
     "ripgrep",  # search tool, package name 'ripgrep' in Ubuntu
-    "starship",  # shell prompt
     "tree",  # show tree-like folder representation
     "zsh",  # shell
     "zoxide",  # better current dir changing
