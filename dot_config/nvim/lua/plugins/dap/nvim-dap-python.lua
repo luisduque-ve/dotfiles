@@ -7,14 +7,24 @@ return {
 	config = function()
 		require("dap-python").setup(vim.g.python3_host_prog)
 		local dap_configurations = require("dap").configurations.python
+
+		-- Function to prompt for an argument with a default value
+		local function prompt_args(default)
+			local input = vim.fn.input("Args: ", default)
+			return input ~= "" and input or default
+		end
+
 		table.insert(dap_configurations, {
 			name = "FastAPI",
 			type = "python",
 			request = "launch",
 			module = "uvicorn",
-			args = { "main:app", "--port", "8000" },
+			args = function()
+				return { prompt_args("app.main:app"), "--port", "8000" }
+			end,
 			justMyCode = false,
 		})
+
 		table.insert(dap_configurations, {
 			type = "python",
 			request = "attach",
@@ -22,18 +32,16 @@ return {
 			host = "localhost",
 			port = 5678,
 			pathMappings = {
-				-- both local and remote root are just templates here
-				-- you must change according your project structure
 				{ ["localRoot"] = "${workspaceFolder}", ["remoteRoot"] = "./src" },
 			},
 		})
-		-- nvim-dap-python stores configurations in a fixed array
-		-- there shouldn't any issue by adding to fixed indexes
-		dap_configurations[1].justMyCode = false
-		-- if you want to print the current config values
-		-- at startup for debugging proproses just uncomment
-		-- the bellow for statement
-		--
+
+		-- Set justMyCode for all configurations if needed
+		for _, config in ipairs(dap_configurations) do
+			config.justMyCode = false
+		end
+
+		-- Uncomment below to print configurations for debugging
 		-- for _, config in ipairs(dap_configurations) do
 		--   print(vim.inspect(config))
 		-- end
