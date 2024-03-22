@@ -56,7 +56,7 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 # path settings
 fish_add_path "$HOME/.src/builds/bin"
-fish_add_path "$HOME/anaconda3/condabin"
+fish_add_path "$HOME/miniconda3/condabin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 
 # initializations
@@ -65,7 +65,7 @@ starship init fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f $HOME/anaconda3/bin/conda
-    eval $HOME/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f $HOME/miniconda3/bin/conda
+    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
