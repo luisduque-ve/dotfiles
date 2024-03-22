@@ -1,3 +1,5 @@
+bindkey -v
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('{{ .chezmoi.homeDir }}/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -17,6 +19,7 @@ unset __conda_setup
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 # WSL-specific
 export DOCKER_HOST=tcp://localhost:2375
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 {{   end }}
 {{ end }}
 
