@@ -13,6 +13,7 @@ set -gx EDITOR nvim
 # WSL-specific
 set -gx DOCKER_HOST 'tcp://localhost:2375'
 set -gx REQUESTS_CA_BUNDLE '/etc/ssl/certs/ca-certificates.crt'
+set -gx NODE_EXTRA_CA_CERTS '/etc/ssl/certs/ca-certificates.crt'
 fish_add_path '/home/linuxbrew/.linuxbrew/bin'
 {{   end }}
 {{ end }}
