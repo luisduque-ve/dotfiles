@@ -23,6 +23,7 @@ Here's an example of what your `chezmoi.toml` file might look like:
 [data]
 email = "email used by tools like git"
 fish_path = "/opt/homebrew/bin/fish"
+ai_support = "false"
 ```
 
 In this file, `email` and `fish_path` are custom variables that can be used in your dotfiles templates.

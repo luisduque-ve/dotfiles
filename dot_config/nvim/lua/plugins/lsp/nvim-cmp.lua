@@ -69,6 +69,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
+				{ name = "copilot" },
 			},
 		})
 	end,

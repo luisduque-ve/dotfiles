@@ -1,0 +1,12 @@
+return {
+  "zbirenbaum/copilot.lua",
+  cmd = {"Copilot"},
+	cond = {{ .ai_support | quote }},
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    })
+  end,
+}

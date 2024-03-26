@@ -1,13 +1,7 @@
 return {
 	"jackMort/ChatGPT.nvim",
 	event = "VeryLazy",
-	enabled = function()
-		if os.getenv("OPENAI_API_KEY") ~= nil then
-			return true
-		else
-			return false
-		end
-	end,
+	enabled = false,
 	opts = {},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
