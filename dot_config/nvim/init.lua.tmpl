@@ -51,8 +51,33 @@ set.relativenumber = true
 -- clipboard config
 set.clipboard = "unnamedplus"
 
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+-- WSL Specific configs
+
+-- there a huge issue with copying and pasting in wsl
+-- environments, see the link above
+-- https://www.reddit.com/r/neovim/comments/17ieyn2/comment/kd9vt97/?utm_source=share&utm_medium=web2x&context=3
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
+  pattern = { "*" },
+  command = [[call setreg("@", getreg("+"))]],
+})
+
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+  pattern = { "*" },
+  command = [[call setreg("+", getreg("@"))]],
+})
+
+-- this is intentionally set twice in wsl systems
+set.clipboard = ""
+{{   end }}
+{{ end }}
+
 set.autoread = true
--- set.syntax = "enabled"
 
 -- this enable letters autoincrementing
 set.nrformats = "bin,hex,alpha"
