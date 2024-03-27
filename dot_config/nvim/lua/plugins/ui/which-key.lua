@@ -13,7 +13,7 @@ return {
 				name = "+buffer",
 			},
 			["<leader>c"] = {
-				name = "+chatgpt",
+				name = "+ai",
 			},
 			["<leader>d"] = {
 				name = "+debug",
