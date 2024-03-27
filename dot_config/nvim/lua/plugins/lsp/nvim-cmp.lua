@@ -9,10 +9,12 @@ return {
 		"hrsh7th/cmp-buffer",
 		"rcarriga/cmp-dap",
 		"saadparwaiz1/cmp_luasnip",
+		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
 
 		cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
 			sources = {
@@ -34,6 +36,14 @@ return {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
+			},
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					maxwidth = 50,
+					symbol_map = { Copilot = "" },
+					ellipsis_char = "...",
+				}),
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
