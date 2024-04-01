@@ -11,7 +11,7 @@ abbr --add pytest "python -m pytest"
 abbr --add rmvirtualenv "conda remove --all --name"
 # w means workon
 abbr --add w "conda activate"
-abbr --add p "python"
+abbr --add jupyterlab "python -m jupyterlab --no-browser"
 
 function prepy -d "Install custom pre-commit config and related Python packages"
     # install my custom pre-commit config

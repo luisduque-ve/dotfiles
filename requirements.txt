@@ -1,6 +1,8 @@
 black
 darker
 debugpy
+jupyterlab
 pre-commit
 pynvim
+python-lsp-server # used by jupyterlab
 requests
