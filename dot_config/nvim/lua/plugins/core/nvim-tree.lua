@@ -1,4 +1,4 @@
--- why this plugin if I have telescope?
+-- why this plugin if I have telescope and oil?
 -- for new projects where I don't know the file
 -- structure, that's all.
 return {
@@ -7,11 +7,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("nvim-tree").setup({
-			actions = {
-				open_file = {
-					quit_on_open = true,
-				},
-			},
 			view = {
 				number = true,
 				relativenumber = true,
@@ -19,7 +14,6 @@ return {
 		})
 	end,
 	keys = {
-		-- why o? just muscle memory I used to use oil.nvim
-		{ "<leader>o", "<CMD>NvimTreeToggle<CR>", desc = "nvim_tree" },
+		{ "<C-b>", "<CMD>NvimTreeToggle<CR>", desc = "nvim_tree" },
 	},
 }
