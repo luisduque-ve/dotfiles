@@ -18,5 +18,9 @@
   st = status
 [http]
   sslVerify = true
+  {{- if .ca_certificate }}
+  # remember to use \\ on windows
+  sslcainfo = {{ .ca_certificate }}
+  {{- end }}
 [rerere]
 	enabled = true
