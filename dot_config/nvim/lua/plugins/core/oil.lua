@@ -7,6 +7,10 @@ return {
 			view_options = {
 				show_hidden = true,
 			},
+			keymaps = {
+				["<C-h>"] = false,
+				["<C-l>"] = false,
+			},
 		})
 		-- not sure why this is not correctly handle in the
 		-- lazy's keys table
