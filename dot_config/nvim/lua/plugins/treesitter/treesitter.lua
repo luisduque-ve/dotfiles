@@ -14,6 +14,9 @@ return {
 		configs.setup({
 			ensure_installed = {
 				"fish",
+				"git_config",
+				"git_rebase",
+				"gitattributes",
 				"gitcommit",
 				"gitignore",
 				"json",
@@ -24,9 +27,6 @@ return {
 				"regex",
 				"vim",
 				"yaml",
-				"git_config",
-				"git_rebase",
-				"gitattributes",
 			},
 			sync_install = false,
 			highlight = {
