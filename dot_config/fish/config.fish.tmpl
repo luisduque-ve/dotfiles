@@ -15,14 +15,8 @@ abbr --add ls "exa -l -h"
 # git
 abbr --add g "git"
 
-# headless neovim
-abbr --add rvim "nvim --headless --listen localhost:50505"
-
 # chezmoi
 abbr --add c "chezmoi"
-
-# crazy_squirrel
-abbr --add cr "python run.py"
 
 # I like to use zoxide like this more than just the vanilla z
 function a
@@ -56,6 +50,8 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 # path settings
 fish_add_path "$HOME/.src/builds/bin"
+# .local/bin is for pipx, pipx is used to install poetry
+fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/miniconda3/condabin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 
