@@ -7,6 +7,6 @@ return {
 	},
 	config = true,
 	keys = {
-		{ "<leader>gg", "<CMD>Neogit<CR>", desc = "neogit" },
+		{ "<leader>gg", ":lua require('neogit').open({ kind = 'replace'})<cr>", desc = "neogit" },
 	},
 }
