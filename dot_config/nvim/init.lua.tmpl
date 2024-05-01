@@ -116,6 +116,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- configure neovim to recognize markdown files
+-- not sure what breaks this in the latest neovim
+-- version, this is going to be probably fixed in
+-- later releases
+
+vim.api.nvim_create_autocmd("BufRead", {
+    pattern = {"*.md", "*.MD"},
+    command = "set filetype=markdown",
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
