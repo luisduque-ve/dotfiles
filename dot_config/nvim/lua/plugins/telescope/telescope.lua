@@ -45,20 +45,6 @@ return {
 					},
 				},
 			},
-			pickers = {
-				git_files = {
-					default_text = "'",
-				},
-				find_files = {
-					default_text = "'",
-				},
-				oldfiles = {
-					default_text = "'",
-				},
-				buffers = {
-					default_text = "'",
-				},
-			},
 			extensions = {
 				live_grep_args = {
 					auto_quoting = true, -- this makes possible the quote_prompt
