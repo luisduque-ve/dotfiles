@@ -29,6 +29,21 @@ function a
   cd $selected_dir
 end
 
+function A
+  set query $argv[1]
+  if test -n "$query"
+    set selected_dir (zoxide query -l | grep -i "$query" | fzf)
+  else
+    set selected_dir (zoxide query -l | fzf)
+  end
+  if test -n "$selected_dir"
+    zoxide remove $selected_dir
+    echo "Removed $selected_dir from zoxide history."
+  else
+    echo "No directory selected."
+  end
+end
+
 # start ssh-agent and fuzzy find key
 function ssh-add-fzf
     eval (ssh-agent -c)
