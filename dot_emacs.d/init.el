@@ -34,6 +34,10 @@
 ;; Disable the menu bar
 (menu-bar-mode -1)
 
+;; Disable cursor blinking
+(setq visible-cursor nil)
+(blink-cursor-mode -1)
+
 ;; Set default font
 (set-face-attribute 'default nil :font "FiraCode Nerd Font Mono" :height 190)
 
