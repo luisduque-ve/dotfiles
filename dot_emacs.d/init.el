@@ -23,7 +23,10 @@
 (setq initial-scratch-message nil)
 
 ;; Set initial major mode
-(setq initial-major-mode 'text-mode)
+(setq initial-major-mode 'emacs-lisp-mode)
+
+;; Ensure the initial buffer is the scratch buffer
+(setq initial-buffer-choice t)
 
 ;; Disable the toolbar
 (tool-bar-mode -1)
@@ -44,15 +47,16 @@
 ;; Set custom-file to a separate file to avoid cluttering init.el
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+;; Create the custom-file if it doesn't exist and load it
+(unless (file-exists-p custom-file)
+  (with-temp-buffer (write-file custom-file)))
+(load custom-file)
+
 ;; Set backup directory to the OS temporary directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-
-;; Load the custom-file if it exists
-(when (file-exists-p custom-file)
-  (load custom-file))
 
 ;; Load all configuration files from the `lisp` directory
 (defvar my-config-dir (expand-file-name "lisp" user-emacs-directory)
