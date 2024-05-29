@@ -74,9 +74,40 @@ fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 zoxide init fish | source
 starship init fish | source
 
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#if test -f $HOME/miniconda3/bin/conda
+#    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+#end
+## <<< conda initialize <<<
+
+{{- if eq .chezmoi.arch "arm64" }}
+# Not sure why this is having different paths, probably is going
+# to be fixed in a future fresh install
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f $HOME/miniconda3/bin/conda
-    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f {{.chezmoi.homeDir}}/opt/miniconda3/bin/conda
+    eval {{.chezmoi.homeDir}}/opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "{{.chezmoi.homeDir}}/opt/miniconda3/etc/fish/conf.d/conda.fish"
+        . "{{.chezmoi.homeDir}}/opt/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "{{.chezmoi.homeDir}}/opt/miniconda3/bin" $PATH
+    end
 end
 # <<< conda initialize <<<
+{{- else }}
+# WSL
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f {{.chezmoi.homeDir}}/miniconda3/bin/conda
+    eval {{.chezmoi.homeDir}}/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "{{.chezmoi.homoDir}}/miniconda3/etc/fish/conf.d/conda.fish"
+        . "{{.chezmoi.homeDir}}/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "{{.chezmoi.homeDir}}/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+{{- end }}
