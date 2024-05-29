@@ -103,7 +103,7 @@ end
 if test -f {{.chezmoi.homeDir}}/miniconda3/bin/conda
     eval {{.chezmoi.homeDir}}/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 else
-    if test -f "{{.chezmoi.homoDir}}/miniconda3/etc/fish/conf.d/conda.fish"
+    if test -f "{{.chezmoi.homeDir}}/miniconda3/etc/fish/conf.d/conda.fish"
         . "{{.chezmoi.homeDir}}/miniconda3/etc/fish/conf.d/conda.fish"
     else
         set -x PATH "{{.chezmoi.homeDir}}/miniconda3/bin" $PATH
