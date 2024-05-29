@@ -6,12 +6,13 @@ packages = [
     "cmake",  # neovim build requirement
     "curl",  # http client
     "docker",  # docker, what else can I say? lol
-    "exa",  # ls replacement
+    "eza",  # ls replacement
     "fish",  # shell
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
     "htop",  # system utility
     "jq",  # cli json utility
+    "lazygit",  # git client
     "ninja",  # neovim build requirement
     "ranger",  # cli file manager
     "ripgrep",  # search tool

@@ -6,7 +6,7 @@ packages = [
     "chezmoi",  # dotfiles manager
     "cmake",  # neovim build requirement
     "curl",  # http client
-    "exa",  # ls replacement
+    "eza",  # ls replacement
     "fish",  # shell
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
