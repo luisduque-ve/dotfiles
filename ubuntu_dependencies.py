@@ -1,4 +1,5 @@
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 
 # List of dependencies to be installed
 packages = [
@@ -45,20 +46,32 @@ if not is_homebrew_installed():
     )
 
 
-# Function to check if package is installed
-def is_package_installed(package):
+# Function to get a list of all installed packages
+def get_installed_packages():
     result = subprocess.run(
-        ["brew", "list", package],
+        ["brew", "list"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
     )
-    return result.returncode == 0
+    if result.returncode == 0:
+        return result.stdout.split()
+    else:
+        return []
 
-# Install or upgrade packages
-for package in packages:
-    if not is_package_installed(package):
+
+# Get the list of installed packages once
+installed_packages = get_installed_packages()
+
+
+# Function to install or upgrade a package
+def install_package(package):
+    if package not in installed_packages:
         subprocess.run(["brew", "install", package])
     else:
-        subprocess.run(["brew", "upgrade", package])
-        print(f"{package} is already installed or upgraded.")
+        print(f"{package} is already installed")
+
+
+# Use ThreadPoolExecutor to install or upgrade packages in parallel
+with ThreadPoolExecutor() as executor:
+    executor.map(install_package, packages)
