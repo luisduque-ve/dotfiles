@@ -5,6 +5,7 @@ packages = [
     "bat",  # cat alternative
     "cmake",  # neovim build requirement
     "curl",  # http client
+    "docker",  # docker, what else can I say? lol
     "exa",  # ls replacement
     "fish",  # shell
     "fzf",  # fuzzy finder
