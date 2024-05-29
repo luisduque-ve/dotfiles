@@ -18,7 +18,6 @@ packages = [
     "tmux",  # multiplexer
     "tpm",  # tmux plugin manager
     "tree",  # show tree-like folder representation
-    "tree",  # file tree visualizer
     "zoxide",  # better current dir changing
 ]
 

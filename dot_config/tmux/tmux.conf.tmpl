@@ -49,5 +49,6 @@ set -g mouse on
 {{- if eq .chezmoi.hostname "tree" }}
 run '/opt/homebrew/opt/tpm/share/tpm/tpm'
 {{- else }}
-run '$HOME/.tmux/plugins/tpm/tpm'
+# Ubuntu location
+run '/home/linuxbrew/.linuxbrew/opt/tpm/share/tpm/tpm'
 {{- end }}
