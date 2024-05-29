@@ -5,28 +5,27 @@ packages = [
     "bat",  # cat alternative
     "cmake",  # neovim build requirement
     "curl",  # http client
-    "exa",  # ls replacement (might need a PPA or snap in Ubuntu)
+    "exa",  # ls replacement
+    "fish",  # shell
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
+    "htop",  # system utility
     "jq",  # cli json utility
-    "neovim",  # editor
-    "ninja-build",  # neovim build requirement, package name 'ninja-build' in Ubuntu
+    "ninja",  # neovim build requirement
     "ranger",  # cli file manager
-    "ripgrep",  # search tool, package name 'ripgrep' in Ubuntu
+    "ripgrep",  # search tool
+    "starship",  # shell prompt
+    "tmux",  # multiplexer
+    "tpm",  # tmux plugin manager
     "tree",  # show tree-like folder representation
-    "zsh",  # shell
+    "tree",  # file tree visualizer
     "zoxide",  # better current dir changing
 ]
 
-# Update system to the latest version with apt
-subprocess.run(["sudo", "apt", "update"])
-subprocess.run(["sudo", "apt", "upgrade", "-y"])
-
-
-# Function to check if package is installed
-def is_package_installed(package):
+# Function to check if Homebrew is installed
+def is_homebrew_installed():
     result = subprocess.run(
-        ["dpkg", "-l", package],
+        ["brew", "--version"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
@@ -34,9 +33,31 @@ def is_package_installed(package):
     return result.returncode == 0
 
 
+# Install Homebrew if not installed
+if not is_homebrew_installed():
+    subprocess.run(
+        [
+            "/bin/bash",
+            "-c",
+            "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
+        ]
+    )
+
+
+# Function to check if package is installed
+def is_package_installed(package):
+    result = subprocess.run(
+        ["brew", "list", package],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    return result.returncode == 0
+
 # Install or upgrade packages
 for package in packages:
     if not is_package_installed(package):
-        subprocess.run(["sudo", "apt", "install", "-y", package])
+        subprocess.run(["brew", "install", package])
     else:
-        print(f"{package} is already installed.")
+        subprocess.run(["brew", "upgrade", package])
+        print(f"{package} is already installed or upgraded.")
