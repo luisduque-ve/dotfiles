@@ -74,13 +74,6 @@ fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"  "$HOME/.docker/bin"
 zoxide init fish | source
 starship init fish | source
 
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
-#if test -f $HOME/miniconda3/bin/conda
-#    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-#end
-## <<< conda initialize <<<
-
 {{- if eq .chezmoi.arch "arm64" }}
 # Not sure why this is having different paths, probably is going
 # to be fixed in a future fresh install
