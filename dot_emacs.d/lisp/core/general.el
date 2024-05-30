@@ -7,7 +7,8 @@
     :global-prefix "C-SPC")
 
   (my-leader-def
-    "SPC" '(consult-find :which-key "find_file")
+    "." '(find-file :which-key "find_file")
+    "SPC" '(consult-find :which-key "consult_file")
     "s" '(:which-key "search") ;; search prefix
     "sb" '(consult-buffer :which-key "buffers")
     "sc" '(execute-extended-command :which-key "commands")
