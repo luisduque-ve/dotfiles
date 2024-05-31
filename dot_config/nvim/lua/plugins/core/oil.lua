@@ -10,6 +10,7 @@ return {
 			keymaps = {
 				["<C-h>"] = false,
 				["<C-l>"] = false,
+				["q"] = "actions.close",
 			},
 		})
 		-- not sure why this is not correctly handle in the
