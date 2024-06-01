@@ -16,5 +16,5 @@
     "%" '(split-window-right :which-key "vsplit")
     "b" '(:which-key "buffers") ;; buffers prefix
     "bc" '(evil-delete-buffer :which-key "close_all")
-    "bd" '(kill-buffer :which-key "close")
+    "bd" '(kill-this-buffer :which-key "close")
     "bo" '(delete-other-windows :which-key "only")))
