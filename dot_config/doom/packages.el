@@ -6,3 +6,5 @@
 ;; use 'M-x doom/reload'.
 ;;
 ;; full example can be found in https://github.com/doomemacs/doomemacs/blob/master/templates/packages.example.el
+
+(package! chezmoi)
