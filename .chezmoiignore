@@ -3,6 +3,7 @@
 .config/skhd
 Library/
 Library/**
+.zshrc
 {{ end }}
 
 
@@ -10,7 +11,10 @@ Library/**
 .config/fish
 .config/nvim
 .config/tmux
-.config/neovide
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.bashrc
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
@@ -21,7 +25,6 @@ AppData/**
 macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
-arch_dependencies.py
 ubuntu_dependencies.py
 README.md
 

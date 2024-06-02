@@ -13,9 +13,6 @@ return {
   {{- end }}
 	hide_tab_bar_if_only_one_tab = true,
 	window_close_confirmation = "NeverPrompt",
-  {{- if eq .chezmoi.hostname "tree" }}
-	default_prog = { "/opt/homebrew/bin/fish"},
-  {{- end }}
 	window_padding = {
 		left = 0,
 		right = 0,
