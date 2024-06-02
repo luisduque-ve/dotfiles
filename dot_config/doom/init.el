@@ -34,6 +34,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
+       vterm             ; Better terminal mode
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
