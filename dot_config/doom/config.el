@@ -17,7 +17,11 @@
 ;;   (after! PACKAGE
 ;;     (setq x y))
 ;; Set the delay for which-key popup
+
+(use-package chezmoi)
+
 (after! which-key
   (setq which-key-idle-delay 0.1))
 
-(use-package chezmoi)
+(after! projectile
+  (setq projectile-switch-project-action 'projectile-dired))
