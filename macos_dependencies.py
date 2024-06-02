@@ -22,6 +22,7 @@ formulaes = [
     "jq",  # cli json utility
     "krisp",  # noise reduction
     "ninja",  # neovim build requirement
+    "nvm",  # node version manager
     "ranger",  # cli file manager
     "raycast",  # spootlight alternative
     "rg",  # ripgrep

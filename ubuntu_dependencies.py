@@ -15,6 +15,7 @@ packages = [
     "jq",  # cli json utility
     "lazygit",  # git client
     "ninja",  # neovim build requirement
+    "nvm",  # node version manager
     "ranger",  # cli file manager
     "ripgrep",  # search tool
     "starship",  # shell prompt
