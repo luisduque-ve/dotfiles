@@ -41,9 +41,9 @@
 
        :tools
        docker
-       (eval +overlay)     ; run code, run (also, repls)
-       lookup              ; navigate your code and its documentation
-       lsp               ; M-x vscode
+       (eval +overlay)   ; run code, run (also, repls)
+       lookup            ; navigate your code and its documentation
+       (lsp +eglot)      ; M-x vscode
        magit             ; a git porcelain for Emacs
        pdf               ; pdf enhancements
        tree-sitter       ; syntax and parsing, sitting in a tree...
@@ -58,7 +58,7 @@
        lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        org               ; organize your plain life in plain text
-       python              ; beautiful is better than ugly
+       (python +lsp)     ; beautiful is better than ugly
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        yaml              ; JSON, but readable
 
