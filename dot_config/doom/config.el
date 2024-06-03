@@ -31,3 +31,6 @@
 (after! conda
   (custom-set-variables
  '(conda-anaconda-home "~/opt/miniconda3")))
+
+(after! magit-todos
+  :config (magit-todos-mode 1))
