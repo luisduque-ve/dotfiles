@@ -21,7 +21,9 @@
 (use-package chezmoi)
 
 (after! which-key
-  (setq which-key-idle-delay 0.1))
+  (setq which-key-idle-delay 0.1)
+  (which-key-add-key-based-replacements
+  "C-c !" "flycheck"))
 
 (after! projectile
   (setq projectile-switch-project-action 'projectile-dired))
