@@ -25,3 +25,7 @@
 
 (after! projectile
   (setq projectile-switch-project-action 'projectile-dired))
+
+(after! conda
+  (custom-set-variables
+ '(conda-anaconda-home "~/opt/miniconda3")))
