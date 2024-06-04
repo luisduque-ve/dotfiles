@@ -10,3 +10,5 @@
 (package! chezmoi)
 
 (package! conda)
+
+(package! org-anki)
