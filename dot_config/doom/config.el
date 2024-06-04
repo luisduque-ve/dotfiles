@@ -5,7 +5,7 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 17 :weight 'semi-light))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 17 :weight 'semi-bold))
 (setq doom-theme 'doom-gruvbox-light)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
