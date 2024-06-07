@@ -57,7 +57,7 @@
        json              ; At least it ain't XML
        lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
-       org               ; organize your plain life in plain text
+       (org +pretty)     ; organize your plain life in plain text
        (python +lsp)     ; beautiful is better than ugly
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        yaml              ; JSON, but readable
