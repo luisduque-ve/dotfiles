@@ -41,8 +41,12 @@ bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
 
 set-option -g status-right ""
 
-# mouse support is needed to scroll
+# mouse support is needed to copy/paste
 set -g mouse on
+# disable mouse wheels to avoid entering
+# in selection mode everytime, it is annoying
+unbind -n WheelUpPane
+unbind -n WheelDownPane
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of
 # tmux.conf)
