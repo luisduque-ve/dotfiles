@@ -12,7 +12,7 @@
        :ui
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       hl-todo           ; highlight todo/fixme/note/deprecated/hack/review uppercase words
        ligatures         ; ligatures and symbols to make your code pretty again
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
