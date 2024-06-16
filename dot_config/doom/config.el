@@ -34,3 +34,18 @@
 
 (after! magit-todos
   :config (magit-todos-mode 1))
+
+(after! vertico
+      (setq which-key-use-C-h-commands t))
+
+(after! org
+  (map! :localleader
+        :map org-mode-map
+        :desc "anki-sync-all" "U" #'org-anki-sync-all)
+  (map! :localleader
+        :map org-mode-map
+        :desc "anki-sync-entry" "u" #'org-anki-sync-entry)
+  (map! :localleader
+        :map org-mode-map
+        :desc "structure-template" "S" #'org-insert-structure-template))
+
