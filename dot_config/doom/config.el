@@ -18,7 +18,14 @@
 ;;     (setq x y))
 ;; Set the delay for which-key popup
 
+
+;; Even if the docs says that we should use after
+;; not sure why with chezmoi.el I must load first
+;; with use package or it didn't work
 (use-package chezmoi)
+(after! chezmoi
+  (map! :leader
+      :desc "chezmoi-find" "s c" #'chezmoi-find))
 
 (after! which-key
   (setq which-key-idle-delay 0.1)
