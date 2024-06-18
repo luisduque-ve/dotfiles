@@ -1,7 +1,8 @@
 return {
 	"unblevable/quick-scope",
 	init = function()
-		vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
+		-- uncomment the following will trigger quickscope only on f and t
+		-- vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
 		vim.cmd([[
       augroup qs_colors
         autocmd!
