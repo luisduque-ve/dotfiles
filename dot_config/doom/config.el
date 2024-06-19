@@ -16,8 +16,6 @@
 ;;
 ;;   (after! PACKAGE
 ;;     (setq x y))
-;; Set the delay for which-key popup
-
 
 ;; Even if the docs says that we should use after
 ;; not sure why with chezmoi.el I must load first
@@ -26,6 +24,11 @@
 (after! chezmoi
   (map! :leader
       :desc "chezmoi-find" "s c" #'chezmoi-find))
+
+;; Load evil-quickscope
+(use-package evil-quickscope
+  :config
+  (global-evil-quickscope-always-mode 1))
 
 (after! which-key
   (setq which-key-idle-delay 0.1)

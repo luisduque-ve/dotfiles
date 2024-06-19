@@ -7,8 +7,14 @@
 ;;
 ;; full example can be found in https://github.com/doomemacs/doomemacs/blob/master/templates/packages.example.el
 
+(package! evil-snipe :disable t)
+
 (package! chezmoi)
 
 (package! conda)
 
 (package! org-anki)
+
+(package! evil-quickscope
+  :recipe (:host github :repo "blorbx/evil-quickscope"))
+
