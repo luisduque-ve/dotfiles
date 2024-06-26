@@ -23,14 +23,22 @@ formulaes = [
     "krisp",  # noise reduction
     "ninja",  # neovim build requirement
     "nvm",  # node version manager
+    "openssl",  # pyenv dependency
+    "pyenv",  # python version manager
+    "pyenv-virtualenv",  # handle pyenv venvs
     "ranger",  # cli file manager
     "raycast",  # spootlight alternative
+    "readline",  # pyenv dependency
     "rg",  # ripgrep
+    "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
+    "tcl-tk",  # pyenv dependency
     "tmux",  # terminal multiplexer
     "tpm",  # tmux package manager
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
+    "xz",  # pyenv dependency
+    "zlib",  # pyenv dependency
     "zoom",  # video calling
     "zoxide",  # better current dir changing
 ]

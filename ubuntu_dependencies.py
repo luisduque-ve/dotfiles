@@ -16,12 +16,20 @@ packages = [
     "lazygit",  # git client
     "ninja",  # neovim build requirement
     "nvm",  # node version manager
+    "openssl",  # pyenv dependency
+    "pyenv",  # python version manager
+    "pyenv-virtualenv",  # handle pyenv venvs
     "ranger",  # cli file manager
+    "readline",  # pyenv dependency
     "ripgrep",  # search tool
+    "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
+    "tcl-tk",  # pyenv dependency
     "tmux",  # multiplexer
     "tpm",  # tmux plugin manager
     "tree",  # show tree-like folder representation
+    "xz",  # pyenv dependency
+    "zlib",  # pyenv dependency
     "zoxide",  # better current dir changing
 ]
 
