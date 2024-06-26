@@ -9,12 +9,11 @@ formulaes = [
     "anki",  # study
     "bat",  # cat alternative
     "brave-browser",  # default browser
-    "calibre",  # local library
     "chezmoi",  # dotfiles manager
     "cmake",  # neovim build requirement
     "curl",  # http client
     "doll",  # show notifications on status bar
-    "exa",  # ls replacement
+    "eza",  # ls replacement
     "fish",  # shell
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
