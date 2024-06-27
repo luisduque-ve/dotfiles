@@ -1,5 +1,14 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+if status --is-interactive
+    # Initialize pyenv and pyenv-virtualenv with improved performance
+    # By default, both use the --on-event fish_prompt hook, which triggers on every prompt display.
+    # This can cause performance issues due to frequent initializations.
+    # The following commands use sed to change the hook to --on-variable PWD,
+    # which triggers only on directory changes (less frequent than prompt displays),
+    # thereby reducing the initialization frequency and improving shell performance.
+
+    # see: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1429300631
+    pyenv init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
+    pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
 end
 
 # remove shell greeting
@@ -74,5 +83,3 @@ fish_add_path $PYENV_ROOT/bin
 # initializations
 zoxide init fish | source
 starship init fish | source
-pyenv init - | source
-pyenv virtualenv-init - | source
