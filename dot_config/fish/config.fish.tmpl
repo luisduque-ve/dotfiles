@@ -7,6 +7,8 @@ if status --is-interactive
     # thereby reducing the initialization frequency and improving shell performance.
 
     # see: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1429300631
+
+    # FOR ME: this is only a issue on WSL, I'll probably remove soon
     pyenv init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
     pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
 end
