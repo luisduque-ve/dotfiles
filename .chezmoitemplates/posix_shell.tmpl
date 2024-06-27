@@ -24,4 +24,5 @@ eval "$(starship init zsh)"
 {{- if eq .chezmoi.os "linux" -}}
 # bash config
 eval "$(starship init bash)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ end }}
