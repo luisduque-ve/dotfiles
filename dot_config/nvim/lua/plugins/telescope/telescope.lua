@@ -29,7 +29,6 @@ return {
 
 		require("telescope").setup({
 			defaults = {
-				layout_strategy = "vertical",
 				mappings = {
 					i = {
 						["<esc>"] = require("telescope.actions").close,
@@ -37,11 +36,6 @@ return {
 						["<C-k>"] = require("telescope.actions").move_selection_next,
 						["<C-j>"] = require("telescope.actions").move_selection_previous,
 						["<C-h>"] = require("telescope.actions").select_default,
-					},
-				},
-				layout_config = {
-					vertical = {
-						preview_cutoff = 0,
 					},
 				},
 			},
