@@ -91,6 +91,7 @@ return {
 			marksman = {},
 			pyright = {},
 			vimls = {},
+			tsserver = {},
 			yamlls = {},
 			lua_ls = {
 				Lua = {
