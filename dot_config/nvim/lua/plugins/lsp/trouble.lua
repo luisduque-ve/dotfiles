@@ -1,6 +1,6 @@
 return {
 	"folke/trouble.nvim",
-	cmd = "TroubleToggle",
+	cmd = "Trouble",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		action_keys = {
@@ -8,6 +8,6 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>sq", "<CMD>TroubleToggle quickfix<CR>", desc = "quickfix" },
+		{ "<leader>sq", "<CMD>Trouble quickfix<CR>", desc = "quickfix" },
 	},
 }
