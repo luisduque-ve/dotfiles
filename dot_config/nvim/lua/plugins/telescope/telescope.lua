@@ -70,6 +70,7 @@ return {
 		{ "<leader>sb", "<CMD>Telescope buffers<CR>", desc = "buffers" },
 		{ "<leader>sh", "<CMD>Telescope help_tags<CR>", desc = "help" },
 		{ "<leader>sk", "<CMD>Telescope keymaps<CR>", desc = "keymaps" },
+		{ "<leader>ss", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", desc = "lsp_symbol" },
 		{
 			"<leader>sD",
 			"<CMD>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--no-ignore', './data'} })<CR>",
