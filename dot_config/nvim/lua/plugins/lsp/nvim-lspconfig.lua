@@ -21,17 +21,12 @@ return {
 		local on_attach = function(_, bufnr)
 			-- call which key to render the groups only
 			local wk = require("which-key")
-			wk.setup({
-				key_labels = { ["<leader>"] = "SPC" },
-			})
-			wk.register({
-				["<leader>h"] = {
-					name = "+LSP",
-					d = { name = "+diagnostics" },
-					g = { name = "+goto" },
-					s = { name = "+server" },
-					w = { name = "+workspace" },
-				},
+			wk.add({
+				{ "<leader>h", group = "+LSP" },
+				{ "<leader>hd", group = "+diagnostics" },
+				{ "<leader>hg", group = "+goto" },
+				{ "<leader>hs", group = "+server" },
+				{ "<leader>hw", group = "+workspace" },
 			}, {
 				buffer = 0,
 			})

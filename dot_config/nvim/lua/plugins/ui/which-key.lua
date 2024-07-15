@@ -1,50 +1,20 @@
 return {
 	"folke/which-key.nvim",
+	dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" },
 	event = "VeryLazy",
 	config = function()
 		local wk = require("which-key")
-		wk.setup({
-			plugins = { spelling = true },
-			key_labels = { ["<leader>"] = "SPC" },
+		wk.add({
+			{ "<leader>b", group = "+buffer" },
+			{ "<leader>c", group = "+ai" },
+			{ "<leader>d", group = "+debug" },
+			{ "<leader>g", group = "+git" },
+			{ "<leader>s", group = "+search" },
+			{ "<leader>t", group = "+test" },
+			{ "<leader>u", group = "+utils" },
+			{ "<leader>uc", group = "+change_case_to" },
+			{ "<leader>um", group = "+markdown" },
+			{ "<leader>uw", group = "+window" },
 		})
-		-- normal mode
-		wk.register({
-			["<leader>b"] = {
-				name = "+buffer",
-			},
-			["<leader>c"] = {
-				name = "+ai",
-			},
-			["<leader>d"] = {
-				name = "+debug",
-			},
-			["<leader>g"] = {
-				name = "+git",
-			},
-			["<leader>s"] = {
-				name = "+search",
-			},
-			["<leader>t"] = {
-				name = "+test",
-			},
-			["<leader>u"] = {
-				name = "+utils",
-				["c"] = {
-					name = "+change_case_to",
-				},
-				["m"] = {
-					name = "+markdown",
-				},
-				["w"] = {
-					name = "+window",
-				},
-			},
-		})
-		-- visual mode
-		wk.register({
-			["<leader>c"] = {
-				name = "+chatgpt",
-			},
-		}, { mode = "v" })
 	end,
 }
