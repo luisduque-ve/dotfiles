@@ -29,6 +29,9 @@ return {
 
 		require("telescope").setup({
 			defaults = {
+				file_ignore_patterns = {
+					"__init__.py",
+				},
 				mappings = {
 					i = {
 						["<esc>"] = require("telescope.actions").close,
