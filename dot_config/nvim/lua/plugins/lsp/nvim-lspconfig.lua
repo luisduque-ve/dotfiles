@@ -5,7 +5,6 @@ return {
 		-- Automatically install LSPs to stdpath for neovim
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
-		"folke/neodev.nvim",
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
