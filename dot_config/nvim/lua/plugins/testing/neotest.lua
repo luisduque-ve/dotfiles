@@ -10,6 +10,10 @@ return {
 	},
 	config = function()
 		require("neotest").setup({
+			output_panel = {
+				enabled = true,
+				open = "rightbelow vsplit | vertical resize 50",
+			},
 			adapters = {
 				require("neotest-python")({
 					dap = { justMyCode = false },
