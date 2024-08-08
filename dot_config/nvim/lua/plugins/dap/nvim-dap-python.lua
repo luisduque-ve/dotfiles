@@ -20,7 +20,7 @@ return {
 			request = "launch",
 			module = "uvicorn",
 			args = function()
-				return { prompt_args("app.main:app"), "--port", "8000", "--reload" }
+				return { prompt_args("app.main:app"), "--port", "8000", "--reload", "--loop", "asyncio" }
 			end,
 			justMyCode = false,
 		})
