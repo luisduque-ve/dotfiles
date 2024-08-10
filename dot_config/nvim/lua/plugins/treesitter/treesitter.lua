@@ -13,7 +13,9 @@ return {
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
 			ensure_installed = {
+				"c",
 				"commonlisp",
+				"cpp",
 				"fish",
 				"git_config",
 				"git_rebase",
