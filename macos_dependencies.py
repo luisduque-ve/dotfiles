@@ -1,6 +1,4 @@
 # Homebrew must be installed before running this script
-# yabai and skhd installations are not handle in this
-# script, you must manually install them
 
 import subprocess
 
@@ -20,6 +18,7 @@ formulaes = [
     "grammarly-desktop",  # grammar tool
     "jq",  # cli json utility
     "krisp",  # noise reduction
+    "nikitabobko/tap/aerospace",  # tiling window manager
     "ninja",  # neovim build requirement
     "nvm",  # node version manager
     "openssl",  # pyenv dependency
@@ -45,7 +44,7 @@ formulaes = [
 # Function to check if package is installed
 def is_package_installed(package):
     result = subprocess.run(
-        ["brew", "list", "--versions", package],
+        ["brew", "list", "--versions", package.split()[-1]],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
