@@ -114,7 +114,6 @@ alt-o = 'workspace O'
 alt-e = 'workspace E'
 alt-u = 'workspace U'
 alt-t = 'workspace T'
-alt-n = 'workspace N'
 alt-s = 'workspace S'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -123,7 +122,6 @@ alt-shift-o = 'move-node-to-workspace O'
 alt-shift-e = 'move-node-to-workspace E'
 alt-shift-u = 'move-node-to-workspace U'
 alt-shift-t = 'move-node-to-workspace T'
-alt-shift-n = 'move-node-to-workspace N'
 alt-shift-s = 'move-node-to-workspace S'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -161,7 +159,3 @@ run = "move-node-to-workspace A"
 [[on-window-detected]]
 if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace A"
-
-[[on-window-detected]]
-if.app-id = "notion.id"
-run = "move-node-to-workspace N"
