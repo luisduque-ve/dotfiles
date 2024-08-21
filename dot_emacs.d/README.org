@@ -1,0 +1,15 @@
+#+TITLE: Emacs config
+#+PROPERTY: header-args :tangle init.el
+
+This is my personal Emacs configuration. I try to keep it simple while using as
+much of evil-mode as possible.
+
+Since this is tracked by Chezmoi, you don't need to modify this file on fresh
+installs.
+
+To regenerate the init.el file, simply go to the top of this file (inside
+Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
+
+#+BEGIN_SRC elisp
+-- hello
+#+END_SRC
