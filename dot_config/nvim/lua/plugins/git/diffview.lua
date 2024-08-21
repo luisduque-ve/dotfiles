@@ -2,10 +2,10 @@ return {
 	"sindrets/diffview.nvim",
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>gD", "<CMD>DiffviewClose<CR>", desc = "close_diffview" },
-		{ "<leader>gc", ":DiffviewOpen ", desc = "custom_diff" },
-		{ "<leader>gd", "<CMD>DiffviewOpen<CR>", desc = "open_diffview" },
-		{ "<leader>gf", "<CMD>DiffviewFileHistory %<CR>", desc = "current_file_history" },
+		{ "<leader>gdc", "<CMD>DiffviewClose<CR>", desc = "close" },
+		{ "<leader>gdC", ":DiffviewOpen ", desc = "custom" },
+		{ "<leader>gdo", "<CMD>DiffviewOpen<CR>", desc = "open" },
+		{ "<leader>gdf", "<CMD>DiffviewFileHistory %<CR>", desc = "file_history" },
 	},
 	config = function()
 		local actions = require("diffview.actions")
