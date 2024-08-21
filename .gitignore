@@ -5,3 +5,4 @@
 **/fish_variables
 **/secrets.fish
 **/ranger/plugins/**
+.worktrees/**
