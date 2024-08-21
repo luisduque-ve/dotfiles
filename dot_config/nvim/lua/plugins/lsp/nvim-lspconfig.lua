@@ -57,10 +57,6 @@ return {
 				{ "<leader>hsu", ":LspUninstall ", desc = "uninstall" },
 				{ "<leader>hsx", ":LspInstall ", desc = "install" },
 			}
-			-- Disable default nvim mappings do not fit my workflow
-			vim.api.nvim_del_keymap("n", "gra")
-			vim.api.nvim_del_keymap("n", "grn")
-			vim.api.nvim_del_keymap("n", "grr")
 			create_key_mappings(keys)
 			-- Lesser used LSP functionality probably never used, that is why is not in the table
 			-- bellow, I'll probably remove soon
@@ -147,5 +143,9 @@ return {
 				})
 			end,
 		})
+		-- Disable default nvim mappings do not fit my workflow
+		vim.api.nvim_del_keymap("n", "gra")
+		vim.api.nvim_del_keymap("n", "grn")
+		vim.api.nvim_del_keymap("n", "grr")
 	end,
 }
