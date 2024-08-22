@@ -26,5 +26,6 @@ pre-commit-config.yaml
 requirements.txt
 ubuntu_dependencies.py
 README.md
+todo.org
 
 **/lazy-lock.json
