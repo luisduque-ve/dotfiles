@@ -36,6 +36,7 @@
                     :font "FiraCode Nerd Font Mono"
                     :height 170
                     :weight 'semi-bold)
+(global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 
