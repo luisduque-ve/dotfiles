@@ -45,7 +45,14 @@
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  ;; Define key mappings to include recentering
+(evil-define-key 'normal 'global
+  (kbd "C-d") (lambda () (interactive) (evil-scroll-down nil) (recenter))
+  (kbd "C-u") (lambda () (interactive) (evil-scroll-up nil) (recenter))
+  (kbd "n") (lambda () (interactive) (evil-search-next) (recenter))
+  (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
+  (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
 (use-package evil-collection
   :after evil
