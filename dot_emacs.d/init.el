@@ -13,7 +13,6 @@
 (setq use-package-always-ensure t)
 
 (use-package doom-themes
-  :ensure t
   :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
@@ -41,7 +40,6 @@
 (setq org-directory "~/org/")
 
 (use-package evil
-  :ensure t
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
@@ -50,6 +48,8 @@
 
 (use-package evil-collection
   :after evil
-  :ensure t
   :config
   (evil-collection-init))
+
+(use-package toc-org
+  :hook (org-mode . toc-org-mode))

@@ -10,6 +10,15 @@ installs.
 To regenerate the init.el file, simply go to the top of this file (inside
 Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 
+* Table of content :TOC:
+- [[#core][Core]]
+  - [[#custom-file-creation-or-loading][Custom file creation or loading]]
+  - [[#use-package-setup][Use package setup]]
+  - [[#ui][UI]]
+- [[#evil][Evil]]
+  - [[#evil-collection][Evil collection]]
+- [[#org][Org]]
+
 * Core
 ** Custom file creation or loading
 
@@ -41,7 +50,6 @@ Color schema
 
 #+BEGIN_SRC elisp
 (use-package doom-themes
-  :ensure t
   :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
@@ -79,7 +87,6 @@ Misc, font and core emacs ui configs
 
 #+BEGIN_SRC elisp
 (use-package evil
-  :ensure t
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
@@ -92,7 +99,14 @@ Misc, font and core emacs ui configs
 #+BEGIN_SRC elisp
 (use-package evil-collection
   :after evil
-  :ensure t
   :config
   (evil-collection-init))
+#+END_SRC
+
+
+* Org
+
+#+BEGIN_SRC elisp
+(use-package toc-org
+  :hook (org-mode . toc-org-mode))
 #+END_SRC
