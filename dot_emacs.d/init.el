@@ -40,10 +40,16 @@
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))

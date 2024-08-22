@@ -76,12 +76,23 @@ Misc, font and core emacs ui configs
 #+END_SRC
 
 * Evil
-#+BEGIN_SRC elisp
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+#+BEGIN_SRC elisp
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
+#+END_SRC
+
+** Evil collection
+
+#+BEGIN_SRC elisp
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 #+END_SRC
