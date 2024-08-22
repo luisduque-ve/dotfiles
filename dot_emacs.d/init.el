@@ -33,7 +33,10 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 17 :weight 'semi-bold))
+(set-face-attribute 'default nil
+                    :font "FiraCode Nerd Font Mono"
+                    :height 170
+                    :weight 'semi-bold)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 
