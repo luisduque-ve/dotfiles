@@ -24,6 +24,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 #+END_SRC
 
 ** Use package setup
+Keep this at the very top
 
 #+BEGIN_SRC elisp
 (require 'package)
@@ -64,6 +65,7 @@ Status bar
   :init (doom-modeline-mode 1))
 #+END_SRC
 
+Misc, font and core emacs ui configs
 #+BEGIN_SRC elisp
 (set-face-attribute 'default nil
                     :font "FiraCode Nerd Font Mono"
