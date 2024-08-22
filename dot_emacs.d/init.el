@@ -40,6 +40,24 @@
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 
+;; Disable the splash screen and open a scratch buffer
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+
+;; Remove GUI elements always, even in terminal
+(scroll-bar-mode -1)     ;; Disable the scroll bar
+(tool-bar-mode -1)       ;; Disable the tool bar
+(menu-bar-mode -1)       ;; Disable the menu bar
+(setq use-file-dialog nil)    ;; Disable the file dialog
+(setq use-dialog-box nil)     ;; Disable dialog boxes
+(setq inhibit-startup-buffer-menu t) ;; Disable buffer menu at startup
+
+;; Suppress warnings at startup
+(setq warning-minimum-level :error)
+(setq inhibit-startup-warnings t)
+
 (use-package evil
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
