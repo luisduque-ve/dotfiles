@@ -133,7 +133,22 @@ Misc, font and core emacs ui configs
 
 * Org
 
+Automatically create table of content
+
 #+BEGIN_SRC elisp
 (use-package toc-org
   :hook (org-mode . toc-org-mode))
+#+END_SRC
+
+Prettify
+#+BEGIN_SRC elisp
+(use-package org-superstar
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+
+(use-package org-fancy-priorities
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
 #+END_SRC
