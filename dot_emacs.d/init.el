@@ -32,9 +32,15 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
+(defun my/get-font-size ()
+  "Return 140 if in a WSL environment, otherwise 170."
+  (if (getenv "WSL_DISTRO_NAME")
+      140
+    170))
+
 (set-face-attribute 'default nil
                     :font "FiraCode Nerd Font Mono"
-                    :height 170
+                    :height (my/get-font-size)
                     :weight 'semi-bold)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)

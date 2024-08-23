@@ -76,11 +76,23 @@ Keep this at the very top
   :init (doom-modeline-mode 1))
 #+END_SRC
 
+I use the following function to get the font size depending on which
+device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
+
+
+#+BEGIN_SRC elisp
+(defun my/get-font-size ()
+  "Return 140 if in a WSL environment, otherwise 170."
+  (if (getenv "WSL_DISTRO_NAME")
+      140
+    170))
+#+END_SRC
+
 *** Misc, font and core emacs ui configs
 #+BEGIN_SRC elisp
 (set-face-attribute 'default nil
                     :font "FiraCode Nerd Font Mono"
-                    :height 170
+                    :height (my/get-font-size)
                     :weight 'semi-bold)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
