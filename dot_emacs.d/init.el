@@ -91,6 +91,11 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(use-package evil-quickscope
+  :after evil
+  :config
+  (global-evil-quickscope-always-mode 1))
+
 (use-package evil-org
   :after org
   :hook (org-mode . (lambda () evil-org-mode))
