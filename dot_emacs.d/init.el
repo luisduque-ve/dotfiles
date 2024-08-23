@@ -91,6 +91,17 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(use-package evil-goggles
+  :config
+  (evil-goggles-mode)
+  (setq evil-goggles-duration 0.100)
+
+  ;; optionally use diff-mode's faces; as a result, deleted text
+  ;; will be highlighed with `diff-removed` face which is typically
+  ;; some red color (as defined by the color theme)
+  ;; other faces such as `diff-added` will be used for other actions
+  (evil-goggles-use-diff-faces))
+
 (use-package evil-quickscope
   :after evil
   :config
