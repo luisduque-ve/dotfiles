@@ -38,10 +38,13 @@
       140
     170))
 
+(setq-default fill-column 70)
+(global-display-fill-column-indicator-mode)
+(global-hl-line-mode 1)
 (set-face-attribute 'default nil
-                    :font "FiraCode Nerd Font Mono"
-                    :height (my/get-font-size)
-                    :weight 'semi-bold)
+		    :font "FiraCode Nerd Font Mono"
+		    :height (my/get-font-size)
+		    :weight 'semi-bold)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")

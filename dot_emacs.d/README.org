@@ -93,31 +93,34 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 #+END_SRC
 
 #+BEGIN_SRC elisp
-(set-face-attribute 'default nil
-                    :font "FiraCode Nerd Font Mono"
-                    :height (my/get-font-size)
-                    :weight 'semi-bold)
-(global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
-(setq org-directory "~/org/")
+  (setq-default fill-column 70)
+  (global-display-fill-column-indicator-mode)
+  (global-hl-line-mode 1)
+  (set-face-attribute 'default nil
+		      :font "FiraCode Nerd Font Mono"
+		      :height (my/get-font-size)
+		      :weight 'semi-bold)
+  (global-display-line-numbers-mode)
+  (setq display-line-numbers-type 'relative)
+  (setq org-directory "~/org/")
 
-;; Disable the splash screen and open a scratch buffer
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message nil)
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
+  ;; Disable the splash screen and open a scratch buffer
+  (setq inhibit-startup-screen t)
+  (setq initial-scratch-message nil)
+  (setq inhibit-startup-message t)
+  (setq inhibit-startup-echo-area-message t)
 
-;; Remove GUI elements always, even in terminal
-(scroll-bar-mode -1)     ;; Disable the scroll bar
-(tool-bar-mode -1)       ;; Disable the tool bar
-(menu-bar-mode -1)       ;; Disable the menu bar
-(setq use-file-dialog nil)    ;; Disable the file dialog
-(setq use-dialog-box nil)     ;; Disable dialog boxes
-(setq inhibit-startup-buffer-menu t) ;; Disable buffer menu at startup
+  ;; Remove GUI elements always, even in terminal
+  (scroll-bar-mode -1)     ;; Disable the scroll bar
+  (tool-bar-mode -1)       ;; Disable the tool bar
+  (menu-bar-mode -1)       ;; Disable the menu bar
+  (setq use-file-dialog nil)    ;; Disable the file dialog
+  (setq use-dialog-box nil)     ;; Disable dialog boxes
+  (setq inhibit-startup-buffer-menu t) ;; Disable buffer menu at startup
 
-;; Suppress warnings at startup
-(setq warning-minimum-level :error)
-(setq inhibit-startup-warnings t)
+  ;; Suppress warnings at startup
+  (setq warning-minimum-level :error)
+  (setq inhibit-startup-warnings t)
 
 #+END_SRC
 
