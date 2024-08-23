@@ -18,6 +18,8 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#evil][Evil]]
   - [[#evil-collection][Evil collection]]
 - [[#org][Org]]
+  - [[#toc-org][toc-org]]
+  - [[#prettify][Prettify]]
 
 * Core
 ** Custom file creation or loading
@@ -46,7 +48,7 @@ Keep this at the very top
 
 ** UI
 
-Color schema
+*** Color schema
 
 #+BEGIN_SRC elisp
 (use-package doom-themes
@@ -67,13 +69,13 @@ Color schema
   (doom-themes-org-config))
 #+END_SRC
 
-Status bar
+*** Status bar
 #+BEGIN_SRC elisp
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 #+END_SRC
 
-Misc, font and core emacs ui configs
+*** Misc, font and core emacs ui configs
 #+BEGIN_SRC elisp
 (set-face-attribute 'default nil
                     :font "FiraCode Nerd Font Mono"
@@ -101,6 +103,16 @@ Misc, font and core emacs ui configs
 (setq warning-minimum-level :error)
 (setq inhibit-startup-warnings t)
 
+#+END_SRC
+
+*** which-key
+*YOU CAN REMOVE THIS ON EMACS 30*, which-key is now included in the master branch of Emacs and will likely be released with Emacs v30
+
+#+BEGIN_SRC elisp
+(use-package which-key
+  :config
+  (setq which-key-idle-delay 0.1)
+  (which-key-mode))
 #+END_SRC
 
 * Evil
@@ -133,6 +145,7 @@ Misc, font and core emacs ui configs
 
 * Org
 
+** toc-org
 Automatically create table of content
 
 #+BEGIN_SRC elisp
@@ -140,7 +153,7 @@ Automatically create table of content
   :hook (org-mode . toc-org-mode))
 #+END_SRC
 
-Prettify
+** Prettify
 #+BEGIN_SRC elisp
 (use-package org-superstar
   :config

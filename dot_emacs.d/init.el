@@ -58,6 +58,11 @@
 (setq warning-minimum-level :error)
 (setq inhibit-startup-warnings t)
 
+(use-package which-key
+  :config
+  (setq which-key-idle-delay 0.1)
+  (which-key-mode))
+
 (use-package evil
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
