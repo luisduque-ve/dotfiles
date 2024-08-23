@@ -21,6 +21,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#evil-collection][Evil collection]]
   - [[#keymaps][Keymaps]]
 - [[#org][Org]]
+  - [[#org-anki][Org Anki]]
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
 - [[#git][Git]]
@@ -187,6 +188,12 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 
 
 * Org
+
+** Org Anki
+
+#+BEGIN_SRC elisp
+(use-package org-anki)
+#+END_SRC
 
 ** toc-org
 Automatically create table of content

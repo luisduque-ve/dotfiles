@@ -107,6 +107,8 @@
   "b"  '(:ignore t :which-key "buffer")
   "bd" '(evil-delete-buffer :which-key "close"))
 
+(use-package org-anki)
+
 (use-package toc-org
   :hook (org-mode . toc-org-mode))
 
