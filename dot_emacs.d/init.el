@@ -129,6 +129,14 @@
   "\"" '(evil-window-split :which-key "split")
   "bd" '(evil-delete-buffer :which-key "close"))
 
+(setq org-todo-keywords
+      '((sequence "TODO" "IN PROGRESS" "DONE")))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning)
+        ("IN PROGRESS" . "green")  ;; Bright Yellow for IN PROGRESS
+        ("DONE" . "gray")))
+
 (use-package org-anki)
 
 (use-package toc-org
