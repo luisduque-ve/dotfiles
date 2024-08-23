@@ -183,3 +183,28 @@
 
 (my-leader-def
   "bs" '(hydra-buffer-scale/body :which-key "scale"))
+
+(use-package vertico
+  :init
+  (vertico-mode))
+
+(use-package savehist
+  :init
+  (savehist-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package marginalia
+  :after vertico
+  :init
+  (marginalia-mode))
+
+(use-package consult)
+
+(my-leader-def
+  "sb" '(consult-buffer :which-key "buffer")
+  "sh" '(consult-org-heading :which-key "org-heading"))

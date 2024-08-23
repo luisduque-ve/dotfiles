@@ -28,8 +28,15 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
 - [[#git][Git]]
+  - [[#magit][Magit]]
 - [[#zoxide][Zoxide]]
 - [[#hydra][Hydra]]
+- [[#completion-system][Completion System]]
+  - [[#vertico][Vertico]]
+  - [[#savehist][Savehist]]
+  - [[#orderless][Orderless]]
+  - [[#marginalia][Marginalia]]
+  - [[#consult][Consult]]
 
 * Core
 ** Custom file creation or loading
@@ -273,6 +280,7 @@ Automatically create table of content
 
 * Git
 
+** Magit
 #+BEGIN_SRC elisp
   (use-package magit
     :config
@@ -309,4 +317,47 @@ Automatically create table of content
 
 (my-leader-def
   "bs" '(hydra-buffer-scale/body :which-key "scale"))
+#+END_SRC
+
+* Completion System
+** Vertico
+#+BEGIN_SRC elisp
+(use-package vertico
+  :init
+  (vertico-mode))
+#+END_SRC
+
+** Savehist
+Persist vertigo history
+#+BEGIN_SRC elisp
+(use-package savehist
+  :init
+  (savehist-mode))
+#+END_SRC
+
+** Orderless
+Persist vertigo history
+#+BEGIN_SRC elisp
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+#+END_SRC
+
+** Marginalia
+#+BEGIN_SRC elisp
+(use-package marginalia
+  :after vertico
+  :init
+  (marginalia-mode))
+#+END_SRC
+
+** Consult
+#+BEGIN_SRC elisp
+  (use-package consult)
+
+  (my-leader-def
+    "sb" '(consult-buffer :which-key "buffer")
+    "sh" '(consult-org-heading :which-key "org-heading"))
 #+END_SRC
