@@ -91,6 +91,13 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(use-package evil-org
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
 (use-package evil-collection
   :after evil
   :config

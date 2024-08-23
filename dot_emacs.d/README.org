@@ -17,6 +17,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#ui][UI]]
 - [[#general][General]]
 - [[#evil][Evil]]
+  - [[#evil-org][Evil Org]]
   - [[#evil-collection][Evil collection]]
   - [[#keymaps][Keymaps]]
 - [[#org][Org]]
@@ -154,6 +155,17 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     (kbd "n") (lambda () (interactive) (evil-search-next) (recenter))
     (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
     (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
+#+END_SRC
+
+** Evil Org
+
+#+BEGIN_SRC elisp
+(use-package evil-org
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 #+END_SRC
 
 ** Evil collection
