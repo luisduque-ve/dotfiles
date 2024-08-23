@@ -20,6 +20,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#org][Org]]
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
+- [[#git][Git]]
 
 * Core
 ** Custom file creation or loading
@@ -164,4 +165,15 @@ Automatically create table of content
   (org-mode . org-fancy-priorities-mode)
   :config
   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+#+END_SRC
+
+* Git
+
+#+BEGIN_SRC elisp
+(use-package magit
+  :config
+  (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(use-package magit-todos
+  :config (magit-todos-mode 1))
 #+END_SRC
