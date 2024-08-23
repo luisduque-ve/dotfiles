@@ -125,6 +125,8 @@
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")
+  "%" '(evil-window-vsplit :which-key "vsplit")
+  "\"" '(evil-window-split :which-key "split")
   "bd" '(evil-delete-buffer :which-key "close"))
 
 (use-package org-anki)
