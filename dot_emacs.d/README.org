@@ -26,6 +26,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
 - [[#git][Git]]
+- [[#zoxide][Zoxide]]
 
 * Core
 ** Custom file creation or loading
@@ -193,6 +194,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 #+BEGIN_SRC elisp
   (my-leader-def
     "b"  '(:ignore t :which-key "buffer")
+    "s"  '(:ignore t :which-key "search")
     "bd" '(evil-delete-buffer :which-key "close"))
 #+END_SRC
 
@@ -238,4 +240,13 @@ Automatically create table of content
 
   (my-leader-def
     "g" '(magit-status :which-key "magit"))
+#+END_SRC
+
+* Zoxide
+
+#+BEGIN_SRC elisp
+(use-package zoxide)
+
+(my-leader-def
+  "sp" '(zoxide-cd :which-key "path"))
 #+END_SRC

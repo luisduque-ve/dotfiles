@@ -110,6 +110,7 @@
 
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
+  "s"  '(:ignore t :which-key "search")
   "bd" '(evil-delete-buffer :which-key "close"))
 
 (use-package org-anki)
@@ -136,3 +137,8 @@
 
 (my-leader-def
   "g" '(magit-status :which-key "magit"))
+
+(use-package zoxide)
+
+(my-leader-def
+  "sp" '(zoxide-cd :which-key "path"))
