@@ -94,6 +94,10 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
+
 (use-package evil-goggles
   :config
   (evil-goggles-mode)
