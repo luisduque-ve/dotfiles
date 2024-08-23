@@ -170,3 +170,16 @@
 
 (my-leader-def
   "sp" '(zoxide-cd :which-key "path"))
+
+(use-package hydra)
+
+(defhydra hydra-buffer-scale (:timeout 10)
+  "scale buffer"
+  ("i" evil-window-increase-width "+horizontal")
+  ("d" evil-window-decrease-width "-horizontal")
+  ("I" evil-window-increase-height "+vertical")
+  ("D" evil-window-decrease-height "-vertical")
+  ("f" nil "finished" :exit t))
+
+(my-leader-def
+  "bs" '(hydra-buffer-scale/body :which-key "scale"))
