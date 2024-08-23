@@ -15,8 +15,10 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
   - [[#use-package-setup][Use package setup]]
   - [[#ui][UI]]
+- [[#general][General]]
 - [[#evil][Evil]]
   - [[#evil-collection][Evil collection]]
+  - [[#keymaps][Keymaps]]
 - [[#org][Org]]
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
@@ -49,8 +51,6 @@ Keep this at the very top
 
 ** UI
 
-*** Color schema
-
 #+BEGIN_SRC elisp
 (use-package doom-themes
   :config
@@ -70,7 +70,6 @@ Keep this at the very top
   (doom-themes-org-config))
 #+END_SRC
 
-*** Status bar
 #+BEGIN_SRC elisp
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
@@ -88,7 +87,6 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     170))
 #+END_SRC
 
-*** Misc, font and core emacs ui configs
 #+BEGIN_SRC elisp
 (set-face-attribute 'default nil
                     :font "FiraCode Nerd Font Mono"
@@ -118,7 +116,6 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 
 #+END_SRC
 
-*** which-key
 *YOU CAN REMOVE THIS ON EMACS 30*, which-key is now included in the master branch of Emacs and will likely be released with Emacs v30
 
 #+BEGIN_SRC elisp
@@ -127,6 +124,19 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (setq which-key-idle-delay 0.1)
   (which-key-mode))
 #+END_SRC
+
+* General
+
+#+BEGIN_SRC elisp
+(use-package general
+  :after (evil which-key)
+  :config
+  (general-evil-setup t)
+  (general-create-definer my-leader-def
+    :keymaps '(normal visual)
+    :prefix "SPC"))
+#+END_SRC
+
 
 * Evil
 
@@ -153,6 +163,14 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   :after evil
   :config
   (evil-collection-init))
+#+END_SRC
+
+** Keymaps
+
+#+BEGIN_SRC elisp
+  (my-leader-def
+    "b"  '(:ignore t :which-key "buffer")
+    "bd" '(evil-delete-buffer :which-key "close"))
 #+END_SRC
 
 
@@ -182,10 +200,13 @@ Automatically create table of content
 * Git
 
 #+BEGIN_SRC elisp
-(use-package magit
-  :config
-  (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+  (use-package magit
+    :config
+    (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-(use-package magit-todos
-  :config (magit-todos-mode 1))
+  (use-package magit-todos
+    :config (magit-todos-mode 1))
+
+  (my-leader-def
+    "g" '(magit-status :which-key "magit"))
 #+END_SRC

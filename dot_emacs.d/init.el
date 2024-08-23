@@ -69,6 +69,14 @@
   (setq which-key-idle-delay 0.1)
   (which-key-mode))
 
+(use-package general
+  :after (evil which-key)
+  :config
+  (general-evil-setup t)
+  (general-create-definer my-leader-def
+    :keymaps '(normal visual)
+    :prefix "SPC"))
+
 (use-package evil
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
@@ -87,6 +95,10 @@
   :after evil
   :config
   (evil-collection-init))
+
+(my-leader-def
+  "b"  '(:ignore t :which-key "buffer")
+  "bd" '(evil-delete-buffer :which-key "close"))
 
 (use-package toc-org
   :hook (org-mode . toc-org-mode))
@@ -107,3 +119,6 @@
 
 (use-package magit-todos
   :config (magit-todos-mode 1))
+
+(my-leader-def
+  "g" '(magit-status :which-key "magit"))
