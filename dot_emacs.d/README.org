@@ -17,6 +17,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#ui][UI]]
 - [[#general][General]]
 - [[#evil][Evil]]
+  - [[#evil-numbers][Evil Numbers]]
   - [[#evil-surround][Evil Surround]]
   - [[#evil-goggles][Evil Goggles]]
   - [[#evil-quick-scope][Evil Quick Scope]]
@@ -172,6 +173,22 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
     (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 #+END_SRC
+
+** Evil Numbers
+
+#+begin_src elisp
+  (use-package evil-numbers)
+
+  (general-define-key
+   :states 'normal
+   "C-a" 'evil-numbers/inc-at-pt
+   "C-x" 'evil-numbers/dec-at-pt)
+
+  (general-define-key
+   :states 'visual
+   "g C-a" 'evil-numbers/inc-at-pt-incremental
+   "g C-x" 'evil-numbers/dec-at-pt-incremental)
+#+end_src
 
 ** Evil Surround
 

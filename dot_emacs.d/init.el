@@ -94,6 +94,18 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(use-package evil-numbers)
+
+(general-define-key
+ :states 'normal
+ "C-a" 'evil-numbers/inc-at-pt
+ "C-x" 'evil-numbers/dec-at-pt)
+
+(general-define-key
+ :states 'visual
+ "g C-a" 'evil-numbers/inc-at-pt-incremental
+ "g C-x" 'evil-numbers/dec-at-pt-incremental)
+
 (use-package evil-surround
   :config
   (global-evil-surround-mode 1))
