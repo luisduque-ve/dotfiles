@@ -139,6 +139,15 @@
   :config
   (evil-collection-init))
 
+(setq visible-cursor nil)
+(blink-cursor-mode -1)
+
+(use-package evil-terminal-cursor-changer
+:config
+ (unless (display-graphic-p)
+ (require 'evil-terminal-cursor-changer)
+ (evil-terminal-cursor-changer-activate)))
+
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")

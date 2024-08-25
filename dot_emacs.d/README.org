@@ -23,6 +23,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#evil-quick-scope][Evil Quick Scope]]
   - [[#evil-org][Evil Org]]
   - [[#evil-collection][Evil collection]]
+  - [[#evil-terminal-cursor-changer][Evil terminal cursor changer]]
   - [[#keymaps][Keymaps]]
 - [[#org][Org]]
   - [[#org-anki][Org Anki]]
@@ -244,6 +245,18 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (evil-collection-init))
 #+END_SRC
 
+** Evil terminal cursor changer
+#+begin_src elisp
+  (setq visible-cursor nil)
+  (blink-cursor-mode -1)
+
+  (use-package evil-terminal-cursor-changer
+  :config
+   (unless (display-graphic-p)
+   (require 'evil-terminal-cursor-changer)
+   (evil-terminal-cursor-changer-activate)))
+
+#+end_src
 ** Keymaps
 
 #+BEGIN_SRC elisp
