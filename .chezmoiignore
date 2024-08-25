@@ -25,7 +25,7 @@ macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
 ubuntu_dependencies.py
-README.md
-todo.org
+*.md
+*.org
 
 **/lazy-lock.json
