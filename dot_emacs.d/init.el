@@ -143,8 +143,7 @@
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")
   "%" '(evil-window-vsplit :which-key "vsplit")
-  "\"" '(evil-window-split :which-key "split")
-  "bd" '(evil-delete-buffer :which-key "close"))
+  "\"" '(evil-window-split :which-key "split"))
 
 (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
@@ -219,7 +218,7 @@
 (use-package consult)
 
 (my-leader-def
-  "sb" '(consult-buffer :which-key "buffer")
+  "sb" '(switch-to-buffer :which-key "buffer")
   "sh" '(consult-org-heading :which-key "org-heading"))
 
 (use-package perspective
@@ -231,6 +230,7 @@
 "ps" '(persp-switch :which-key "switch")
 "pn" '(persp-next :which-key "next")
 "pp" '(persp-prev :which-key "previous")
-"pc" '(persp-kill-other-buffes :which-key "close-buffers")
+"pc" '(persp-kill-other-buffers :which-key "close-buffers")
 "pk" '(persp-kill :which-key "kill")
-"pr" '(persp-rename :which-key "rename"))
+"pr" '(persp-rename :which-key "rename")
+"bd" '(persp-kill-buffer* :which-key "close"))
