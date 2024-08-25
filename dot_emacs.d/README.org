@@ -24,6 +24,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#evil-org][Evil Org]]
   - [[#evil-collection][Evil collection]]
   - [[#evil-terminal-cursor-changer][Evil terminal cursor changer]]
+  - [[#evil-nerd-commenter][Evil Nerd Commenter]]
   - [[#keymaps][Keymaps]]
 - [[#org][Org]]
   - [[#org-anki][Org Anki]]
@@ -257,6 +258,16 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
    (evil-terminal-cursor-changer-activate)))
 
 #+end_src
+
+** Evil Nerd Commenter
+#+begin_src elisp
+  (use-package evil-nerd-commenter
+    :config
+    :bind (:map evil-normal-state-map
+              ("gcc" . evilnc-comment-or-uncomment-lines)
+              ("gc" . evilnc-comment-operator)))
+#+end_src
+
 ** Keymaps
 
 #+BEGIN_SRC elisp

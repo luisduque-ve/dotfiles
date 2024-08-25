@@ -148,6 +148,12 @@
  (require 'evil-terminal-cursor-changer)
  (evil-terminal-cursor-changer-activate)))
 
+(use-package evil-nerd-commenter
+  :config
+  :bind (:map evil-normal-state-map
+            ("gcc" . evilnc-comment-or-uncomment-lines)
+            ("gc" . evilnc-comment-operator)))
+
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")
