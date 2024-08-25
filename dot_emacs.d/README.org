@@ -147,13 +147,14 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 * General
 
 #+BEGIN_SRC elisp
-(use-package general
-  :after (evil which-key)
-  :config
-  (general-evil-setup t)
-  (general-create-definer my-leader-def
-    :keymaps '(normal visual)
-    :prefix "SPC"))
+  (use-package general
+    :after (evil which-key)
+    :config
+    (general-evil-setup t)
+    (general-create-definer my-leader-def
+      :states '(normal visual emacs)
+      :keymaps '(global magit-mode-map)
+      :prefix "SPC"))
 #+END_SRC
 
 

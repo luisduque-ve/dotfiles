@@ -77,7 +77,8 @@
   :config
   (general-evil-setup t)
   (general-create-definer my-leader-def
-    :keymaps '(normal visual)
+    :states '(normal visual emacs)
+    :keymaps '(global magit-mode-map)
     :prefix "SPC"))
 
 (use-package evil
