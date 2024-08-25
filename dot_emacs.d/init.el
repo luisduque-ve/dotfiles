@@ -36,7 +36,7 @@
   "Return 140 if in a WSL environment, otherwise 170."
   (if (getenv "WSL_DISTRO_NAME")
       140
-    170))
+    180))
 
 (setq-default fill-column 70)
 (global-display-fill-column-indicator-mode)
