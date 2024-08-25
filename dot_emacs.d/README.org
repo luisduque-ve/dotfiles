@@ -38,6 +38,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#orderless][Orderless]]
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
+- [[#perspective][Perspective]]
 
 * Core
 ** Custom file creation or loading
@@ -316,7 +317,7 @@ Automatically create table of content
 (use-package zoxide)
 
 (my-leader-def
-  "sp" '(zoxide-cd :which-key "path"))
+  "sz" '(zoxide-cd :which-key "zoxide"))
 #+END_SRC
 
 * Hydra
@@ -378,3 +379,22 @@ Persist vertigo history
     "sb" '(consult-buffer :which-key "buffer")
     "sh" '(consult-org-heading :which-key "org-heading"))
 #+END_SRC
+
+* Perspective
+
+This enables support for different workspaces
+
+#+begin_src elisp
+(use-package perspective
+:init
+(persp-mode))
+
+(my-leader-def
+"p"  '(:ignore t :which-key "perspective")
+"ps" '(persp-switch :which-key "switch")
+"pn" '(persp-next :which-key "next")
+"pp" '(persp-prev :which-key "previous")
+"pc" '(persp-kill-other-buffes :which-key "close-buffers")
+"pk" '(persp-kill :which-key "kill")
+"pr" '(persp-rename :which-key "rename"))
+#+end_src

@@ -181,7 +181,7 @@
 (use-package zoxide)
 
 (my-leader-def
-  "sp" '(zoxide-cd :which-key "path"))
+  "sz" '(zoxide-cd :which-key "zoxide"))
 
 (use-package hydra)
 
@@ -220,3 +220,16 @@
 (my-leader-def
   "sb" '(consult-buffer :which-key "buffer")
   "sh" '(consult-org-heading :which-key "org-heading"))
+
+(use-package perspective
+:init
+(persp-mode))
+
+(my-leader-def
+"p"  '(:ignore t :which-key "perspective")
+"ps" '(persp-switch :which-key "switch")
+"pn" '(persp-next :which-key "next")
+"pp" '(persp-prev :which-key "previous")
+"pc" '(persp-kill-other-buffes :which-key "close-buffers")
+"pk" '(persp-kill :which-key "kill")
+"pr" '(persp-rename :which-key "rename"))
