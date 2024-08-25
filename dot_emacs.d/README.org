@@ -17,6 +17,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#ui][UI]]
 - [[#general][General]]
 - [[#evil][Evil]]
+  - [[#more-vim-like-escape-behaviour][More vim like escape behaviour]]
   - [[#evil-numbers][Evil Numbers]]
   - [[#evil-surround][Evil Surround]]
   - [[#evil-goggles][Evil Goggles]]
@@ -177,6 +178,12 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
     (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 #+END_SRC
+
+** More vim like escape behaviour
+
+#+begin_src elisp
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+#+end_src
 
 ** Evil Numbers
 

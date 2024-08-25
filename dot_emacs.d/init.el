@@ -95,6 +95,8 @@
   (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
   (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
 
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 (use-package evil-numbers)
 
 (general-define-key
