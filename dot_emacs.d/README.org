@@ -42,6 +42,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
 - [[#perspective][Perspective]]
+- [[#exec-path-from-shell][Exec Path from shell]]
 
 * Core
 ** Custom file creation or loading
@@ -429,4 +430,15 @@ This enables support for different workspaces
 "pk" '(persp-kill :which-key "kill")
 "pr" '(persp-rename :which-key "rename")
 "bd" '(persp-kill-buffer* :which-key "close"))
+#+end_src
+
+* Exec Path from shell
+Without this emacs has a lot of issues finding commands when
+launched from outside a shell
+
+#+begin_src elisp
+  (use-package exec-path-from-shell
+    :config
+    (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize)))
 #+end_src

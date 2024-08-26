@@ -251,3 +251,8 @@
 "pk" '(persp-kill :which-key "kill")
 "pr" '(persp-rename :which-key "rename")
 "bd" '(persp-kill-buffer* :which-key "close"))
+
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x))
+(exec-path-from-shell-initialize)))
