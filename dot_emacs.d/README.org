@@ -43,6 +43,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#consult][Consult]]
 - [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
+- [[#python][Python]]
 
 * Core
 ** Custom file creation or loading
@@ -441,4 +442,12 @@ launched from outside a shell
     :config
     (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
+#+end_src
+
+* Python
+
+#+begin_src elisp
+  (use-package pyenv-mode
+    :config
+    (pyenv-mode))
 #+end_src
