@@ -13,10 +13,10 @@ mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
 
 # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "{{- .brew_path -}}/opt/nvm/nvm.sh" ] && \. "{{- .brew_path -}}/opt/nvm/nvm.sh"
 
 # This loads nvm bash_completion
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+[ -s "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm"
 
 ############################## NVM END ##############################
 
