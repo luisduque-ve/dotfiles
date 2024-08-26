@@ -2,7 +2,6 @@
 .config/aerospace
 Library/
 Library/**
-.zshrc
 {{ end }}
 
 
@@ -10,6 +9,7 @@ Library/**
 .config/fish
 .config/nvim
 .config/tmux
+.zshrc
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
