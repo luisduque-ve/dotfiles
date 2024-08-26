@@ -260,3 +260,7 @@
 (use-package pyenv-mode
   :config
   (pyenv-mode))
+
+(use-package eglot
+:defer t
+:hook (python-mode . eglot-ensure))

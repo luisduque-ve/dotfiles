@@ -1,8 +1,11 @@
-black
 darker
 debugpy
 jupyterlab
 pre-commit
+pyls-memestra
+pylsp-mypy
+pylsp-rope
 pynvim
-python-lsp-server # used by jupyterlab
-requests
+
+# LSP
+python-lsp-server[all]

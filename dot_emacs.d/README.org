@@ -44,6 +44,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
+- [[#lsp][LSP]]
 
 * Core
 ** Custom file creation or loading
@@ -450,4 +451,12 @@ launched from outside a shell
   (use-package pyenv-mode
     :config
     (pyenv-mode))
+#+end_src
+
+
+* LSP
+#+begin_src elisp
+  (use-package eglot
+  :defer t
+  :hook (python-mode . eglot-ensure))
 #+end_src
