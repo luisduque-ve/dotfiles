@@ -1,11 +1,17 @@
 darker
 debugpy
-jupyterlab
 pre-commit
 pyls-memestra
 pylsp-mypy
 pylsp-rope
 pynvim
-
-# LSP
 python-lsp-server[all]
+
+# LSP BRIDGE
+epc
+orjson
+sexpdata
+six
+setuptools
+paramiko
+rapidfuzz

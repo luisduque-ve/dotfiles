@@ -261,6 +261,25 @@
   :config
   (pyenv-mode))
 
-(use-package eglot
-:defer t
-:hook (python-mode . eglot-ensure))
+(use-package markdown-mode)
+
+(use-package yasnippet
+:config
+(yas-global-mode 1))
+
+(use-package lsp-bridge
+ :load-path "~/.emacs.d/lsp-bridge" ;; or any directory where you want to clone it
+ :init
+ ;; Clone the repository if it doesn't exist
+ (unless (file-directory-p "~/.emacs.d/lsp-bridge")
+   (shell-command "git clone https://github.com/manateelazycat/lsp-bridge.git ~/.emacs.d/lsp-bridge"))
+ :config
+ (setq lsp-bridge-python-lsp-server "pylsp")
+ (global-lsp-bridge-mode)
+ (general-define-key
+:states '(insert) ;; Bind these keys in insert mode
+:keymaps 'lsp-bridge-mode-map
+"C-j" 'acm-select-next
+"C-k" 'acm-select-prev
+"C-e" 'acm-hide
+[return] 'acm-complete))
