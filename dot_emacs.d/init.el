@@ -261,6 +261,14 @@
   :config
   (pyenv-mode))
 
+(use-package flycheck
+:init (global-flycheck-mode))
+
+(use-package flycheck-posframe
+  :ensure t
+  :after flycheck
+  :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
+
 (use-package markdown-mode)
 
 (use-package yasnippet

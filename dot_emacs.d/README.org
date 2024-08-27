@@ -45,6 +45,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
 - [[#lsp][LSP]]
+  - [[#flycheck][Flycheck]]
   - [[#markdown-mode][markdown-mode]]
   - [[#yasnippet][yasnippet]]
   - [[#lsp-bridge][LSP Bridge]]
@@ -394,7 +395,6 @@ Persist vertigo history
 Persist vertigo history
 #+BEGIN_SRC elisp
 (use-package orderless
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
@@ -458,6 +458,17 @@ launched from outside a shell
 
 
 * LSP
+
+** Flycheck
+#+begin_src elisp
+  (use-package flycheck
+  :init (global-flycheck-mode))
+
+  (use-package flycheck-posframe
+    :after flycheck
+    :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
+#+end_src
+
 
 ** markdown-mode
 #+begin_src elisp
