@@ -159,7 +159,7 @@
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")
-  "sb" '(switch-to-buffer :which-key "buffer")
+  "su" '(switch-to-buffer :which-key "buffer")
   "%" '(evil-window-vsplit :which-key "vsplit")
   "\"" '(evil-window-split :which-key "split"))
 
@@ -241,7 +241,7 @@
 (use-package consult)
 
 (my-leader-def
-  "sB" '(consult-bookmark :which-key "bookmark")
+  "sb" '(consult-bookmark :which-key "bookmark")
   "sh" '(consult-org-heading :which-key "org-heading"))
 
 (use-package perspective
@@ -277,8 +277,14 @@
 (use-package markdown-mode)
 
 (use-package yasnippet
-:config
-(yas-global-mode 1))
+  :config
+  (yas-global-mode 1)
+  (general-define-key
+   :states '(insert)
+   :keymaps 'yas-minor-mode-map
+   "C-j" 'yas-next-field
+   "C-k" 'yas-prev-field
+   "C-e" 'yas-exit-all-snippets))
 
 (use-package lsp-bridge
  :load-path "~/.emacs.d/lsp-bridge" ;; or any directory where you want to clone it
@@ -294,5 +300,13 @@
 :keymaps 'lsp-bridge-mode-map
 "C-j" 'acm-select-next
 "C-k" 'acm-select-prev
-"C-e" 'acm-hide
-[return] 'acm-complete))
+"C-e" 'acm-hide))
+
+(use-package reformatter
+:hook ((python-mode . darker-reformat-on-save-mode))
+:config
+(reformatter-define darker-reformat
+  :program "darker"
+  :stdin nil
+  :stdout nil
+  :args (list "-q" input-file)))
