@@ -1,4 +1,0 @@
-[custom.shell]
-command = "basename $SHELL"
-when = "true"
-format = '[$output ](bold green)'
