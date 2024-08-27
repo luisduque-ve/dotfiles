@@ -159,8 +159,15 @@
 (my-leader-def
   "b"  '(:ignore t :which-key "buffer")
   "s"  '(:ignore t :which-key "search")
+  "sb" '(switch-to-buffer :which-key "buffer")
   "%" '(evil-window-vsplit :which-key "vsplit")
   "\"" '(evil-window-split :which-key "split"))
+
+(evil-define-key 'normal 'global
+(kbd "C-l") 'evil-window-right
+(kbd "C-h") 'evil-window-left
+(kbd "C-k") 'evil-window-up
+(kbd "C-j") 'evil-window-down)
 
 (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
@@ -222,7 +229,6 @@
   (savehist-mode))
 
 (use-package orderless
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
@@ -235,7 +241,7 @@
 (use-package consult)
 
 (my-leader-def
-  "sb" '(switch-to-buffer :which-key "buffer")
+  "sB" '(consult-bookmark :which-key "bookmark")
   "sh" '(consult-org-heading :which-key "org-heading"))
 
 (use-package perspective
@@ -265,7 +271,6 @@
 :init (global-flycheck-mode))
 
 (use-package flycheck-posframe
-  :ensure t
   :after flycheck
   :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
 
