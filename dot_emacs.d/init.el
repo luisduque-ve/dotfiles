@@ -12,6 +12,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(setq ring-bell-function 'ignore)
+
+(use-package all-the-icons
+:if (display-graphic-p))
+
 (use-package doom-themes
   :config
   ;; Global settings (defaults)
@@ -19,14 +24,6 @@
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
   (load-theme 'doom-gruvbox-light t)
 
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-  (doom-themes-treemacs-config)
-  ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
 (use-package doom-modeline
@@ -248,7 +245,9 @@
 
 (use-package perspective
 :init
+  (setq persp-suppress-no-prefix-key-warning t))
 (persp-mode))
+
 
 (my-leader-def
 "p"  '(:ignore t :which-key "perspective")
@@ -312,3 +311,23 @@
   :stdin nil
   :stdout nil
   :args (list "-q" input-file)))
+
+(use-package treemacs)
+
+    (use-package treemacs-evil
+    :after (treemacs evil))
+
+  ;; (use-package treemacs-projectile
+    ;; :after (treemacs projectile))
+
+  (use-package treemacs-icons-dired
+    :hook (dired-mode . treemacs-icons-dired-enable-once))
+
+  (use-package treemacs-magit
+    :after (treemacs magit))
+
+  (use-package treemacs-persp
+    :after (treemacs perspective)
+    :config (treemacs-set-scope-type 'Perspectives))
+
+;; (treemacs-start-on-boot)

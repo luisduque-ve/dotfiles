@@ -50,6 +50,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#yasnippet][yasnippet]]
   - [[#lsp-bridge][LSP Bridge]]
 - [[#emacs-reformatter][Emacs Reformatter]]
+- [[#treemacs][Treemacs]]
 
 * Core
 ** Custom file creation or loading
@@ -78,6 +79,15 @@ Keep this at the very top
 
 ** UI
 
+#+begin_src elisp
+  (setq ring-bell-function 'ignore)
+#+end_src
+
+#+begin_src elisp
+  (use-package all-the-icons
+  :if (display-graphic-p))
+#+end_src
+
 #+BEGIN_SRC elisp
 (use-package doom-themes
   :config
@@ -86,16 +96,9 @@ Keep this at the very top
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
   (load-theme 'doom-gruvbox-light t)
 
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-  (doom-themes-treemacs-config)
-  ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 #+END_SRC
+
 
 #+BEGIN_SRC elisp
 (use-package doom-modeline
@@ -432,20 +435,23 @@ Persist vertigo history
 This enables support for different workspaces
 
 #+begin_src elisp
-(use-package perspective
-:init
-(persp-mode))
+  (use-package perspective
+  :init
+    (setq persp-suppress-no-prefix-key-warning t))
+  (persp-mode))
 
-(my-leader-def
-"p"  '(:ignore t :which-key "perspective")
-"ps" '(persp-switch :which-key "switch")
-"pn" '(persp-next :which-key "next")
-"pp" '(persp-prev :which-key "previous")
-"pc" '(persp-kill-other-buffers :which-key "close-buffers")
-"pk" '(persp-kill :which-key "kill")
-"pr" '(persp-rename :which-key "rename")
-"bd" '(persp-kill-buffer* :which-key "close"))
+
+  (my-leader-def
+  "p"  '(:ignore t :which-key "perspective")
+  "ps" '(persp-switch :which-key "switch")
+  "pn" '(persp-next :which-key "next")
+  "pp" '(persp-prev :which-key "previous")
+  "pc" '(persp-kill-other-buffers :which-key "close-buffers")
+  "pk" '(persp-kill :which-key "kill")
+  "pr" '(persp-rename :which-key "rename")
+  "bd" '(persp-kill-buffer* :which-key "close"))
 #+end_src
+
 
 * Exec Path from shell
 Without this emacs has a lot of issues finding commands when
@@ -528,4 +534,27 @@ launched from outside a shell
     :stdin nil
     :stdout nil
     :args (list "-q" input-file)))
+#+end_src
+
+* Treemacs
+#+begin_src elisp
+      (use-package treemacs)
+
+      (use-package treemacs-evil
+      :after (treemacs evil))
+
+    ;; (use-package treemacs-projectile
+      ;; :after (treemacs projectile))
+
+    (use-package treemacs-icons-dired
+      :hook (dired-mode . treemacs-icons-dired-enable-once))
+
+    (use-package treemacs-magit
+      :after (treemacs magit))
+
+    (use-package treemacs-persp
+      :after (treemacs perspective)
+      :config (treemacs-set-scope-type 'Perspectives))
+
+  ;; (treemacs-start-on-boot)
 #+end_src
