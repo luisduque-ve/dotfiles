@@ -245,7 +245,7 @@
 
 (use-package perspective
 :init
-  (setq persp-suppress-no-prefix-key-warning t))
+  (setq persp-suppress-no-prefix-key-warning t)
 (persp-mode))
 
 
@@ -314,20 +314,21 @@
 
 (use-package treemacs)
 
-    (use-package treemacs-evil
-    :after (treemacs evil))
+  (use-package treemacs-evil
+  :after (treemacs evil))
 
-  ;; (use-package treemacs-projectile
-    ;; :after (treemacs projectile))
+;; (use-package treemacs-projectile
+  ;; :after (treemacs projectile))
 
-  (use-package treemacs-icons-dired
-    :hook (dired-mode . treemacs-icons-dired-enable-once))
+(use-package treemacs-icons-dired
+  :hook (dired-mode . treemacs-icons-dired-enable-once))
 
-  (use-package treemacs-magit
-    :after (treemacs magit))
+(use-package treemacs-magit
+  :after (treemacs magit))
 
-  (use-package treemacs-persp
-    :after (treemacs perspective)
-    :config (treemacs-set-scope-type 'Perspectives))
+(use-package treemacs-persp
+  :after (treemacs perspective)
+  :config (treemacs-set-scope-type 'Perspectives))
 
-;; (treemacs-start-on-boot)
+(use-package dirvish
+:init (dirvish-override-dired-mode))
