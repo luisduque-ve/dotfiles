@@ -75,7 +75,7 @@
   (general-evil-setup t)
   (general-create-definer my-leader-def
     :states '(normal visual emacs)
-    :keymaps '(global magit-mode-map)
+ :keymaps 'override
     :prefix "SPC"))
 
 (use-package evil
@@ -158,7 +158,8 @@
    "s"  '(:ignore t :which-key "search")
    "su" '(switch-to-buffer :which-key "buffer")
    "%" '(evil-window-vsplit :which-key "vsplit")
-   "\"" '(evil-window-split :which-key "split"))
+   "\"" '(evil-window-split :which-key "split")
+   "d" '(dired-jump :which-key "dired"))
 
 (general-define-key
   :states 'normal
