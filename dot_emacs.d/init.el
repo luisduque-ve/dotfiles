@@ -157,17 +157,19 @@
             ("gc" . evilnc-comment-operator)))
 
 (my-leader-def
-  "b"  '(:ignore t :which-key "buffer")
-  "s"  '(:ignore t :which-key "search")
-  "su" '(switch-to-buffer :which-key "buffer")
-  "%" '(evil-window-vsplit :which-key "vsplit")
-  "\"" '(evil-window-split :which-key "split"))
+   "b"  '(:ignore t :which-key "buffer")
+   "s"  '(:ignore t :which-key "search")
+   "su" '(switch-to-buffer :which-key "buffer")
+   "%" '(evil-window-vsplit :which-key "vsplit")
+   "\"" '(evil-window-split :which-key "split"))
 
-(evil-define-key 'normal 'global
-(kbd "C-l") 'evil-window-right
-(kbd "C-h") 'evil-window-left
-(kbd "C-k") 'evil-window-up
-(kbd "C-j") 'evil-window-down)
+(general-define-key
+  :states 'normal
+  :keymaps 'override
+  "C-l" 'evil-window-right
+  "C-h" 'evil-window-left
+  "C-k" 'evil-window-up
+  "C-j" 'evil-window-down)
 
 (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
