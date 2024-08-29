@@ -306,6 +306,12 @@
 "C-k" 'acm-select-prev
 "C-e" 'acm-hide))
 
+(use-package lsp-pyright
+:ensure t
+:hook (python-mode . (lambda ()
+                        (require 'lsp-pyright)
+                        (lsp))))  ; or lsp-deferred
+
 (use-package reformatter
 :hook ((python-mode . darker-reformat-on-save-mode))
 :config
