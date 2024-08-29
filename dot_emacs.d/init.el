@@ -297,6 +297,7 @@
  (unless (file-directory-p "~/.emacs.d/lsp-bridge")
    (shell-command "git clone https://github.com/manateelazycat/lsp-bridge.git ~/.emacs.d/lsp-bridge"))
  :config
+ (setq lsp-headerline-breadcrumb-enable nil)
  (setq lsp-bridge-python-lsp-server "pylsp")
  (global-lsp-bridge-mode)
  (general-define-key
@@ -309,8 +310,8 @@
 (use-package lsp-pyright
 :ensure t
 :hook (python-mode . (lambda ()
-                        (require 'lsp-pyright)
-                        (lsp))))  ; or lsp-deferred
+			(require 'lsp-pyright)
+			(lsp))))  ; or lsp-deferred
 
 (use-package reformatter
 :hook ((python-mode . darker-reformat-on-save-mode))
