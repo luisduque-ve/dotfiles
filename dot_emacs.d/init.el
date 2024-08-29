@@ -261,7 +261,7 @@
 "pc" '(persp-kill-other-buffers :which-key "close-buffers")
 "pk" '(persp-kill :which-key "kill")
 "pr" '(persp-rename :which-key "rename")
-"bd" '(persp-kill-buffer* :which-key "close"))
+"bd" '(lambda () (interactive) (persp-kill-buffer* (current-buffer)) :which-key "close"))
 
 (use-package exec-path-from-shell
   :config
