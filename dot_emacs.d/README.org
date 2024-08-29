@@ -66,6 +66,10 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 
 #+END_SRC
 
+#+begin_src elisp
+  (when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
+#+end_src
 ** Use package setup
 Keep this at the very top
 
