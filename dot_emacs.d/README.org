@@ -490,10 +490,6 @@ launched from outside a shell
 #+begin_src elisp
   (use-package flycheck
   :init (global-flycheck-mode))
-
-  (use-package flycheck-posframe
-    :after flycheck
-    :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
 #+end_src
 
 
