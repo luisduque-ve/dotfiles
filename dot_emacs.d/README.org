@@ -53,6 +53,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#treemacs][Treemacs]]
 - [[#dirvish][Dirvish]]
 - [[#projectile][Projectile]]
+- [[#elisp-autoformat][Elisp Autoformat]]
 
 * Core
 ** Custom file creation or loading
@@ -61,15 +62,15 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 (setq custom-file "~/.emacs.d/custom.el")
 
 (unless (file-exists-p custom-file)
-  (with-temp-buffer (write-file custom-file)))
+  (with-temp-buffer
+    (write-file custom-file)))
 
 (load custom-file)
-
 #+END_SRC
 
 #+begin_src elisp
-  (when (string= system-type "darwin")
-  (setq dired-use-ls-dired nil))
+(when (string= system-type "darwin")
+(setq dired-use-ls-dired nil))
 #+end_src
 ** Use package setup
 Keep this at the very top
@@ -579,12 +580,17 @@ launched from outside a shell
 * Projectile
 
 #+begin_src elisp
-  (use-package projectile
-   :config
-   (projectile-mode +1)
-   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(use-package
+ projectile
+ :config (projectile-mode +1)
+ (define-key
+  projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-    (my-leader-def
-    "SPC" '(projectile-find-file :which-key "find-file"))
+(my-leader-def "SPC" '(projectile-find-file :which-key "find-file"))
 
+#+end_src
+
+* Elisp Autoformat
+#+begin_src elisp
+(use-package elisp-autofmt)
 #+end_src
