@@ -347,6 +347,3 @@
 
   (my-leader-def
   "SPC" '(projectile-find-file :which-key "find-file"))
-
-(use-package elisp-autofmt
-:config (elisp-autofmt-mode))
