@@ -159,6 +159,7 @@
 (my-leader-def
    "b"  '(:ignore t :which-key "buffer")
    "s"  '(:ignore t :which-key "search")
+   "bo" '(delete-other-windows :which-key "delete-others")
    "su" '(switch-to-buffer :which-key "buffer")
    "%" '(evil-window-vsplit :which-key "vsplit")
    "\"" '(evil-window-split :which-key "split")
@@ -244,6 +245,7 @@
 (use-package consult)
 
 (my-leader-def
+  "." '(consult-find :which-key "consult-find")
   "sb" '(consult-bookmark :which-key "bookmark")
   "sh" '(consult-org-heading :which-key "org-heading"))
 
@@ -261,6 +263,7 @@
 "pc" '(persp-kill-other-buffers :which-key "close-buffers")
 "pk" '(persp-kill :which-key "kill")
 "pr" '(persp-rename :which-key "rename")
+"bD" '(persp-kill-buffer* :which-key "close-other")
 "bd" '(lambda () (interactive) (persp-kill-buffer* (current-buffer)) :which-key "close"))
 
 (use-package exec-path-from-shell
@@ -321,8 +324,8 @@
   (use-package treemacs-evil
   :after (treemacs evil))
 
-;; (use-package treemacs-projectile
-  ;; :after (treemacs projectile))
+(use-package treemacs-projectile
+  :after (treemacs projectile))
 
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once))
@@ -336,3 +339,11 @@
 
 (use-package dirvish
 :init (dirvish-override-dired-mode))
+
+(use-package projectile
+ :config
+ (projectile-mode +1)
+ (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+  (my-leader-def
+  "SPC" '(projectile-find-file :which-key "find-file"))
