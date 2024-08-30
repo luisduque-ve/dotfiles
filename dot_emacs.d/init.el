@@ -85,6 +85,8 @@
   :init
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump t)
   :config
   (evil-mode 1)
   ;; Define key mappings to include recentering
@@ -336,9 +338,9 @@
 (use-package treemacs-magit
   :after (treemacs magit))
 
-(use-package treemacs-persp
-  :after (treemacs perspective)
-  :config (treemacs-set-scope-type 'Perspectives))
+;; (use-package treemacs-persp
+;;   :after (treemacs perspective)
+;;   :config (treemacs-set-scope-type 'Perspectives))
 
 (use-package dirvish
 :init (dirvish-override-dired-mode))
