@@ -33,7 +33,6 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
   - [[#prettify][Prettify]]
 - [[#git][Git]]
   - [[#magit][Magit]]
-- [[#zoxide][Zoxide]]
 - [[#hydra][Hydra]]
 - [[#completion-system][Completion System]]
   - [[#vertico][Vertico]]
@@ -372,15 +371,6 @@ Automatically create table of content
 
   (my-leader-def
     "g" '(magit-status :which-key "magit"))
-#+END_SRC
-
-* Zoxide
-
-#+BEGIN_SRC elisp
-(use-package zoxide)
-
-(my-leader-def
-  "sz" '(zoxide-cd :which-key "zoxide"))
 #+END_SRC
 
 * Hydra
