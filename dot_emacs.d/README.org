@@ -43,11 +43,6 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
-- [[#lsp][LSP]]
-  - [[#flycheck][Flycheck]]
-  - [[#markdown-mode][markdown-mode]]
-  - [[#yasnippet][yasnippet]]
-  - [[#lsp-bridge][LSP Bridge]]
 - [[#emacs-reformatter][Emacs Reformatter]]
 - [[#treemacs][Treemacs]]
 - [[#dirvish][Dirvish]]
@@ -124,7 +119,6 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 #+END_SRC
 
 #+BEGIN_SRC elisp
-  (setq-default fill-column 70)
   (global-display-fill-column-indicator-mode)
   (global-hl-line-mode 1)
   (set-face-attribute 'default nil
@@ -301,7 +295,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     "b"  '(:ignore t :which-key "buffer")
     "s"  '(:ignore t :which-key "search")
     "bo" '(delete-other-windows :which-key "delete-others")
-    "su" '(switch-to-buffer :which-key "buffer")
+    "sb" '(switch-to-buffer :which-key "buffer")
     "%" '(evil-window-vsplit :which-key "vsplit")
     "\"" '(evil-window-split :which-key "split")
     "d" '(dired-jump :which-key "dired"))
@@ -428,7 +422,6 @@ Persist vertigo history
 
   (my-leader-def
     "." '(consult-find :which-key "consult-find")
-    "sb" '(consult-bookmark :which-key "bookmark")
     "sh" '(consult-org-heading :which-key "org-heading"))
 #+END_SRC
 
@@ -476,60 +469,6 @@ launched from outside a shell
     (pyenv-mode))
 #+end_src
 
-
-* LSP
-
-** Flycheck
-#+begin_src elisp
-  (use-package flycheck
-  :init (global-flycheck-mode))
-#+end_src
-
-
-** markdown-mode
-#+begin_src elisp
-  (use-package markdown-mode)
-#+end_src
-
-** yasnippet
-#+begin_src elisp
-(use-package yasnippet
-  :config
-  (yas-global-mode 1)
-  (general-define-key
-   :states '(insert)
-   :keymaps 'yas-minor-mode-map
-   "C-j" 'yas-next-field
-   "C-k" 'yas-prev-field
-   "C-e" 'yas-exit-all-snippets))
-#+end_src
-
-** LSP Bridge
-#+begin_src elisp
-   (use-package lsp-bridge
-   :load-path "~/.emacs.d/lsp-bridge" ;; or any directory where you want to clone it
-   :init
-   ;; Clone the repository if it doesn't exist
-   (unless (file-directory-p "~/.emacs.d/lsp-bridge")
-     (shell-command "git clone https://github.com/manateelazycat/lsp-bridge.git ~/.emacs.d/lsp-bridge"))
-   :config
-   (setq lsp-headerline-breadcrumb-enable nil)
-   (setq lsp-bridge-python-lsp-server "pylsp")
-   (global-lsp-bridge-mode)
-   (general-define-key
-  :states '(insert) ;; Bind these keys in insert mode
-  :keymaps 'lsp-bridge-mode-map
-  "C-j" 'acm-select-next
-  "C-k" 'acm-select-prev
-  "C-e" 'acm-hide))
-
-  (use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-			  (require 'lsp-pyright)
-			  (lsp))))  ; or lsp-deferred
-
-#+end_src
 
 * Emacs Reformatter
 #+begin_src elisp
