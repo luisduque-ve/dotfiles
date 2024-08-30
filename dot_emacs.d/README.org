@@ -54,6 +54,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#dirvish][Dirvish]]
 - [[#projectile][Projectile]]
 - [[#vterm][Vterm]]
+- [[#undotree][Undotree]]
 
 * Core
 ** Custom file creation or loading
@@ -606,4 +607,9 @@ launched from outside a shell
                   (setq fill-column nil)))      ;; Disable fill-column
   :after (evil evil-collection))
   (use-package multi-vterm)
+#+end_src
+
+* Undotree
+#+begin_src elisp
+  (use-package vundo)
 #+end_src
