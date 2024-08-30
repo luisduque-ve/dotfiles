@@ -352,3 +352,12 @@
 
   (my-leader-def
   "SPC" '(projectile-find-file :which-key "find-file"))
+
+(use-package vterm
+:init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
+:hook
+(vterm-mode . (lambda ()
+                (display-line-numbers-mode 0) ;; Disable line numbers
+                (setq fill-column nil)))      ;; Disable fill-column
+:after (evil evil-collection))
+(use-package multi-vterm)

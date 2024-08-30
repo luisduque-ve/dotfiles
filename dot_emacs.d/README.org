@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle init.el
+#+PROPERTY: header-args :tangle init.el.tmpl
 #+TITLE: Emacs config
 
 This is my personal Emacs configuration. I try to keep it simple while using as
@@ -53,6 +53,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#treemacs][Treemacs]]
 - [[#dirvish][Dirvish]]
 - [[#projectile][Projectile]]
+- [[#vterm][Vterm]]
 
 * Core
 ** Custom file creation or loading
@@ -592,4 +593,17 @@ launched from outside a shell
     (my-leader-def
     "SPC" '(projectile-find-file :which-key "find-file"))
 
+#+end_src
+
+* Vterm
+
+#+begin_src elisp :eval no
+  (use-package vterm
+  :init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
+  :hook
+  (vterm-mode . (lambda ()
+                  (display-line-numbers-mode 0) ;; Disable line numbers
+                  (setq fill-column nil)))      ;; Disable fill-column
+  :after (evil evil-collection))
+  (use-package multi-vterm)
 #+end_src
