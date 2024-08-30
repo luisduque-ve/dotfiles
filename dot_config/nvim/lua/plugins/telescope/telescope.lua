@@ -12,6 +12,7 @@ return {
 			-- 'git rev-parse --is-inside-work-tree' returns 0 if the current directory is a git repository
 			if os.execute("git rev-parse --is-inside-work-tree > /dev/null 2>&1") == 0 then
 				require("telescope.builtin").git_files({
+					use_git_root = false,
 					attach_mappings = function(_, map)
 						map("i", "<esc>", actions.close)
 						return true
