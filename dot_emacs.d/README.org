@@ -51,7 +51,6 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#emacs-reformatter][Emacs Reformatter]]
 - [[#treemacs][Treemacs]]
 - [[#dirvish][Dirvish]]
-- [[#projectile][Projectile]]
 - [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
 
@@ -551,18 +550,11 @@ launched from outside a shell
       (use-package treemacs-evil
       :after (treemacs evil))
 
-    (use-package treemacs-projectile
-      :after (treemacs projectile))
-
     (use-package treemacs-icons-dired
       :hook (dired-mode . treemacs-icons-dired-enable-once))
 
     (use-package treemacs-magit
       :after (treemacs magit))
-
-    ;; (use-package treemacs-persp
-    ;;   :after (treemacs perspective)
-    ;;   :config (treemacs-set-scope-type 'Perspectives))
 
 #+end_src
 
@@ -571,19 +563,6 @@ launched from outside a shell
 #+begin_src elisp
   (use-package dirvish
   :init (dirvish-override-dired-mode))
-#+end_src
-
-* Projectile
-
-#+begin_src elisp
-  (use-package projectile
-   :config
-   (projectile-mode +1)
-   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-
-    (my-leader-def
-    "SPC" '(projectile-find-file :which-key "find-file"))
-
 #+end_src
 
 * Vterm
