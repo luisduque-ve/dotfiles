@@ -9,6 +9,7 @@ return {
   endif
   set background=light
   let g:gruvbox_material_background = 'medium'
+  let g:gruvbox_material_enable_bold = 1
   let g:gruvbox_material_better_performance = 1
   colorscheme gruvbox-material
 ]])
