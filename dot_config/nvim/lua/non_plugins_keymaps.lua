@@ -21,6 +21,8 @@ map({ "n" }, "<C-u>", "<C-u>zz")
 map({ "n" }, "n", "nzz")
 map({ "n" }, "N", "Nzz")
 map({ "n" }, "G", "Gzz")
+map({ "n" }, "}", "}zz")
+map({ "n" }, "{", "{zz")
 
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
