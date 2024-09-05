@@ -8,3 +8,6 @@ abbr --add rmvirtualenv "pyenv uninstall"
 # w means workon
 abbr --add w "pyenv activate"
 abbr --add jupyterlab "python -m jupyterlab --no-browser"
+
+
+set -gx PYDEVD_DISABLE_FILE_VALIDATION 1
