@@ -1,5 +1,5 @@
 abbr --add deactivate "pyenv deactivate"
-abbr --add fastapi "python -m uvicorn main:app --reload"
+abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --loop asyncio"
 abbr --add mkvirtualenv "pyenv virtualenv"
 abbr --add pi "python -m pip install"
 abbr --add pylist "pyenv virtualenvs"
