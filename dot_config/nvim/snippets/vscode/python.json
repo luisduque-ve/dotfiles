@@ -1,34 +1,4 @@
 {
-  "drill_template": {
-    "prefix": "drill_template",
-    "body": [
-      "\"\"\"",
-      "Description:",
-      "",
-      "\"\"\"",
-      "# Implementation foldin",
-      "\"\"\"",
-      "\"\"\"",
-      "# foldout",
-      "# Hints foldin",
-      "# foldout",
-      "# Mnemonic foldin",
-      "# foldout",
-      "class Exercise:",
-      "    # TEST_CASES foldin",
-      "    TEST_CASES = [",
-      "        {\"name\": \"no args\", \"input\": (), \"expected_output\": \"\"},",
-      "    ]",
-      "    # foldout",
-      "    def execute(self):",
-      "        pass"
-    ],
-    "description": "Template for creating a new Exercise class"
-  },
-  "drill_debug": {
-    "prefix": "drill_debug",
-    "body": "print(Exercise().execute(*Exercise().TEST_CASES[0][\"input\"]))"
-  },
   "from_import_": {
     "prefix": "fim",
     "body": "from ${1:package/module} import ${2:names}$0",
@@ -43,16 +13,6 @@
     "prefix": "dc",
     "body": "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:iterable}}$0",
     "description": "Handy and faster way to create dictories based on existing dictionaries."
-  },
-  "debugpy": {
-    "prefix": "debugpy",
-    "body": [
-      "# REMOVE ME",
-      "import debugpy",
-      "debugpy.listen((\"0.0.0.0\", 5678))",
-      "debugpy.wait_for_client()"
-    ],
-    "description": "adds a debugpy remote attach breakpoint"
   },
   "generator_comprehension_if_filter": {
     "prefix": "gci",

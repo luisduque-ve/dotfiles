@@ -15,22 +15,13 @@
         "path": "./all.json"
       },
       {
-        "language": "json",
-        "path": "./json.json"
-      },
-      {
         "language": "gitcommit",
         "path": "./gitcommit.json"
       },
       {
         "language": "lua",
         "path": "./lua.json"
-      },
-      {
-        "language": "norg",
-        "path": "./norg.json"
       }
-
     ]
   }
 }
