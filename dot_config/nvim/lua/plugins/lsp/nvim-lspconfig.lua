@@ -84,6 +84,7 @@ return {
 			dockerls = {},
 			jsonls = {},
 			marksman = {},
+			terraformls = {},
 			pyright = {},
 			vimls = {},
 			yamlls = {},

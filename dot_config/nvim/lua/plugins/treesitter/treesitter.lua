@@ -29,6 +29,7 @@ return {
 				"markdown_inline",
 				"python",
 				"regex",
+				"terraform",
 				"typescript",
 				"vim",
 				"yaml",
