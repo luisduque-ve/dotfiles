@@ -63,13 +63,8 @@ vim.o.timeoutlen = 200
 
 set.colorcolumn = "70"
 
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "Neogit*",
-  callback = function()
-    vim.opt_local.colorcolumn = "0"
-  end,
-})
+-- set global status line
+set.laststatus = 3
 
 -- configure neovim to recognize markdown files
 -- not sure what breaks this in the latest neovim
