@@ -67,6 +67,7 @@ return {
 			"<CMD>lua TelescopeFindOrGitFiles()<CR>",
 			desc = "find_files",
 		},
+		{ "<Leader>st", "<CMD>Telescope<CR>", desc = "telescope" },
 		{ "<Leader>gb", "<CMD>Telescope git_branches<CR>", desc = "branch" },
 		{ "<Leader>sc", "<CMD>Telescope commands<CR>", desc = "command" },
 		{ "<Leader>sm", "<CMD>Telescope marks<CR>", desc = "marks" },
