@@ -24,6 +24,11 @@ map({ "n" }, "G", "Gzz")
 map({ "n" }, "}", "}zz")
 map({ "n" }, "{", "{zz")
 
+-- Quickfix
+
+map({ "n" }, "<leader>p", "<CMD>cprevious<CR>zz")
+map({ "n" }, "<leader>n", "<CMD>cnext<CR>zz")
+
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
 map({ "n" }, "<leader>bd", "<CMD>bd<CR>", "close")
