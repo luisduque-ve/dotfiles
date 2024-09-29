@@ -48,6 +48,9 @@ set.shortmess = "atI"
 -- Format python files on change
 vim.cmd([[au BufWritePost *.py silent :!darker %]])
 
+-- Format terraform files
+vim.cmd([[au BufWritePost *.tf silent :!terraform fmt %]])
+
 vim.opt.shortmess:append("S")
 
 set.confirm = true
