@@ -26,8 +26,8 @@ map({ "n" }, "{", "{zz")
 
 -- Quickfix
 
-map({ "n" }, "<leader>p", "<CMD>cprevious<CR>zz")
-map({ "n" }, "<leader>n", "<CMD>cnext<CR>zz")
+map({ "n" }, "<leader>p", "<CMD>cprevious<CR>zz", "cprevious")
+map({ "n" }, "<leader>n", "<CMD>cnext<CR>zz", "cnext")
 
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
