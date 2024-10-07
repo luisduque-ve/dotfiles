@@ -49,6 +49,11 @@ return {
       mods = 'LEADER',
       action = wezterm.action.ActivateTabRelative(1),
     },
+    {
+      key = '[',
+      mods = 'LEADER',
+      action = wezterm.action.ActivateCopyMode,
+    },
   },
   leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
   window_close_confirmation = "NeverPrompt",
