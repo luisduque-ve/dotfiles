@@ -9,6 +9,7 @@ return {
   }),
   {{- if eq .chezmoi.os "windows" }}
   font_size = 14.0,
+  default_domain = "WSL:Ubuntu-24.04",
   {{- else }}
   font_size = 19.0,
   {{- end }}
