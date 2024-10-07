@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
+  disable_default_key_bindings = true,
   color_scheme = "Gruvbox light, medium (base16)",
   default_prog = { '{{- .brew_path -}}/bin/fish', '-l' },
   font = wezterm.font({
@@ -37,6 +38,16 @@ return {
       key = 'c',
       mods = 'LEADER',
       action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+    },
+    {
+      key = 'p',
+      mods = 'LEADER',
+      action = wezterm.action.ActivateTabRelative(-1),
+    },
+    {
+      key = 'n',
+      mods = 'LEADER',
+      action = wezterm.action.ActivateTabRelative(1),
     },
   },
   leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
