@@ -157,6 +157,10 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (which-key-mode))
 #+END_SRC
 
+#+begin_src elisp
+  (use-package pdf-tools
+    :config (pdf-tools-install))
+#+end_src
 * General
 
 #+BEGIN_SRC elisp

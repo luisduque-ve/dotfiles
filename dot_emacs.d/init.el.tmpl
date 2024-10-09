@@ -70,6 +70,9 @@
   (setq which-key-idle-delay 0.1)
   (which-key-mode))
 
+(use-package pdf-tools
+  :config (pdf-tools-install))
+
 (use-package general
   :after (evil which-key)
   :config
