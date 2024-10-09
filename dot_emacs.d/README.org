@@ -123,8 +123,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (global-hl-line-mode 1)
   (set-face-attribute 'default nil
 		      :font "FiraCode Nerd Font Mono"
-		      :height (my/get-font-size)
-		      :weight 'semi-bold)
+		      :height (my/get-font-size))
   (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
   (setq org-directory "~/org/")
