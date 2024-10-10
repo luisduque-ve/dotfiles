@@ -7,7 +7,12 @@ return {
     { "zbirenbaum/copilot.lua" },
     { "nvim-lua/plenary.nvim" },
   },
-  opts = {},
+  opts = {
+    reset = {
+      normal = nil,
+      insert = nil,
+    },
+  },
   keys = {
     { "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
     {
