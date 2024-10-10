@@ -6,7 +6,7 @@ return {
 		local wk = require("which-key")
 		wk.add({
 			{ "<leader>b", group = "+buffer" },
-			{ "<leader>c", group = "+ai", mode = { "n", "v" } },
+			{ "<leader>c", group = "+ai", mode = { "n" } },
 			{ "<leader>d", group = "+debug" },
 			{ "<leader>g", group = "+git" },
 			{ "<leader>gd", group = "+diff" },
