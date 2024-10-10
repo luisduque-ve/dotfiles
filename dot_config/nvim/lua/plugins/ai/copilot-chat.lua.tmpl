@@ -15,7 +15,7 @@ return {
     },
   },
   },
-keys = {
+  keys = {
     { "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
     {
       "<leader>cb",
@@ -41,34 +41,7 @@ keys = {
     {
       "<leader>cs",
       function()
-        local function get_visual_selection()
-          local bufnr = vim.api.nvim_get_current_buf()
-          local mode = vim.fn.mode()
-          local s_start = vim.api.nvim_buf_get_mark(bufnr, "<")
-          local s_end = vim.api.nvim_buf_get_mark(bufnr, ">")
-
-          -- Adjust for line-wise visual mode
-          if mode == "V" then
-            s_start[3] = 1
-            s_end[3] = math.max(vim.fn.col({s_end[2], "$"}) - 1, 1)
-          end
-
-          local lines = vim.api.nvim_buf_get_text(
-            bufnr,
-            s_start[1] - 1,
-            s_start[2] - 1,
-            s_end[1] - 1,
-            s_end[2],
-            {}
-          )
-
-          return table.concat(lines, "\n")
-        end
-
-        local input = get_visual_selection()
-        if input ~= "" then
-          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
-        end
+        require("CopilotChat").ask(require("CopilotChat.select").visual)
       end,
       desc = "ask_selection",
       mode = {"v"},
