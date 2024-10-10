@@ -1,14 +1,44 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   event = "InsertEnter",
-	cond = {{ .ai_support }},
+  cond = {{ .ai_support }},
   branch = "canary",
   dependencies = {
     { "zbirenbaum/copilot.lua" },
     { "nvim-lua/plenary.nvim" },
   },
   opts = {},
-	keys = {
-		{ "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
-	},
+  keys = {
+    { "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
+    {
+      "<leader>cb",
+      function()
+        local input = vim.fn.input("Question: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+        end
+      end,
+      desc = "buffer_as_context",
+    },
+    {
+      "<leader>cv",
+      function()
+        local input = vim.fn.input("Question: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+        end
+      end,
+      desc = "selection as context",
+    }
+    {
+      "<leader>cs",
+      function()
+        local input = table.concat(vim.fn.getline("'<", "'>"), "\n")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+        end
+      end,
+      desc = "ask_selection",
+    }
+  },
 }
