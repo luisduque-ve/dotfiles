@@ -8,10 +8,12 @@ return {
     { "nvim-lua/plenary.nvim" },
   },
   opts = {
+    mappings = {
     reset = {
-      normal = nil,
-      insert = nil,
+      normal = '',
+      insert = '',
     },
+  },
   },
   keys = {
     { "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
