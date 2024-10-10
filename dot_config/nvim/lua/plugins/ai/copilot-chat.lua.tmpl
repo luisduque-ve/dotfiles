@@ -50,8 +50,9 @@ return {
 
         -- or use api.nvim_buf_get_lines
         local lines = vim.fn.getline(line_start,line_end)
-        if lines ~= "" then
-          require("CopilotChat").ask(lines, { selection = require("CopilotChat.select").visual })
+        local text = table.concat(lines, "\n")
+        if text ~= "" then
+          require("CopilotChat").ask(text, { selection = require("CopilotChat.select").visual })
         end
       end,
       desc = "ask_selection",
