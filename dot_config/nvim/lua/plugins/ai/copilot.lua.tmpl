@@ -2,7 +2,7 @@ return {
   "zbirenbaum/copilot.lua",
   cmd = {"Copilot"},
 	cond = {{ .ai_support }},
-  event = "InsertEnter",
+  event = "VeryLazy",
   config = function()
     require("copilot").setup({
       suggestion = { enabled = false },
