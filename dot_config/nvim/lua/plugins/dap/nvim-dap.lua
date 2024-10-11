@@ -10,8 +10,8 @@ return {
 		-- work in a vscode environment when needed
 		{ "<F5>", "<CMD>lua require('dap').continue()<CR>", desc = "continue" },
 		{ "<F9>", "<CMD>lua require('dap').toggle_breakpoint()<CR>", desc = "breakpoint" },
-		{ "<F10>", "<CMD>lua require('dap').step_over()<CR>", desc = "step_over" },
-		{ "<F11>", "<CMD>lua require('dap').step_into()<CR>", desc = "into" },
+		{ "<F10>", "<CMD>lua require('dap').step_over()<CR><CMD>normal! zz<CR>", desc = "step_over" },
+		{ "<F11>", "<CMD>lua require('dap').step_into()<CR><CMD>normal! zz<CR>", desc = "into" },
 	},
 	config = function()
 		local sign = vim.fn.sign_define
