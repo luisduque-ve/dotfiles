@@ -15,7 +15,9 @@ end
 -- avoid this mapping
 map({ "t" }, "<C-;>", "<C-\\><C-n>")
 
--- Scroll without loosing the cursor
+-- Do not loose the center ;-)
+map({ "n" }, "<C-o>", "<C-o>zz")
+map({ "n" }, "<C-i>", "<C-i>zz")
 map({ "n" }, "<C-d>", "<C-d>zz")
 map({ "n" }, "<C-u>", "<C-u>zz")
 map({ "n" }, "n", "nzz")
