@@ -27,6 +27,7 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
+				"org",
 				"python",
 				"regex",
 				"terraform",

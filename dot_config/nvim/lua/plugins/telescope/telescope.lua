@@ -73,7 +73,6 @@ return {
 		{ "<Leader>sm", "<CMD>Telescope marks<CR>", desc = "marks" },
 		{ "<Leader>sr", "<CMD>Telescope oldfiles<CR>", desc = "recent_files" },
 		{ "<leader>sb", "<CMD>Telescope buffers<CR>", desc = "buffers" },
-		{ "<leader>sh", "<CMD>Telescope help_tags<CR>", desc = "help" },
 		{ "<leader>sk", "<CMD>Telescope keymaps<CR>", desc = "keymaps" },
 		{ "<leader>ss", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", desc = "lsp_symbol" },
 		{
