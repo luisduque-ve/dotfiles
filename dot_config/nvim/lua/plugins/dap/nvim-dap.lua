@@ -9,6 +9,11 @@ return {
 		-- This follows the vscode style as much as possible, to easy
 		-- work in a vscode environment when needed
 		{ "<F5>", "<CMD>lua require('dap').continue()<CR>", desc = "continue" },
+		{
+			"<leader>ub",
+			"<CMD>lua require('dap').set_exception_breakpoints({'raised'})<CR>",
+			desc = "raised_breakpoint",
+		},
 		{ "<F9>", "<CMD>lua require('dap').toggle_breakpoint()<CR>", desc = "breakpoint" },
 		{ "<F10>", "<CMD>lua require('dap').step_over()<CR><CMD>normal! zz<CR>", desc = "step_over" },
 		{ "<F11>", "<CMD>lua require('dap').step_into()<CR><CMD>normal! zz<CR>", desc = "into" },
