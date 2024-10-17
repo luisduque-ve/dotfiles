@@ -9,6 +9,7 @@ return {
 			{ "<leader>c", group = "+ai", mode = { "n", "v" } },
 			{ "<leader>d", group = "+debug" },
 			{ "<leader>g", group = "+git" },
+			{ "<leader>g", group = "+org" },
 			{ "<leader>gd", group = "+diff" },
 			{ "<leader>s", group = "+search" },
 			{ "<leader>t", group = "+test" },
