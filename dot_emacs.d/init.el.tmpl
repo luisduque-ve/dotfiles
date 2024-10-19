@@ -72,6 +72,8 @@
 
 (use-package pdf-tools
   :config (pdf-tools-install))
+(use-package saveplace-pdf-view
+  :config (save-place-mode 1))
 
 (use-package general
   :after (evil which-key)
@@ -166,7 +168,7 @@
    "sb" '(switch-to-buffer :which-key "buffer")
    "%" '(evil-window-vsplit :which-key "vsplit")
    "\"" '(evil-window-split :which-key "split")
-   "d" '(dired-jump :which-key "dired"))
+   "-" '(dired-jump :which-key "dired"))
 
 (general-define-key
   :states 'normal

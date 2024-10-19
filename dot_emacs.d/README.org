@@ -160,6 +160,8 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 #+begin_src elisp
   (use-package pdf-tools
     :config (pdf-tools-install))
+  (use-package saveplace-pdf-view
+    :config (save-place-mode 1))
 #+end_src
 * General
 
@@ -301,7 +303,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     "sb" '(switch-to-buffer :which-key "buffer")
     "%" '(evil-window-vsplit :which-key "vsplit")
     "\"" '(evil-window-split :which-key "split")
-    "d" '(dired-jump :which-key "dired"))
+    "-" '(dired-jump :which-key "dired"))
 
  (general-define-key
    :states 'normal
