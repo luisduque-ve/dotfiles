@@ -24,6 +24,7 @@ return {
 				"gitignore",
 				"javascript",
 				"json",
+				"kdl",
 				"lua",
 				"markdown",
 				"markdown_inline",
