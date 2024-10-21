@@ -28,6 +28,7 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
+				"nix",
 				"org",
 				"python",
 				"regex",
