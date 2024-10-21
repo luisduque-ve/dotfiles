@@ -228,7 +228,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -360,9 +360,3 @@ default_mode "locked"
 // Default: false
 //
 // disable_session_metadata true
-
-ui {
-  pane_frames {
-    hide_session_name true
-  }
-}
