@@ -262,8 +262,8 @@ pane_frames false
 //
 themes {
  	default {
-        fg "#928374"
-        bg "#a89984"
+        fg "#d5c4a1"
+        bg "#928374"
         black "#ebdbb2"
         red 205 75 69
         green 152 151 26
