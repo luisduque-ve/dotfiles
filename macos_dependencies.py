@@ -11,9 +11,6 @@ formulaes = [
     "cmake",  # neovim build requirement
     "curl",  # http client
     "doll",  # show notifications on status bar
-    "eza",  # ls replacement
-    "fish",  # shell
-    "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
     "grammarly-desktop",  # grammar tool
     "jq",  # cli json utility
@@ -24,10 +21,8 @@ formulaes = [
     "openssl",  # pyenv dependency
     "pyenv",  # python version manager
     "pyenv-virtualenv",  # handle pyenv venvs
-    "ranger",  # cli file manager
     "raycast",  # spootlight alternative
     "readline",  # pyenv dependency
-    "rg",  # ripgrep
     "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
     "tcl-tk",  # pyenv dependency

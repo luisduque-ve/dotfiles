@@ -1,5 +1,5 @@
 {
-  description = "Tree system flake";
+  description = "Darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -12,8 +12,10 @@
     configuration = { pkgs, ... }: {
       environment.systemPackages =
         [
-          pkgs.fish
-          pkgs.vim
+          pkgs.eza # ls replacement
+          pkgs.fish # shell
+          pkgs.fzf # fuzzy finder
+          pkgs.ripgrep # grep replacement
         ];
 
       # Auto upgrade nix package and the daemon service.
