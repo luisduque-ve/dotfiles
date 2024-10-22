@@ -8,15 +8,12 @@ formulaes = [
     "bat",  # cat alternative
     "brave-browser",  # default browser
     "chezmoi",  # dotfiles manager
-    "cmake",  # neovim build requirement
     "curl",  # http client
     "doll",  # show notifications on status bar
-    "gettext",  # neovim build requirement
     "grammarly-desktop",  # grammar tool
     "jq",  # cli json utility
     "krisp",  # noise reduction
     "nikitabobko/tap/aerospace",  # tiling window manager
-    "ninja",  # neovim build requirement
     "nvm",  # node version manager
     "openssl",  # pyenv dependency
     "pyenv",  # python version manager

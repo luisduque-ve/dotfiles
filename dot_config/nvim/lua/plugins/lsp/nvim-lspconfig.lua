@@ -144,9 +144,5 @@ return {
 				})
 			end,
 		})
-		-- Disable default nvim mappings do not fit my workflow
-		vim.api.nvim_del_keymap("n", "gra")
-		vim.api.nvim_del_keymap("n", "grn")
-		vim.api.nvim_del_keymap("n", "grr")
 	end,
 }

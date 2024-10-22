@@ -16,6 +16,7 @@
           pkgs.fish # shell
           pkgs.fzf # fuzzy finder
           pkgs.ripgrep # grep replacement
+          pkgs.neovim # text editor
         ];
 
       # Auto upgrade nix package and the daemon service.
