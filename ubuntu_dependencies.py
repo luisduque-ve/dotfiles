@@ -25,8 +25,6 @@ packages = [
     "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
     "tcl-tk",  # pyenv dependency
-    "tmux",  # multiplexer
-    "tpm",  # tmux plugin manager
     "tree",  # show tree-like folder representation
     "xz",  # pyenv dependency
     "zlib",  # pyenv dependency

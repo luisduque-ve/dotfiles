@@ -17,6 +17,7 @@
           pkgs.fzf # fuzzy finder
           pkgs.ripgrep # grep replacement
           pkgs.neovim # text editor
+          pkgs.zellij # terminal multiplexer
         ];
 
       # Auto upgrade nix package and the daemon service.

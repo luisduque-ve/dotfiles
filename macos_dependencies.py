@@ -23,8 +23,6 @@ formulaes = [
     "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
     "tcl-tk",  # pyenv dependency
-    "tmux",  # terminal multiplexer
-    "tpm",  # tmux package manager
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
     "xz",  # pyenv dependency
