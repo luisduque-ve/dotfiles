@@ -32,7 +32,3 @@ repos:
     hooks:
     -   id: darker
         exclude: "conftest.py|test_default.py|setup.py"
-- repo: https://github.com/JohnnyMorganz/StyLua
-  rev: v0.18.1
-  hooks:
-    - id: stylua # or stylua-system / stylua-github
