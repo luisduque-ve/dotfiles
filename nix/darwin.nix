@@ -9,6 +9,11 @@ let
     {
       environment.systemPackages = import ./common-cli.nix { inherit pkgs; };
 
+      environment.variables = {
+        EDITOR = "${pkgs.neovim}/bin/nvim";
+        VISUAL = "${pkgs.neovim}/bin/nvim";
+      };
+
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
