@@ -84,7 +84,13 @@ return {
 			dockerls = {},
 			jsonls = {},
 			marksman = {},
-			nil_ls = {},
+			nil_ls = {
+				["nil"] = {
+					formatting = {
+						command = { "nixfmt" },
+					},
+				},
+			},
 			terraformls = {},
 			pyright = {},
 			vimls = {},

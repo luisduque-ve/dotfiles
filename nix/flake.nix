@@ -18,6 +18,7 @@
           pkgs.ripgrep # grep replacement
           pkgs.neovim # text editor
           pkgs.zellij # terminal multiplexer
+          pkgs.nixfmt-rfc-style # nix formatter
         ];
 
       # Auto upgrade nix package and the daemon service.
