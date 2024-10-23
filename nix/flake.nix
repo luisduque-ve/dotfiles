@@ -7,50 +7,56 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, ... }: {
-      environment.systemPackages =
-        [
-          pkgs.eza # ls replacement
-          pkgs.fish # shell
-          pkgs.fzf # fuzzy finder
-          pkgs.ripgrep # grep replacement
-          pkgs.neovim # text editor
-          pkgs.zellij # terminal multiplexer
-          pkgs.nixfmt-rfc-style # nix formatter
-        ];
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+    }:
+    let
+      configuration =
+        { pkgs, ... }:
+        {
+          environment.systemPackages = [
+            pkgs.eza # ls replacement
+            pkgs.fish # shell
+            pkgs.fzf # fuzzy finder
+            pkgs.ripgrep # grep replacement
+            pkgs.neovim # text editor
+            pkgs.zellij # terminal multiplexer
+            pkgs.nixfmt-rfc-style # nix formatter
+          ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
+          # Auto upgrade nix package and the daemon service.
+          services.nix-daemon.enable = true;
+          # nix.package = pkgs.nix;
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = ["nix-command flakes"];
+          # Necessary for using flakes on this system.
+          nix.settings.experimental-features = [ "nix-command flakes" ];
 
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;  # default shell on catalina
-      programs.fish.enable = true;
+          # Create /etc/zshrc that loads the nix-darwin environment.
+          programs.zsh.enable = true; # default shell on catalina
+          programs.fish.enable = true;
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+          # Set Git commit hash for darwin-version.
+          system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
+          # Used for backwards compatibility, please read the changelog before changing.
+          # $ darwin-rebuild changelog
+          system.stateVersion = 5;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+          # The platform the configuration will be used on.
+          nixpkgs.hostPlatform = "aarch64-darwin";
+        };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#simple
+      darwinConfigurations."tree" = nix-darwin.lib.darwinSystem {
+        modules = [ configuration ];
+      };
+
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."tree".pkgs;
     };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."tree" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
-    };
-
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."tree".pkgs;
-  };
 }
