@@ -28,3 +28,9 @@ email = "email used by tools like git"
 ```
 
 In this file, `email` and `fish_path` are custom variables that can be used in your dotfiles templates.
+
+### Nix
+
+1. Follow the installation instructions [here](https://nixos.org/download/)
+2. Install home manager standalone as describe *(IN MAC SCROLL DOWN UNTIL THE DARWIN MODULE)*[here](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)
+3. Do not forget to run `nix-shell '<home-manager>' -A install`
