@@ -3,14 +3,15 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = [
-    pkgs.neovim
     pkgs.eza
     pkgs.fish
     pkgs.fzf
-    pkgs.ripgrep
+    pkgs.lazygit
     pkgs.neovim
-    pkgs.zellij
+    pkgs.neovim
     pkgs.nixfmt-rfc-style
+    pkgs.ripgrep
+    pkgs.zellij
   ];
 
   home.sessionVariables = {
