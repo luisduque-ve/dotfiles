@@ -5,6 +5,7 @@ return {
       lua = { "stylua" },
       python = { "darker" },
       nix = { "nixfmt" },
+      terraform = { "terraform_fmt" },
     },
     format_on_save = {
       lsp_format = "fallback",

@@ -45,9 +45,6 @@ set.nrformats = "bin,hex,alpha"
 
 set.shortmess = "atI"
 
--- Format terraform files
-vim.cmd([[au BufWritePost *.tf silent :!terraform fmt %]])
-
 vim.opt.shortmess:append("S")
 
 set.confirm = true
