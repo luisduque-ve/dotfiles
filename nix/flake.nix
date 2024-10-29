@@ -17,12 +17,21 @@
       home-manager,
       ...
     }:
-    import ./darwin.nix {
-      inherit
-        self
-        nix-darwin
-        nixpkgs
-        home-manager
-        ;
+    let
+      darwin = import ./darwin.nix {
+        inherit
+          self
+          nix-darwin
+          nixpkgs
+          home-manager
+          ;
+      };
+      wsl = import ./wsl.nix {
+        inherit nixpkgs home-manager;
+      };
+    in
+    {
+      darwinConfigurations = darwin.darwinConfigurations;
+      homeConfigurations = wsl.homeConfigurations;
     };
 }

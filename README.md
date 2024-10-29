@@ -32,5 +32,6 @@ In this file, `email` and `fish_path` are custom variables that can be used in y
 ### Nix
 
 1. Follow the installation instructions [here](https://nixos.org/download/)
-2. Install home manager standalone as describe *(IN MAC SCROLL DOWN UNTIL THE DARWIN MODULE)*[here](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)
+2. Install home manager standalone as describe *(IN MAC SCROLL DOWN UNTIL THE DARWIN MODULE and install it as well)*[here](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)
+3. On Ubuntu edit `/etc/nix/nix.conf` and add `experimental-features = nix-command flakes`
 3. Do not forget to run `nix-shell '<home-manager>' -A install`
