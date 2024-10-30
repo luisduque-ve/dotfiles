@@ -26,12 +26,8 @@
           home-manager
           ;
       };
-      wsl = import ./wsl.nix {
-        inherit nixpkgs home-manager;
-      };
     in
     {
       darwinConfigurations = darwin.darwinConfigurations;
-      homeConfigurations = wsl.homeConfigurations;
     };
 }
