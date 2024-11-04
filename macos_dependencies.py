@@ -10,7 +10,9 @@ formulaes = [
     "chezmoi",  # dotfiles manager
     "curl",  # http client
     "doll",  # show notifications on status bar
+    "ghcup",  # haskell tool
     "grammarly-desktop",  # grammar tool
+    "haskell-language-server",
     "jq",  # cli json utility
     "krisp",  # noise reduction
     "nikitabobko/tap/aerospace",  # tiling window manager
