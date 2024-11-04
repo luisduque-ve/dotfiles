@@ -10,11 +10,15 @@ formulaes = [
     "chezmoi",  # dotfiles manager
     "curl",  # http client
     "doll",  # show notifications on status bar
+    "eza",  # ls replacement
+    "fish",  # shell
+    "fzf",  # fuzzy finder
     "ghcup",  # haskell tool
     "grammarly-desktop",  # grammar tool
     "haskell-language-server",
     "jq",  # cli json utility
     "krisp",  # noise reduction
+    "lazygit",  # git tool
     "nikitabobko/tap/aerospace",  # tiling window manager
     "nvm",  # node version manager
     "openssl",  # pyenv dependency
@@ -22,6 +26,7 @@ formulaes = [
     "pyenv-virtualenv",  # handle pyenv venvs
     "raycast",  # spootlight alternative
     "readline",  # pyenv dependency
+    "rg",  # rip grep
     "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
     "tcl-tk",  # pyenv dependency
