@@ -1,11 +1,11 @@
 local function map(modes, keybinding, action, description)
-	for _, mode in ipairs(modes) do
-		local options = { silent = true }
-		if description then
-			options.desc = description
-		end
-		vim.keymap.set(mode, keybinding, action, options)
-	end
+  for _, mode in ipairs(modes) do
+    local options = { silent = true }
+    if description then
+      options.desc = description
+    end
+    vim.keymap.set(mode, keybinding, action, options)
+  end
 end
 
 -- Return to normal mode from terminal mode
@@ -46,3 +46,8 @@ map({ "n" }, ",,", ",", ",")
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", "escape_and_clear_hlsearch")
+
+map({ "n" }, "<C-h>", "<C-w>h", "left_window")
+map({ "n" }, "<C-j>", "<C-w>j", "lower_window")
+map({ "n" }, "<C-k>", "<C-w>k", "upper_window")
+map({ "n" }, "<C-l>", "<C-w>l", "right_window")
