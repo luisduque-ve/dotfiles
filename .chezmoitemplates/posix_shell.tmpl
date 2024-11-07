@@ -2,10 +2,10 @@
 
 mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
-export PATH=$HOME/.config/emacs/bin:$PATH
-export PATH=$HOME/.src/builds/bin:$PATH
 export PATH="{{- .brew_path -}}/bin:$PATH"
 export PATH="{{- .brew_path -}}/sbin:$PATH"
+export EDITOR=nvim
+export VISUAL=nvim
 
 
 {{/* MacOS specific shell configs */}}
