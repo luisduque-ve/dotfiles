@@ -3,7 +3,7 @@ abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:
 abbr --add mkvirtualenv "pyenv virtualenv"
 abbr --add pi "python -m pip install"
 abbr --add pylist "pyenv virtualenvs"
-abbr --add pytest "python -m pytest"
+abbr --add pytest "python -m pytest --disable-warnings"
 abbr --add rmvirtualenv "pyenv uninstall"
 # w means workon
 abbr --add w "pyenv activate"
