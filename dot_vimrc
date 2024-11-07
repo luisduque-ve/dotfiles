@@ -1,0 +1,14 @@
+" Must of the time I compile neovim from source, because of that
+" some CLI tools do not find neovim in my path in certain scenarios
+" this file is only used as a very basic configuration to use
+" vim instead of neovim on those tools, as vim is usually the default
+" value for VISUAL and EDITOR environment variables
+
+
+set number " enable line numbers
+set relativenumber " enable relative line numbers
+
+
+let &t_SI = "\e[5 q"   " Cursor to blinking bar in insert mode
+let &t_SR = "\e[4 q"   " Cursor to underline in replace mode
+let &t_EI = "\e[2 q"   " Cursor to block in normal mode
