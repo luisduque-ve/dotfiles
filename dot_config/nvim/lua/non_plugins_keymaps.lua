@@ -8,12 +8,6 @@ local function map(modes, keybinding, action, description)
   end
 end
 
--- Return to normal mode from terminal mode
--- this is only confortable because I use
--- home rows and a tumb cluster, if you're
--- reading this and has an standard keyboard
--- avoid this mapping
-map({ "t" }, "<C-;>", "<C-\\><C-n>")
 
 -- Do not loose the center ;-)
 map({ "n" }, "<C-o>", "<C-o>zz")
