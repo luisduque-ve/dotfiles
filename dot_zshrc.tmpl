@@ -1,7 +1,7 @@
 # Minimal setup for programs that needs a login shell
 
-export PATH="$(brew --prefix)/bin:$PATH"
-export PATH="$(brew --prefix)/sbin:$PATH"
+export PATH="{{- .brew_path -}}/bin:$PATH"
+export PATH="{{- .brew_path -}}/sbin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
@@ -10,10 +10,10 @@ mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
 
 # This loads nvm
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
+[ -s "{{- .brew_path -}}/opt/nvm/nvm.sh" ] && \. "{{- .brew_path -}}/opt/nvm/nvm.sh"
 
 # This loads nvm bash_completion
-[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
+[ -s "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
