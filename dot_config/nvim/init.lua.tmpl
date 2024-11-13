@@ -8,7 +8,6 @@ set.termguicolors = true
 -- end of nvim-tree.lua requirements
 
 g.mapleader = " "
-g.maplocalleader = ","
 
 -- providers
 g.python3_host_prog = "$HOME/.pyenv/versions/provider/bin/python"
@@ -72,6 +71,29 @@ vim.api.nvim_create_autocmd("BufRead", {
     pattern = {"*.md", "*.MD"},
     command = "set filetype=markdown",
 })
+
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+-- WSL only config start
+--
+-- from :h clipboard
+vim.cmd([[
+    let g:clipboard = {
+                \   'name': 'WslClipboard',
+                \   'copy': {
+                \      '+': 'clip.exe',
+                \      '*': 'clip.exe',
+                \    },
+                \   'paste': {
+                \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \   },
+                \   'cache_enabled': 0,
+                \ }
+        ]])
+-- WSL only config end
+{{   end }}
+{{ end }}
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
