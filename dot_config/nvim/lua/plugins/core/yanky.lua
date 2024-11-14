@@ -9,8 +9,8 @@ return {
     })
     vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
     vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-    vim.keymap.set("n", "]p", "<Plug>(YankyCycleForward)", { desc = "yanky_forward" })
-    vim.keymap.set("n", "[p", "<Plug>(YankyCycleBackward)", { desc = "yanky_backward" })
+    vim.keymap.set("n", "[p", "<Plug>(YankyCycleForward)", { desc = "yanky_forward" })
+    vim.keymap.set("n", "]p", "<Plug>(YankyCycleBackward)", { desc = "yanky_backward" })
     require("telescope").load_extension("yank_history")
   end,
   keys = {
