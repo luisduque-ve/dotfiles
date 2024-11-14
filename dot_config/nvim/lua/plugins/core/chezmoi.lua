@@ -34,7 +34,6 @@ return {
         end,
       })
       telescope.load_extension('chezmoi')
-      vim.keymap.set('n', '<leader>sc', telescope.extensions.chezmoi.find_files, {})
     end
   }
 }
