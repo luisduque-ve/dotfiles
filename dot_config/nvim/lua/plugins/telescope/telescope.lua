@@ -69,6 +69,7 @@ return {
     },
     { "<Leader>st", "<CMD>Telescope<CR>",                               desc = "telescope" },
     { "<Leader>gb", "<CMD>Telescope git_branches<CR>",                  desc = "branch" },
+    { "<Leader>f",  "<CMD>Telescope filetypes<CR>",                     desc = "filetypes" },
     { "<M-x>",      "<CMD>Telescope commands<CR>",                      desc = "command" },
     { "<Leader>sm", "<CMD>Telescope marks<CR>",                         desc = "marks" },
     { "<Leader>sr", "<CMD>Telescope oldfiles<CR>",                      desc = "recent_files" },
