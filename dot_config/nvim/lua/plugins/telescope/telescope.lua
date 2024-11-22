@@ -76,5 +76,6 @@ return {
     { "<leader>sb", "<CMD>Telescope buffers<CR>",              desc = "buffers" },
     { "<leader>sk", "<CMD>Telescope keymaps<CR>",              desc = "keymaps" },
     { "<leader>ss", "<CMD>Telescope lsp_document_symbols<CR>", desc = "lsp_document_symbols" },
+    { "gr",         "<CMD>Telescope lsp_references<CR>",       desc = "lsp_references" },
   },
 }

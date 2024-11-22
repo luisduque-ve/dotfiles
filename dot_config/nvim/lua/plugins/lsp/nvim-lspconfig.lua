@@ -36,7 +36,6 @@ return {
       end
       local keys = {
         { "<leader>ha",  "<CMD>lua vim.lsp.buf.code_action()<CR>",                    desc = "code_action" },
-        { "<leader>hdd", "<CMD>Trouble document_diagnostics<CR>",                     desc = "show_all_in_buffer" },
         { "<leader>hdf", "<CMD>lua vim.diagnostic.open_float()<CR>",                  desc = "show_current" },
         { "<leader>hdn", "<CMD>lua vim.diagnostic.goto_next()<CR>",                   desc = "next" },
         { "<leader>hdp", "<CMD>lua vim.diagnostic.goto_prev()<CR>",                   desc = "previous" },
@@ -44,7 +43,6 @@ return {
         { "gd",          "<CMD>lua vim.lsp.buf.definition()<CR>",                     desc = "lsp_definition" },
         { "gi",          "<CMD>lua vim.lsp.buf.implementation()<CR>",                 desc = "lsp_implementation" },
         { "gD",          "<CMD>lua vim.lsp.buf.declaration()<CR>",                    desc = "lsp_declaration" },
-        { "gr",          "<CMD>Trouble lsp_references<CR>",                           desc = "lsp_references" },
         { "gs",          "<CMD>lua vim.lsp.buf.signature_help()<CR>",                 desc = "lsp_signature" },
         { "go",          "<CMD>lua vim.lsp.buf.type_definition()<CR>",                desc = "lsp_type_definition" },
         { "K",           "<CMD>lua vim.lsp.buf.hover()<CR>",                          desc = "lsp_hover" },
