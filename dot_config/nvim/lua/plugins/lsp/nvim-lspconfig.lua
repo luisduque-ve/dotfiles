@@ -5,6 +5,7 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
+    "nvim-tree/nvim-tree.lua",
   },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
@@ -80,11 +81,10 @@ return {
     local servers = {
       clangd = {},
       dockerls = {},
-      hls = {},
       jsonls = {},
       marksman = {},
       terraformls = {},
-      pyright = {},
+      pylsp = {},
       vimls = {},
       yamlls = {},
       lua_ls = {
