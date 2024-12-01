@@ -1,17 +1,11 @@
 darker
 debugpy
 pre-commit
+pynvim
+rope
+
+# LSP
 pyls-memestra
 pylsp-mypy
 pylsp-rope
-pynvim
 python-lsp-server[all]
-
-# LSP BRIDGE
-epc
-orjson
-sexpdata
-six
-setuptools
-paramiko
-rapidfuzz
