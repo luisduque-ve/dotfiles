@@ -75,109 +75,6 @@
 (use-package saveplace-pdf-view
   :config (save-place-mode 1))
 
-(use-package general
-  :after (evil which-key)
-  :config
-  (general-evil-setup t)
-  (general-create-definer my-leader-def
-    :states '(normal visual)
- :keymaps 'override
-    :prefix "SPC"))
-
-(use-package evil
-  :init
-  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump t)
-  :config
-  (evil-mode 1)
-  ;; Define key mappings to include recentering
-(evil-define-key 'normal 'global
-  (kbd "C-d") (lambda () (interactive) (evil-scroll-down nil) (recenter))
-  (kbd "C-u") (lambda () (interactive) (evil-scroll-up nil) (recenter))
-  (kbd "n") (lambda () (interactive) (evil-search-next) (recenter))
-  (kbd "N") (lambda () (interactive) (evil-search-previous) (recenter))
-  (kbd "G") (lambda () (interactive) (evil-goto-line) (recenter))))
-
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-(use-package evil-numbers)
-
-(general-define-key
- :states 'normal
- "C-a" 'evil-numbers/inc-at-pt
- "C-x" 'evil-numbers/dec-at-pt)
-
-(general-define-key
- :states 'visual
- "g C-a" 'evil-numbers/inc-at-pt-incremental
- "g C-x" 'evil-numbers/dec-at-pt-incremental)
-
-(use-package evil-surround
-  :config
-  (global-evil-surround-mode 1))
-
-(use-package evil-goggles
-  :config
-  (evil-goggles-mode)
-  (setq evil-goggles-duration 0.100)
-
-  ;; optionally use diff-mode's faces; as a result, deleted text
-  ;; will be highlighed with `diff-removed` face which is typically
-  ;; some red color (as defined by the color theme)
-  ;; other faces such as `diff-added` will be used for other actions
-  (evil-goggles-use-diff-faces))
-
-(use-package evil-quickscope
-  :after evil
-  :config
-  (global-evil-quickscope-always-mode 1))
-
-(use-package evil-org
-  :after org
-  :hook (org-mode . (lambda () evil-org-mode))
-  :config
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))
-
-(use-package evil-collection
-  :after evil
-  :config
-  (evil-collection-init))
-
-(setq visible-cursor nil)
-(blink-cursor-mode -1)
-
-(use-package evil-terminal-cursor-changer
-:config
- (unless (display-graphic-p)
- (require 'evil-terminal-cursor-changer)
- (evil-terminal-cursor-changer-activate)))
-
-(use-package evil-nerd-commenter
-  :config
-  :bind (:map evil-normal-state-map
-            ("gcc" . evilnc-comment-or-uncomment-lines)
-            ("gc" . evilnc-comment-operator)))
-
-(my-leader-def
-   "b"  '(:ignore t :which-key "buffer")
-   "s"  '(:ignore t :which-key "search")
-   "bo" '(delete-other-windows :which-key "delete-others")
-   "sb" '(switch-to-buffer :which-key "buffer")
-   "%" '(evil-window-vsplit :which-key "vsplit")
-   "\"" '(evil-window-split :which-key "split")
-   "-" '(dired-jump :which-key "dired"))
-
-(general-define-key
-  :states 'normal
-  :keymaps 'override
-  "C-l" 'evil-window-right
-  "C-h" 'evil-window-left
-  "C-k" 'evil-window-up
-  "C-j" 'evil-window-down)
-
 (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
 
@@ -208,22 +105,6 @@
 (use-package magit-todos
   :config (magit-todos-mode 1))
 
-(my-leader-def
-  "g" '(magit-status :which-key "magit"))
-
-(use-package hydra)
-
-(defhydra hydra-buffer-scale (:timeout 10)
-  "scale buffer"
-  ("i" evil-window-increase-width "+horizontal")
-  ("d" evil-window-decrease-width "-horizontal")
-  ("I" evil-window-increase-height "+vertical")
-  ("D" evil-window-decrease-height "-vertical")
-  ("f" nil "finished" :exit t))
-
-(my-leader-def
-  "bs" '(hydra-buffer-scale/body :which-key "scale"))
-
 (use-package vertico
   :init
   (vertico-mode))
@@ -244,27 +125,10 @@
 
 (use-package consult)
 
-(my-leader-def
-  "." '(consult-find :which-key "consult-find")
-  "sm" '(consult-bookmark :which-key "consult-bookmark")
-  "sh" '(consult-org-heading :which-key "org-heading"))
-
 (use-package perspective
 :init
   (setq persp-suppress-no-prefix-key-warning t)
 (persp-mode))
-
-
-(my-leader-def
-"p"  '(:ignore t :which-key "perspective")
-"ps" '(persp-switch :which-key "switch")
-"pn" '(persp-next :which-key "next")
-"pp" '(persp-prev :which-key "previous")
-"pc" '(persp-kill-other-buffers :which-key "close-buffers")
-"pk" '(persp-kill :which-key "kill")
-"pr" '(persp-rename :which-key "rename")
-"bD" '(persp-kill-buffer* :which-key "close-other")
-"bd" '(lambda () (interactive) (persp-kill-buffer* (current-buffer)) :which-key "close"))
 
 (use-package exec-path-from-shell
   :config
@@ -286,9 +150,6 @@
 
 (use-package treemacs)
 
-  (use-package treemacs-evil
-  :after (treemacs evil))
-
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once))
 
@@ -304,7 +165,7 @@
 (vterm-mode . (lambda ()
                 (display-line-numbers-mode 0) ;; Disable line numbers
                 (setq fill-column nil)))      ;; Disable fill-column
-:after (evil evil-collection))
+)
 (use-package multi-vterm)
 
 (use-package vundo)
