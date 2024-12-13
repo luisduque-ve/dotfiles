@@ -9,6 +9,7 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 
 * Table of content :TOC:
 - [[#core][Core]]
+  - [[#advice-functions][Advice functions]]
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
   - [[#use-package-setup][Use package setup]]
   - [[#ui][UI]]
@@ -32,8 +33,18 @@ Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
 - [[#dirvish][Dirvish]]
 - [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
+- [[#evil][Evil]]
 
 * Core
+** Advice functions
+#+begin_src elisp
+(defun recenter-advice (&rest _args)
+  "Advice to recenter the screen this only calls recenter
+  I use this to use in advice implementations in a clear way,
+  is used in several functions evil and not evil"
+  (recenter))
+#+end_src
+
 ** Custom file creation or loading
 
 #+BEGIN_SRC elisp
@@ -318,4 +329,26 @@ launched from outside a shell
 * Undotree
 #+begin_src elisp
   (use-package vundo)
+#+end_src
+
+* Evil
+#+begin_src elisp
+  (use-package evil
+    :init
+    (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+    (setq evil-want-keybinding nil)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump t)
+
+    ;; Evil advices
+    (advice-add 'evil-search-next :after #'recenter-advice)
+    (advice-add 'evil-scroll-down :after #'recenter-advice)
+    (advice-add 'evil-scroll-up :after #'recenter-advice)
+    (advice-add 'evil-search-previous :after #'recenter-advice)
+    (advice-add 'evil-goto-line :after #'recenter-advice)
+
+    :config
+    (evil-mode 1)
+    (global-set-key (kbd "<escape>") 'keyboard-escape-quit))
+
 #+end_src
