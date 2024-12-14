@@ -45,7 +45,11 @@ org-babel-tangle.
   is used in several functions evil and not evil"
   (recenter))
 #+end_src
-
+*** Advice implementations
+#+begin_src elisp
+(advice-add 'isearch-repeat-forward :after #'recenter-advice)
+(advice-add 'isearch-repeat-backward :after #'recenter-advice)
+#+end_src
 ** Custom file creation or loading
 
 #+BEGIN_SRC elisp

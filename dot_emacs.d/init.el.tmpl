@@ -4,6 +4,9 @@
   is used in several functions evil and not evil"
   (recenter))
 
+(advice-add 'isearch-repeat-forward :after #'recenter-advice)
+(advice-add 'isearch-repeat-backward :after #'recenter-advice)
+
 (setq custom-file "~/.emacs.d/custom.el")
 
 (unless (file-exists-p custom-file)
