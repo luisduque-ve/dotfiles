@@ -85,12 +85,14 @@
   :config (save-place-mode 1))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "IN PROGRESS" "DONE")))
+    '((sequence "TODO" "IN PROGRESS" "DONE")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning)
-        ("IN PROGRESS" . "green")  ;; Bright Yellow for IN PROGRESS
-        ("DONE" . "gray")))
+    '(("TODO" . org-warning)
+	("IN PROGRESS" . "green")  ;; Bright Yellow for IN PROGRESS
+	("DONE" . "gray")))
+
+  (setq org-hide-emphasis-markers t)
 
 (use-package org-anki)
 
