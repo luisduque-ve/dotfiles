@@ -1,11 +1,12 @@
 #+PROPERTY: header-args :tangle init.el.tmpl
 #+TITLE: Emacs config
 
-Since this is tracked by Chezmoi, you don't need to modify this file on fresh
-installs.
+Since this is tracked by Chezmoi, you don't need to modify this file
+on fresh installs.
 
-To regenerate the init.el file, simply go to the top of this file (inside
-Emacs, of course) and press C-c C-c. After that, run org-babel-tangle.
+To regenerate the init.el file, simply go to the top of this file
+(inside Emacs, of course) and press C-c C-c. After that, run
+org-babel-tangle.
 
 * Table of content :TOC:
 - [[#core][Core]]
