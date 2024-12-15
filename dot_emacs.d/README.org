@@ -35,6 +35,7 @@ org-babel-tangle.
 - [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
+  - [[#evil-surround][Evil surround]]
 
 * Core
 ** Advice functions
@@ -175,8 +176,6 @@ Core org mode configs
     '(("TODO" . org-warning)
 	("IN PROGRESS" . "green")  ;; Bright Yellow for IN PROGRESS
 	("DONE" . "gray")))
-
-  (setq org-hide-emphasis-markers t)
 #+END_SRC
 
 ** Org Anki
@@ -358,4 +357,11 @@ launched from outside a shell
     (evil-mode 1)
     (global-set-key (kbd "<escape>") 'keyboard-escape-quit))
 
+#+end_src
+
+** Evil surround
+#+begin_src elisp
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
 #+end_src

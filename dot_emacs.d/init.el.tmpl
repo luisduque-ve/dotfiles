@@ -92,8 +92,6 @@
 	("IN PROGRESS" . "green")  ;; Bright Yellow for IN PROGRESS
 	("DONE" . "gray")))
 
-  (setq org-hide-emphasis-markers t)
-
 (use-package org-anki)
 
 (use-package toc-org
@@ -198,3 +196,7 @@
   :config
   (evil-mode 1)
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit))
+
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
