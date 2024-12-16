@@ -26,12 +26,12 @@ org-babel-tangle.
   - [[#orderless][Orderless]]
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
+- [[#embark][Embark]]
 - [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
 - [[#emacs-reformatter][Emacs Reformatter]]
 - [[#treemacs][Treemacs]]
-- [[#dirvish][Dirvish]]
 - [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
@@ -255,6 +255,31 @@ Persist vertigo history
   (use-package consult)
 #+END_SRC
 
+* Embark
+#+begin_src elisp
+  (use-package embark
+    :bind
+    (("C-." . embark-act)         ;; pick some comfortable binding
+     ("C-;" . embark-dwim)        ;; good alternative: M-.
+     ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+    :init
+
+    ;; Optionally replace the key help with a completing-read interface
+    (setq prefix-help-command #'embark-prefix-help-command)
+
+    :config
+
+    ;; Hide the mode line of the Embark live/completions buffers
+    (add-to-list 'display-buffer-alist
+		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+		   nil
+		   (window-parameters (mode-line-format . none)))))
+
+  (use-package embark-consult
+    :hook
+    (embark-collect-mode . consult-preview-at-point-mode))
+#+end_src
+
 * Perspective
 
 This enables support for different workspaces
@@ -310,13 +335,6 @@ launched from outside a shell
     (use-package treemacs-magit
       :after (treemacs magit))
 
-#+end_src
-
-* Dirvish
-
-#+begin_src elisp
-  (use-package dirvish
-  :init (dirvish-override-dired-mode))
 #+end_src
 
 * Vterm
