@@ -214,7 +214,9 @@
 
   :config
   (evil-mode 1)
-  (global-set-key (kbd "<escape>") 'keyboard-escape-quit))
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  (evil-set-initial-state 'magit-mode 'emacs)
+  (evil-set-initial-state 'dired-mode 'emacs))
 
 (use-package evil-surround
   :config
