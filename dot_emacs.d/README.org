@@ -247,7 +247,9 @@ Persist vertigo history
 
 ** Consult
 #+BEGIN_SRC elisp
-  (use-package consult)
+  (use-package consult
+    :config
+    (global-set-key (kbd "C-x b") #'consult-buffer))
 #+END_SRC
 
 * Embark
