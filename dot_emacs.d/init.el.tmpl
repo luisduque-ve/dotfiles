@@ -211,7 +211,14 @@
 
   :config
   (evil-mode 1)
+
+  ;; mappings
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  (with-eval-after-load 'evil
+    (define-key evil-normal-state-map (kbd "C-n") nil)
+    (define-key evil-normal-state-map (kbd "C-p") nil))
+
+  ;; default states
   (evil-set-initial-state 'magit-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs))
 
