@@ -171,6 +171,8 @@ Core org mode configs
 #+BEGIN_SRC elisp
   (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
+
+  (setq org-hide-emphasis-markers "")
 #+END_SRC
 
 ** Org Anki
