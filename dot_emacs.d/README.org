@@ -36,6 +36,8 @@ org-babel-tangle.
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
+- [[#chezmoi][Chezmoi]]
+- [[#fish][Fish]]
 
 * Core
 ** Advice functions
@@ -393,4 +395,15 @@ launched from outside a shell
 (use-package evil-surround
   :config
   (global-evil-surround-mode 1))
+#+end_src
+
+* Chezmoi
+#+begin_src elisp
+  (use-package chezmoi)
+#+end_src
+
+
+* Fish
+#+begin_src elisp
+  (use-package fish-mode)
 #+end_src
