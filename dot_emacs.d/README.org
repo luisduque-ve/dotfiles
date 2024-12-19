@@ -127,7 +127,6 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 		      :height (my/get-font-size))
   (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
-  (setq org-directory "~/org/")
 
   ;; Disable the splash screen and open a scratch buffer
   (setq inhibit-startup-screen t)
@@ -169,6 +168,8 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 
 Core org mode configs
 #+BEGIN_SRC elisp
+  (setq org-directory "~/org/")
+
   (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
 

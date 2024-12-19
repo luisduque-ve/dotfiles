@@ -54,7 +54,6 @@
 		    :height (my/get-font-size))
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
-(setq org-directory "~/org/")
 
 ;; Disable the splash screen and open a scratch buffer
 (setq inhibit-startup-screen t)
@@ -83,6 +82,8 @@
   :config (pdf-tools-install))
 (use-package saveplace-pdf-view
   :config (save-place-mode 1))
+
+(setq org-directory "~/org/")
 
 (setq org-todo-keywords
     '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
