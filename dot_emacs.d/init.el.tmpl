@@ -234,3 +234,7 @@
 (use-package chezmoi)
 
 (use-package fish-mode)
+
+(use-package eglot
+  :defer t
+  :hook (python-mode . eglot-ensure))

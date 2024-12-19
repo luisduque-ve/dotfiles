@@ -38,6 +38,7 @@ org-babel-tangle.
   - [[#evil-surround][Evil surround]]
 - [[#chezmoi][Chezmoi]]
 - [[#fish][Fish]]
+- [[#lsp][LSP]]
 
 * Core
 ** Advice functions
@@ -165,6 +166,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (use-package saveplace-pdf-view
     :config (save-place-mode 1))
 #+end_src
+
 
 * Org
 
@@ -294,8 +296,6 @@ This enables support for different workspaces
   (persp-mode))
 #+end_src
 
-
-
 * Exec Path from shell
 Without this emacs has a lot of issues finding commands when
 launched from outside a shell
@@ -402,8 +402,14 @@ launched from outside a shell
   (use-package chezmoi)
 #+end_src
 
-
 * Fish
 #+begin_src elisp
   (use-package fish-mode)
+#+end_src
+
+* LSP
+#+begin_src elisp
+  (use-package eglot
+    :defer t
+    :hook (python-mode . eglot-ensure))
 #+end_src
