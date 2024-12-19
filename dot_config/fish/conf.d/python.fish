@@ -11,3 +11,7 @@ abbr --add jupyterlab "python -m jupyterlab --no-browser"
 
 
 set -gx PYDEVD_DISABLE_FILE_VALIDATION 1
+
+function pysetup
+  python -m pip install -r ~/.local/share/chezmoi/requirements.txt
+end
