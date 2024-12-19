@@ -172,7 +172,7 @@ Core org mode configs
   (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
 
-  (setq org-hide-emphasis-markers "")
+  (setq org-hide-emphasis-markers t)
 #+END_SRC
 
 ** Org Anki
