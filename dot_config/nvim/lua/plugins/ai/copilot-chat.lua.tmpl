@@ -31,7 +31,7 @@ return {
       "<leader>ce",
       function()
         local prompt = "You are an American English grammar and clarity expert. Your task is to review the text above and correct any grammar or clarity issues while maintaining the original ideas. Use English at a B2 level and focus exclusively on improving grammar and clarity without altering the content or intent of the text.\n\n### English Text\n"
-        selection = require("CopilotChat.select").visual
+        local selection = require("CopilotChat.select").visual
         require("CopilotChat").ask(prompt .. selection )
       end,
       desc = "english_fixer",
