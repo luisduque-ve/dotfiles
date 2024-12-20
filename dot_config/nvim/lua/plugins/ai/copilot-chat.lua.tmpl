@@ -28,6 +28,16 @@ return {
       desc = "buffer_as_context",
     },
     {
+      "<leader>ce",
+      function()
+        local input = "You are an American English grammar and clarity expert. Your task is to review the text above and correct any grammar or clarity issues while maintaining the original ideas. Use English at a B2 level and focus exclusively on improving grammar and clarity without altering the content or intent of the text. \n ### English Text \n"
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+        end
+      end,
+      desc = "english_fixer",
+      mode = {"v"},
+    }{
       "<leader>cv",
       function()
         local input = vim.fn.input("Question: ")
