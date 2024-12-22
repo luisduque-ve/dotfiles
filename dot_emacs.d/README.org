@@ -27,12 +27,12 @@ org-babel-tangle.
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
 - [[#embark][Embark]]
+- [[#eat][EAT]]
 - [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
 - [[#emacs-reformatter][Emacs Reformatter]]
 - [[#treemacs][Treemacs]]
-- [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
@@ -284,6 +284,11 @@ Persist vertigo history
     (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
 
+* EAT
+#+begin_src elisp
+  (use-package eat)
+#+end_src
+
 * Perspective
 
 This enables support for different workspaces
@@ -342,19 +347,6 @@ launched from outside a shell
     (use-package treemacs-magit
       :after (treemacs magit))
 
-#+end_src
-
-* Vterm
-
-#+begin_src elisp :eval no
-  (use-package vterm
-  :init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
-  :hook
-  (vterm-mode . (lambda ()
-                  (display-line-numbers-mode 0) ;; Disable line numbers
-                  (setq fill-column nil)))      ;; Disable fill-column
-  )
-  (use-package multi-vterm)
 #+end_src
 
 * Undotree
