@@ -256,8 +256,7 @@ Persist vertigo history
 #+BEGIN_SRC elisp
   (use-package consult
     :config
-    (global-set-key (kbd "C-x r b") #'consult-bookmark)
-    (global-set-key (kbd "C-x b") #'consult-buffer))
+    (global-set-key (kbd "C-x r b") #'consult-bookmark))
 #+END_SRC
 
 * Embark
@@ -291,9 +290,14 @@ This enables support for different workspaces
 
 #+begin_src elisp
   (use-package perspective
-  :init
+    :bind
+    ("C-x b" . persp-switch-to-buffer*)
+    ("C-x k" . persp-kill-buffer*)
+    :custom
+    (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
+    :init
     (setq persp-suppress-no-prefix-key-warning t)
-  (persp-mode))
+    (persp-mode))
 #+end_src
 
 * Exec Path from shell

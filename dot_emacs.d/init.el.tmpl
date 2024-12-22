@@ -132,8 +132,7 @@
 
 (use-package consult
   :config
-  (global-set-key (kbd "C-x r b") #'consult-bookmark)
-  (global-set-key (kbd "C-x b") #'consult-buffer))
+  (global-set-key (kbd "C-x r b") #'consult-bookmark))
 
 (use-package embark
   :bind
@@ -158,9 +157,14 @@
   (embark-collect-mode . consult-preview-at-point-mode))
 
 (use-package perspective
-:init
+  :bind
+  ("C-x b" . persp-switch-to-buffer*)
+  ("C-x k" . persp-kill-buffer*)
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
+  :init
   (setq persp-suppress-no-prefix-key-warning t)
-(persp-mode))
+  (persp-mode))
 
 (use-package exec-path-from-shell
   :config
