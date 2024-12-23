@@ -229,6 +229,14 @@
   :config
   (global-evil-surround-mode 1))
 
+(setq visible-cursor nil)
+(blink-cursor-mode -1)
+(use-package evil-terminal-cursor-changer
+:config
+ (unless (display-graphic-p)
+ (require 'evil-terminal-cursor-changer)
+ (evil-terminal-cursor-changer-activate)))
+
 (use-package chezmoi)
 
 (use-package fish-mode)

@@ -36,6 +36,7 @@ org-babel-tangle.
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
+  - [[#evil-terminal-cursor-change][Evil Terminal Cursor Change]]
 - [[#chezmoi][Chezmoi]]
 - [[#fish][Fish]]
 - [[#lsp][LSP]]
@@ -394,6 +395,16 @@ launched from outside a shell
   (global-evil-surround-mode 1))
 #+end_src
 
+** Evil Terminal Cursor Change
+#+begin_src elisp
+  (setq visible-cursor nil)
+  (blink-cursor-mode -1)
+  (use-package evil-terminal-cursor-changer
+  :config
+   (unless (display-graphic-p)
+   (require 'evil-terminal-cursor-changer)
+   (evil-terminal-cursor-changer-activate)))
+#+end_src
 * Chezmoi
 #+begin_src elisp
   (use-package chezmoi)
