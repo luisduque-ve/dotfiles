@@ -14,6 +14,7 @@ org-babel-tangle.
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
   - [[#use-package-setup][Use package setup]]
   - [[#ui][UI]]
+- [[#ediff][Ediff]]
 - [[#org][Org]]
   - [[#org-anki][Org Anki]]
   - [[#toc-org][toc-org]]
@@ -168,7 +169,11 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
     :config (save-place-mode 1))
 #+end_src
 
-
+* Ediff
+#+begin_src elisp
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+#+end_src
 * Org
 
 Core org mode configs

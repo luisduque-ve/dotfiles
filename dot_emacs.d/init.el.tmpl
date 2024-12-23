@@ -83,6 +83,9 @@
 (use-package saveplace-pdf-view
   :config (save-place-mode 1))
 
+(setq ediff-split-window-function 'split-window-horizontally)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 (setq org-directory "~/org/")
 
 (setq org-todo-keywords
