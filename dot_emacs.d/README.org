@@ -223,16 +223,6 @@ Automatically create table of content
     :config
     (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-  (defun my-magit-cherry-pick-from-hash ()
-    "Cherry-pick a Git commit using the hash under the cursor.
-     Useful to cherry pick from any buffer which has a hash.
-     For example: org tables"
-    (interactive)
-    (let ((hash (thing-at-point 'word t)))
-      (if (and hash (string-match-p "\\`[a-f0-9]\\{7,40\\}\\'" hash))
-	  (magit-run-git "cherry-pick" hash)
-	(message "Invalid or no Git hash found under the cursor."))))
-
   (use-package magit-todos
     :config (magit-todos-mode 1))
 #+END_SRC
