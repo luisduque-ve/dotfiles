@@ -88,6 +88,7 @@ Keep this at the very top
 
 #+begin_src elisp
   (setq ring-bell-function 'ignore)
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
 
 #+begin_src elisp

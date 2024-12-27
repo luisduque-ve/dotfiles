@@ -25,6 +25,7 @@
 (setq use-package-always-ensure t)
 
 (setq ring-bell-function 'ignore)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (use-package all-the-icons
 :if (display-graphic-p))
