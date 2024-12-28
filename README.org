@@ -1,0 +1,40 @@
+#+TITLE: My Dotfiles
+
+This repository contains my personal dotfiles, managed using
+[[https://www.chezmoi.io/][chezmoi]].
+
+* HTTP init
+#+begin_src bash
+chezmoi init --apply luisduque-ve
+#+end_src
+
+* SSH init
+#+begin_src bash
+chezmoi init --apply git@github.com:luisduque-ve/dotfiles.git
+#+end_src
+
+** [[https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#use-templates][Per-Machine Configuration]]
+For each machine, you should have a unique
+`~/.config/chezmoi/chezmoi.toml` file which contains machine-specific
+values. This file is not tracked in the git repository for privacy and
+security reasons.
+
+*** chezmoi.toml Example
+Here's an example of what your `chezmoi.toml` file might look like:
+
+#+begin_src toml
+[data]
+ai_support = false
+brew_path = "/opt/homebrew"
+ca_certificate = ""
+email = "email used by tools like git"
+#+end_src
+
+In this file, `email` and `fish_path` are custom variables that can be
+used in your dotfiles templates.
+
+* Fonts
+
+I use DejaVuSansM Nerd Font for anything not coding related, and
+FiraCode Nerd Font for anything else. Both fonts can be downloaded
+[[https://www.nerdfonts.com/font-downloads][here]].
