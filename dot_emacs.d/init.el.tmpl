@@ -163,8 +163,6 @@
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
-(use-package eat)
-
 (use-package perspective
   :bind
   ("C-x b" . persp-switch-to-buffer*)
@@ -200,6 +198,15 @@
 
 (use-package treemacs-magit
   :after (treemacs magit))
+
+(use-package vterm
+:init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
+:hook
+(vterm-mode . (lambda ()
+                (display-line-numbers-mode 0) ;; Disable line numbers
+                (setq fill-column nil)))      ;; Disable fill-column
+)
+(use-package multi-vterm)
 
 (use-package vundo)
 
