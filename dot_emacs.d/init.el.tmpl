@@ -43,10 +43,10 @@
   :init (doom-modeline-mode 1))
 
 (defun my/get-font-size ()
-  "Return 140 if in a WSL environment, otherwise 170."
+  "Return 140 if in a WSL environment, otherwise 190."
   (if (getenv "WSL_DISTRO_NAME")
       140
-    180))
+    190))
 
 (global-display-fill-column-indicator-mode)
 (global-hl-line-mode 1)

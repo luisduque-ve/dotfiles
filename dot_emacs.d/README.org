@@ -119,10 +119,10 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 
 #+BEGIN_SRC elisp
 (defun my/get-font-size ()
-  "Return 140 if in a WSL environment, otherwise 170."
+  "Return 140 if in a WSL environment, otherwise 190."
   (if (getenv "WSL_DISTRO_NAME")
       140
-    180))
+    190))
 #+END_SRC
 
 #+BEGIN_SRC elisp
