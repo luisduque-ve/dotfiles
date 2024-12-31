@@ -20,7 +20,6 @@ return {
           watch = true,
         },
       })
-      local telescope = require("telescope")
       -- The below configuration wll allow you to automatically
       -- apply changes on files under chezmoi source path.
       vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -33,7 +32,6 @@ return {
           vim.schedule(edit_watch)
         end,
       })
-      telescope.load_extension('chezmoi')
     end
   }
 }

@@ -6,7 +6,6 @@ return {
   { import = "plugins.languages.markdown" },
   { import = "plugins.languages.python" },
   { import = "plugins.lsp" },
-  { import = "plugins.telescope" },
   { import = "plugins.testing" },
   { import = "plugins.treesitter" },
   { import = "plugins.ui" },
