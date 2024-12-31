@@ -4,6 +4,14 @@ return {
   event = "VeryLazy",
   config = function()
     local fzf = require("fzf-lua")
+    fzf.setup({
+      keymap = {
+        builtin = {
+          ["<C-d>"] = "preview-page-down",
+          ["<C-u>"] = "preview-page-up",
+        }
+      }
+    })
     vim.keymap.set("n", "<leader><leader>", function()
       vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
       if vim.v.shell_error == 0 then
