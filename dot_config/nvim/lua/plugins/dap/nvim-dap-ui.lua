@@ -4,7 +4,6 @@ return {
 	ft = "python",
 	dependencies = {
 		"mfussenegger/nvim-dap",
-		"rcarriga/cmp-dap",
 		"nvim-neotest/nvim-nio",
 	},
 	config = function()
