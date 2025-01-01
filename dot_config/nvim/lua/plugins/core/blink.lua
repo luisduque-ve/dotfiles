@@ -3,7 +3,7 @@ return {
   -- about the dap source
   {
     'saghen/blink.compat',
-    dependencies = { "rcarriga/cmp-dap" },
+    dependencies = { "rcarriga/cmp-dap", "zbirenbaum/copilot-cmp", },
     version = '*',
     lazy = true,
     opts = {},
@@ -26,9 +26,16 @@ return {
         return vim.bo.buftype ~= "prompt" or require("cmp_dap").is_dap_buffer()
       end,
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'dap' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'dap', 'copilot', 'lazydev', },
         providers = {
           dap = { name = "dap", module = "blink.compat.source" },
+          copilot = { name = "copilot", module = "blink.compat.source" },
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 100,
+          },
         },
       },
     },
