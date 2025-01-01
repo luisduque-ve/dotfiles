@@ -122,7 +122,11 @@ return {
       },
     }
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- Integrate Blink capabilities
+    local capabilities = require("blink.cmp").get_lsp_capabilities(
+      vim.lsp.protocol.make_client_capabilities(),
+      true
+    )
 
     -- Ensure the servers above are installed
     local mason_lspconfig = require("mason-lspconfig")
