@@ -37,7 +37,6 @@ map({ "n" }, "<leader>un", "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:t'))<CR
 
 -- others
 map({ "n" }, "<leader>l", "<CMD>Lazy<CR>", "lazy")
-map({ "n" }, "<leader>gh", "<CMD>!pre-commit run<CR>", "pre_commit")
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", "escape_and_clear_hlsearch")
