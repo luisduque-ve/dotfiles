@@ -10,8 +10,6 @@ return {
   },
   {
     'saghen/blink.cmp',
-    -- optional: provides snippets for the snippet source
-    -- dependencies = 'rafamadriz/friendly-snippets',
     version = '*',
 
     ---@module 'blink.cmp'
@@ -26,7 +24,7 @@ return {
         return vim.bo.buftype ~= "prompt" or require("cmp_dap").is_dap_buffer()
       end,
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'dap', 'copilot', 'lazydev', },
+        default = { 'lsp', 'path', 'buffer', 'dap', 'copilot', 'lazydev', },
         providers = {
           dap = { name = "dap", module = "blink.compat.source" },
           copilot = { name = "copilot", module = "blink.compat.source" },
