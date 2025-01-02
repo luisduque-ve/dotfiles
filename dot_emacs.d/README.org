@@ -378,6 +378,7 @@ launched from outside a shell
     (setq evil-want-C-u-scroll t)
     (setq evil-want-C-i-jump t)
     (setq evil-undo-system 'undo-redo)
+    (setq evil-search-module 'evil-search)
 
     ;; Evil advices
     (advice-add 'evil-search-next :after #'recenter-advice)
