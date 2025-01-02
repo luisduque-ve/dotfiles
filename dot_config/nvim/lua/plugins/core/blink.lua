@@ -25,6 +25,7 @@ return {
       end,
       sources = {
         default = { 'lsp', 'path', 'buffer', 'dap', 'copilot', 'lazydev', },
+        cmdline = {}, -- disable cmd completions
         providers = {
           dap = { name = "dap", module = "blink.compat.source" },
           copilot = { name = "copilot", module = "blink.compat.source" },
