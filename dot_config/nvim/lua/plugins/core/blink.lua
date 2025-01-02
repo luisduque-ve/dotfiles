@@ -3,13 +3,14 @@ return {
   -- about the dap source
   {
     'saghen/blink.compat',
-    dependencies = { "rcarriga/cmp-dap", "zbirenbaum/copilot-cmp", },
+    dependencies = { "rcarriga/cmp-dap" },
     version = '*',
     lazy = true,
     opts = {},
   },
   {
     'saghen/blink.cmp',
+    dependencies = { "giuxtaposition/blink-cmp-copilot" },
     version = '*',
 
     ---@module 'blink.cmp'
@@ -28,12 +29,17 @@ return {
         cmdline = {}, -- disable cmd completions
         providers = {
           dap = { name = "dap", module = "blink.compat.source" },
-          copilot = { name = "copilot", module = "blink.compat.source" },
           lazydev = {
             name = "LazyDev",
             module = "lazydev.integrations.blink",
             -- make lazydev completions top priority (see `:h blink.cmp`)
             score_offset = 100,
+          },
+          copilot = {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            score_offset = -100, -- setting low priority, garbage must of the time
+            async = true,
           },
         },
       },
