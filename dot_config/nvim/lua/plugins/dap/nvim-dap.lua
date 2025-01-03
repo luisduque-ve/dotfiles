@@ -31,7 +31,9 @@ return {
 			dap.step_into()
 		end, { desc = "into" })
 		dap.listeners.after.event_initialized["dapui_config"] = function()
-			dap.repl.open()
+			dap.repl.open({
+				height = 10,
+			})
 		end
 		dap.listeners.before.event_terminated["dapui_config"] = function()
 			dap.repl.close()
