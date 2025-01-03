@@ -5,7 +5,7 @@ return {
 		"mfussenegger/nvim-dap",
 	},
 	config = function()
-		require("dap-python").setup(vim.g.python3_host_prog)
+		require("dap-python").setup("python")
 		local dap_configurations = require("dap").configurations.python
 
 		-- Function to prompt for an argument with a default value
