@@ -13,7 +13,6 @@ packages = [
     "gettext",  # neovim build requirement
     "htop",  # system utility
     "jq",  # cli json utility
-    "lazygit",  # git client
     "ninja",  # neovim build requirement
     "nvm",  # node version manager
     "openssl",  # pyenv dependency
@@ -29,7 +28,9 @@ packages = [
     "xz",  # pyenv dependency
     "zlib",  # pyenv dependency
     "zoxide",  # better current dir changing
+    "zsh-syntax-highlighting",
 ]
+
 
 # Function to check if Homebrew is installed
 def is_homebrew_installed():

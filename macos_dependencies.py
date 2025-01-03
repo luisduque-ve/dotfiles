@@ -17,8 +17,6 @@ formulaes = [
     "grammarly-desktop",  # grammar tool
     "haskell-language-server",
     "jq",  # cli json utility
-    "krisp",  # noise reduction
-    "lazygit",  # git tool
     "nikitabobko/tap/aerospace",  # tiling window manager
     "nvm",  # node version manager
     "openssl",  # pyenv dependency
@@ -36,7 +34,9 @@ formulaes = [
     "zlib",  # pyenv dependency
     "zoom",  # video calling
     "zoxide",  # better current dir changing
+    "zsh-syntax-highlighting",
 ]
+
 
 # Function to check if package is installed
 def is_package_installed(package):

@@ -3,15 +3,18 @@
 This repository contains my personal dotfiles, managed using
 [[https://www.chezmoi.io/][chezmoi]].
 
-* Table of content :TOC:
+* Table of content :TOC_3:
 - [[#ssh-init][SSH init]]
   - [[#per-machine-configuration][Per-Machine Configuration]]
+    - [[#chezmoitoml-example][chezmoi.toml Example]]
 - [[#fonts][Fonts]]
 - [[#git][Git]]
 - [[#zsh][ZSH]]
   - [[#variables][Variables]]
   - [[#node][Node]]
   - [[#python][Python]]
+  - [[#extensions][Extensions]]
+    - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
 
 * SSH init
 #+begin_src bash
@@ -114,10 +117,21 @@ This is the same but applies to the .zlogin file
   eval "$(pyenv init -)"
 #+end_src
 
-#+begin_src shell :tangle dot_zshrc.tmpl
 
-eval "$(ssh-agent -s > /dev/null 2>&1)"
+** Extensions
+This are packages or commands that needs to be run at the very button,
+for example: sourcing third party plugins.
+
+*** [[https://github.com/zsh-users/zsh-syntax-highlighting][zsh-syntax-highlighting]]
+Fish like syntax highlight
+#+begin_src shell :tangle dot_zshrc.tmpl
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#+end_src
+
+
+
+# ### PENDING TO INTEGRATE
+# eval "$(ssh-agent -s > /dev/null 2>&1)"
 
 # Enable starship
 # eval "$(starship init zsh)"
-#+end_src
