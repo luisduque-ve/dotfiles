@@ -1,13 +1,12 @@
 local function map(modes, keybinding, action, description)
-  for _, mode in ipairs(modes) do
-    local options = { silent = true }
-    if description then
-      options.desc = description
-    end
-    vim.keymap.set(mode, keybinding, action, options)
-  end
+	for _, mode in ipairs(modes) do
+		local options = { silent = true }
+		if description then
+			options.desc = description
+		end
+		vim.keymap.set(mode, keybinding, action, options)
+	end
 end
-
 
 -- Do not loose the center ;-)
 map({ "n" }, "<C-o>", "<C-o>zz")
@@ -27,13 +26,14 @@ map({ "n" }, "]q", "<CMD>cnext<CR>zz", "cnext")
 map({ "n" }, "[Q", "<CMD>cfirst<CR>zz", "cfirst")
 map({ "n" }, "]Q", "<CMD>clast<CR>zz", "clast")
 
+-- Tabs
+map({ "n" }, "[t", "<CMD>tabprevious<CR>", "tabprevious")
+map({ "n" }, "]t", "<CMD>tabnext<CR>", "tabnext")
+
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
 map({ "n" }, "<leader>bd", "<CMD>bd<CR>", "close")
 map({ "n" }, "<leader>bo", "<CMD>on<CR>", "only")
-
--- utils
-map({ "n" }, "<leader>un", "<cmd>lua vim.fn.setreg('+', vim.fn.expand('%:t'))<CR>", "yank_filename")
 
 -- others
 map({ "n" }, "<leader>l", "<CMD>Lazy<CR>", "lazy")
