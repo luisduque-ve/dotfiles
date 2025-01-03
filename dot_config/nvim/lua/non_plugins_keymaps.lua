@@ -26,9 +26,6 @@ map({ "n" }, "]q", "<CMD>cnext<CR>zz", "cnext")
 map({ "n" }, "[Q", "<CMD>cfirst<CR>zz", "cfirst")
 map({ "n" }, "]Q", "<CMD>clast<CR>zz", "clast")
 
--- Tabs
-map({ "n" }, "[t", "<CMD>tabprevious<CR>", "tabprevious")
-map({ "n" }, "]t", "<CMD>tabnext<CR>", "tabnext")
 
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
