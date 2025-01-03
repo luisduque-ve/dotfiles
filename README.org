@@ -3,10 +3,14 @@
 This repository contains my personal dotfiles, managed using
 [[https://www.chezmoi.io/][chezmoi]].
 
-* HTTP init
-#+begin_src bash
-chezmoi init --apply luisduque-ve
-#+end_src
+* Table of content :TOC:
+- [[#ssh-init][SSH init]]
+  - [[#per-machine-configuration][Per-Machine Configuration]]
+- [[#fonts][Fonts]]
+- [[#zsh][ZSH]]
+  - [[#variables][Variables]]
+  - [[#node][Node]]
+  - [[#python][Python]]
 
 * SSH init
 #+begin_src bash
@@ -30,7 +34,7 @@ ca_certificate = ""
 email = "email used by tools like git"
 #+end_src
 
-In this file, `email` and `fish_path` are custom variables that can be
+In this file, `email` is a custom variable that can be
 used in your dotfiles templates.
 
 * Fonts
@@ -38,3 +42,48 @@ used in your dotfiles templates.
 I use DejaVuSansM Nerd Font for anything not coding related, and
 FiraCode Nerd Font for anything else. Both fonts can be downloaded
 [[https://www.nerdfonts.com/font-downloads][here]].
+
+* ZSH
+
+I really like but I find it not convenient in my workflow, as is not a
+loggin shell, several GUI programs can has odd behaviours that is why
+I have ZSH extension to emulate fish shell instead of use it.
+
+** Variables
+#+begin_src bash :tangle dot_zshrc.tmpl
+export PATH="{{- .brew_path -}}/bin:$PATH"
+export PATH="{{- .brew_path -}}/sbin:$PATH"
+export EDITOR="nvim"
+export VISUAL="nvim"
+#+end_src
+
+** Node
+#+begin_src bash :tangle dot_zshrc.tmpl
+mkdir -p ~/.nvm
+export NVM_DIR="$HOME/.nvm"
+# This loads nvm
+[ -s "{{- .brew_path -}}/opt/nvm/nvm.sh" ] && \. "{{- .brew_path -}}/opt/nvm/nvm.sh"
+# This loads nvm bash_completion
+[ -s "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm"
+#+end_src
+
+** Python
+#+begin_src bash :tangle dot_zshrc.tmpl
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+#+end_src
+
+#+begin_src bash :tangle dot_zlogin
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+#+end_src
+
+#+begin_src bash :tangle dot_zshrc.tmpl
+
+eval "$(ssh-agent -s > /dev/null 2>&1)"
+
+# Enable starship
+# eval "$(starship init zsh)"
+#+end_src
