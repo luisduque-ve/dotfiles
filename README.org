@@ -7,6 +7,7 @@ This repository contains my personal dotfiles, managed using
 - [[#ssh-init][SSH init]]
   - [[#per-machine-configuration][Per-Machine Configuration]]
 - [[#fonts][Fonts]]
+- [[#git][Git]]
 - [[#zsh][ZSH]]
   - [[#variables][Variables]]
   - [[#node][Node]]
@@ -42,6 +43,37 @@ used in your dotfiles templates.
 I use DejaVuSansM Nerd Font for anything not coding related, and
 FiraCode Nerd Font for anything else. Both fonts can be downloaded
 [[https://www.nerdfonts.com/font-downloads][here]].
+
+* Git
+#+begin_src toml :tangle dot_gitconfig.tmpl
+  [user]
+    name = Luis Duque
+    email = {{ .email | quote }}
+  [core]
+    editor = vim
+  [merge]
+    conflictstyle = diff3
+  [diff]
+    colorMoved = default
+  [pull]
+    rebase = false
+  [push]
+    autoSetupRemote = true
+  [init]
+    defaultBranch = main
+  [alias]
+    cb = checkout -b
+    po = pull origin
+    st = status
+  [http]
+    sslVerify = true
+    {{- if .ca_certificate }}
+    # remember to use \\ on windows
+    sslcainfo = {{ .ca_certificate }}
+    {{- end }}
+  [rerere]
+	  enabled = true
+#+end_src
 
 * ZSH
 
