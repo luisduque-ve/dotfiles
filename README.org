@@ -68,12 +68,14 @@ export NVM_DIR="$HOME/.nvm"
 #+end_src
 
 ** Python
+This loads the pyenv config into .zshrc
 #+begin_src bash :tangle dot_zshrc.tmpl
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 #+end_src
 
+This is the same but applies to the .zlogin file
 #+begin_src bash :tangle dot_zlogin
   export PYENV_ROOT="$HOME/.pyenv"
   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
