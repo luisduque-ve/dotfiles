@@ -19,7 +19,16 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+export PYDEVD_DISABLE_FILE_VALIDATION=1
+
+pysetup() {
+  python -m pip install -r ~/.local/share/chezmoi/requirements.txt
+}
+
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^F' forward-word
+
+export ABBR_USER_ABBREVIATIONS_FILE=$HOME/.config/zsh-abbr/abbreviations
+source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh

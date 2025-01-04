@@ -16,6 +16,7 @@ This repository contains my personal dotfiles, managed using
   - [[#extensions][Extensions]]
     - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
     - [[#zsh-autosuggestions][zsh-autosuggestions]]
+    - [[#zsh-abbr][zsh-abbr]]
 
 * SSH init
 #+begin_src bash
@@ -104,6 +105,7 @@ This enables using the default editor to edit commands with alt+v
   bindkey '^[v' edit-command-line
 #+end_src
 
+
 ** Node
 #+begin_src shell :tangle dot_zshrc.tmpl
 mkdir -p ~/.nvm
@@ -129,11 +131,17 @@ This is the same but tangles to the .zlogin file
   eval "$(pyenv init -)"
 #+end_src
 
+Functions an variables
+
+#+begin_src shell :tangle dot_zshrc.tmpl
+  export PYDEVD_DISABLE_FILE_VALIDATION=1
+
+  pysetup() {
+    python -m pip install -r ~/.local/share/chezmoi/requirements.txt
+  }
+#+end_src
 
 ** Extensions
-This are packages or commands that needs to be run at the very button,
-for example: sourcing third party plugins.
-
 *** [[https://github.com/zsh-users/zsh-syntax-highlighting][zsh-syntax-highlighting]]
 Fish like syntax highlight
 #+begin_src shell :tangle dot_zshrc.tmpl
@@ -145,6 +153,12 @@ Fish like autosuggestions for zsh
 #+begin_src shell :tangle dot_zshrc.tmpl
   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   bindkey '^F' forward-word
+#+end_src
+
+*** [[https://github.com/olets/zsh-abbr][zsh-abbr]]
+#+begin_src shell :tangle dot_zshrc.tmpl
+  export ABBR_USER_ABBREVIATIONS_FILE=$HOME/.config/zsh-abbr/abbreviations
+  source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
 #+end_src
 
 # ### PENDING TO INTEGRATE
