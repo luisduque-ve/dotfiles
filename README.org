@@ -10,7 +10,7 @@ This repository contains my personal dotfiles, managed using
 - [[#fonts][Fonts]]
 - [[#git][Git]]
 - [[#zsh][ZSH]]
-  - [[#variables][Variables]]
+  - [[#core][Core]]
   - [[#node][Node]]
   - [[#python][Python]]
   - [[#extensions][Extensions]]
@@ -86,7 +86,8 @@ loggin shell, several GUI programs can has odd behaviours that is why
 I have ZSH extension to emulate fish shell instead of use it.
 
 ** Core
-*** Variables
+This are my environment variables, nothing specific goes here for
+example variables related to python, goes in the python section.
 #+begin_src shell :tangle dot_zshrc.tmpl
 export PATH="{{- .brew_path -}}/bin:$PATH"
 export PATH="{{- .brew_path -}}/sbin:$PATH"
@@ -94,7 +95,6 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 #+end_src
 
-*** Settings
 This enables using the default editor to edit commands with alt+v
 
 #+begin_src shell :tangle dot_zshrc.tmpl
