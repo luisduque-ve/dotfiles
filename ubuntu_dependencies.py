@@ -29,6 +29,7 @@ packages = [
     "zlib",  # pyenv dependency
     "zoxide",  # better current dir changing
     "zsh-syntax-highlighting",
+    "zsh-autosuggestions",
 ]
 
 

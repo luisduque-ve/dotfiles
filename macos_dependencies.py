@@ -35,6 +35,7 @@ formulaes = [
     "zoom",  # video calling
     "zoxide",  # better current dir changing
     "zsh-syntax-highlighting",
+    "zsh-autosuggestions",
 ]
 
 

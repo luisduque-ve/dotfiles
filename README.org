@@ -15,6 +15,7 @@ This repository contains my personal dotfiles, managed using
   - [[#python][Python]]
   - [[#extensions][Extensions]]
     - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
+    - [[#zsh-autosuggestions][zsh-autosuggestions]]
 
 * SSH init
 #+begin_src bash
@@ -128,7 +129,12 @@ Fish like syntax highlight
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #+end_src
 
-
+*** [[https://github.com/zsh-users/zsh-autosuggestions][zsh-autosuggestions]]
+Fish like autosuggestions for zsh
+#+begin_src shell :tangle dot_zshrc.tmpl
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  bindkey '^F' forward-word
+#+end_src
 
 # ### PENDING TO INTEGRATE
 # eval "$(ssh-agent -s > /dev/null 2>&1)"
