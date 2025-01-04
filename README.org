@@ -119,6 +119,15 @@ This is the same but applies to the .zlogin file
 #+end_src
 
 
+This enables using the default editor to edit commands with alt+v
+
+#+begin_src shell :tangle dot_zshrc.tmpl
+  autoload -Uz edit-command-line
+  zle -N edit-command-line
+
+  bindkey '^[v' edit-command-line
+#+end_src
+
 ** Extensions
 This are packages or commands that needs to be run at the very button,
 for example: sourcing third party plugins.
