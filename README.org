@@ -85,12 +85,23 @@ I really like fish shell but I find it not convenient in my workflow, as is not 
 loggin shell, several GUI programs can has odd behaviours that is why
 I have ZSH extension to emulate fish shell instead of use it.
 
-** Variables
+** Core
+*** Variables
 #+begin_src shell :tangle dot_zshrc.tmpl
 export PATH="{{- .brew_path -}}/bin:$PATH"
 export PATH="{{- .brew_path -}}/sbin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
+#+end_src
+
+*** Settings
+This enables using the default editor to edit commands with alt+v
+
+#+begin_src shell :tangle dot_zshrc.tmpl
+  autoload -Uz edit-command-line
+  zle -N edit-command-line
+
+  bindkey '^[v' edit-command-line
 #+end_src
 
 ** Node
@@ -118,15 +129,6 @@ This is the same but tangles to the .zlogin file
   eval "$(pyenv init -)"
 #+end_src
 
-** Core
-This enables using the default editor to edit commands with alt+v
-
-#+begin_src shell :tangle dot_zshrc.tmpl
-  autoload -Uz edit-command-line
-  zle -N edit-command-line
-
-  bindkey '^[v' edit-command-line
-#+end_src
 
 ** Extensions
 This are packages or commands that needs to be run at the very button,
