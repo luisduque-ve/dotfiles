@@ -17,6 +17,7 @@ This repository contains my personal dotfiles, managed using
     - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
     - [[#zsh-autosuggestions][zsh-autosuggestions]]
     - [[#zsh-abbr][zsh-abbr]]
+    - [[#fzf][Fzf]]
 
 * SSH init
 #+begin_src bash
@@ -166,6 +167,10 @@ Fish like autosuggestions for zsh
   source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
 #+end_src
 
+*** Fzf
+#+begin_src shell :tangle dot_zshrc.tmpl
+  source <(fzf --zsh)
+#+end_src
 # ### PENDING TO INTEGRATE
 
 # Enable starship
