@@ -108,12 +108,12 @@ This enables using the default editor to edit commands with alt+v
 
 ** Node
 #+begin_src shell :tangle dot_zshrc.tmpl
-mkdir -p ~/.nvm
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "{{- .brew_path -}}/opt/nvm/nvm.sh" ] && \. "{{- .brew_path -}}/opt/nvm/nvm.sh"
-# This loads nvm bash_completion
-[ -s "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "{{- .brew_path -}}/opt/nvm/etc/bash_completion.d/nvm"
+  mkdir -p ~/.nvm
+  export NVM_DIR="$HOME/.nvm"
+  # This loads nvm
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
+  # This loads nvm bash_completion
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
 #+end_src
 
 ** Python
