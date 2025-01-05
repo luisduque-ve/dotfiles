@@ -20,12 +20,14 @@ map({ "n" }, "}", "}zz")
 map({ "n" }, "{", "{zz")
 
 -- Quickfix
-
 map({ "n" }, "[q", "<CMD>cprevious<CR>zz", "cprevious")
 map({ "n" }, "]q", "<CMD>cnext<CR>zz", "cnext")
 map({ "n" }, "[Q", "<CMD>cfirst<CR>zz", "cfirst")
 map({ "n" }, "]Q", "<CMD>clast<CR>zz", "clast")
 
+-- Tabs
+map({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", "tabnext")
+map({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", "tabprevious")
 
 -- buffers
 map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
