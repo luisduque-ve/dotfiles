@@ -3,6 +3,15 @@ export PATH="{{- .brew_path -}}/sbin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# WSL-specific
+export REQUESTS_CA_BUNDLE='/etc/ssl/certs/ca-certificates.crt'
+export NODE_EXTRA_CA_CERTS='/etc/ssl/certs/ca-certificates.crt'
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+{{   end }}
+{{ end }}
+
 autoload -Uz edit-command-line
 zle -N edit-command-line
 
@@ -10,12 +19,109 @@ bindkey '^[v' edit-command-line
 
 eval "$(ssh-agent -s > /dev/null 2>&1)"
 
+a() {
+  local query=$1
+  local selected_dir
+
+  if [[ -n $query ]]; then
+    selected_dir=$(zoxide query -l | grep -i "$query" | fzf)
+  else
+    selected_dir=$(zoxide query -l | fzf)
+  fi
+
+  [[ -n $selected_dir ]] && cd "$selected_dir"
+}
+
+A() {
+  local query=$1
+  local selected_dir
+
+  if [[ -n $query ]]; then
+    selected_dir=$(zoxide query -l | grep -i "$query" | fzf)
+  else
+    selected_dir=$(zoxide query -l | fzf)
+  fi
+
+  if [[ -n $selected_dir ]]; then
+    zoxide remove "$selected_dir"
+    echo "Removed $selected_dir from zoxide history."
+  else
+    echo "No directory selected."
+  fi
+}
+
+custom_cat() {
+  if [[ $# -lt 2 ]]; then
+    echo "Usage: custom_cat <file_extension> <recursive_flag>"
+    return 1
+  fi
+
+  local ext=$1
+  local recursive=$2
+  local find_command
+
+  if [[ $recursive == "true" ]]; then
+    find_command="find . -name '*.$ext' -type f"
+  else
+    find_command="find . -maxdepth 1 -name '*.$ext' -type f"
+  fi
+
+  for file in $(eval "$find_command"); do
+    echo "### $file"
+    echo ""
+    cat "$file"
+    echo ""
+  done
+}
+
+
+
+conflict_generator() {
+  local folder_name="git-conflict-test"
+
+  # Create/override the folder
+  if [[ -d $folder_name ]]; then
+    rm -rf "$folder_name"
+  fi
+
+  mkdir "$folder_name"
+  cd "$folder_name" || return
+
+  # Init a git repository
+  git init
+
+  # Create a file
+  echo "Initial content" > dummy.txt
+  git add dummy.txt
+  git commit -m "Initial commit"
+
+  # Create a new branch
+  git branch conflict_branch
+
+  # Modify the file in the master branch
+  echo "Content added in master branch" >> dummy.txt
+  git commit -am "Modify file in master branch"
+
+  # Switch to the conflict branch and modify the file
+  git checkout conflict_branch
+  echo "Content added in conflict branch" >> dummy.txt
+  git commit -am "Modify file in conflict branch"
+
+  echo "Setup complete. You can now try to merge 'conflict_branch' into 'master' to create a conflict."
+  cd ..
+}
+
 mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
 # This loads nvm
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 # This loads nvm bash_completion
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 export PYDEVD_DISABLE_FILE_VALIDATION=1
 
@@ -31,4 +137,10 @@ bindkey '^F' forward-word
 export ABBR_USER_ABBREVIATIONS_FILE=$HOME/.config/zsh-abbr/abbreviations
 source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
 
+export FZF_DEFAULT_OPTS="--color=bg:#fbf1c7,bg+:#ebdbb2,spinner:#458588,hl:#076678,fg:#3c3836,header:#3c3836,fg+:#3c3836,bg+:#d5c4a1,hl+:#076678"
+
 source <(fzf --zsh)
+
+eval "$(zoxide init zsh)"
+
+eval "$(starship init zsh)"
