@@ -8,7 +8,6 @@ packages = [
     "curl",  # http client
     "docker",  # docker, what else can I say? lol
     "eza",  # ls replacement
-    "fish",  # shell
     "fzf",  # fuzzy finder
     "gettext",  # neovim build requirement
     "htop",  # system utility

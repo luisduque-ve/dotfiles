@@ -11,7 +11,6 @@ formulaes = [
     "curl",  # http client
     "doll",  # show notifications on status bar
     "eza",  # ls replacement
-    "fish",  # shell
     "fzf",  # fuzzy finder
     "ghcup",  # haskell tool
     "grammarly-desktop",  # grammar tool
