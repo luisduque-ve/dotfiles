@@ -30,6 +30,7 @@ packages = [
     "zsh-syntax-highlighting",
     "zsh-autosuggestions",
     "zsh-vi-mode",
+    "olets/tap/zsh-abbr",
 ]
 
 
