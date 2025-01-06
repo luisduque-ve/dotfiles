@@ -1,46 +1,41 @@
-local function map(modes, keybinding, action, description)
-	for _, mode in ipairs(modes) do
-		local options = { silent = true }
-		if description then
-			options.desc = description
-		end
-		vim.keymap.set(mode, keybinding, action, options)
-	end
-end
+-- exit terminal mode
+vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
+vim.keymap.set({ "n", "v", "i", "t" }, "<C-c>t", "<CMD>term<CR>", { desc = "term" })
 
 -- Do not loose the center ;-)
-map({ "n" }, "<C-o>", "<C-o>zz")
-map({ "n" }, "<C-i>", "<C-i>zz")
-map({ "n" }, "<C-d>", "<C-d>zz")
-map({ "n" }, "<C-u>", "<C-u>zz")
-map({ "n" }, "n", "nzz")
-map({ "n" }, "N", "Nzz")
-map({ "n" }, "G", "Gzz")
-map({ "n" }, "}", "}zz")
-map({ "n" }, "{", "{zz")
+vim.keymap.set({ "n" }, "<C-o>", "<C-o>zz")
+vim.keymap.set({ "n" }, "<C-i>", "<C-i>zz")
+vim.keymap.set({ "n" }, "<C-d>", "<C-d>zz")
+vim.keymap.set({ "n" }, "<C-u>", "<C-u>zz")
+vim.keymap.set({ "n" }, "n", "nzz")
+vim.keymap.set({ "n" }, "N", "Nzz")
+vim.keymap.set({ "n" }, "G", "Gzz")
+vim.keymap.set({ "n" }, "}", "}zz")
+vim.keymap.set({ "n" }, "{", "{zz")
 
 -- Quickfix
-map({ "n" }, "[q", "<CMD>cprevious<CR>zz", "cprevious")
-map({ "n" }, "]q", "<CMD>cnext<CR>zz", "cnext")
-map({ "n" }, "[Q", "<CMD>cfirst<CR>zz", "cfirst")
-map({ "n" }, "]Q", "<CMD>clast<CR>zz", "clast")
+vim.keymap.set({ "n" }, "[q", "<CMD>cprevious<CR>zz", { desc = "cprevious" })
+vim.keymap.set({ "n" }, "]q", "<CMD>cnext<CR>zz", { desc = "cnext" })
+vim.keymap.set({ "n" }, "[Q", "<CMD>cfirst<CR>zz", { desc = "cfirst" })
+vim.keymap.set({ "n" }, "]Q", "<CMD>clast<CR>zz", { desc = "clast" })
 
 -- Tabs
-map({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", "tabnext")
-map({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", "tabprevious")
+vim.keymap.set({ "n", "v", "i", "t" }, "<C-c>p", "<CMD>tabnew<CR>", { desc = "tabnew" })
+vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
+vim.keymap.set({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", { desc = "tabprevious" })
 
 -- buffers
-map({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", "close_all")
-map({ "n" }, "<leader>bd", "<CMD>bd<CR>", "close")
-map({ "n" }, "<leader>bo", "<CMD>on<CR>", "only")
+vim.keymap.set({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", { desc = "close_all" })
+vim.keymap.set({ "n" }, "<leader>bd", "<CMD>bd<CR>", { desc = "close" })
+vim.keymap.set({ "n" }, "<leader>bo", "<CMD>on<CR>", { desc = "only" })
 
 -- others
-map({ "n" }, "<leader>l", "<CMD>Lazy<CR>", "lazy")
+vim.keymap.set({ "n" }, "<leader>l", "<CMD>Lazy<CR>", { desc = "lazy" })
 
 -- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", "escape_and_clear_hlsearch")
+vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "escape_and_clear_hlsearch" })
 
-map({ "n" }, "<C-h>", "<C-w>h", "left_window")
-map({ "n" }, "<C-j>", "<C-w>j", "lower_window")
-map({ "n" }, "<C-k>", "<C-w>k", "upper_window")
-map({ "n" }, "<C-l>", "<C-w>l", "right_window")
+vim.keymap.set({ "n" }, "<C-h>", "<C-w>h", { desc = "left_window" })
+vim.keymap.set({ "n" }, "<C-j>", "<C-w>j", { desc = "lower_window" })
+vim.keymap.set({ "n" }, "<C-k>", "<C-w>k", { desc = "upper_window" })
+vim.keymap.set({ "n" }, "<C-l>", "<C-w>l", { desc = "right_window" })
