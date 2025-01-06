@@ -17,6 +17,7 @@ This repository contains my personal dotfiles, managed using
     - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
     - [[#zsh-autosuggestions][zsh-autosuggestions]]
     - [[#zsh-abbr][zsh-abbr]]
+    - [[#zsh-vi-mode][zsh-vi-mode]]
     - [[#fzf][Fzf]]
     - [[#zoxide][Zoxide]]
     - [[#starship][Starship]]
@@ -267,6 +268,11 @@ Fish like autosuggestions for zsh
 #+begin_src shell :tangle dot_zshrc.tmpl
   export ABBR_USER_ABBREVIATIONS_FILE=$HOME/.config/zsh-abbr/abbreviations
   source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
+#+end_src
+
+*** [[https://github.com/jeffreytse/zsh-vi-mode][zsh-vi-mode]]
+#+begin_src shell :tangle dot_zshrc.tmpl
+  source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 #+end_src
 
 *** Fzf

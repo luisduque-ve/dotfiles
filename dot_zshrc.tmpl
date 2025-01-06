@@ -137,6 +137,8 @@ bindkey '^F' forward-word
 export ABBR_USER_ABBREVIATIONS_FILE=$HOME/.config/zsh-abbr/abbreviations
 source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 export FZF_DEFAULT_OPTS="--color=bg:#fbf1c7,bg+:#ebdbb2,spinner:#458588,hl:#076678,fg:#3c3836,header:#3c3836,fg+:#3c3836,bg+:#d5c4a1,hl+:#076678"
 
 source <(fzf --zsh)

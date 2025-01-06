@@ -29,6 +29,7 @@ packages = [
     "zoxide",  # better current dir changing
     "zsh-syntax-highlighting",
     "zsh-autosuggestions",
+    "zsh-vi-mode",
 ]
 
 
