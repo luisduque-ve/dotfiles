@@ -281,7 +281,11 @@ Fish like autosuggestions for zsh
 
 *** [[https://github.com/jeffreytse/zsh-vi-mode][zsh-vi-mode]]
 #+begin_src shell :tangle dot_zshrc.tmpl
-  source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+  # this is a really awesome plugin but is currently breaking others
+  # plugins mappings, I have it comment until the issue is resolved
+  # https://github.com/jeffreytse/zsh-vi-mode/issues/303
+  # uncomment the next line to re-enable it
+  # source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 #+end_src
 
 *** Fzf
