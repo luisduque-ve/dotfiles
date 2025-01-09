@@ -129,7 +129,7 @@ This enables using the default editor to edit commands with alt+v
 Start the ssh agent
 
 #+begin_src shell :tangle dot_zshrc.tmpl
-  eval "$(ssh-agent -s > /dev/null 2>&1)"
+  eval "$(ssh-agent -s)"
 #+end_src
 
 These are my custom functions
