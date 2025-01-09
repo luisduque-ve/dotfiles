@@ -10,6 +10,7 @@ org-babel-tangle.
 
 * Table of content :TOC:
 - [[#core][Core]]
+  - [[#performance][Performance]]
   - [[#advice-functions][Advice functions]]
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
   - [[#use-package-setup][Use package setup]]
@@ -43,6 +44,12 @@ org-babel-tangle.
 - [[#lsp][LSP]]
 
 * Core
+
+** Performance
+#+begin_src elisp
+  (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
+#+end_src
 ** Advice functions
 #+begin_src elisp
 (defun recenter-advice (&rest _args)
