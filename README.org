@@ -235,7 +235,6 @@ These are my custom functions
   export PYENV_ROOT="$HOME/.pyenv"
   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
 #+end_src
 
 
@@ -245,7 +244,13 @@ Functions an variables
   export PYDEVD_DISABLE_FILE_VALIDATION=1
 
   pysetup() {
+    ## Install install all cross env requirements like debugpy
     python -m pip install -r ~/.local/share/chezmoi/requirements.txt
+  }
+
+  pyinit() {
+    ## Enable auto enabling environments with .python-version file
+    eval "$(pyenv virtualenv-init -)"
   }
 #+end_src
 
