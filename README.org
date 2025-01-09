@@ -11,7 +11,6 @@ This repository contains my personal dotfiles, managed using
 - [[#git][Git]]
 - [[#zsh][ZSH]]
   - [[#core][Core]]
-  - [[#node][Node]]
   - [[#python][Python]]
   - [[#extensions][Extensions]]
     - [[#zsh-syntax-highlighting][zsh-syntax-highlighting]]
@@ -229,15 +228,6 @@ These are my custom functions
   }
 #+end_src
 
-** Node
-#+begin_src shell :tangle dot_zshrc.tmpl
-  mkdir -p ~/.nvm
-  export NVM_DIR="$HOME/.nvm"
-  # This loads nvm
-  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
-  # This loads nvm bash_completion
-  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
-#+end_src
 
 ** Python
 # This loads the pyenv config into .zshrc
