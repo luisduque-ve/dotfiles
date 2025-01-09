@@ -10,6 +10,9 @@ return {
 					["<C-d>"] = "preview-page-down",
 					["<C-u>"] = "preview-page-up",
 				},
+				fzf = {
+					["ctrl-q"] = "select-all+accept",
+				},
 			},
 		})
 		vim.keymap.set("n", "<leader><leader>", function()
