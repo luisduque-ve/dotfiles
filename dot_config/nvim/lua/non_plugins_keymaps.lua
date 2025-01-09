@@ -1,6 +1,8 @@
 -- exit terminal mode
 vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
 vim.keymap.set({ "n", "v", "i", "t" }, "<C-c>t", "<CMD>term<CR>", { desc = "term" })
+vim.keymap.set({ "t" }, "<C-o>", "<C-\\><C-n><C-o>")
+vim.keymap.set({ "t" }, "<C-i>", "<C-\\><C-n><C-i>")
 
 -- Do not loose the center ;-)
 vim.keymap.set({ "n" }, "<C-o>", "<C-o>zz")
@@ -20,7 +22,6 @@ vim.keymap.set({ "n" }, "[Q", "<CMD>cfirst<CR>zz", { desc = "cfirst" })
 vim.keymap.set({ "n" }, "]Q", "<CMD>clast<CR>zz", { desc = "clast" })
 
 -- Tabs
-vim.keymap.set({ "n", "v", "i", "t" }, "<C-c>p", "<CMD>tabnew<CR>", { desc = "tabnew" })
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", { desc = "tabprevious" })
 

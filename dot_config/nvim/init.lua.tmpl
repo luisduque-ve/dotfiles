@@ -72,6 +72,14 @@ vim.api.nvim_create_autocmd("BufRead", {
     command = "set filetype=markdown",
 })
 
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+})
+
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 -- WSL only config start

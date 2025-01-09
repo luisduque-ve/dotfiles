@@ -32,7 +32,7 @@ return {
 		{ "<leader>sg", "<CMD>FzfLua live_grep_glob<CR>", desc = "live_grep" },
 		{ "<Leader>sm", "<CMD>FzfLua marks<CR>", desc = "marks" },
 		{ "<Leader>sr", "<CMD>FzfLua oldfiles<CR>", desc = "recent_files" },
-		{ "<leader>sb", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
+		{ "<leader>su", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
 		{ "<leader>sk", "<CMD>FzfLua keymaps<CR>", desc = "keymaps" },
 		{ "<leader>ss", "<CMD>FzfLua lsp_document_symbols<CR>", desc = "lsp_document_symbols" },
 		{ "<leader>st", "<CMD>FzfLua tabs<CR>", desc = "tabs" },
