@@ -260,3 +260,19 @@
 (use-package eglot
   :defer t
   :hook (python-mode . eglot-ensure))
+
+(defvar find-files-program
+  (if (executable-find "fd")
+      '("fd" "--type" "f" "--hidden")
+    (error "`fd` is not available on your system"))
+  "Command to find files recursively using `fd`.")
+
+(defun find-file-rec ()
+  "Find a file in the current working directory recursively using `fd`."
+  (interactive)
+  (find-file
+   (completing-read "Find file: "
+		    (apply #'process-lines find-files-program))))
+
+;; Key mapping for `find-file-rec`
+(global-set-key (kbd "C-c f") 'find-file-rec)

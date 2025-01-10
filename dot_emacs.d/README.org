@@ -42,6 +42,7 @@ org-babel-tangle.
 - [[#chezmoi][Chezmoi]]
 - [[#fish][Fish]]
 - [[#lsp][LSP]]
+- [[#find-file-with-fd][Find file with fd]]
 
 * Core
 
@@ -443,4 +444,25 @@ launched from outside a shell
   (use-package eglot
     :defer t
     :hook (python-mode . eglot-ensure))
+#+end_src
+
+* Find file with fd
+This is a utility function to find file using fd very similar as
+is done in terminal based workflows.
+#+begin_src elisp
+  (defvar find-files-program
+    (if (executable-find "fd")
+	'("fd" "--type" "f" "--hidden")
+      (error "`fd` is not available on your system"))
+    "Command to find files recursively using `fd`.")
+
+  (defun find-file-rec ()
+    "Find a file in the current working directory recursively using `fd`."
+    (interactive)
+    (find-file
+     (completing-read "Find file: "
+		      (apply #'process-lines find-files-program))))
+
+  ;; Key mapping for `find-file-rec`
+  (global-set-key (kbd "C-c f") 'find-file-rec)
 #+end_src
