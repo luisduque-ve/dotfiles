@@ -257,24 +257,9 @@
 
 (use-package fish-mode)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lsp-bridge"))
-
-(use-package markdown-mode
-  :ensure t
-  :mode ("README\\.md\\'" . gfm-mode)
-  :init (setq markdown-command "multimarkdown")
-  :bind (:map markdown-mode-map
-	 ("C-c C-e" . markdown-do)))
-
-(use-package yasnippet
-  :config (yas-global-mode 1))
-
-(use-package lsp-bridge
-  :ensure nil ;; Prevents package manager installation
-  :load-path "~/.emacs.d/lsp-bridge"
-  :config
-  (setq lsp-bridge-python-lsp-server "pylsp")
-  (global-lsp-bridge-mode))
+(use-package eglot
+  :defer t
+  :hook (python-mode . eglot-ensure))
 
 (defvar find-files-program
   (if (executable-find "fd")

@@ -41,7 +41,7 @@ org-babel-tangle.
   - [[#evil-terminal-cursor-change][Evil Terminal Cursor Change]]
 - [[#chezmoi][Chezmoi]]
 - [[#fish][Fish]]
-- [[#lsp-bridge][LSP Bridge]]
+- [[#lsp][LSP]]
 - [[#find-file-with-fd][Find file with fd]]
 
 * Core
@@ -439,38 +439,12 @@ launched from outside a shell
   (use-package fish-mode)
 #+end_src
 
-* [[https://github.com/manateelazycat/lsp-bridge?tab=readme-ov-file#installation][LSP Bridge]]
-
-LSP Bridge must be cloned first, I decided to have it in
-~/.emacs.d/lsp-bridge
-
-#+begin_src shell :tangle no
-  git clone https://github.com/manateelazycat/lsp-bridge ~/.emacs.d/lsp-bridge
-#+end_src
-
-For the python dependencies setup just run the shell function pysetup.
-
+* LSP
 #+begin_src elisp
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/lsp-bridge"))
-
-  (use-package markdown-mode
-    :ensure t
-    :mode ("README\\.md\\'" . gfm-mode)
-    :init (setq markdown-command "multimarkdown")
-    :bind (:map markdown-mode-map
-	   ("C-c C-e" . markdown-do)))
-
-  (use-package yasnippet
-    :config (yas-global-mode 1))
-
-  (use-package lsp-bridge
-    :ensure nil ;; Prevents package manager installation
-    :load-path "~/.emacs.d/lsp-bridge"
-    :config
-    (setq lsp-bridge-python-lsp-server "pylsp")
-    (global-lsp-bridge-mode))
+  (use-package eglot
+    :defer t
+    :hook (python-mode . eglot-ensure))
 #+end_src
-
 
 * Find file with fd
 This is a utility function to find file using fd very similar as
