@@ -1,11 +1,18 @@
-darker
-debugpy
-pre-commit
-pynvim
-rope
-
-# LSP
-pyls-memestra
-pylsp-mypy
-pylsp-rope
-python-lsp-server[all]
+darker # Core dependency
+debugpy # Core dependency
+epc # LSP Bridge dependency
+orjson # LSP Bridge dependency
+packaging # LSP Bridge dependency
+paramiko # LSP Bridge dependency
+pre-commit # Core dependency
+pyls-memestra # LSP Server
+pylsp-mypy # LSP Server
+pylsp-rope # LSP Server
+pynvim # Core dependency
+python-lsp-server[all] # LSP Server
+rapidfuzz # LSP Bridge dependency
+rope # Core dependency
+setuptools # LSP Bridge dependency
+sexpdata # LSP Bridge dependency
+six # LSP Bridge dependency
+watchdog # LSP Bridge dependency
