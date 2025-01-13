@@ -28,21 +28,15 @@ org-babel-tangle.
   - [[#orderless][Orderless]]
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
-- [[#embark][Embark]]
-- [[#perspective][Perspective]]
 - [[#exec-path-from-shell][Exec Path from shell]]
 - [[#python][Python]]
 - [[#emacs-reformatter][Emacs Reformatter]]
-- [[#treemacs][Treemacs]]
-- [[#vterm][Vterm]]
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
   - [[#evil-terminal-cursor-change][Evil Terminal Cursor Change]]
 - [[#chezmoi][Chezmoi]]
 - [[#fish][Fish]]
-- [[#lsp][LSP]]
-- [[#find-file-with-fd][Find file with fd]]
 
 * Core
 
@@ -162,7 +156,8 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
 
 #+END_SRC
 
-*YOU CAN REMOVE THIS ON EMACS 30*, which-key is now included in the master branch of Emacs and will likely be released with Emacs v30
+*YOU CAN REMOVE THIS ON EMACS 30*, which-key is now included in the
+master branch of Emacs and will likely be released with Emacs v30
 
 #+BEGIN_SRC elisp
 (use-package which-key
@@ -183,6 +178,7 @@ device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
   (setq ediff-split-window-function 'split-window-horizontally)
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 #+end_src
+
 * Org
 
 Core org mode configs
@@ -190,7 +186,7 @@ Core org mode configs
   (setq org-directory "~/org/")
 
   (setq org-todo-keywords
-      '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
+      '((sequence "TODO" "IN PROGRESS" "DONE")))
 
   (setq org-log-done "time")
 
@@ -273,48 +269,6 @@ Persist vertigo history
     (global-set-key (kbd "C-x r b") #'consult-bookmark))
 #+END_SRC
 
-* Embark
-#+begin_src elisp
-  (use-package embark
-    :bind
-    (("C-." . embark-act)         ;; pick some comfortable binding
-     ("C-;" . embark-dwim)        ;; good alternative: M-.
-     ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
-    :init
-
-    ;; Optionally replace the key help with a completing-read interface
-    (setq prefix-help-command #'embark-prefix-help-command)
-
-    :config
-    (setq embark-quit-after-action nil)
-
-    ;; Hide the mode line of the Embark live/completions buffers
-    (add-to-list 'display-buffer-alist
-		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-		   nil
-		   (window-parameters (mode-line-format . none)))))
-
-  (use-package embark-consult
-    :hook
-    (embark-collect-mode . consult-preview-at-point-mode))
-#+end_src
-
-* Perspective
-
-This enables support for different workspaces
-
-#+begin_src elisp
-  (use-package perspective
-    :bind
-    ("C-x b" . persp-switch-to-buffer*)
-    ("C-x k" . persp-kill-buffer*)
-    :custom
-    (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
-    :init
-    (setq persp-suppress-no-prefix-key-warning t)
-    (persp-mode))
-#+end_src
-
 * Exec Path from shell
 Without this emacs has a lot of issues finding commands when
 launched from outside a shell
@@ -347,30 +301,6 @@ launched from outside a shell
     :args (list "-q" input-file)))
 #+end_src
 
-* Treemacs
-#+begin_src elisp
-      (use-package treemacs)
-
-    (use-package treemacs-icons-dired
-      :hook (dired-mode . treemacs-icons-dired-enable-once))
-
-    (use-package treemacs-magit
-      :after (treemacs magit))
-
-#+end_src
-
-* Vterm
-
-#+begin_src elisp :eval no
-  (use-package vterm
-  :init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
-  :hook
-  (vterm-mode . (lambda ()
-                  (display-line-numbers-mode 0) ;; Disable line numbers
-                  (setq fill-column nil)))      ;; Disable fill-column
-  )
-  (use-package multi-vterm)
-#+end_src
 
 * Undotree
 #+begin_src elisp
@@ -429,6 +359,7 @@ launched from outside a shell
    (require 'evil-terminal-cursor-changer)
    (evil-terminal-cursor-changer-activate)))
 #+end_src
+
 * Chezmoi
 #+begin_src elisp
   (use-package chezmoi)
@@ -437,32 +368,4 @@ launched from outside a shell
 * Fish
 #+begin_src elisp
   (use-package fish-mode)
-#+end_src
-
-* LSP
-#+begin_src elisp
-  (use-package eglot
-    :defer t
-    :hook (python-mode . eglot-ensure))
-#+end_src
-
-* Find file with fd
-This is a utility function to find file using fd very similar as
-is done in terminal based workflows.
-#+begin_src elisp
-  (defvar find-files-program
-    (if (executable-find "fd")
-	'("fd" "--type" "f" "--hidden")
-      (error "`fd` is not available on your system"))
-    "Command to find files recursively using `fd`.")
-
-  (defun find-file-rec ()
-    "Find a file in the current working directory recursively using `fd`."
-    (interactive)
-    (find-file
-     (completing-read "Find file: "
-		      (apply #'process-lines find-files-program))))
-
-  ;; Key mapping for `find-file-rec`
-  (global-set-key (kbd "C-c f") 'find-file-rec)
 #+end_src

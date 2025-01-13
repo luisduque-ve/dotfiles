@@ -93,7 +93,7 @@
 (setq org-directory "~/org/")
 
 (setq org-todo-keywords
-    '((sequence "TODO" "IN PROGRESS" "RESOLVED" "DONE")))
+    '((sequence "TODO" "IN PROGRESS" "DONE")))
 
 (setq org-log-done "time")
 
@@ -140,39 +140,6 @@
   :config
   (global-set-key (kbd "C-x r b") #'consult-bookmark))
 
-(use-package embark
-  :bind
-  (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
-  :init
-
-  ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
-
-  :config
-  (setq embark-quit-after-action nil)
-
-  ;; Hide the mode line of the Embark live/completions buffers
-  (add-to-list 'display-buffer-alist
-	       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-		 nil
-		 (window-parameters (mode-line-format . none)))))
-
-(use-package embark-consult
-  :hook
-  (embark-collect-mode . consult-preview-at-point-mode))
-
-(use-package perspective
-  :bind
-  ("C-x b" . persp-switch-to-buffer*)
-  ("C-x k" . persp-kill-buffer*)
-  :custom
-  (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
-  :init
-  (setq persp-suppress-no-prefix-key-warning t)
-  (persp-mode))
-
 (use-package exec-path-from-shell
   :config
   (when (memq window-system '(mac ns x))
@@ -190,23 +157,6 @@
   :stdin nil
   :stdout nil
   :args (list "-q" input-file)))
-
-(use-package treemacs)
-
-(use-package treemacs-icons-dired
-  :hook (dired-mode . treemacs-icons-dired-enable-once))
-
-(use-package treemacs-magit
-  :after (treemacs magit))
-
-(use-package vterm
-:init (setq vterm-shell "{{- .brew_path -}}/bin/fish")
-:hook
-(vterm-mode . (lambda ()
-                (display-line-numbers-mode 0) ;; Disable line numbers
-                (setq fill-column nil)))      ;; Disable fill-column
-)
-(use-package multi-vterm)
 
 (use-package vundo)
 
@@ -256,23 +206,3 @@
 (use-package chezmoi)
 
 (use-package fish-mode)
-
-(use-package eglot
-  :defer t
-  :hook (python-mode . eglot-ensure))
-
-(defvar find-files-program
-  (if (executable-find "fd")
-      '("fd" "--type" "f" "--hidden")
-    (error "`fd` is not available on your system"))
-  "Command to find files recursively using `fd`.")
-
-(defun find-file-rec ()
-  "Find a file in the current working directory recursively using `fd`."
-  (interactive)
-  (find-file
-   (completing-read "Find file: "
-		    (apply #'process-lines find-files-program))))
-
-;; Key mapping for `find-file-rec`
-(global-set-key (kbd "C-c f") 'find-file-rec)
