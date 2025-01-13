@@ -31,7 +31,10 @@
   :config (xclip-mode 1))
 
 (setq ring-bell-function 'ignore)
+(global-visual-line-mode 1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(setq shr-width 70)
 
 (use-package all-the-icons
 :if (display-graphic-p))
@@ -192,6 +195,7 @@
   (evil-set-initial-state 'magit-mode 'emacs)
   (evil-set-initial-state 'Info-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'eww-mode 'emacs)
   (evil-set-initial-state 'vterm-mode 'emacs))
 
 (use-package evil-surround

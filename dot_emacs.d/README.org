@@ -97,7 +97,13 @@ Keep this at the very top
 
 #+begin_src elisp
   (setq ring-bell-function 'ignore)
+  (global-visual-line-mode 1)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
+#+end_src
+
+This sets the width for HTML rendering useful for eww
+#+begin_src elisp
+  (setq shr-width 70)
 #+end_src
 
 #+begin_src elisp
@@ -345,6 +351,7 @@ launched from outside a shell
     (evil-set-initial-state 'magit-mode 'emacs)
     (evil-set-initial-state 'Info-mode 'emacs)
     (evil-set-initial-state 'dired-mode 'emacs)
+    (evil-set-initial-state 'eww-mode 'emacs)
     (evil-set-initial-state 'vterm-mode 'emacs))
 
 #+end_src
