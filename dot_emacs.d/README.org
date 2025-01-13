@@ -13,7 +13,8 @@ org-babel-tangle.
   - [[#performance][Performance]]
   - [[#advice-functions][Advice functions]]
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
-  - [[#use-package-setup][Use package setup]]
+  - [[#use-package-setup][use-package setup]]
+  - [[#xclip][Xclip]]
   - [[#ui][UI]]
 - [[#ediff][Ediff]]
 - [[#org][Org]]
@@ -74,7 +75,8 @@ org-babel-tangle.
   (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
 #+end_src
-** Use package setup
+
+** use-package setup
 Keep this at the very top
 
 #+BEGIN_SRC elisp
@@ -86,6 +88,11 @@ Keep this at the very top
 (setq use-package-always-ensure t)
 #+END_SRC
 
+** Xclip
+#+begin_src elisp
+  (use-package xclip
+    :config (xclip-mode 1))
+#+end_src
 ** UI
 
 #+begin_src elisp
