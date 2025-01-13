@@ -223,9 +223,9 @@ These are my custom functions
     git checkout conflict_branch
     echo "Content added in conflict branch" >> dummy.txt
     git commit -am "Modify file in conflict branch"
-
-    echo "Setup complete. You can now try to merge 'conflict_branch' into 'master' to create a conflict."
-    cd ..
+    git checkout main
+    git merge conflict_branch
+    echo "Setup complete. There is a conflict in a current merge"
   }
 #+end_src
 
