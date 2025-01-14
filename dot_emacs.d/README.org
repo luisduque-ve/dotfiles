@@ -18,6 +18,7 @@ org-babel-tangle.
   - [[#ui][UI]]
 - [[#ediff][Ediff]]
 - [[#org][Org]]
+  - [[#agenda][Agenda]]
   - [[#org-anki][Org Anki]]
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
@@ -193,6 +194,14 @@ master branch of Emacs and will likely be released with Emacs v30
 #+end_src
 
 * Org
+
+** Agenda
+
+If you want todo items to appear in the agenda view just call the
+*org-agenda-file-to-front* function in the file that has the *TODO* items.
+
+You can set *org-agenda-files* variable as well, but I don't see it
+neccesary.
 
 Core org mode configs
 #+BEGIN_SRC elisp
