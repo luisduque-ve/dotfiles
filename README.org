@@ -207,25 +207,39 @@ These are my custom functions
     # Init a git repository
     git init
 
-    # Create a file
-    echo "Initial content" > dummy.txt
+    # Create a file with initial content
+    cat <<EOF > dummy.txt
+  def example_function():
+      print("Initial content")
+  EOF
     git add dummy.txt
     git commit -m "Initial commit"
 
     # Create a new branch
     git branch conflict_branch
 
-    # Modify the file in the master branch
-    echo "Content added in master branch" >> dummy.txt
-    git commit -am "Modify file in master branch"
+    # Modify the file in the main branch
+    cat <<EOF > dummy.txt
+  def example_function():
+      print("Initial content")
+      print("Content added in main branch")
+  EOF
+    git commit -am "Modify file in main branch"
 
-    # Switch to the conflict branch and modify the file
+    # Switch to the conflict branch and modify the file with indentation changes
     git checkout conflict_branch
-    echo "Content added in conflict branch" >> dummy.txt
+    cat <<EOF > dummy.txt
+  def example_function():
+      def nested():
+	  print("Initial content")
+	  print("Content added in conflict branch")
+      return nested()
+  EOF
     git commit -am "Modify file in conflict branch"
+
+    # Switch back to the main branch and merge, creating a conflict
     git checkout main
-    git merge conflict_branch
-    echo "Setup complete. There is a conflict in a current merge"
+    git merge conflict_branch || echo "Setup complete. There is a conflict in the current merge"
   }
 #+end_src
 
