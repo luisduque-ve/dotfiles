@@ -1,6 +1,3 @@
--- This is the only file that has two plugins in it
--- for me is this is more clear as both are called chezmoi
--- and I have a 1:1 map with plugins names and file names
 return {
 	{
 		"alker0/chezmoi.vim",
