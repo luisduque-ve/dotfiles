@@ -21,8 +21,4 @@ return {
 			})
 		end,
 	},
-	{
-		"dhruvasagar/vim-table-mode",
-		event = "VeryLazy",
-	},
 }
