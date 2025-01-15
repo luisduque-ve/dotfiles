@@ -129,6 +129,16 @@ function conflict_generator
     cd ..
 end
 
+function ssh-add-fzf
+    eval (ssh-agent -c)
+    set key_file (find ~/.ssh -type f -name "id_*" -not -name "*.pub" | fzf)
+    if test -n "$key_file"
+        ssh-add $key_file
+    else
+        echo "No key selected."
+    end
+end
+
 ### Python
 
 abbr --add deactivate "pyenv deactivate"
@@ -152,4 +162,3 @@ end
 
 zoxide init fish | source
 starship init fish | source
-eval (ssh-agent -c)
