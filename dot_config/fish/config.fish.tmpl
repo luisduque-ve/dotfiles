@@ -1,0 +1,155 @@
+# For plugins install fisher first
+# https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
+#
+# Then this are the current plugins I use
+# https://github.com/PatrickF1/fzf.fish?tab=readme-ov-file#installation
+
+if status is-interactive
+    # Initialize pyenv and pyenv-virtualenv with improved performance
+    # By default, both use the --on-event fish_prompt hook, which triggers on every prompt display.
+    # This can cause performance issues due to frequent initializations.
+    # The following commands use sed to change the hook to --on-variable PWD,
+    # which triggers only on directory changes (less frequent than prompt displays),
+    # thereby reducing the initialization frequency and improving shell performance.
+    # see: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1429300631
+    # FOR ME: this is only a issue on WSL, I'll probably remove soon
+    pyenv init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
+    pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
+end
+
+# Remove shell greeting
+set -g fish_greeting
+
+# vi mode
+set -g fish_key_bindings fish_vi_key_bindings
+
+# fzf alias
+alias fzf="fzf -m --query \"'\""
+
+# abbreviations
+abbr --add ls "eza -l -h"
+abbr --add c "chezmoi"
+abbr --add t "terraform"
+abbr --ad k "kubectl"
+
+### Variables
+
+fish_add_path "$HOME/.local/bin"
+fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"
+fish_add_path "{{- .brew_path -}}/bin"
+fish_add_path "{{- .brew_path -}}/sbin"
+fish_add_path $PYENV_ROOT/bin
+
+set -gx FZF_DEFAULT_OPTS '--color=bg:#fbf1c7,bg+:#ebdbb2,spinner:#458588,hl:#076678,fg:#3c3836,header:#3c3836,fg+:#3c3836,bg+:#d5c4a1,hl+:#076678'
+# used by fd which is giving the output to fzf.fish
+set -gx LS_COLORS 'di=1;36:ln=1;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=31;01:*.gz=31;01:*.bz2=31;01:*.rpm=31;01:*.deb=31;01:*.jpg=35;01:*.png=35;01:*.gif=35;01:'
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+{{ if eq .chezmoi.os "linux" }}
+  {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+    # WSL-specific
+    set -gx REQUESTS_CA_BUNDLE '/etc/ssl/certs/ca-certificates.crt'
+    set -gx NODE_EXTRA_CA_CERTS '/etc/ssl/certs/ca-certificates.crt'
+    fish_add_path '/home/linuxbrew/.linuxbrew/bin'
+  {{   end }}
+{{ end }}
+
+### Functions
+
+# I like to use zoxide like this more than just the vanilla z
+
+function a
+  set query $argv[1]
+  if test -n "$query"
+    set selected_dir (zoxide query -l | grep -i "$query" | fzf)
+  else
+    set selected_dir (zoxide query -l | fzf)
+  end
+  cd $selected_dir
+end
+function A
+  set query $argv[1]
+  if test -n "$query"
+    set selected_dir (zoxide query -l | grep -i "$query" | fzf)
+  else
+    set selected_dir (zoxide query -l | fzf)
+  end
+  if test -n "$selected_dir"
+    zoxide remove $selected_dir
+    echo "Removed $selected_dir from zoxide history."
+  else
+    echo "No directory selected."
+  end
+end
+
+function custom_cat
+    if test (count $argv) -lt 2
+        echo "Usage: custom_cat <file_extension> <recursive_flag>"
+        return 1
+    end
+    set ext $argv[1]
+    set recursive $argv[2]
+    if test $recursive = "true"
+        set find_command "find . -name '*.$ext' -type f"
+    else
+        set find_command "find . -maxdepth 1 -name '*.$ext' -type f"
+    end
+    for file in (eval $find_command)
+        echo "### $file"
+        echo ""
+        cat $file
+        echo ""
+    end
+end
+
+function conflict_generator
+    # Create/override the folder
+    set folder_name "git-conflict-test"
+    if test -d $folder_name
+        rm -rf $folder_name
+    end
+    mkdir $folder_name
+    cd $folder_name
+    # Init a git repository
+    git init
+    # Create a file
+    echo "Initial content" > dummy.txt
+    git add dummy.txt
+    git commit -m "Initial commit"
+    # Create a new branch
+    git branch conflict_branch
+    # Modify the file in the master branch
+    echo "Content added in master branch" >> dummy.txt
+    git commit -am "Modify file in master branch"
+    # Switch to the conflict branch and modify the file
+    git checkout conflict_branch
+    echo "Content added in conflict branch" >> dummy.txt
+    git commit -am "Modify file in conflict branch"
+    echo "Setup complete. You can now try to merge 'conflict_branch' into 'master' to create a conflict."
+    cd ..
+end
+
+### Python
+
+abbr --add deactivate "pyenv deactivate"
+abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --loop asyncio"
+abbr --add mkvirtualenv "pyenv virtualenv"
+abbr --add pi "python -m pip install"
+abbr --add pylist "pyenv virtualenvs"
+abbr --add pytest "python -m pytest --disable-warnings"
+abbr --add rmvirtualenv "pyenv uninstall"
+# w means workon
+abbr --add w "pyenv activate"
+abbr --add jupyterlab "python -m jupyterlab --no-browser"
+
+function pysetup
+  python -m pip install -r ~/.local/share/chezmoi/requirements.txt
+end
+
+
+
+### Initializations
+
+zoxide init fish | source
+starship init fish | source
+eval (ssh-agent -c)
