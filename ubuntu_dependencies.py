@@ -25,6 +25,7 @@ packages = [
     "tcl-tk",  # pyenv dependency
     "tree",  # show tree-like folder representation
     "xz",  # pyenv dependency
+    "zellij",
     "zlib",  # pyenv dependency
     "zoxide",  # better current dir changing
     "zsh-syntax-highlighting",

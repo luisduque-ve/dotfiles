@@ -33,6 +33,7 @@ formulaes = [
     "zlib",  # pyenv dependency
     "zoom",  # video calling
     "zoxide",  # better current dir changing
+    "zellij",
     "zsh-syntax-highlighting",
     "zsh-autosuggestions",
     "zsh-vi-mode",
