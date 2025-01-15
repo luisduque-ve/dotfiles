@@ -1,13 +1,11 @@
 return {
 	{
 		"nvim-orgmode/org-bullets.nvim",
-		event = "VeryLazy",
 		ft = { "org" },
 		opts = {},
 	},
 	{
 		"nvim-orgmode/orgmode",
-		event = "VeryLazy",
 		ft = { "org" },
 		config = function()
 			-- Setup orgmode
