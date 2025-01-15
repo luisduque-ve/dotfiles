@@ -28,7 +28,9 @@ alias fzf="fzf -m --query \"'\""
 
 # abbreviations
 abbr --add ls "eza -l -h"
-abbr --add c "chezmoi"
+abbr --add ca "chezmoi apply -v"
+abbr --add cu "chezmoi update -v"
+abbr --add cd "chezmoi diff"
 abbr --add t "terraform"
 abbr --ad k "kubectl"
 
@@ -129,7 +131,7 @@ function conflict_generator
     cd ..
 end
 
-function ssh-add-fzf
+function sa
     eval (ssh-agent -c)
     set key_file (find ~/.ssh -type f -name "id_*" -not -name "*.pub" | fzf)
     if test -n "$key_file"
