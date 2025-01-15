@@ -8,6 +8,6 @@ return {
 	},
 	config = true,
 	keys = {
-		{ "<leader>gn", "<CMD>Neogit kind=replace<CR>", desc = "neogit" },
+		{ "<leader>gg", "<CMD>Neogit kind=replace<CR>", desc = "neogit" },
 	},
 }
