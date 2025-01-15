@@ -11,8 +11,10 @@ return {
 			keymaps = {
 				["<C-h>"] = false,
 				["<C-l>"] = false,
+				["<C-p>"] = false,
+				["<C-n>"] = false,
 				["q"] = "actions.close",
-				["<C-p>"] = {
+				["<C-e>"] = {
 					callback = function()
 						oil.open_preview({ vertical = true, split = "botright" })
 					end,
