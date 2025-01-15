@@ -28,10 +28,6 @@ packages = [
     "zellij",
     "zlib",  # pyenv dependency
     "zoxide",  # better current dir changing
-    "zsh-syntax-highlighting",
-    "zsh-autosuggestions",
-    "zsh-vi-mode",
-    "olets/tap/zsh-abbr",
 ]
 
 

@@ -3,7 +3,6 @@
 import subprocess
 
 # List of dependencies to be installed
-formulaes = [
     "anki",  # study
     "bat",  # cat alternative
     "brave-browser",  # default browser
@@ -30,15 +29,12 @@ formulaes = [
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
     "xz",  # pyenv dependency
+    "zellij",
     "zlib",  # pyenv dependency
     "zoom",  # video calling
     "zoxide",  # better current dir changing
-    "zellij",
-    "zsh-syntax-highlighting",
-    "zsh-autosuggestions",
-    "zsh-vi-mode",
-    "olets/tap/zsh-abbr",
 ]
+formulaes = [
 
 
 # Function to check if package is installed
