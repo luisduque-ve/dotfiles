@@ -138,12 +138,7 @@ end
 
 function sa
     eval (ssh-agent -c)
-    set key_file (find ~/.ssh -type f -name "id_*" -not -name "*.pub" | fzf)
-    if test -n "$key_file"
-        ssh-add $key_file
-    else
-        echo "No key selected."
-    end
+    ssh-add
 end
 
 ### Python
