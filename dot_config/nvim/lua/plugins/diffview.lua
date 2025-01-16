@@ -1,10 +1,6 @@
 return {
 	"sindrets/diffview.nvim",
 	event = "VeryLazy",
-	keys = {
-		{ "<leader>gc", "<CMD>DiffviewClose<CR>", desc = "close_diffview" },
-		{ "<leader>gd", "<CMD>DiffviewOpen<CR>", desc = "open_diffview" },
-	},
 	config = function()
 		local actions = require("diffview.actions")
 		require("diffview").setup({
@@ -36,5 +32,16 @@ return {
 				},
 			},
 		})
+		vim.keymap.set("n", "<leader>gd", function()
+			local lib = require("diffview.lib")
+			local view = lib.get_current_view()
+			if view then
+				-- Current tabpage is a Diffview; close it
+				vim.cmd.DiffviewClose()
+			else
+				-- No open Diffview exists: open a new one
+				vim.cmd.DiffviewOpen()
+			end
+		end, { desc = "diffview" })
 	end,
 }
