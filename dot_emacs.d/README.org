@@ -31,14 +31,11 @@ org-babel-tangle.
   - [[#marginalia][Marginalia]]
   - [[#consult][Consult]]
 - [[#exec-path-from-shell][Exec Path from shell]]
-- [[#python][Python]]
-- [[#emacs-reformatter][Emacs Reformatter]]
 - [[#undotree][Undotree]]
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
   - [[#evil-terminal-cursor-change][Evil Terminal Cursor Change]]
 - [[#chezmoi][Chezmoi]]
-- [[#fish][Fish]]
 
 * Core
 
@@ -306,28 +303,6 @@ launched from outside a shell
   (exec-path-from-shell-initialize)))
 #+end_src
 
-* Python
-
-#+begin_src elisp
-  (use-package pyenv-mode
-    :config
-    (pyenv-mode))
-#+end_src
-
-
-* Emacs Reformatter
-#+begin_src elisp
-  (use-package reformatter
-  :hook ((python-mode . darker-reformat-on-save-mode))
-  :config
-  (reformatter-define darker-reformat
-    :program "darker"
-    :stdin nil
-    :stdout nil
-    :args (list "-q" input-file)))
-#+end_src
-
-
 * Undotree
 #+begin_src elisp
   (use-package vundo)
@@ -390,9 +365,4 @@ launched from outside a shell
 * Chezmoi
 #+begin_src elisp
   (use-package chezmoi)
-#+end_src
-
-* Fish
-#+begin_src elisp
-  (use-package fish-mode)
 #+end_src

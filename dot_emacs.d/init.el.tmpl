@@ -153,19 +153,6 @@
   (when (memq window-system '(mac ns x))
 (exec-path-from-shell-initialize)))
 
-(use-package pyenv-mode
-  :config
-  (pyenv-mode))
-
-(use-package reformatter
-:hook ((python-mode . darker-reformat-on-save-mode))
-:config
-(reformatter-define darker-reformat
-  :program "darker"
-  :stdin nil
-  :stdout nil
-  :args (list "-q" input-file)))
-
 (use-package vundo)
 
 (use-package evil
@@ -213,5 +200,3 @@
  (evil-terminal-cursor-changer-activate)))
 
 (use-package chezmoi)
-
-(use-package fish-mode)
