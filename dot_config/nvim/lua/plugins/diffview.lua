@@ -12,7 +12,7 @@ return {
 			},
 			view = {
 				merge_tool = {
-					layout = "diff3_horizontal",
+					layout = "diff4_mixed",
 				},
 			},
 			keymaps = {
