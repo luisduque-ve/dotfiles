@@ -1,8 +1,10 @@
 # Homebrew must be installed before running this script
 
+
 import subprocess
 
 # List of dependencies to be installed
+formulaes = [
     "anki",  # study
     "bat",  # cat alternative
     "brave-browser",  # default browser
@@ -34,7 +36,6 @@ import subprocess
     "zoom",  # video calling
     "zoxide",  # better current dir changing
 ]
-formulaes = [
 
 
 # Function to check if package is installed
