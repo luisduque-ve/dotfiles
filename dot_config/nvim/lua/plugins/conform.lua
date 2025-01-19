@@ -1,14 +1,24 @@
 return {
-  'stevearc/conform.nvim',
-  opts = {
-    formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "darker" },
-      terraform = { "terraform_fmt" },
-    },
-    format_on_save = {
-      lsp_format = "fallback",
-      timeout_ms = 500,
-    },
-  },
+	"stevearc/conform.nvim",
+	config = function()
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "autoflake", "isort", "darker" },
+				terraform = { "terraform_fmt" },
+			},
+			formatters = {
+				autoflake = {
+					prepend_args = { "--in-place", "--remove-unused-variables" },
+				},
+				isort = {
+					prepend_args = { "--profile", "black" },
+				},
+			},
+			format_on_save = {
+				timeout_ms = 1000,
+				lsp_format = "fallback",
+			},
+		})
+	end,
 }
