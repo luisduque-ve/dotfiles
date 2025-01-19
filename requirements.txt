@@ -1,5 +1,7 @@
+autoflake
 darker
 debugpy
+isort
 pre-commit
 pynvim
 rope
