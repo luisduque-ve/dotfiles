@@ -211,7 +211,7 @@ Core org mode configs
   (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
 
-  (setq org-log-done "time")
+  ;; (setq org-log-done "time")
 
   (setq org-hide-emphasis-markers t)
 #+END_SRC
