@@ -7,7 +7,7 @@ return {
 		wk.add({
 			{ "<leader>b", group = "+buffer" },
 			{ "<leader>c", group = "+ai", mode = { "n", "v" } },
-			{ "<leader>d", group = "+debug" },
+			{ "<leader>d", group = "+directory" },
 			{ "<leader>g", group = "+git" },
 			{ "<leader>s", group = "+search" },
 			{ "<leader>t", group = "+test" },
