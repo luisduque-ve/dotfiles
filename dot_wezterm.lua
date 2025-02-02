@@ -6,11 +6,7 @@ return {
   font = wezterm.font({
     family = "FiraCode Nerd Font Mono",
   }),
-  {{- if eq .chezmoi.os "windows" }}
-  font_size = 14.0,
-  {{- else }}
   font_size = 19.0,
-  {{- end }}
   hide_tab_bar_if_only_one_tab = true,
   window_close_confirmation = "NeverPrompt",
   window_padding = {

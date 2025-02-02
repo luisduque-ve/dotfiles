@@ -126,24 +126,13 @@ This sets the width for HTML rendering useful for eww
   :init (doom-modeline-mode 1))
 #+END_SRC
 
-I use the following function to get the font size depending on which
-device I am. Usually if I'm in a WSL instance I'm in a bigger screen.
-
-
-#+BEGIN_SRC elisp
-(defun my/get-font-size ()
-  "Return 140 if in a WSL environment, otherwise 190."
-  (if (getenv "WSL_DISTRO_NAME")
-      140
-    190))
-#+END_SRC
 
 #+BEGIN_SRC elisp
   (global-display-fill-column-indicator-mode)
   (global-hl-line-mode 1)
   (set-face-attribute 'default nil
 		      :font "DejaVuSansM Nerd Font Mono"
-		      :height (my/get-font-size))
+		      :height 190)
   (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
 

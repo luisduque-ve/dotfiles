@@ -7,14 +7,6 @@ export VISUAL="nvim"
 export COLORTERM="truecolor"
 export WORDCHARS="*?.[]~=&;!#$%^(){}<>"
 
-{{ if eq .chezmoi.os "linux" }}
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-# WSL-specific
-export REQUESTS_CA_BUNDLE='/etc/ssl/certs/ca-certificates.crt'
-export NODE_EXTRA_CA_CERTS='/etc/ssl/certs/ca-certificates.crt'
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-{{   end }}
-{{ end }}
 
 autoload -Uz edit-command-line
 zle -N edit-command-line

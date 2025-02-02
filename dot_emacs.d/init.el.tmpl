@@ -51,17 +51,12 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
-(defun my/get-font-size ()
-  "Return 140 if in a WSL environment, otherwise 190."
-  (if (getenv "WSL_DISTRO_NAME")
-      140
-    190))
 
 (global-display-fill-column-indicator-mode)
 (global-hl-line-mode 1)
 (set-face-attribute 'default nil
 		    :font "DejaVuSansM Nerd Font Mono"
-		    :height (my/get-font-size))
+		    :height 190)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 

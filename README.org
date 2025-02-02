@@ -27,7 +27,6 @@ Here's an example of what your `chezmoi.toml` file might look like:
 [data]
 ai_support = false
 brew_path = "/opt/homebrew"
-ca_certificate = ""
 email = "email used by tools like git"
 #+end_src
 
