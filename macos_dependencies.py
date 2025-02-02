@@ -7,33 +7,19 @@ import subprocess
 formulaes = [
     "anki",  # study
     "bat",  # cat alternative
-    "brave-browser",  # default browser
     "chezmoi",  # dotfiles manager
     "curl",  # http client
-    "doll",  # show notifications on status bar
+    # "doll",  # show notifications on status bar
     "eza",  # ls replacement
     "fzf",  # fuzzy finder
-    "ghcup",  # haskell tool
-    "grammarly-desktop",  # grammar tool
-    "haskell-language-server",
     "jq",  # cli json utility
     "nikitabobko/tap/aerospace",  # tiling window manager
-    "nvm",  # node version manager
-    "openssl",  # pyenv dependency
-    "pyenv",  # python version manager
-    "pyenv-virtualenv",  # handle pyenv venvs
     "raycast",  # spootlight alternative
-    "readline",  # pyenv dependency
     "rg",  # rip grep
-    "sqlite3",  # pyenv dependency
     "starship",  # shell prompt
-    "tcl-tk",  # pyenv dependency
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
-    "xz",  # pyenv dependency
     "zellij",
-    "zlib",  # pyenv dependency
-    "zoom",  # video calling
     "zoxide",  # better current dir changing
 ]
 
