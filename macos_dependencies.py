@@ -9,8 +9,9 @@ formulaes = [
     "bat",  # cat alternative
     "chezmoi",  # dotfiles manager
     "curl",  # http client
-    # "doll",  # show notifications on status bar
+    "doll",  # show notifications on status bar
     "eza",  # ls replacement
+    "fish", # shell
     "fzf",  # fuzzy finder
     "jq",  # cli json utility
     "nikitabobko/tap/aerospace",  # tiling window manager
