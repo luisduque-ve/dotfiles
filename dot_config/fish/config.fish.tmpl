@@ -5,16 +5,6 @@
 # https://github.com/PatrickF1/fzf.fish?tab=readme-ov-file#installation
 
 if status is-interactive
-    # Initialize pyenv and pyenv-virtualenv with improved performance
-    # By default, both use the --on-event fish_prompt hook, which triggers on every prompt display.
-    # This can cause performance issues due to frequent initializations.
-    # The following commands use sed to change the hook to --on-variable PWD,
-    # which triggers only on directory changes (less frequent than prompt displays),
-    # thereby reducing the initialization frequency and improving shell performance.
-    # see: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1429300631
-    # FOR ME: this is only a issue on WSL, I'll probably remove soon
-    pyenv init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
-    pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-variable PWD/g' | source
 end
 
 # Remove shell greeting
@@ -43,7 +33,6 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"
 fish_add_path "{{- .brew_path -}}/bin"
 fish_add_path "{{- .brew_path -}}/sbin"
-fish_add_path $PYENV_ROOT/bin
 
 set -gx FZF_DEFAULT_OPTS '--color=bg:#fbf1c7,bg+:#ebdbb2,spinner:#458588,hl:#076678,fg:#3c3836,header:#3c3836,fg+:#3c3836,bg+:#d5c4a1,hl+:#076678'
 # used by fd which is giving the output to fzf.fish
@@ -143,15 +132,10 @@ end
 
 ### Python
 
-abbr --add deactivate "pyenv deactivate"
 abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --loop asyncio"
-abbr --add mkvirtualenv "pyenv virtualenv"
+abbr --add mkvirtualenv "uv venv --python"
 abbr --add pi "python -m pip install"
-abbr --add pylist "pyenv virtualenvs"
 abbr --add pytest "python -m pytest --disable-warnings"
-abbr --add rmvirtualenv "pyenv uninstall"
-# w means workon
-abbr --add w "pyenv activate"
 abbr --add jupyterlab "python -m jupyterlab --no-browser"
 
 function pysetup
