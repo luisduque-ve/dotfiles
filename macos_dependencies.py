@@ -11,10 +11,11 @@ formulaes = [
     "curl",  # http client
     "doll",  # show notifications on status bar
     "eza",  # ls replacement
-    "fish", # shell
+    "fish",  # shell
     "fzf",  # fuzzy finder
     "jq",  # cli json utility
     "nikitabobko/tap/aerospace",  # tiling window manager
+    "node",  # nodejs
     "raycast",  # spootlight alternative
     "rg",  # rip grep
     "starship",  # shell prompt
