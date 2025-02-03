@@ -36,8 +36,9 @@
 
 (setq shr-width 70)
 
-(use-package all-the-icons
-:if (display-graphic-p))
+;; RUN nerd-icons-install-fonts
+;; THIS IS NECESSARY
+(use-package nerd-icons)
 
 (use-package doom-themes
   :config
@@ -50,7 +51,6 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
-
 
 (global-display-fill-column-indicator-mode)
 (global-hl-line-mode 1)

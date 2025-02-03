@@ -105,8 +105,9 @@ This sets the width for HTML rendering useful for eww
 #+end_src
 
 #+begin_src elisp
-  (use-package all-the-icons
-  :if (display-graphic-p))
+  ;; RUN nerd-icons-install-fonts
+  ;; THIS IS NECESSARY
+  (use-package nerd-icons)
 #+end_src
 
 #+BEGIN_SRC elisp
