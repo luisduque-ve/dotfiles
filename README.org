@@ -27,10 +27,9 @@ Here's an example of what your `chezmoi.toml` file might look like:
 [data]
 ai_support = false
 brew_path = "/opt/homebrew"
-email = "email used by tools like git"
 #+end_src
 
-In this file, `email` is a custom variable that can be
+In this file, `brew_path` is a custom variable that can be
 used in your dotfiles templates.
 
 * Fonts
