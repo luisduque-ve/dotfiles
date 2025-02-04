@@ -109,20 +109,28 @@ alt-shift-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 
 # Love you dvorak ;-)
-alt-a = 'workspace A'
-alt-o = 'workspace O'
-alt-e = 'workspace E'
-alt-u = 'workspace U'
-alt-t = 'workspace T'
-alt-s = 'workspace S'
+alt-0 = 'workspace 0'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-a = 'move-node-to-workspace A'
-alt-shift-o = 'move-node-to-workspace O'
-alt-shift-e = 'move-node-to-workspace E'
-alt-shift-u = 'move-node-to-workspace U'
-alt-shift-t = 'move-node-to-workspace T'
-alt-shift-s = 'move-node-to-workspace S'
+alt-shift-0 = 'move-node-to-workspace 0'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -148,14 +156,40 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 # Always open apps in specific workspaces
+# apps which start with z, s, or l
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = "move-node-to-workspace 0"
+
 [[on-window-detected]]
 if.app-id = "com.spotify.client"
-run = "move-node-to-workspace S"
+run = "move-node-to-workspace 0"
+
+# main
+[[on-window-detected]]
+if.app-id = "com.apple.Safari"
+run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
-if.app-id = "com.brave.Browser"
-run = "move-node-to-workspace A"
+if.app-id = "org.gnu.Emacs"
+run = "move-node-to-workspace 1"
 
+# apps which start with w, t, or c
 [[on-window-detected]]
 if.app-id = "com.github.wez.wezterm"
-run = "move-node-to-workspace A"
+run = "move-node-to-workspace 8"
+
+[[on-window-detected]]
+if.app-id = "com.todesktop.230313mzl4w4u92"
+run = "move-node-to-workspace 8"
+
+# apps which start with e or j
+[[on-window-detected]]
+if.app-id = "com.apple.mail"
+run = "move-node-to-workspace 3"
+
+
+# apps which start with v, n, or r
+[[on-window-detected]]
+if.app-id = "com.microsoft.VSCode"
+run = "move-node-to-workspace 9"
