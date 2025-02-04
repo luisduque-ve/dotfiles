@@ -167,7 +167,7 @@ run = "move-node-to-workspace 0"
 
 # main
 [[on-window-detected]]
-if.app-id = "com.apple.Safari"
+if.app-id = "com.brave.Browser"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
