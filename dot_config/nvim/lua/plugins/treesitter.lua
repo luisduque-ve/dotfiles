@@ -39,23 +39,11 @@ return {
 				},
 				sync_install = false,
 				highlight = {
-					enable = true, -- false will disable the whole extension
+					enable = false, -- false will disable the whole extension
 					additional_vim_regex_highlighting = false,
 				},
 			})
 		end,
-		keys = {
-			{ "<leader>uh", "<CMD>TSToggle highlight<CR>", desc = "toogle_ts_highlight" },
-		},
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = "VeryLazy",
-		dependencies = "nvim-treesitter/nvim-treesitter-context",
-		opts = {
-			max_lines = 1,
-			trim_scope = "outer",
-		},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
