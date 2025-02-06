@@ -16,4 +16,5 @@ return {
     bottom = 0,
   },
   tab_bar_at_bottom = true,
+  max_fps = 240,
 }
