@@ -1,0 +1,81 @@
+return {
+  "CopilotC-Nvim/CopilotChat.nvim",
+  event = "VeryLazy",
+  cond = {{ .ai_support }},
+  branch = "main",
+  dependencies = {
+    { "zbirenbaum/copilot.lua" },
+    { "nvim-lua/plenary.nvim" },
+  },
+  opts = {
+    mappings = {
+    reset = {
+      normal = '',
+      insert = '',
+    },
+  },
+  },
+  keys = {
+    { "<leader>cc", "<CMD>CopilotChat<CR>", desc = "copilot_chat" },
+    {
+      "<leader>cb",
+      function()
+        local input = vim.fn.input("Question: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+        end
+      end,
+      desc = "buffer_as_context",
+    },
+    {
+      "<leader>ce",
+      function()
+        local prompt = "You are an American English grammar and clarity expert. Your task is to review the text above and correct any grammar or clarity issues while maintaining the original ideas. Use English at a B2 level and focus exclusively on improving grammar and clarity without altering the content or intent of the text.\n\n### English Text\n"
+        local vstart = vim.fn.getpos("'<")
+
+        local vend = vim.fn.getpos("'>")
+
+        local line_start = vstart[2]
+        local line_end = vend[2]
+
+        -- or use api.nvim_buf_get_lines
+        local lines = vim.fn.getline(line_start,line_end)
+        local selection = table.concat(lines, "\n")
+        require("CopilotChat").ask(prompt .. selection )
+      end,
+      desc = "english_fixer",
+      mode = {"v"},
+    },
+    {
+      "<leader>cv",
+      function()
+        local input = vim.fn.input("Question: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+        end
+      end,
+      desc = "selection as context",
+      mode = {"v"},
+    },
+    {
+      "<leader>cs",
+      function()
+        local vstart = vim.fn.getpos("'<")
+
+        local vend = vim.fn.getpos("'>")
+
+        local line_start = vstart[2]
+        local line_end = vend[2]
+
+        -- or use api.nvim_buf_get_lines
+        local lines = vim.fn.getline(line_start,line_end)
+        local text = table.concat(lines, "\n")
+        if text ~= "" then
+          require("CopilotChat").ask(text, { selection = require("CopilotChat.select").visual })
+        end
+      end,
+      desc = "ask_selection",
+      mode = {"v"},
+    }
+  },
+}
