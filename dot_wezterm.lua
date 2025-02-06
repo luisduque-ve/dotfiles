@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
   disable_default_key_bindings = true,
-  color_scheme = "Gruvbox light, medium (base16)",
+  color_scheme = "Gruvbox dark, medium (base16)",
   font = wezterm.font({
     family = "FiraCode Nerd Font Mono",
   }),
