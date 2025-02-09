@@ -1,7 +1,7 @@
 ## Minimal setup to cover my back if fish has issues
 
-export PATH="{{- .brew_path -}}/bin:$PATH"
-export PATH="{{- .brew_path -}}/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export COLORTERM="truecolor"
@@ -13,4 +13,4 @@ zle -N edit-command-line
 
 bindkey '^[v' edit-command-line
 
-eval "$(ssh-agent -s)"
+# eval "$(ssh-agent -s)"
