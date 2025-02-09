@@ -9,17 +9,25 @@ layout {
         }
     }
 
-    tab name="main" {
-        floating_panes {
-            pane name="" {
-                x 1
-                y "10%"
-                width 200
-                height "50%"
-            }
-        }
-        pane
+    tab name="term"
+
+    tab name="nvim" {
+        // floating_panes {
+        //     pane name="" {
+        //         x 1
+        //         y "10%"
+        //         width 200
+        //         height "50%"
+        //     }
+        // }
+        pane command="nvim"
     }
 
-    tab name="aux"
+    tab name="emacs" {
+      pane {
+        command "emacs"
+        args "-nw"
+      }
+    }
+
 }
