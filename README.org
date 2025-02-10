@@ -5,8 +5,6 @@ This repository contains my personal dotfiles, managed using
 
 * Table of content :TOC_3:
 - [[#ssh-init][SSH init]]
-  - [[#per-machine-configuration][Per-Machine Configuration]]
-    - [[#chezmoitoml-example][chezmoi.toml Example]]
 - [[#fonts][Fonts]]
 
 * SSH init
@@ -14,23 +12,6 @@ This repository contains my personal dotfiles, managed using
 chezmoi init --apply git@github.com:luisduque-ve/dotfiles.git
 #+end_src
 
-** [[https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#use-templates][Per-Machine Configuration]]
-For each machine, you should have a unique
-`~/.config/chezmoi/chezmoi.toml` file which contains machine-specific
-values. This file is not tracked in the git repository for privacy and
-security reasons.
-
-*** chezmoi.toml Example
-Here's an example of what your `chezmoi.toml` file might look like:
-
-#+begin_src toml
-[data]
-ai_support = false
-brew_path = "/opt/homebrew"
-#+end_src
-
-In this file, `brew_path` is a custom variable that can be
-used in your dotfiles templates.
 
 * Fonts
 
