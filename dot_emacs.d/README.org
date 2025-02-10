@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle init.el.tmpl
+#+PROPERTY: header-args :tangle init.el
 #+TITLE: Emacs config
 
 Since this is tracked by Chezmoi, you don't need to modify this file
