@@ -1,6 +1,7 @@
 return {
   {
     "folke/lazydev.nvim",
+    cond = not vim.g.vscode,
     ft = "lua", -- only load on lua files
     opts = {
       library = {
@@ -10,5 +11,9 @@ return {
       },
     },
   },
-  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+  {
+    "Bilal2453/luvit-meta",
+    cond = not vim.g.vscode,
+    lazy = true
+  }, -- optional `vim.uv` typings
 }
