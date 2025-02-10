@@ -11,7 +11,7 @@ layout {
 
     tab name="term"
 
-    tab name="nvim" {
+    tab focus=true name="nvim" {
         // floating_panes {
         //     pane name="" {
         //         x 1
@@ -20,7 +20,9 @@ layout {
         //         height "50%"
         //     }
         // }
-        pane command="nvim"
+        pane {
+          command "nvim"
+        }
     }
 
     tab name="emacs" {
