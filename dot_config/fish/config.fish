@@ -31,8 +31,8 @@ abbr --add gd "git diff --ignore-all-space"
 
 fish_add_path "$HOME/.local/bin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"
-fish_add_path "{{- .brew_path -}}/bin"
-fish_add_path "{{- .brew_path -}}/sbin"
+fish_add_path "/opt/homebrew/bin"
+fish_add_path "/opt/homebrew/sbin"
 
 #set -gx FZF_DEFAULT_OPTS '--color=bg:#fbf1c7,bg+:#ebdbb2,spinner:#458588,hl:#076678,fg:#3c3836,header:#3c3836,fg+:#3c3836,bg+:#d5c4a1,hl+:#076678'
 ## used by fd which is giving the output to fzf.fish
