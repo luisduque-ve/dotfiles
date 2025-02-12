@@ -10,6 +10,7 @@ org-babel-tangle.
 
 * Table of content :TOC:
 - [[#core][Core]]
+  - [[#core-mappings][Core mappings]]
   - [[#performance][Performance]]
   - [[#advice-functions][Advice functions]]
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
@@ -39,6 +40,10 @@ org-babel-tangle.
 
 * Core
 
+** Core mappings
+#+begin_src elisp
+  (global-set-key (kbd "C-c x") 'execute-extended-command)
+#+end_src
 ** Performance
 #+begin_src elisp
   (setq gc-cons-threshold 100000000)

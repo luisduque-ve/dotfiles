@@ -1,3 +1,5 @@
+(global-set-key (kbd "C-c x") 'execute-extended-command)
+
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
