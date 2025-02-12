@@ -179,9 +179,10 @@ run = "move-node-to-workspace 1"
 if.app-id = "com.github.wez.wezterm"
 run = "move-node-to-workspace 8"
 
+# This is the cursor app
 [[on-window-detected]]
 if.app-id = "com.todesktop.230313mzl4w4u92"
-run = "move-node-to-workspace 8"
+run = "move-node-to-workspace 1"
 
 # apps which start with e or j
 [[on-window-detected]]
@@ -192,4 +193,4 @@ run = "move-node-to-workspace 3"
 # apps which start with v, n, or r
 [[on-window-detected]]
 if.app-id = "com.microsoft.VSCode"
-run = "move-node-to-workspace 9"
+run = "move-node-to-workspace 1"
