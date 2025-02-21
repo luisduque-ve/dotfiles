@@ -156,14 +156,13 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 # Always open apps in specific workspaces
-# apps which start with z, s, or l
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
-run = "move-node-to-workspace 0"
+run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
 if.app-id = "com.spotify.client"
-run = "move-node-to-workspace 0"
+run = "move-node-to-workspace 9"
 
 # main
 [[on-window-detected]]
@@ -174,10 +173,6 @@ run = "move-node-to-workspace 1"
 if.app-id = "org.gnu.Emacs"
 run = "move-node-to-workspace 1"
 
-# apps which start with w, t, or c
-[[on-window-detected]]
-if.app-id = "com.github.wez.wezterm"
-run = "move-node-to-workspace 8"
 
 # This is the cursor app
 [[on-window-detected]]
@@ -188,9 +183,3 @@ run = "move-node-to-workspace 1"
 [[on-window-detected]]
 if.app-id = "com.apple.mail"
 run = "move-node-to-workspace 3"
-
-
-# apps which start with v, n, or r
-[[on-window-detected]]
-if.app-id = "com.microsoft.VSCode"
-run = "move-node-to-workspace 1"
