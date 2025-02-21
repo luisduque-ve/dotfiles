@@ -128,7 +128,7 @@ end
 abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --loop asyncio"
 abbr --add mkvirtualenv "uv venv --python"
 abbr --add pi "uv pip install"
-abbr --add pytest "python -m pytest --disable-warnings"
+abbr --add pytest "python -m pytest -s --disable-warnings"
 abbr --add jupyterlab "python -m jupyterlab --no-browser"
 
 function pysetup
