@@ -1,5 +1,9 @@
 # Homebrew must be installed before running this script
 
+# for borders tab and install
+# brew tap FelixKratz/formulae
+# brew install borders
+
 
 import subprocess
 
