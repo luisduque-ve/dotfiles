@@ -14,7 +14,6 @@ formulaes = [
     "fish",  # shell
     "fzf",  # fuzzy finder
     "jq",  # cli json utility
-    "nikitabobko/tap/aerospace",  # tiling window manager
     "node",  # nodejs
     "raycast",  # spootlight alternative
     "rg",  # rip grep
