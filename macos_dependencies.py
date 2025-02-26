@@ -2,8 +2,6 @@
 
 # for borders and sketchybar
 # brew tap FelixKratz/formulae
-# brew install borders
-# brew tap FelixKratz/formulae
 # brew install sketchybar
 
 import subprocess
@@ -24,7 +22,8 @@ formulaes = [
     "raycast",  # spootlight alternative
     "rg",  # rip grep
     "starship",  # shell prompt
-    "font-hack-nerd-font", # sketchybar requirement
+    "font-sf-pro", # sketchybar requirement
+    "sf-symbols", # sketchybar requirement
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
     "zellij",
