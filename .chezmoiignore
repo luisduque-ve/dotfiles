@@ -20,6 +20,7 @@ pre-commit-config.yaml
 requirements.txt
 ubuntu_dependencies.py
 wallpaper.png
+.vscode
 *.md
 *.org
 
