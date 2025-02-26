@@ -19,6 +19,7 @@ macos_dependencies.py
 pre-commit-config.yaml
 requirements.txt
 ubuntu_dependencies.py
+wallpaper.png
 *.md
 *.org
 
