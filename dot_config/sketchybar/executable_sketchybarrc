@@ -18,10 +18,15 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
+
 # -- Left side items --
 sketchybar --add item front_app left \
            --set front_app script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
+
+sketchybar --add item apps left \
+           --set apps script="$PLUGIN_DIR/apps.sh" \
+           --subscribe apps space_windows_change
 
 # -- Right side items --
 sketchybar --add item battery right \
