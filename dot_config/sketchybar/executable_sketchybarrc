@@ -47,5 +47,9 @@ sketchybar --add item mail right \
            --set mail update_freq=120 \
            script="$PLUGIN_DIR/mail.sh" \
 
+sketchybar --add item slack right \
+           --set slack update_freq=120 \
+           script="$PLUGIN_DIR/slack.sh" \
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
