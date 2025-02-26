@@ -1,9 +1,10 @@
 # Homebrew must be installed before running this script
 
-# for borders tab and install
+# for borders and sketchybar
 # brew tap FelixKratz/formulae
 # brew install borders
-
+# brew tap FelixKratz/formulae
+# brew install sketchybar
 
 import subprocess
 
@@ -23,6 +24,7 @@ formulaes = [
     "raycast",  # spootlight alternative
     "rg",  # rip grep
     "starship",  # shell prompt
+    "font-hack-nerd-font", # sketchybar requirement
     "tree",  # show tree like folder representation
     "wezterm",  # terminal emulator
     "zellij",
