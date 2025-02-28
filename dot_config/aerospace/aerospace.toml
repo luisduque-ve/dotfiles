@@ -34,10 +34,10 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 15
+accordion-padding = 0
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -169,13 +169,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 # # Always open apps in specific workspaces
-[[on-window-detected]]
-if.app-id = "com.tinyspeck.slackmacgap"
-run = "move-node-to-workspace 8"
 
-[[on-window-detected]]
-if.app-id = "com.spotify.client"
-run = "move-node-to-workspace 9"
 
 # main
 [[on-window-detected]]
@@ -186,13 +180,28 @@ run = "move-node-to-workspace 1"
 if.app-id = "org.gnu.Emacs"
 run = "move-node-to-workspace 1"
 
-
-# This is the cursor app
+# This is cursor app
 [[on-window-detected]]
 if.app-id = "com.todesktop.230313mzl4w4u92"
 run = "move-node-to-workspace 1"
 
-# apps which start with e or j
 [[on-window-detected]]
 if.app-id = "com.apple.mail"
 run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = "move-node-to-workspace 7"
+
+# managed by raycast
+[[on-window-detected]]
+if.app-id = "net.ankiweb.dtop"
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "com.spotify.client"
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "com.electron.dockerdesktop"
+run = "move-node-to-workspace 9"
