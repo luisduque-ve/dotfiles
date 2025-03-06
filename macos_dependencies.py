@@ -32,7 +32,7 @@ formulaes = [
 
 
 # Function to check if package is installed
-def is_package_installed(package):
+def is_package_installed(package: str):
     result = subprocess.run(
         ["brew", "list", "--versions", package.split()[-1]],
         stdout=subprocess.PIPE,
