@@ -180,9 +180,8 @@ run = "move-node-to-workspace 1"
 if.app-id = "org.gnu.Emacs"
 run = "move-node-to-workspace 1"
 
-# This is cursor app
 [[on-window-detected]]
-if.app-id = "com.todesktop.230313mzl4w4u92"
+if.app-id = "com.microsoft.VSCode"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
