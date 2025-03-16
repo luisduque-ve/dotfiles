@@ -26,7 +26,6 @@ abbr --add cu "chezmoi update -v"
 abbr --add t "terraform"
 abbr --add k "kubectl"
 abbr --add gd "git diff --ignore-all-space"
-abbr --add nvim "nvim ."
 
 ### Variables
 
