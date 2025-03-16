@@ -22,10 +22,10 @@ formulaes = [
     "raycast",  # spootlight alternative
     "rg",  # rip grep
     "starship",  # shell prompt
-    "font-sf-pro", # sketchybar requirement
-    "sf-symbols", # sketchybar requirement
+    "font-sf-pro",  # sketchybar requirement
+    "sf-symbols",  # sketchybar requirement
     "tree",  # show tree like folder representation
-    "wezterm",  # terminal emulator
+    "alacritty",  # terminal emulator
     "zellij",
     "zoxide",  # better current dir changing
 ]
