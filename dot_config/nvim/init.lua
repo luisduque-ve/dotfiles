@@ -72,8 +72,6 @@ vim.o.timeout = true
 vim.o.timeoutlen = 200
 
 
-set.colorcolumn = "70"
-
 -- set global status line
 set.laststatus = 3
 
