@@ -19,13 +19,27 @@ g.loaded_perl_provider = 0
 require("non_plugins_keymaps")
 
 -- Indentation
--- tabstop controls how many spaces a tab character (\t) appears as. In this case, every time you press the tab key or insert a tab character, it will be displayed as if it's 2 spaces wide in the editor. However, it's still a tab character in the file itself
+--
+-- tabstop controls how many spaces a tab character (\t) appears as.
+-- In this case, every time you press the tab key or insert a tab character,
+-- it will be displayed as if it's 2 spaces wide in the editor.
+-- However, it's still a tab character in the file itself
 set.tabstop = 2
--- shiftwidth is the number of spaces used for each level of indentation. So when you indent or de-indent lines (like pressing > or < in normal mode), it will change the indentation by 2 spaces
+
+-- shiftwidth is the number of spaces used for each level of indentation.
+-- So when you indent or de-indent lines (like pressing > or < in normal mode),
+-- it will change the indentation by 2 spaces
 set.shiftwidth = 2
--- softtabstop is how many spaces a tab key press counts for when you're entering text. It works together with expandtab setting. When expandtab is set, pressing tab will actually insert spaces, and softtabstop will control how many spaces to insert
+
+-- softtabstop is how many spaces a tab key press counts for when
+-- you're entering text. It works together with expandtab setting.
+-- When expandtab is set, pressing tab will actually insert spaces,
+-- and softtabstop will control how many spaces to insert
 set.softtabstop = 2
--- expandtab determines whether the tab key inserts tab characters or spaces. When expandtab is true (as it is in this case), pressing the tab key will insert spaces instead of a tab character
+
+-- expandtab determines whether the tab key inserts tab characters
+-- or spaces. When expandtab is true (as it is in this case),
+-- pressing the tab key will insert spaces instead of a tab character
 set.expandtab = true
 
 set.mouse = ""
@@ -69,8 +83,8 @@ set.laststatus = 3
 -- later releases
 
 vim.api.nvim_create_autocmd("BufRead", {
-    pattern = {"*.md", "*.MD"},
-    command = "set filetype=markdown",
+  pattern = { "*.md", "*.MD" },
+  command = "set filetype=markdown",
 })
 
 vim.api.nvim_create_autocmd("TermOpen", {
@@ -84,14 +98,14 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
