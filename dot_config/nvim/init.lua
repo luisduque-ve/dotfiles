@@ -9,7 +9,6 @@ set.termguicolors = true
 
 g.mapleader = " "
 
-
 -- diff options
 set.diffopt:append("iwhiteall")
 
@@ -71,7 +70,6 @@ vim.o.grepformat = "%f:%l:%c:%m"
 vim.o.timeout = true
 vim.o.timeoutlen = 200
 
-
 -- set global status line
 set.laststatus = 3
 
@@ -81,29 +79,28 @@ set.laststatus = 3
 -- later releases
 
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = { "*.md", "*.MD" },
-  command = "set filetype=markdown",
+	pattern = { "*.md", "*.MD" },
+	command = "set filetype=markdown",
 })
 
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-  end,
+	pattern = "*",
+	callback = function()
+		vim.opt_local.number = false
+		vim.opt_local.relativenumber = false
+	end,
 })
-
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
