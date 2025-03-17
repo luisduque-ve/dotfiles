@@ -13,4 +13,33 @@ zle -N edit-command-line
 
 bindkey '^[v' edit-command-line
 
-# eval "$(ssh-agent -s)"
+function a() {
+  local query=$1
+  local selected_dir
+
+  if [[ -n "$query" ]]; then
+    selected_dir=$(zoxide query -l | grep -i "$query" | fzf)
+  else
+    selected_dir=$(zoxide query -l | fzf)
+  fi
+
+  [[ -n "$selected_dir" ]] && cd "$selected_dir"
+}
+
+function A() {
+  local query=$1
+  local selected_dir
+
+  if [[ -n "$query" ]]; then
+    selected_dir=$(zoxide query -l | grep -i "$query" | fzf)
+  else
+    selected_dir=$(zoxide query -l | fzf)
+  fi
+
+  if [[ -n "$selected_dir" ]]; then
+    zoxide remove "$selected_dir"
+    echo "Removed $selected_dir from zoxide history."
+  else
+    echo "No directory selected."
+  fi
+}
