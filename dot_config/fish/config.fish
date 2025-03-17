@@ -55,6 +55,7 @@ function a
   end
   cd $selected_dir
 end
+
 function A
   set query $argv[1]
   if test -n "$query"
