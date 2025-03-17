@@ -8,24 +8,27 @@ import subprocess
 
 # List of dependencies to be installed
 formulaes = [
+    "alacritty",  # terminal emulator
+    "pipx",  # global python packages
     "anki",  # study
     "bat",  # cat alternative
+    "bob",  # neovim version manager
     "chezmoi",  # dotfiles manager
     "curl",  # http client
     "doll",  # show notifications on status bar
     "eza",  # ls replacement
     "fish",  # shell
+    "font-sf-pro",  # sketchybar requirement
     "fzf",  # fuzzy finder
+    "gcc",  # nvim build dependency
     "jq",  # cli json utility
     "nikitabobko/tap/aerospace",  # tiling window manager
     "node",  # nodejs
     "raycast",  # spootlight alternative
     "rg",  # rip grep
-    "starship",  # shell prompt
-    "font-sf-pro",  # sketchybar requirement
     "sf-symbols",  # sketchybar requirement
+    "starship",  # shell prompt
     "tree",  # show tree like folder representation
-    "alacritty",  # terminal emulator
     "zellij",
     "zoxide",  # better current dir changing
 ]
