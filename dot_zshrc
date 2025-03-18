@@ -2,6 +2,8 @@
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 export COLORTERM="truecolor"

@@ -30,6 +30,7 @@ abbr --add gd "git diff --ignore-all-space"
 ### Variables
 
 fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.local/share/bob/nvim-bin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"
 fish_add_path "/opt/homebrew/bin"
 fish_add_path "/opt/homebrew/sbin"
