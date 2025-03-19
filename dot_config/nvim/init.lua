@@ -8,6 +8,7 @@ set.termguicolors = true
 -- end of nvim-tree.lua requirements
 
 g.mapleader = " "
+g.maplocalleader = ","
 
 -- diff options
 set.diffopt:append("iwhiteall")
