@@ -10,6 +10,7 @@ return {
         autocmd ColorScheme * highlight QuickScopeSecondary guifg='#7c6f64' gui=underline ctermfg=59 cterm=underline
       augroup END
     ]])
+		vim.g.qs_highlight_on_keys = { "f", "F" }
 	end,
 	event = "VeryLazy",
 }
