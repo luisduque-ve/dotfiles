@@ -9,7 +9,6 @@ import subprocess
 # List of dependencies to be installed
 formulaes = [
     "alacritty",  # terminal emulator
-    "pipx",  # global python packages
     "anki",  # study
     "bat",  # cat alternative
     "bob",  # neovim version manager
