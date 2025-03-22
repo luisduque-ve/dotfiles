@@ -4,6 +4,8 @@
 # Then this are the current plugins I use
 # https://github.com/PatrickF1/fzf.fish?tab=readme-ov-file#installation
 
+source $HOME/.config/fish/custom_variables.fish
+
 if status is-interactive
 end
 
@@ -26,6 +28,7 @@ abbr --add cu "chezmoi update -v"
 abbr --add t "terraform"
 abbr --add k "kubectl"
 abbr --add gd "git diff --ignore-all-space"
+abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
 
 ### Variables
 
