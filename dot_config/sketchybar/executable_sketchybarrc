@@ -39,15 +39,5 @@ sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change
 
-sketchybar --add item mail right \
-           --set mail update_freq=120 \
-           updates=on \
-           script="$PLUGIN_DIR/mail.sh" \
-
-sketchybar --add item slack right \
-           --set slack update_freq=3 \
-           updates=on \
-           script="$PLUGIN_DIR/slack.sh" \
-
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
