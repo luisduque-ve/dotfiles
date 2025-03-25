@@ -10,10 +10,8 @@ vim.keymap.set({ "n" }, "}", "}zz")
 vim.keymap.set({ "n" }, "{", "{zz")
 
 -- Quickfix
-vim.keymap.set({ "n" }, "[q", "<CMD>cprevious<CR>zz", { desc = "cprevious" })
-vim.keymap.set({ "n" }, "]q", "<CMD>cnext<CR>zz", { desc = "cnext" })
-vim.keymap.set({ "n" }, "[Q", "<CMD>cfirst<CR>zz", { desc = "cfirst" })
-vim.keymap.set({ "n" }, "]Q", "<CMD>clast<CR>zz", { desc = "clast" })
+vim.keymap.set({ "n" }, "<leader>pq", "<CMD>cprevious<CR>zz", { desc = "quickfix" })
+vim.keymap.set({ "n" }, "<leader>nq", "<CMD>cnext<CR>zz", { desc = "quickfix" })
 
 -- buffers
 vim.keymap.set({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", { desc = "close_all" })

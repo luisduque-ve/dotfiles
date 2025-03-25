@@ -11,6 +11,8 @@ return {
 			{ "<leader>b", group = "+buffer" },
 			{ "<leader>c", group = "+ai", mode = { "n", "v" } },
 			{ "<leader>g", group = "+git" },
+			{ "<leader>n", group = "+next" },
+			{ "<leader>p", group = "+previous" },
 			{ "<leader>s", group = "+search" },
 			{ "<leader>t", group = "+test" },
 			{ "<leader>u", group = "+utils" },
