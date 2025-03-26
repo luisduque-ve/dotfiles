@@ -15,6 +15,7 @@ return {
 			{ "<leader>p", group = "+previous" },
 			{ "<leader>s", group = "+search" },
 			{ "<leader>t", group = "+test" },
+			{ "<leader>tc", group = "+coverage" },
 			{ "<leader>u", group = "+utils" },
 			{ "<leader>uc", group = "+change_case_to" },
 			{ "<leader>um", group = "+markdown" },
