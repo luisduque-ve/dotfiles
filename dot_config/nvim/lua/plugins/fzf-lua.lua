@@ -42,7 +42,6 @@ return {
 		{ "<leader>su", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
 		{ "<leader>sk", "<CMD>FzfLua keymaps<CR>", desc = "keymaps" },
 		{ "<leader>ss", "<CMD>FzfLua lsp_document_symbols<CR>", desc = "lsp_document_symbols" },
-		{ "<leader>st", "<CMD>FzfLua tabs<CR>", desc = "tabs" },
 		{ "<F4>", "<CMD>FzfLua dap_commands<CR>", desc = "dap_commands", mode = { "n", "i" } },
 		{ "<M-x>", "<CMD>FzfLua commands<CR>", desc = "command" },
 	},

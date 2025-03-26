@@ -25,4 +25,7 @@ return {
 			},
 		},
 	},
+	keys = {
+		{ "<leader>st", "<CMD>e todo.norg<CR>", desc = "TODOs" },
+	},
 }
