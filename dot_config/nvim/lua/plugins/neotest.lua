@@ -1,6 +1,5 @@
 return {
 	"nvim-neotest/neotest",
-	cond = not vim.g.vscode,
 	ft = "python", -- only working with python right now
 	dependencies = {
 		"nvim-neotest/nvim-nio",

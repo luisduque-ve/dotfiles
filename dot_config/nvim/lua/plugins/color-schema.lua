@@ -1,10 +1,9 @@
 return {
-  "sainnhe/gruvbox-material",
-  cond = not vim.g.vscode,
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd([[
+	"sainnhe/gruvbox-material",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd([[
   if has('termguicolors')
     set termguicolors
   endif
@@ -14,5 +13,5 @@ return {
   let g:gruvbox_material_better_performance = 1
   colorscheme gruvbox-material
 ]])
-  end,
+	end,
 }
