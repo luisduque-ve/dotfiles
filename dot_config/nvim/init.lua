@@ -16,8 +16,6 @@ set.diffopt:append("iwhiteall")
 g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0
 
-require("non_plugins_keymaps")
-
 -- Indentation
 --
 -- tabstop controls how many spaces a tab character (\t) appears as.
@@ -106,3 +104,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+vim.keymap.set({ "n" }, "<leader>l", "<CMD>Lazy<CR>", { desc = "Lazy" })
+
+vim.lsp.enable({ "pylsp" })
+
+require("keymaps")

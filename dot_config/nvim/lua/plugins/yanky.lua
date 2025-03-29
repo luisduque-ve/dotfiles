@@ -9,7 +9,7 @@ return {
 		})
 		vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
 		vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-		vim.keymap.set("n", "<leader>ny", "<Plug>(YankyCycleForward)", { desc = "yank" })
-		vim.keymap.set("n", "<leader>py", "<Plug>(YankyCycleBackward)", { desc = "yank" })
+		vim.keymap.set("n", "]y", "<Plug>(YankyCycleForward)", { desc = "yank" })
+		vim.keymap.set("n", "[y", "<Plug>(YankyCycleBackward)", { desc = "yank" })
 	end,
 }
