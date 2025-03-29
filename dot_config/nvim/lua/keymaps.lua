@@ -41,6 +41,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set({ "n" }, "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>", { desc = "lsp_declaration" })
 		vim.keymap.set({ "n" }, "gs", "<CMD>lua vim.lsp.buf.signature_help()<CR>", { desc = "lsp_signature" })
 		vim.keymap.set({ "n" }, "go", "<CMD>lua vim.lsp.buf.type_definition()<CR>", { desc = "lsp_type_definition" })
-		vim.keymap.set({ "n" }, "K", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = "lsp_hover" })
 	end,
 })
