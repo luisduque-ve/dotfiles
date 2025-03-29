@@ -1,14 +1,11 @@
 return {
 	"NeogitOrg/neogit",
-	cond = not vim.g.vscode,
 	dependencies = {
-		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
-		-- Only one of these is needed.
-		"ibhagwan/fzf-lua", -- optional
+		"nvim-lua/plenary.nvim",
+		"sindrets/diffview.nvim",
+		"ibhagwan/fzf-lua",
 	},
 	opts = {
-		-- disable_line_numbers = false,
 		disable_relative_line_numbers = false,
 		mappings = {
 			finder = {
@@ -18,6 +15,10 @@ return {
 			status = {
 				["<c-n>"] = false,
 				["<c-p>"] = false,
+				["1"] = false,
+				["2"] = false,
+				["3"] = false,
+				["4"] = false,
 			},
 		},
 	},
