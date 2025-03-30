@@ -1,3 +1,4 @@
+### FORMULAES
 brew "bat" # cat alternative
 brew "bob" # neovim version manager
 brew "chezmoi" # dotfiles manager
@@ -14,9 +15,25 @@ brew "starship" # shell prompt
 brew "tree" # show tree like folder representation
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
+
+
+### CASKS
 cask "alacritty" # terminal emulator
 cask "anki" # study
-cask "font-sf-pro" # sketchybar requirement
-cask "nikitabobko/tap/aerospace" # tiling window manager
+cask "brave-browser"
+cask "calibre"
+cask "digikam"
+cask "drawio"
+cask "kdiff3"
+cask "ngrok"
 cask "raycast" # spootlight alternative
+
+
+### TAPS
+tap "nikitabobko/tap"
+cask "nikitabobko/tap/aerospace" # tiling window manager
+
+tap "FelixKratz/formulae"
+brew "sketchybar"
+cask "font-sf-pro" # sketchybar requirement
 cask "sf-symbols" # sketchybar requirement
