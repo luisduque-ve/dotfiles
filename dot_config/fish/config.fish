@@ -29,6 +29,8 @@ abbr --add t "terraform"
 abbr --add k "kubectl"
 abbr --add gd "git diff --ignore-all-space"
 abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
+abbr --add bclean "brew bundle --force cleanup"
+abbr --add bupgrade "brew bundle install --upgrade"
 
 ### Variables
 
