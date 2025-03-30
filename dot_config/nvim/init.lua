@@ -107,7 +107,7 @@ require("lazy").setup("plugins")
 vim.keymap.set({ "n" }, "<leader>l", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
 vim.diagnostic.config({
-	virtual_text = { current_line = true },
+	virtual_lines = { current_line = false },
 })
 
 vim.lsp.enable({
