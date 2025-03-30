@@ -28,7 +28,7 @@ return {
 				prompt = "Neorg » ",
 				cwd = "~/notes",
 			})
-		end)
+		end, {desc="notes"})
 	end,
 	keys = {
 		{ "gr", "<CMD>FzfLua lsp_references<CR>", desc = "lsp_references" },
