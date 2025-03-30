@@ -12,6 +12,7 @@ brew "lua-language-server" # LSP
 brew "node" # nodejs
 brew "rg" # rip grep
 brew "starship" # shell prompt
+brew "stylua" # lua code formatter
 brew "tree" # show tree like folder representation
 brew "uv" # python package manager
 brew "zellij" # terminal multiplexer
