@@ -8,6 +8,10 @@ return {
 	config = function()
 		local wk = require("which-key")
 
+
+  wk.setup({
+    sort = { "alphanum"}
+  })
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(ev)
 				wk.add({
