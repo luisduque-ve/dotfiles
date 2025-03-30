@@ -113,6 +113,7 @@ vim.diagnostic.config({
 vim.lsp.enable({
 	"luals",
 	"pylsp",
+	"tsserver",
 })
 
 require("keymaps")
