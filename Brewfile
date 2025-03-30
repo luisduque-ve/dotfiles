@@ -13,6 +13,7 @@ brew "node" # nodejs
 brew "rg" # rip grep
 brew "starship" # shell prompt
 brew "tree" # show tree like folder representation
+brew "uv" # python package manager
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
 
