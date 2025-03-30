@@ -2,12 +2,16 @@
 brew "bat" # cat alternative
 brew "bob" # neovim version manager
 brew "chezmoi" # dotfiles manager
+brew "colima" # containers runtime
 brew "curl" # http client
+brew "docker" # container engine
+brew "docker-compose" # docker tool
 brew "eza" # ls replacement
 brew "fish" # shell
 brew "fzf" # fuzzy finder
 brew "gcc" # nvim build dependency
 brew "jq" # cli json utility
+brew "lazydocker" # docker management tool
 brew "lua-language-server" # LSP
 brew "node" # nodejs
 brew "rg" # rip grep
