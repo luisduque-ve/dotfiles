@@ -34,6 +34,7 @@ cask "drawio"
 cask "kdiff3"
 cask "ngrok"
 cask "raycast" # spootlight alternative
+cask "spotify"
 
 
 ### TAPS
