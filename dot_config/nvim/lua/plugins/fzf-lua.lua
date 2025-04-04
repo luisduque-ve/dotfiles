@@ -28,7 +28,7 @@ return {
 				prompt = "Neorg » ",
 				cwd = "~/notes",
 			})
-		end, {desc="notes"})
+		end, { desc = "notes" })
 	end,
 	keys = {
 		{ "grr", "<CMD>FzfLua lsp_references<CR>", desc = "lsp_references" },
@@ -41,6 +41,6 @@ return {
 		{ "<leader>sk", "<CMD>FzfLua keymaps<CR>", desc = "keymaps" },
 		{ "<leader>ss", "<CMD>FzfLua lsp_document_symbols<CR>", desc = "lsp_document_symbols" },
 		{ "<F4>", "<CMD>FzfLua dap_commands<CR>", desc = "dap_commands", mode = { "n", "i" } },
-		{ "<M-x>", "<CMD>FzfLua commands<CR>", desc = "command" },
+		{ "<leader>sc", "<CMD>FzfLua commands<CR>", desc = "command" },
 	},
 }

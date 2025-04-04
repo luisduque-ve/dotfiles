@@ -43,3 +43,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set({ "n" }, "go", "<CMD>lua vim.lsp.buf.type_definition()<CR>", { desc = "lsp_type_definition" })
 	end,
 })
+
+vim.keymap.set({ "n", "v" }, "<M-x>", ":")
