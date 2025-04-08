@@ -8,6 +8,7 @@ return {
 				theme = "gruvbox_dark",
 			},
 			sections = {
+				lualine_c = { { "filename", path = 1 } },
 				lualine_b = { "branch" },
 				lualine_x = { "searchcount", "filetype" },
 			},
