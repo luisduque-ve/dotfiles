@@ -4,9 +4,3 @@ isort
 pre-commit
 pynvim
 rope
-
-# LSP
-pyls-memestra
-pylsp-mypy
-pylsp-rope
-python-lsp-server[all]
