@@ -22,6 +22,8 @@ brew "typescript-language-server" # LSP
 brew "uv" # python package manager
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
+brew "pyright" # LSP
+brew "mypy" # python type checking
 
 
 ### CASKS

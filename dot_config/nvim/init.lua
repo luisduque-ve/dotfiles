@@ -112,7 +112,7 @@ vim.diagnostic.config({
 
 vim.lsp.enable({
 	"luals",
-	"pylsp",
+	"pyright",
 	"tsserver",
 })
 
