@@ -72,6 +72,8 @@ vim.o.timeoutlen = 200
 -- set global status line
 set.laststatus = 3
 
+set.colorcolumn = "70"
+
 -- configure neovim to recognize markdown files
 -- not sure what breaks this in the latest neovim
 -- version, this is going to be probably fixed in
