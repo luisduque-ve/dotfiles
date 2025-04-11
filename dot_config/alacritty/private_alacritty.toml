@@ -23,3 +23,4 @@ y = 1
 [window]
 option_as_alt = "Both"
 decorations = "Buttonless"
+startup_mode = "Maximized"
