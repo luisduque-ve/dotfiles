@@ -33,6 +33,7 @@ cask "brave-browser"
 cask "calibre"
 cask "digikam"
 cask "drawio"
+cask "foxitreader" # pdf reader
 cask "kdiff3"
 cask "ngrok"
 cask "raycast" # spootlight alternative
