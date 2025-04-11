@@ -195,7 +195,7 @@ run = "move-node-to-workspace 7"
 # managed by raycast
 [[on-window-detected]]
 if.app-id = "net.ankiweb.dtop"
-run = "move-node-to-workspace 9"
+run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = "com.spotify.client"
