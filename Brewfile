@@ -7,6 +7,7 @@ brew "curl" # http client
 brew "docker" # container engine
 brew "docker-compose" # docker tool
 brew "eza" # ls replacement
+brew "fd" # faster find
 brew "fish" # shell
 brew "fzf" # fuzzy finder
 brew "gcc" # nvim build dependency
