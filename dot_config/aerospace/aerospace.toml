@@ -181,21 +181,16 @@ if.app-id = "org.alacritty"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
-if.app-id = "com.microsoft.VSCode"
-run = "move-node-to-workspace 1"
+if.app-id = "com.flexibits.fantastical2.mac"
+run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
-if.app-id = "com.apple.mail"
+if.app-id = "com.mailspring.mailspring"
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
 run = "move-node-to-workspace 7"
-
-# managed by raycast
-[[on-window-detected]]
-if.app-id = "net.ankiweb.dtop"
-run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = "com.spotify.client"
