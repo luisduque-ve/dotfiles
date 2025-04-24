@@ -34,9 +34,9 @@ cask "brave-browser"
 cask "calibre"
 cask "digikam"
 cask "drawio"
-cask "mailspring"
 cask "foxitreader" # pdf reader
 cask "kdiff3"
+cask "mailspring"
 cask "ngrok"
 cask "raycast" # spootlight alternative
 cask "spotify"
