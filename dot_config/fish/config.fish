@@ -22,15 +22,16 @@ bind -M insert \cn down-or-search
 alias fzf="fzf -m --query \"'\""
 
 # abbreviations
-abbr --add ls "eza -l -h"
-abbr --add ca "chezmoi apply -v"
-abbr --add cu "chezmoi update -v"
-abbr --add t "terraform"
-abbr --add k "kubectl"
-abbr --add gd "git diff --ignore-all-space"
+abbr --add apps 'aerospace list-windows --all --format "%{workspace} %{app-name}" --json'
 abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
 abbr --add bclean "brew bundle --force cleanup"
 abbr --add bupgrade "brew bundle install --upgrade"
+abbr --add ca "chezmoi apply -v"
+abbr --add cu "chezmoi update -v"
+abbr --add gd "git diff --ignore-all-space"
+abbr --add k "kubectl"
+abbr --add ls "eza -l -h"
+abbr --add t "terraform"
 
 ### Variables
 
