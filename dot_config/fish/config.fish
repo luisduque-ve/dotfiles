@@ -22,7 +22,7 @@ bind -M insert \cn down-or-search
 alias fzf="fzf -m --query \"'\""
 
 # abbreviations
-abbr --add apps 'aerospace list-windows --all --format "%{workspace} %{app-name}" --json'
+abbr --add apps 'aerospace list-windows --all --format "%{workspace} %{app-name} %{app-bundle-id}" --json'
 abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
 abbr --add bclean "brew bundle --force cleanup"
 abbr --add bupgrade "brew bundle install --upgrade"
