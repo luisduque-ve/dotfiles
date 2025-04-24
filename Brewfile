@@ -44,8 +44,3 @@ cask "spotify"
 ### TAPS
 tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace" # tiling window manager
-
-tap "FelixKratz/formulae"
-brew "sketchybar"
-cask "font-sf-pro" # sketchybar requirement
-cask "sf-symbols" # sketchybar requirement
