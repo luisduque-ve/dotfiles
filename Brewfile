@@ -34,6 +34,7 @@ cask "brave-browser"
 cask "calibre"
 cask "digikam"
 cask "drawio"
+cask "mailspring"
 cask "foxitreader" # pdf reader
 cask "kdiff3"
 cask "ngrok"
