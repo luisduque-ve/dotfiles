@@ -14,7 +14,9 @@ brew "gcc" # nvim build dependency
 brew "jq" # cli json utility
 brew "lazydocker" # docker management tool
 brew "lua-language-server" # LSP
+brew "mypy" # python type checking
 brew "node" # nodejs
+brew "pyright" # LSP
 brew "rg" # rip grep
 brew "starship" # shell prompt
 brew "stylua" # lua code formatter
@@ -23,8 +25,6 @@ brew "typescript-language-server" # LSP
 brew "uv" # python package manager
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
-brew "pyright" # LSP
-brew "mypy" # python type checking
 
 
 ### CASKS
