@@ -31,6 +31,7 @@ brew "zoxide" # better current dir changing
 cask "alacritty" # terminal emulator
 cask "anki" # study
 cask "brave-browser"
+cask "bruno"
 cask "calibre"
 cask "digikam"
 cask "drawio"
