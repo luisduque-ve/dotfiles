@@ -46,3 +46,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.keymap.set({ "n", "v" }, "<M-x>", ":")
 vim.keymap.set("i", "<M-x>", "<Esc>:")
+
+-- Keymaps removals
+vim.keymap.set("n", "u", function()
+	print("Oops, you tried to undo.")
+end)
