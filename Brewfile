@@ -40,6 +40,7 @@ cask "kdiff3"
 cask "mailspring"
 cask "ngrok"
 cask "raycast" # spootlight alternative
+cask "visual-studio-code"
 cask "spotify"
 
 
