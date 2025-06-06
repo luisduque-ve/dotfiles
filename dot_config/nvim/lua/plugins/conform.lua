@@ -6,6 +6,7 @@ return {
 				lua = { "stylua" },
 				python = { "autoflake", "isort", "darker" },
 				terraform = { "terraform_fmt" },
+				javascript = { "prettier" },
 			},
 			formatters = {
 				autoflake = {

@@ -6,6 +6,7 @@ brew "colima" # containers runtime
 brew "curl" # http client
 brew "docker" # container engine
 brew "docker-compose" # docker tool
+brew "eslint" # js ecosystem linter
 brew "eza" # ls replacement
 brew "fd" # faster find
 brew "fish" # shell
@@ -16,6 +17,7 @@ brew "lazydocker" # docker management tool
 brew "lua-language-server" # LSP
 brew "mypy" # python type checking
 brew "node" # nodejs
+brew "prettier" # js ecosystem formatter
 brew "pyright" # LSP
 brew "rg" # rip grep
 brew "starship" # shell prompt
