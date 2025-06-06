@@ -84,6 +84,14 @@ vim.api.nvim_create_autocmd("BufRead", {
 	command = "set filetype=markdown",
 })
 
+-- Remove auto comments
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "r", "o" })
+	end,
+})
+
 vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "*",
 	callback = function()
