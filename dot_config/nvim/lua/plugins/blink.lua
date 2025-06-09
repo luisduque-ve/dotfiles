@@ -8,6 +8,7 @@ return {
 				require("luasnip.loaders.from_vscode").lazy_load()
 				-- add html snippets to js files
 				require("luasnip").filetype_extend("javascript", { "html" })
+				require("luasnip").filetype_extend("htmldjango", { "html" })
 			end,
 		},
 	},
