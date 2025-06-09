@@ -7,6 +7,8 @@ return {
 				python = { "autoflake", "isort", "darker" },
 				terraform = { "terraform_fmt" },
 				javascript = { "prettier" },
+				html = { "prettier" },
+				htmldjango = { "prettier" },
 			},
 			formatters = {
 				autoflake = {
