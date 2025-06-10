@@ -8,7 +8,7 @@ return {
 				terraform = { "terraform_fmt" },
 				javascript = { "prettier" },
 				html = { "prettier" },
-				htmldjango = { "prettier" },
+				htmldjango = { "djlint" },
 			},
 			formatters = {
 				autoflake = {

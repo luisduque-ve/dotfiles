@@ -4,6 +4,7 @@ brew "bob" # neovim version manager
 brew "chezmoi" # dotfiles manager
 brew "colima" # containers runtime
 brew "curl" # http client
+brew "djlint" # html template lint and formatter
 brew "docker" # container engine
 brew "docker-compose" # docker tool
 brew "eslint" # js ecosystem linter
