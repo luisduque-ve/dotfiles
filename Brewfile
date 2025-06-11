@@ -1,6 +1,7 @@
 ### FORMULAES
 brew "bat" # cat alternative
 brew "bob" # neovim version manager
+brew "cairo" # weasyprint requirement
 brew "chezmoi" # dotfiles manager
 brew "colima" # containers runtime
 brew "curl" # http client
@@ -13,11 +14,14 @@ brew "fd" # faster find
 brew "fish" # shell
 brew "fzf" # fuzzy finder
 brew "gcc" # nvim build dependency
+brew "gdk-pixbuf" # weasyprint requirement
 brew "jq" # cli json utility
 brew "lazydocker" # docker management tool
+brew "libffi" # weasyprint requirement
 brew "lua-language-server" # LSP
 brew "mypy" # python type checking
 brew "node" # nodejs
+brew "pango" # weasyprint requirement
 brew "prettier" # js ecosystem formatter
 brew "pyright" # LSP
 brew "rg" # rip grep

@@ -46,6 +46,10 @@ set -gx VISUAL nvim
 
 set -gx PYDEVD_DISABLE_FILE_VALIDATION 1
 
+### weasyprint requirements
+set -gx PKG_CONFIG_PATH /opt/homebrew/lib/pkgconfig
+set -gx DYLD_LIBRARY_PATH /opt/homebrew/lib $DYLD_LIBRARY_PATH
+
 ### Functions
 
 # I like to use zoxide like this more than just the vanilla z
