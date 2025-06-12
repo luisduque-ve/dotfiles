@@ -47,10 +47,10 @@ cask "kdiff3"
 cask "mailspring"
 cask "notion"
 cask "raycast" # spootlight alternative
-cask "visual-studio-code"
 cask "spotify"
+cask "visual-studio-code"
 
 
 ### TAPS
-tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace" # tiling window manager
+tap "nikitabobko/tap"
