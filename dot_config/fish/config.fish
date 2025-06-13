@@ -50,6 +50,10 @@ set -gx PYDEVD_DISABLE_FILE_VALIDATION 1
 set -gx PKG_CONFIG_PATH /opt/homebrew/lib/pkgconfig
 set -gx DYLD_LIBRARY_PATH /opt/homebrew/lib $DYLD_LIBRARY_PATH
 
+
+### fzf config: show prompt at top
+set -gx FZF_DEFAULT_OPTS '--layout=reverse --info=inline --height=40%'
+
 ### Functions
 
 # I like to use zoxide like this more than just the vanilla z
