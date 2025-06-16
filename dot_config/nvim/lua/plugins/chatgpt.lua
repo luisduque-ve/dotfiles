@@ -15,6 +15,6 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	keys = {
-		{ "<leader>uc", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "opena_with_instructions" },
+		{ "<leader>uc", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "openai_with_instructions" },
 	},
 }
