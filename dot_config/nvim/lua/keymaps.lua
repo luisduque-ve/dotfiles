@@ -47,6 +47,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.keymap.set({ "n", "v" }, "<M-x>", ":")
 vim.keymap.set("i", "<M-x>", "<Esc>:")
 
+-- term
+vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
+vim.keymap.set({ "t" }, "<C-o>", "<C-\\><C-n><C-o>zz")
+vim.keymap.set({ "t" }, "<C-i>", "<C-\\><C-n><C-i>zz")
+
+-- tabs
+vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
+vim.keymap.set({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", { desc = "tabprevious" })
+vim.keymap.set({ "n" }, "<leader>ut", "<CMD>tabnew<CR>", { desc = "tab" })
+
 -- Keymaps removals
 vim.keymap.set("n", "u", function()
 	print("Oops, you tried to undo.")
