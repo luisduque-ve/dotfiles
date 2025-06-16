@@ -1,17 +1,5 @@
 ## Minimal setup to cover my back if fish has issues
 
-source "$HOME/.config/zsh/variables"
-
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-
-export EDITOR="nvim"
-export VISUAL="nvim"
-export COLORTERM="truecolor"
-export WORDCHARS="*?.[]~=&;!#$%^(){}<>"
-
-
 autoload -Uz edit-command-line
 zle -N edit-command-line
 
