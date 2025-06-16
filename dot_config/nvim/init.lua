@@ -1,6 +1,9 @@
 local g = vim.g
 local set = vim.opt
 
+-- set default shell
+vim.o.shell = "/opt/homebrew/bin/fish"
+
 -- this is for nvim-tree.lua
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
