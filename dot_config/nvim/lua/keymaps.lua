@@ -44,9 +44,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.keymap.set({ "n", "v" }, "<M-x>", ":")
-vim.keymap.set("i", "<M-x>", "<Esc>:")
-
 -- term
 vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
 vim.keymap.set({ "t" }, "<C-o>", "<C-\\><C-n><C-o>zz")
