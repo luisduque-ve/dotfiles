@@ -32,6 +32,7 @@ return {
 	end,
 	keys = {
 		{ "grr", "<CMD>FzfLua lsp_references<CR>", desc = "lsp_references" },
+		{ "<Leader>sa", "<CMD>FzfLua zoxide<CR>", desc = "zoxide" },
 		{ "<Leader>sd", "<CMD>FzfLua dap_configurations<CR>", desc = "dap_configurations" },
 		{ "<Leader>sf", "<CMD>FzfLua<CR>", desc = "fzf-lua" },
 		{ "<leader>sg", "<CMD>FzfLua live_grep_glob<CR>", desc = "live_grep" },
