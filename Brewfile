@@ -45,6 +45,7 @@ cask "drawio"
 cask "foxitreader" # pdf reader
 cask "kdiff3"
 cask "mailspring"
+cask "neovide"
 cask "notion"
 cask "raycast" # spootlight alternative
 cask "spotify"
