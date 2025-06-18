@@ -153,9 +153,3 @@ end
 
 zoxide init fish | source
 starship init fish | source
-
-
-### Clear screen before each command to keep prompt at top
-function clear_before_command --on-event fish_preexec
-    clear
-end
