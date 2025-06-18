@@ -1,6 +1,10 @@
 local g = vim.g
 local set = vim.opt
 
+if vim.g.neovide then
+	require("neovide")
+end
+
 -- set default shell
 vim.o.shell = "/opt/homebrew/bin/fish"
 
