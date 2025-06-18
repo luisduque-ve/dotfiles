@@ -1,5 +1,6 @@
 -- Disable cursor animation
 vim.g.neovide_cursor_animation_length = 0
+vim.g.neovide_input_macos_option_key_is_meta = "both"
 
 vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
 vim.keymap.set("v", "<D-c>", '"+y') -- Copy
