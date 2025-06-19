@@ -8,10 +8,9 @@ return {
 	config = function()
 		local wk = require("which-key")
 
-
-  wk.setup({
-    sort = { "alphanum"}
-  })
+		wk.setup({
+			sort = { "alphanum" },
+		})
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(ev)
 				wk.add({
@@ -29,6 +28,7 @@ return {
 			{ "<leader>t", group = "+test" },
 			{ "<leader>tc", group = "+coverage" },
 			{ "<leader>u", group = "+utils" },
+			{ "<leader>uv", group = "+uv" },
 			{
 				"<leader>w",
 				'<cmd>lua require("which-key").show({keys = "<c-w>", loop=true})<cr>',
