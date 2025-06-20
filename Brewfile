@@ -35,12 +35,12 @@ brew "zoxide" # better current dir changing
 
 
 ### CASKS
-cask "alacritty" # terminal emulator
 cask "anki" # study
 cask "brave-browser"
 cask "bruno"
 cask "calibre"
 cask "digikam"
+cask "ghostty" # terminal emulator
 cask "drawio"
 cask "foxitreader" # pdf reader
 cask "kdiff3"

@@ -1,0 +1,6 @@
+font-family = "FiraCode Nerd Font Mono"
+font-size = 19
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+macos-option-as-alt = left
+theme = GruvboxDark
