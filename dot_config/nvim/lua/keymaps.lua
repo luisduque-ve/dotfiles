@@ -53,8 +53,3 @@ vim.keymap.set({ "t" }, "<C-i>", "<C-\\><C-n><C-i>zz")
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", { desc = "tabprevious" })
 vim.keymap.set({ "n" }, "<leader>ut", "<CMD>tabnew<CR>", { desc = "tab" })
-
--- Keymaps removals
-vim.keymap.set("n", "u", function()
-	print("Oops, you tried to undo.")
-end)
