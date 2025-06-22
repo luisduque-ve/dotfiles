@@ -17,6 +17,7 @@ brew "gcc" # nvim build dependency
 brew "gdk-pixbuf" # weasyprint requirement
 brew "jq" # cli json utility
 brew "lazydocker" # docker management tool
+brew "lazygit"
 brew "libffi" # weasyprint requirement
 brew "lua-language-server" # LSP
 brew "mypy" # python type checking
