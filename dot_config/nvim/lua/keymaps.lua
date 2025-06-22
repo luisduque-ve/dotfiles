@@ -12,6 +12,8 @@ vim.keymap.set({ "n" }, "N", "Nzz")
 vim.keymap.set({ "n" }, "G", "Gzz")
 vim.keymap.set({ "n" }, "}", "}zz")
 vim.keymap.set({ "n" }, "{", "{zz")
+vim.keymap.set({ "n" }, "[c", "[czz")
+vim.keymap.set({ "n" }, "]c", "]czz")
 
 -- buffers
 vim.keymap.set({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", { desc = "close_all" })
