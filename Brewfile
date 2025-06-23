@@ -44,6 +44,7 @@ cask "digikam"
 cask "ghostty" # terminal emulator
 cask "drawio"
 cask "foxitreader" # pdf reader
+cask "kdiff3"
 cask "mailspring"
 cask "neovide"
 cask "notion"
