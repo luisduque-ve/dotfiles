@@ -3,12 +3,13 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
+				html = { "prettier" },
+				htmldjango = { "djlint" },
+				javascript = { "prettier" },
+				json = { "prettier" },
 				lua = { "stylua" },
 				python = { "autoflake", "isort", "darker" },
 				terraform = { "terraform_fmt" },
-				javascript = { "prettier" },
-				html = { "prettier" },
-				htmldjango = { "djlint" },
 			},
 			formatters = {
 				autoflake = {
