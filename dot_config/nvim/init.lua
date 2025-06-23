@@ -131,6 +131,7 @@ vim.diagnostic.config({
 })
 
 vim.lsp.enable({
+	"json",
 	"luals",
 	"pyright",
 	"tsserver",

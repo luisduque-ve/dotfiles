@@ -31,6 +31,7 @@ brew "stylua" # lua code formatter
 brew "tree" # show tree like folder representation
 brew "typescript-language-server" # LSP
 brew "uv" # python package manager
+brew "vscode-langservers-extracted"
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
 
