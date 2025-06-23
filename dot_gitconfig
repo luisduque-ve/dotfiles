@@ -6,6 +6,7 @@
   conflictstyle = zdiff3
 [diff]
   colorMoved = default
+  tool = nvimdiff
 [pull]
   rebase = false
 [push]
@@ -20,3 +21,5 @@
   sslVerify = true
 [rerere]
 	enabled = true
+[difftool "nvimdiff"]
+    cmd = nvim -d -R "$LOCAL" "$REMOTE"
