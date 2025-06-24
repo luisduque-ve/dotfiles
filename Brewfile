@@ -1,10 +1,11 @@
 ### FORMULAES
 brew "bat" # cat alternative
-brew "bob" # neovim version manager
 brew "cairo" # weasyprint requirement
 brew "chezmoi" # dotfiles manager
+brew "cmake" # nvim build dependency
 brew "colima" # containers runtime
 brew "curl" # http client
+brew "curl" # nvim build dependency
 brew "djlint" # html template lint and formatter
 brew "docker" # container engine
 brew "docker-compose" # docker tool
@@ -15,12 +16,14 @@ brew "fish" # shell
 brew "fzf" # fuzzy finder
 brew "gcc" # nvim build dependency
 brew "gdk-pixbuf" # weasyprint requirement
+brew "gettext" # nvim build dependency
 brew "jq" # cli json utility
 brew "lazydocker" # docker management tool
 brew "lazygit"
 brew "libffi" # weasyprint requirement
 brew "lua-language-server" # LSP
 brew "mypy" # python type checking
+brew "ninja" # nvim build dependency
 brew "node" # nodejs
 brew "pango" # weasyprint requirement
 brew "prettier" # js ecosystem formatter
@@ -35,7 +38,6 @@ brew "vscode-langservers-extracted"
 brew "zellij" # terminal multiplexer
 brew "zoxide" # better current dir changing
 
-
 ### CASKS
 cask "anki" # study
 cask "brave-browser"
@@ -46,7 +48,6 @@ cask "ghostty" # terminal emulator
 cask "drawio"
 cask "foxitreader" # pdf reader
 cask "mailspring"
-cask "neovide"
 cask "notion"
 cask "raycast" # spootlight alternative
 cask "spotify"

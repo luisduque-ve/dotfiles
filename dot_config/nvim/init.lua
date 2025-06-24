@@ -1,15 +1,8 @@
 local g = vim.g
 local set = vim.opt
 
-if vim.g.neovide then
-	require("neovide")
-end
-
 -- set default shell
 vim.o.shell = "/opt/homebrew/bin/fish"
-
--- GUI configs
-vim.o.guifont = "FiraCode Nerd Font Mono:h19"
 
 -- this is for nvim-tree.lua
 g.loaded_netrw = 1

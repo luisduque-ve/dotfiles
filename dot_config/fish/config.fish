@@ -135,6 +135,30 @@ function sa
     ssh-add
 end
 
+function buildnvim -d "Build neovim from source and install it"
+    echo "Saving current version"
+    set OLD_VERSION (nvim --version | grep NVIM)
+    echo "Entering in neovim source folder..."
+    cd $HOME/code/neovim
+    echo "Pulling branch..."
+    git pull
+    echo "Making a distclean..."
+    make distclean
+    echo "Running make..."
+    make CMAKE_BUILD_TYPE=Release CMAKE_OSX_ARCHITECTURES=arm64 CMAKE_INSTALL_PREFIX=$HOME/.local
+    echo "Running make install ..."
+    make install
+    set NEW_VERSION ($HOME/.local/bin/nvim --version | grep NVIM)
+    echo "Previous version was:"
+    echo $OLD_VERSION
+    echo "New version is:"
+    echo $NEW_VERSION
+    $HOME/.local/bin/nvim --version | grep ^Build
+    echo "Returning to previous directory..."
+    cd -
+end
+
+
 ### Python
 
 abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:app --reload --loop asyncio"
