@@ -43,6 +43,7 @@ cask "anki" # study
 cask "brave-browser"
 cask "bruno"
 cask "calibre"
+cask "chatbox"
 cask "digikam"
 cask "ghostty" # terminal emulator
 cask "drawio"
