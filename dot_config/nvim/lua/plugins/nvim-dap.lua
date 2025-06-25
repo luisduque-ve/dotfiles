@@ -8,7 +8,8 @@ return {
 	config = function()
 		local sign = vim.fn.sign_define
 		local dap = require("dap")
-		dap.defaults.fallback.terminal_win_cmd = "tabnew"
+		local dv = require("dap-view")
+		-- dap.defaults.fallback.terminal_win_cmd = "tabnew"
 		sign("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 		sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
 		sign("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
@@ -30,16 +31,17 @@ return {
 		vim.keymap.set({ "n", "i" }, "<F11>", function()
 			dap.step_into()
 		end, { desc = "into" })
-		dap.listeners.after.event_initialized["dapui_config"] = function()
-			dap.repl.open({
-				height = 10,
-			})
+		dap.listeners.before.attach["dap-view-config"] = function()
+			dv.open()
 		end
-		dap.listeners.before.event_terminated["dapui_config"] = function()
-			dap.repl.close()
+		dap.listeners.before.launch["dap-view-config"] = function()
+			dv.open()
 		end
-		dap.listeners.before.event_exited["dapui_config"] = function()
-			print("dap exited")
+		dap.listeners.before.event_terminated["dap-view-config"] = function()
+			dv.close()
+		end
+		dap.listeners.before.event_exited["dap-view-config"] = function()
+			dv.close()
 		end
 	end,
 }
