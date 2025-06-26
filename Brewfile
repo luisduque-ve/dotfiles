@@ -45,9 +45,9 @@ cask "bruno"
 cask "calibre"
 cask "chatbox"
 cask "digikam"
-cask "ghostty" # terminal emulator
 cask "drawio"
 cask "foxitreader" # pdf reader
+cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
 cask "raycast" # spootlight alternative
