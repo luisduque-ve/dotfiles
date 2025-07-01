@@ -45,6 +45,7 @@ cask "brave-browser"
 cask "bruno"
 cask "calibre"
 cask "chatbox"
+cask "corretto@21"
 cask "digikam"
 cask "drawio"
 cask "foxitreader" # pdf reader
