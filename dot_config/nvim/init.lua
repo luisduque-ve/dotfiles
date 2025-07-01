@@ -124,6 +124,7 @@ vim.diagnostic.config({
 })
 
 vim.lsp.enable({
+	"clangd",
 	"json",
 	"luals",
 	"pyright",

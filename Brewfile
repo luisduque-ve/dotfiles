@@ -21,6 +21,7 @@ brew "jq" # cli json utility
 brew "lazydocker" # docker management tool
 brew "lazygit"
 brew "libffi" # weasyprint requirement
+brew "llvm" # c/c++ lsp
 brew "lua-language-server" # LSP
 brew "mypy" # python type checking
 brew "ninja" # nvim build dependency
