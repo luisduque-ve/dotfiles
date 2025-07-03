@@ -5,7 +5,6 @@ brew "chezmoi" # dotfiles manager
 brew "cmake" # nvim build dependency
 brew "colima" # containers runtime
 brew "curl" # http client
-brew "curl" # nvim build dependency
 brew "djlint" # html template lint and formatter
 brew "docker" # container engine
 brew "docker-compose" # docker tool
