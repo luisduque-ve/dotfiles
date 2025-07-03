@@ -43,7 +43,6 @@ brew "zoxide" # better current dir changing
 ### CASKS
 cask "anki" # study
 cask "brave-browser"
-cask "bruno"
 cask "calibre"
 cask "chatbox"
 cask "corretto@21"
@@ -53,6 +52,7 @@ cask "foxitreader" # pdf reader
 cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
+cask "postman"
 cask "raycast" # spootlight alternative
 cask "spotify"
 cask "visual-studio-code"
