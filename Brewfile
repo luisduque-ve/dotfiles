@@ -1,5 +1,6 @@
 ### FORMULAES
 brew "bat" # cat alternative
+brew "espeak" # requirement for english personal repo
 brew "cairo" # weasyprint requirement
 brew "chezmoi" # dotfiles manager
 brew "cmake" # nvim build dependency
