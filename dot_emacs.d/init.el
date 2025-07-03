@@ -1,5 +1,3 @@
-(global-set-key (kbd "C-c x") 'execute-extended-command)
-
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
@@ -56,9 +54,6 @@
 
 (global-display-fill-column-indicator-mode)
 (global-hl-line-mode 1)
-(set-face-attribute 'default nil
-		    :font "DejaVuSansM Nerd Font Mono"
-		    :height 190)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -93,14 +88,10 @@
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
-(global-set-key (kbd "C-c a") 'org-agenda)
-
-(setq org-directory "~/org/")
+(setq org-directory "~/notes/")
 
 (setq org-todo-keywords
     '((sequence "TODO" "IN PROGRESS" "DONE")))
-
-;; (setq org-log-done "time")
 
 (setq org-hide-emphasis-markers t)
 
@@ -195,5 +186,3 @@
  (unless (display-graphic-p)
  (require 'evil-terminal-cursor-changer)
  (evil-terminal-cursor-changer-activate)))
-
-(use-package chezmoi)

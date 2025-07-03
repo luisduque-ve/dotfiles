@@ -10,7 +10,6 @@ org-babel-tangle.
 
 * Table of content :TOC:
 - [[#core][Core]]
-  - [[#core-mappings][Core mappings]]
   - [[#performance][Performance]]
   - [[#advice-functions][Advice functions]]
   - [[#custom-file-creation-or-loading][Custom file creation or loading]]
@@ -19,7 +18,6 @@ org-babel-tangle.
   - [[#ui][UI]]
 - [[#ediff][Ediff]]
 - [[#org][Org]]
-  - [[#agenda][Agenda]]
   - [[#org-anki][Org Anki]]
   - [[#toc-org][toc-org]]
   - [[#prettify][Prettify]]
@@ -36,14 +34,9 @@ org-babel-tangle.
 - [[#evil][Evil]]
   - [[#evil-surround][Evil surround]]
   - [[#evil-terminal-cursor-change][Evil Terminal Cursor Change]]
-- [[#chezmoi][Chezmoi]]
 
 * Core
 
-** Core mappings
-#+begin_src elisp
-  (global-set-key (kbd "C-c x") 'execute-extended-command)
-#+end_src
 ** Performance
 #+begin_src elisp
   (setq gc-cons-threshold 100000000)
@@ -136,9 +129,6 @@ This sets the width for HTML rendering useful for eww
 #+BEGIN_SRC elisp
   (global-display-fill-column-indicator-mode)
   (global-hl-line-mode 1)
-  (set-face-attribute 'default nil
-		      :font "DejaVuSansM Nerd Font Mono"
-		      :height 190)
   (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
 
@@ -187,26 +177,15 @@ master branch of Emacs and will likely be released with Emacs v30
 
 * Org
 
-** Agenda
-
-If you want todo items to appear in the agenda view just call the
-*org-agenda-file-to-front* function in the file that has the *TODO* items.
-
-#+begin_src elisp
-  (global-set-key (kbd "C-c a") 'org-agenda)
-#+end_src
-
 You can set *org-agenda-files* variable as well, but I don't see it
 neccesary.
 
 Core org mode configs
 #+BEGIN_SRC elisp
-  (setq org-directory "~/org/")
+  (setq org-directory "~/notes/")
 
   (setq org-todo-keywords
       '((sequence "TODO" "IN PROGRESS" "DONE")))
-
-  ;; (setq org-log-done "time")
 
   (setq org-hide-emphasis-markers t)
 #+END_SRC
@@ -355,9 +334,4 @@ launched from outside a shell
    (unless (display-graphic-p)
    (require 'evil-terminal-cursor-changer)
    (evil-terminal-cursor-changer-activate)))
-#+end_src
-
-* Chezmoi
-#+begin_src elisp
-  (use-package chezmoi)
 #+end_src

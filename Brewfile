@@ -59,9 +59,11 @@ cask "visual-studio-code"
 
 
 ### TAPS
-cask "nikitabobko/tap/aerospace" # tiling window manager
 tap "nikitabobko/tap"
+cask "nikitabobko/tap/aerospace" # tiling window manager
 
+tap "d12frosted/emacs-plus"
+brew "emacs-plus"
 
 ### APP Store
 ### https://apps.apple.com/co/app/overlays/id868499627?l=en-GB&mt=12
