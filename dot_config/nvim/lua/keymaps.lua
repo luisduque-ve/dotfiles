@@ -55,3 +55,7 @@ vim.keymap.set({ "t" }, "<C-i>", "<C-\\><C-n><C-i>zz")
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Left>", "<CMD>tabprevious<CR>", { desc = "tabprevious" })
 vim.keymap.set({ "n" }, "<leader>ut", "<CMD>tabnew<CR>", { desc = "tab" })
+
+-- insert mode keymaps
+vim.keymap.set("i", "<M-BS>", "<C-w>", { noremap = true })
+vim.keymap.set("i", "<D-BS>", "<C-u>", { noremap = true })
