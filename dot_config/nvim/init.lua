@@ -1,6 +1,9 @@
 local g = vim.g
 local set = vim.opt
 
+-- enable experimental ui
+require("vim._extui").enable({})
+
 -- set default shell
 vim.o.shell = "/opt/homebrew/bin/fish"
 
