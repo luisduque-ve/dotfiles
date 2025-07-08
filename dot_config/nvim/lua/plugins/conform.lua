@@ -20,6 +20,14 @@ return {
 				},
 			},
 		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.lua",
+			callback = function(args)
+				require("conform").format({ bufnr = args.buf })
+			end,
+		})
+
 		vim.keymap.set(
 			{ "n", "v" },
 			"<leader>uf",
