@@ -19,10 +19,12 @@ return {
 					prepend_args = { "--profile", "black" },
 				},
 			},
-			format_on_save = {
-				timeout_ms = 1000,
-				lsp_format = "fallback",
-			},
 		})
+		vim.keymap.set(
+			{ "n", "v" },
+			"<leader>uf",
+			"<CMD>lua require('conform').format({async = true})<CR><CMD>w<CR>",
+			{ desc = "format" }
+		)
 	end,
 }
