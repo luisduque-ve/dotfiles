@@ -46,6 +46,7 @@ cask "calibre"
 cask "chatbox"
 cask "corretto@21"
 cask "digikam"
+cask "doll"
 cask "drawio"
 cask "foxitreader" # pdf reader
 cask "ghostty" # terminal emulator
