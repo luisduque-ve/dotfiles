@@ -3,6 +3,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
+				cpp = { "clang-format" },
 				html = { "prettier" },
 				htmldjango = { "djlint" },
 				javascript = { "prettier" },
@@ -19,6 +20,13 @@ return {
 					prepend_args = { "--profile", "black" },
 				},
 			},
+		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.cpp",
+			callback = function(args)
+				require("conform").format({ bufnr = args.buf })
+			end,
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {

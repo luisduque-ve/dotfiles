@@ -41,6 +41,7 @@ fish_add_path "$HOME/.local/share/bob/nvim-bin"
 fish_add_path "/opt/homebrew/bin" "/opt/homebrew/sbin"
 fish_add_path "/opt/homebrew/bin"
 fish_add_path "/opt/homebrew/sbin"
+fish_add_path "/opt/homebrew/opt/llvm/bin"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
