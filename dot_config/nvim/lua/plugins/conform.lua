@@ -10,6 +10,7 @@ return {
 				json = { "prettier" },
 				lua = { "stylua" },
 				python = { "autoflake", "isort", "darker" },
+				swift = { "swiftformat" },
 				terraform = { "terraform_fmt" },
 			},
 			formatters = {
@@ -23,14 +24,7 @@ return {
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*.cpp",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf })
-			end,
-		})
-
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*.lua",
+			pattern = { "*.lua", "*.cpp", "*.swift" },
 			callback = function(args)
 				require("conform").format({ bufnr = args.buf })
 			end,

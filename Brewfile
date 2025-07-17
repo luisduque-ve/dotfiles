@@ -32,6 +32,7 @@ brew "pyright" # LSP
 brew "rg" # rip grep
 brew "starship" # shell prompt
 brew "stylua" # lua code formatter
+brew "swiftformat" # code formatter
 brew "tree" # show tree like folder representation
 brew "typescript-language-server" # LSP
 brew "uv" # python package manager
