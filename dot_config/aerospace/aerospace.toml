@@ -176,6 +176,9 @@ alt-shift-l = ['join-with right', 'mode main']
 if.app-id = "com.brave.Browser"
 run = "move-node-to-workspace 1"
 
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = "com.flexibits.fantastical2.mac"
@@ -196,10 +199,3 @@ run = "move-node-to-workspace 9"
 [[on-window-detected]]
 if.app-id = "com.electron.dockerdesktop"
 run = "move-node-to-workspace 9"
-
-
-# This is the left monitor
-
-[[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
-run = "move-node-to-workspace 10"
