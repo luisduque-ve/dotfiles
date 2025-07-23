@@ -1,5 +1,6 @@
 config.load_autoconfig()
 c.hints.chars = "aoeuhtns"
+c.fonts.hints = "20pt FiraCode Nerd Font Mono"
 c.tabs.position = "left"
 c.tabs.width = 150
 c.completion.shrink = True
