@@ -1,4 +1,5 @@
 config.load_autoconfig()
+c.hints.chars = "aoeuhtns"
 c.tabs.position = "left"
 c.tabs.width = 150
 c.completion.shrink = True
