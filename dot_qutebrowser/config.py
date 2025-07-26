@@ -16,6 +16,13 @@ with config.pattern("*://meet.google.com/*") as p:
 c.qt.args = ["disable-features=PermissionElement"]
 
 
+c.url.searchengines = {
+    "DEFAULT": "https://www.startpage.com/sp/search?query={}",
+    "s": "https://www.startpage.com/sp/search?query={}",
+    "g": "https://www.google.com/search?q={}",
+    "d": "https://duckduckgo.com/?q={}",
+}
+
 ## Keymappings
 config.bind("<Alt-x>", "cmd-set-text :")
 config.bind("<Alt-x>", "cmd-set-text :", mode="insert")
