@@ -1,5 +1,6 @@
 autoflake
 darker
+go-task-bin
 isort
 pre-commit
 pynvim
