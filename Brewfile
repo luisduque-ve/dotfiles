@@ -46,6 +46,7 @@ cask "anki" # study
 cask "brave-browser"
 cask "calibre"
 cask "chatbox"
+cask "cursor"
 cask "digikam"
 cask "doll"
 cask "foxitreader" # pdf reader
@@ -62,6 +63,3 @@ cask "visual-studio-code"
 ### TAPS
 tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace" # tiling window manager
-
-### APP Store
-### https://apps.apple.com/co/app/overlays/id868499627?l=en-GB&mt=12
