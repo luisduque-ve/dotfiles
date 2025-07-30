@@ -26,5 +26,8 @@ c.url.searchengines = {
 ## Keymappings
 config.bind("<Alt-x>", "cmd-set-text :")
 config.bind("<Alt-x>", "cmd-set-text :", mode="insert")
+config.bind("<Alt-x>", "cmd-set-text :", mode="passthrough")
 config.bind("<Ctrl-n>", "tab-next", mode="normal")
 config.bind("<Ctrl-p>", "tab-prev", mode="normal")
+config.bind("<Ctrl-n>", "tab-next", mode="passthrough")
+config.bind("<Ctrl-p>", "tab-prev", mode="passthrough")
