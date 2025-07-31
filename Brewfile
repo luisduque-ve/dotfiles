@@ -1,6 +1,5 @@
 ### FORMULAES
 brew "bat" # cat alternative
-brew "pyqt@6" # qutebrowser requirement
 brew "cairo" # weasyprint requirement
 brew "chezmoi" # dotfiles manager
 brew "cmake" # nvim build dependency
@@ -54,7 +53,6 @@ cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
 cask "postman"
-cask "qutebrowser"
 cask "raycast" # spootlight alternative
 cask "spotify"
 cask "visual-studio-code"
