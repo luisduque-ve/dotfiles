@@ -85,6 +85,12 @@ set.colorcolumn = "70"
 -- version, this is going to be probably fixed in
 -- later releases
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 vim.api.nvim_create_autocmd("BufRead", {
 	pattern = { "*.md", "*.MD" },
 	command = "set filetype=markdown",
