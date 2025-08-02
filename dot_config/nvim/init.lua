@@ -101,8 +101,14 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "*",
 	callback = function()
-		vim.opt_local.number = false
-		vim.opt_local.relativenumber = false
+		vim.opt_local.number = true
+		vim.opt_local.relativenumber = true
+		local cwd = vim.fn.getcwd()
+		local dir_name = vim.fn.fnamemodify(cwd, ":t")
+		local bufnr = vim.api.nvim_get_current_buf()
+		local new_name = dir_name .. "[term][" .. bufnr .. "]"
+		pcall(vim.api.nvim_buf_set_name, bufnr, new_name)
+		vim.b.term_title = dir_name
 	end,
 })
 
