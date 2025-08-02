@@ -56,8 +56,3 @@ cask "postman"
 cask "raycast" # spootlight alternative
 cask "spotify"
 cask "visual-studio-code"
-
-
-### TAPS
-tap "nikitabobko/tap"
-cask "nikitabobko/tap/aerospace" # tiling window manager
