@@ -35,3 +35,6 @@ function A() {
     echo "No directory selected."
   fi
 }
+
+
+alias gc="git commit"
