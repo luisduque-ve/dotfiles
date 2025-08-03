@@ -80,11 +80,13 @@ set.laststatus = 3
 
 set.colorcolumn = "70"
 
--- configure neovim to recognize markdown files
--- not sure what breaks this in the latest neovim
--- version, this is going to be probably fixed in
--- later releases
-
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "gitcommit",
+	callback = function()
+		vim.keymap.set("i", "<C-c><C-c>", "<Esc>:wq<CR>", { buffer = true, silent = true })
+		vim.keymap.set("n", "<C-c><C-c>", ":wq<CR>", { buffer = true, silent = true })
+	end,
+})
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
@@ -92,6 +94,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
+	-- configure neovim to recognize markdown files
+	-- not sure what breaks this in the latest neovim
+	-- version, this is going to be probably fixed in
+	-- later releases
 	pattern = { "*.md", "*.MD" },
 	command = "set filetype=markdown",
 })
