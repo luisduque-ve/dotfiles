@@ -15,20 +15,6 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<leader><leader>", function()
-			vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
-			if vim.v.shell_error == 0 then
-				fzf.git_files({ cwd = "." })
-			else
-				fzf.files()
-			end
-		end, { desc = "find_files" })
-		vim.keymap.set("n", "<leader>sn", function()
-			require("fzf-lua").files({
-				prompt = "Neorg » ",
-				cwd = "~/notes",
-			})
-		end, { desc = "notes" })
 	end,
 	keys = {
 		{ "grr", "<CMD>FzfLua lsp_references<CR>", desc = "lsp_references" },
