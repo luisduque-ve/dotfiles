@@ -9,6 +9,9 @@ return {
 		fff.setup({
 			prompt = "> ",
 			max_threads = 8,
+			hl = {
+				active_file = "@error", --just picked this randomly red, no semantic meaning
+			},
 		})
 		vim.keymap.set("n", "<leader><leader>", function()
 			vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
