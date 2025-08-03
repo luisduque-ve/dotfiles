@@ -23,7 +23,6 @@ brew "lazygit"
 brew "libffi" # weasyprint requirement
 brew "llvm" # c/c++ lsp
 brew "lua-language-server" # LSP
-brew "mypy" # python type checking
 brew "ninja" # nvim build dependency
 brew "node" # nodejs
 brew "pango" # weasyprint requirement
