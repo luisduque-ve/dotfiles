@@ -53,6 +53,7 @@ cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
 cask "postman"
+cask "raindropio"
 cask "raycast" # spootlight alternative
 cask "spotify"
 cask "visual-studio-code"
