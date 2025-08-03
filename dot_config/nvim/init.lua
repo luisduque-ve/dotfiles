@@ -124,6 +124,31 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+	-- Always keep the cursor centered
+
+	pattern = "*",
+	callback = function()
+		local line = vim.api.nvim_win_get_cursor(0)[1]
+
+		if vim.b.last_line == nil then
+			vim.b.last_line = line
+		end
+
+		if line ~= vim.b.last_line then
+			local column = vim.fn.getcurpos()[3]
+			local mode = vim.api.nvim_get_mode().mode
+
+			vim.cmd("norm! zz")
+			vim.b.last_line = line
+
+			if mode:match("^i") then
+				vim.fn.cursor({ line, column })
+			end
+		end
+	end,
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
