@@ -22,13 +22,9 @@ bind -M insert \cn down-or-search
 alias fzf="fzf -m --query \"'\""
 
 # abbreviations
-abbr --add apps 'aerospace list-windows --all --format "%{workspace} %{app-name} %{app-bundle-id}" --json'
 abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
 abbr --add bclean "brew bundle --force cleanup"
 abbr --add bupgrade "brew bundle install --upgrade"
-abbr --add ca "chezmoi apply -v"
-abbr --add cu "chezmoi update -v"
-abbr --add emacs "emacs -nw"
 abbr --add gd "git diff --ignore-all-space"
 abbr --add k "kubectl"
 abbr --add ls "eza -l -h"
@@ -85,25 +81,6 @@ function A
   end
 end
 
-function custom_cat
-    if test (count $argv) -lt 2
-        echo "Usage: custom_cat <file_extension> <recursive_flag>"
-        return 1
-    end
-    set ext $argv[1]
-    set recursive $argv[2]
-    if test $recursive = "true"
-        set find_command "find . -name '*.$ext' -type f"
-    else
-        set find_command "find . -maxdepth 1 -name '*.$ext' -type f"
-    end
-    for file in (eval $find_command)
-        echo "### $file"
-        echo ""
-        cat $file
-        echo ""
-    end
-end
 
 function conflict_generator
     # Create/override the folder
@@ -167,13 +144,6 @@ abbr --add fastapi "python -m debugpy --listen 0.0.0.0:5678 -m uvicorn app.main:
 abbr --add mkvirtualenv "uv venv --python"
 abbr --add pi "uv pip install"
 abbr --add pytest "python -m pytest -s --disable-warnings"
-abbr --add jupyterlab "python -m jupyterlab --no-browser"
-
-function pysetup
-  uv pip install -r ~/.local/share/chezmoi/requirements.txt
-end
-
-
 
 ### Initializations
 
