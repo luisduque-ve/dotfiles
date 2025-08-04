@@ -17,6 +17,7 @@ set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert \cf forward-word
 bind -M insert \cp up-or-search
 bind -M insert \cn down-or-search
+bind -M insert alt-backspace backward-kill-word
 
 # fzf alias
 alias fzf="fzf -m --query \"'\""
