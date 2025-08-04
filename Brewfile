@@ -50,6 +50,7 @@ cask "foxitreader" # pdf reader
 cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
+cask "obsidian"
 cask "postman"
 cask "raindropio"
 cask "raycast" # spootlight alternative
