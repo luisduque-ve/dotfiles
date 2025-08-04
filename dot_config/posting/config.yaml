@@ -1,0 +1,4 @@
+theme: gruvbox
+layout: horizontal
+keymap:
+  open-in-editor: alt+v
