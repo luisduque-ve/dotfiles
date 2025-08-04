@@ -1,7 +1,7 @@
 autoflake
 darker
-go-task-bin
 isort
+posting
 pre-commit
 pynvim
 rope
