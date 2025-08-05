@@ -40,6 +40,7 @@ brew "vscode-langservers-extracted"
 brew "zoxide" # better current dir changing
 
 ### CASKS
+cask "alt-tab"
 cask "anki" # study
 cask "brave-browser"
 cask "calibre"
