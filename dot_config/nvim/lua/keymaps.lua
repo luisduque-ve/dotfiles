@@ -3,20 +3,14 @@
 --
 
 -- buffers
-vim.keymap.set({ "n" }, "<leader>bc", "<CMD>bufdo bwipeout<CR>", { desc = "close_all" })
 vim.keymap.set({ "n" }, "<leader>bd", "<CMD>bd<CR>", { desc = "close" })
 vim.keymap.set({ "n" }, "<leader>bo", "<CMD>on<CR>", { desc = "only" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "escape_and_clear_hlsearch" })
 
-vim.keymap.set({ "n" }, "<C-h>", "<C-w>h", { desc = "left_window" })
-vim.keymap.set({ "n" }, "<C-j>", "<C-w>j", { desc = "lower_window" })
-vim.keymap.set({ "n" }, "<C-k>", "<C-w>k", { desc = "upper_window" })
-vim.keymap.set({ "n" }, "<C-l>", "<C-w>l", { desc = "right_window" })
-
 vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(ev)
+	callback = function(_)
 		vim.keymap.set({ "n" }, "<leader>ha", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "code_action" })
 		vim.keymap.set({ "n" }, "<leader>hd", "<CMD>lua vim.diagnostic.open_float()<CR>", { desc = "show_diagnostic" })
 		vim.keymap.set(
