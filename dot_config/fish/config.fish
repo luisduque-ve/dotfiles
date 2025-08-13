@@ -26,9 +26,11 @@ alias fzf="fzf -m --query \"'\""
 abbr --add ask "aider --no-auto-commits --chat-mode ask --model"
 abbr --add bclean "brew bundle --force cleanup"
 abbr --add bupgrade "brew bundle install --upgrade"
+abbr --add g "git"
 abbr --add gd "git diff --ignore-all-space"
 abbr --add k "kubectl"
 abbr --add ls "eza -l -h"
+abbr --add n "nvim"
 abbr --add t "terraform"
 
 ### Variables
