@@ -10,6 +10,7 @@ return {
 		-- https://github.com/nvim-treesitter/nvim-treesitter/issues/3674#issuecomment-1281118491
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
+		lazy = false,
 		config = function()
 			local configs = require("nvim-treesitter.configs")
 			configs.setup({
@@ -36,6 +37,7 @@ return {
 					"typescript",
 					"vim",
 					"yaml",
+					"html",
 				},
 				sync_install = false,
 				highlight = {
