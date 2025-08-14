@@ -9,7 +9,6 @@ return {
 		-- yeah does not make sense but it is what it is
 		-- https://github.com/nvim-treesitter/nvim-treesitter/issues/3674#issuecomment-1281118491
 		build = ":TSUpdate",
-		event = { "BufReadPost", "BufNewFile" },
 		lazy = false,
 		config = function()
 			local configs = require("nvim-treesitter.configs")
@@ -24,20 +23,19 @@ return {
 					"gitattributes",
 					"gitcommit",
 					"gitignore",
+					"html",
 					"javascript",
 					"json",
 					"kdl",
 					"lua",
 					"markdown",
 					"markdown_inline",
-					"org",
 					"python",
 					"regex",
 					"terraform",
 					"typescript",
 					"vim",
 					"yaml",
-					"html",
 				},
 				sync_install = false,
 				highlight = {
