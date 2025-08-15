@@ -80,10 +80,6 @@ set.laststatus = 3
 
 set.colorcolumn = "70"
 
--- Enable conceal for Tree-sitter
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = "n"
-
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "gitcommit",
 	callback = function()
@@ -104,6 +100,16 @@ vim.api.nvim_create_autocmd("BufRead", {
 	-- later releases
 	pattern = { "*.md", "*.MD" },
 	command = "set filetype=markdown",
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+	-- enable conceal to clean html tags
+	pattern = { "*.html", "*.jsx", "*.tsx" },
+	callback = function()
+		set.conceallevel = 2
+		set.concealcursor = "n"
+		set.wrap = false
+	end,
 })
 
 -- Remove auto comments
