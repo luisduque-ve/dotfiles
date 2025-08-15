@@ -7,6 +7,7 @@ return {
 				html = { "prettier" },
 				htmldjango = { "djlint" },
 				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
 				json = { "prettier" },
 				lua = { "stylua" },
 				python = { "autoflake", "isort", "darker" },
@@ -24,7 +25,7 @@ return {
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = { "*.lua", "*.cpp", "*.swift" },
+			pattern = { "*.lua", "*.cpp", "*.swift", "*.jsx", "*.tsx" },
 			callback = function(args)
 				require("conform").format({ bufnr = args.buf })
 			end,
