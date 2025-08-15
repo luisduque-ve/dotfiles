@@ -1,2 +1,4 @@
 (attribute
-  (quoted_attribute_value) @conceal (#set! conceal ""))
+  "=" @conceal
+  (quoted_attribute_value) @conceal
+  (#set! conceal ""))
