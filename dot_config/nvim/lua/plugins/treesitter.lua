@@ -32,6 +32,7 @@ return {
 					"markdown_inline",
 					"python",
 					"regex",
+					"svelte",
 					"terraform",
 					"typescript",
 					"vim",
