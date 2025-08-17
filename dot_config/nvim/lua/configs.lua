@@ -2,19 +2,24 @@ local g = vim.g
 local set = vim.opt
 local o = vim.o
 
+g.have_nerd_font = true
 g.loaded_netrw = 1 -- this is for nvim-tree.lua
 g.loaded_netrwPlugin = 1 -- this is for nvim-tree.lua
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 g.mapleader = " "
-g.maplocalleader = ","
+g.maplocalleader = " "
 o.grepformat = "%f:%l:%c:%m"
 o.grepprg = "rg --vimgrep --no-heading" -- setting grepprg to use ripgrep
+o.ignorecase = true
 o.shell = "/opt/homebrew/bin/fish" -- set default shell
+o.showmode = false
+o.signcolumn = "yes"
+o.smartcase = true
 o.timeout = true -- used by which-key but affect other places
 o.timeoutlen = 200 -- used by which-key but affect other places
+o.undofile = true
 set.autoread = true
-set.clipboard = "unnamedplus"
 set.colorcolumn = "70"
 set.confirm = true
 set.cursorline = true
@@ -31,3 +36,7 @@ set.softtabstop = 2
 set.tabstop = 2
 set.termguicolors = true -- this is for nvim-tree.lua
 vim.opt.shortmess:append("S")
+
+vim.schedule(function()
+	set.clipboard = "unnamedplus"
+end)
