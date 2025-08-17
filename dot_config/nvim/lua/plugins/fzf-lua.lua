@@ -22,6 +22,7 @@ return {
 		{ "<Leader>sd", "<CMD>FzfLua dap_configurations<CR>", desc = "dap_configurations" },
 		{ "<Leader>sf", "<CMD>FzfLua<CR>", desc = "fzf-lua" },
 		{ "<leader>sg", "<CMD>FzfLua live_grep<CR>", desc = "live_grep" },
+		{ "<leader>sh", "<CMD>FzfLua help_tags<CR>", desc = "help_tags" },
 		{ "<Leader>sm", "<CMD>FzfLua marks<CR>", desc = "marks" },
 		{ "<Leader>sr", "<CMD>FzfLua oldfiles<CR>", desc = "recent_files" },
 		{ "<leader>su", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
