@@ -41,6 +41,19 @@ vim.schedule(function()
 	set.clipboard = "unnamedplus"
 end)
 
+local function status_line()
+	local mode = " %-5{%v:lua.string.upper(v:lua.vim.fn.mode())%}"
+	local file_name = "%-.100t"
+	local modified = " %-m"
+	local file_type = " ft=%y"
+	local right_align = "%="
+	local pct_thru_file = "%5p%% "
+
+	return string.format("%s%s%s%s%s%s", mode, file_name, modified, file_type, right_align, pct_thru_file)
+end
+
+vim.opt.statusline = status_line()
+
 require("autocmds")
 
 require("vim._extui").enable({}) -- enable experimental ui
