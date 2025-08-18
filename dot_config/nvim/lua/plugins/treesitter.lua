@@ -1,88 +1,69 @@
+-- always have the treesitter cli in your node environment
+-- npm install -g tree-sitter-cli
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		-- if you find arch issues on a fresh install
-		-- delete the plugin folder which is usually at
-		-- ~/.local/share/nvim/lazy and then install the plugin
-		-- from a native M1 terminal like iTerm2
-		--
-		-- yeah does not make sense but it is what it is
-		-- https://github.com/nvim-treesitter/nvim-treesitter/issues/3674#issuecomment-1281118491
-		build = ":TSUpdate",
-		lazy = false,
-		config = function()
-			local configs = require("nvim-treesitter.configs")
-			configs.setup({
-				ensure_installed = {
-					"c",
-					"commonlisp",
-					"cpp",
-					"fish",
-					"git_config",
-					"git_rebase",
-					"gitattributes",
-					"gitcommit",
-					"gitignore",
-					"html",
-					"javascript",
-					"json",
-					"kdl",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"python",
-					"regex",
-					"svelte",
-					"terraform",
-					"typescript",
-					"vim",
-					"yaml",
-				},
-				sync_install = false,
-				highlight = {
-					enable = true, -- false will disable the whole extension
-					additional_vim_regex_highlighting = false,
-				},
-			})
-		end,
-		keys = {
-			{ "<leader>uh", "<CMD>TSToggle highlight<CR>", desc = "toogle_ts_highlight" },
-		},
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = "VeryLazy",
-		dependencies = "nvim-treesitter/nvim-treesitter-context",
-		opts = {
-			max_lines = 1,
-			trim_scope = "outer",
-		},
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = { "BufReadPost", "BufNewFile" },
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				textobjects = {
-					select = {
-						enable = true,
-						-- Automatically jump forward to textobj, similar to targets.vim
-						lookahead = true,
-						keymaps = {
-							-- You can use the capture groups defined in textobjects.scm
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-							["ac"] = "@class.outer",
-							["ic"] = "@class.inner",
-							["ab"] = "@block.outer",
-							["ib"] = "@block.inner",
-						},
-					},
-				},
-			})
-		end,
-	},
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	branch = "main",
+	lazy = false,
+	config = function()
+		local ts = require("nvim-treesitter")
+		ts.setup()
+
+		local parsers = {
+			"cpp",
+			"fish",
+			"git_config",
+			"git_rebase",
+			"gitattributes",
+			"gitcommit",
+			"gitignore",
+			"html",
+			"javascript",
+			"json",
+			"python",
+			"svelte",
+			"terraform",
+			"typescript",
+			"yaml",
+		}
+		local filetypes = {
+			"cpp",
+			"fish",
+			"git_config",
+			"git_rebase",
+			"gitattributes",
+			"gitcommit",
+			"gitignore",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"python",
+			"svelte",
+			"terraform",
+			"typescript",
+			"yaml",
+		}
+		-- Calls `install()` only if there are missing parsers.
+		local installed = ts.get_installed()
+		local not_installed = vim.tbl_filter(function(parser)
+			return not vim.tbl_contains(installed, parser)
+		end, parsers)
+		if #not_installed > 0 then
+			ts.install(not_installed)
+		end
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = filetypes,
+			callback = function()
+				-- syntax highlighting, provided by Neovim
+				vim.treesitter.start()
+				-- folds, provided by Neovim
+				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+				-- indentation, provided by nvim-treesitter
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+				print("treesitter enabled")
+			end,
+		})
+	end,
 }
