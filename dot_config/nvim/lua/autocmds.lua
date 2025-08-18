@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("BufRead", {
 
 vim.api.nvim_create_autocmd("BufRead", {
 	-- enable conceal to clean html tags
-	pattern = { "*.html", "*.jsx", "*.tsx" },
+	pattern = { "*.html", "*.jsx", "*.tsx", "*.svelte" },
 	callback = function()
 		set.conceallevel = 2
 		set.concealcursor = "n"
