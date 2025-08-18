@@ -14,6 +14,10 @@ return {
 				["<C-p>"] = false,
 				["<C-n>"] = false,
 				["q"] = "actions.close",
+				["<C-y>"] = function()
+					require("oil.actions").yank_entry.callback()
+					print("oil entry copied to clipboard")
+				end,
 				["<C-e>"] = {
 					callback = function()
 						oil.open_preview({ vertical = true, split = "botright" })
