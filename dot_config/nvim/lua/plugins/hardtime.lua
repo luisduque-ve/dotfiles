@@ -9,5 +9,5 @@ return {
 		allow_different_keys = true,
 	},
 	command = "Hardtime",
-	event = "VeryLazy",
+	lazy = false,
 }
