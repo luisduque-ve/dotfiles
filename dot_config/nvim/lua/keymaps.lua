@@ -2,6 +2,9 @@
 -- Only not plugin related mappins in this file
 --
 
+vim.keymap.set({ "n" }, "n", "n<CMD>echo searchcount()<CR>")
+vim.keymap.set({ "n" }, "N", "N<CMD>echo searchcount()<CR>")
+
 -- buffers
 vim.keymap.set({ "n" }, "<leader>bd", "<CMD>bd<CR>", { desc = "close" })
 vim.keymap.set({ "n" }, "<leader>bo", "<CMD>on<CR>", { desc = "only" })
