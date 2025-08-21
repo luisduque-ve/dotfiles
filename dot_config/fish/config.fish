@@ -67,7 +67,11 @@ function a
   else
     set selected_dir (zoxide query -l | fzf)
   end
-  cd $selected_dir
+  if test -n "$selected_dir"
+    cd $selected_dir
+  else
+    echo ""
+  end
 end
 
 function A
