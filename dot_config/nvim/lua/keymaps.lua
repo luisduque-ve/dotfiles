@@ -7,7 +7,6 @@ vim.keymap.set({ "n" }, "N", "N<CMD>echo searchcount()<CR>")
 
 -- buffers
 vim.keymap.set({ "n" }, "<leader>bd", "<CMD>bd<CR>", { desc = "close" })
-vim.keymap.set({ "n" }, "<leader>bo", "<CMD>on<CR>", { desc = "only" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "escape_and_clear_hlsearch" })
