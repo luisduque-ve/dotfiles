@@ -33,6 +33,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- term
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>")
 vim.keymap.set({ "t" }, "<C-o>", "<C-\\><C-n><C-o>")
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>")
 
 -- tabs
 vim.keymap.set({ "n", "v", "i", "t" }, "<M-Right>", "<CMD>tabnext<CR>", { desc = "tabnext" })
