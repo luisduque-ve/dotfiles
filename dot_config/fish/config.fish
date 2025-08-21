@@ -30,7 +30,8 @@ abbr --add g "git"
 abbr --add gd "git diff --ignore-all-space"
 abbr --add k "kubectl"
 abbr --add ls "eza -l -h"
-abbr --add n "nvim"
+abbr --add n "nvim ."
+abbr --add nvim "nvim ."
 abbr --add t "terraform"
 
 ### Variables
