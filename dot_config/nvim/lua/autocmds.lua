@@ -58,7 +58,12 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 	-- Always keep the cursor centered
 
 	pattern = "*",
-	callback = function()
+	callback = function(ctx)
+		-- avoid keep center in terminal, is distracting
+		if vim.bo[ctx.buf].buftype == "terminal" then
+			return
+		end
+
 		local line = vim.api.nvim_win_get_cursor(0)[1]
 
 		if vim.b.last_line == nil then
