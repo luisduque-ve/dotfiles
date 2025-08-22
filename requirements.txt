@@ -1,7 +1,6 @@
 autoflake
 darker
 isort
-posting
 pre-commit
 pynvim
 rope

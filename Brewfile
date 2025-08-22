@@ -13,7 +13,6 @@ brew "espeak" # requirement for english personal repo
 brew "eza" # ls replacement
 brew "fd" # faster find
 brew "fish" # shell
-brew "fx" # posting requirement
 brew "fzf" # fuzzy finder
 brew "gcc" # nvim build dependency
 brew "gdk-pixbuf" # weasyprint requirement
