@@ -41,7 +41,6 @@ brew "zoxide" # better current dir changing
 ### CASKS
 cask "anki" # study
 cask "brave-browser"
-cask "calibre"
 cask "chatbox"
 cask "cursor"
 cask "digikam"
