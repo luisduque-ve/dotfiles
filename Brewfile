@@ -55,4 +55,3 @@ cask "postman"
 cask "raindropio"
 cask "raycast" # spootlight alternative
 cask "spotify"
-cask "visual-studio-code"
