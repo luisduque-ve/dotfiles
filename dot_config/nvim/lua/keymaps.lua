@@ -43,5 +43,6 @@ vim.keymap.set({ "n" }, "<leader>ut", "<CMD>tabnew<CR>", { desc = "tab" })
 vim.keymap.set("i", "<M-BS>", "<C-w>", { noremap = true })
 vim.keymap.set("i", "<D-BS>", "<C-u>", { noremap = true })
 
-vim.keymap.set({ "n", "v", "t" }, "<M-o>", ":", { desc = "cmdline" })
-vim.keymap.set("i", "<M-o>", "<Esc>:", { desc = "cmdline" })
+vim.keymap.set({ "n", "v" }, "<M-o>", ":")
+vim.keymap.set("i", "<M-o>", "<Esc>:")
+vim.keymap.set({ "t" }, "<M-o>", "<C-\\><C-n>:")
