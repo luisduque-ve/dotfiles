@@ -1,7 +1,6 @@
 pre-commit-config.yaml
 requirements.txt
 wallpaper.png
-.vscode
 *.md
 *.org
 
