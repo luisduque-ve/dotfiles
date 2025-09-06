@@ -26,8 +26,7 @@ return {
 			{ "<leader>s", group = "+search" },
 			{ "<leader>t", group = "+test" },
 			{ "<leader>tc", group = "+coverage" },
-			{ "<leader>u", group = "+utils" },
-			{ "<leader>uv", group = "+uv" },
+			{ "<leader>m", group = "+miscellaneous" },
 			{
 				"<leader>w",
 				'<cmd>lua require("which-key").show({keys = "<c-w>", loop=true})<cr>',
