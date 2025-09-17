@@ -13,6 +13,7 @@ return {
 				python = { "autoflake", "isort", "darker" },
 				swift = { "swiftformat" },
 				terraform = { "terraform_fmt" },
+				rust = { "rustfmt" },
 			},
 			formatters = {
 				autoflake = {
@@ -25,7 +26,14 @@ return {
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = { "*.lua", "*.cpp", "*.swift", "*.jsx", "*.tsx" },
+			pattern = {
+				"*.cpp",
+				"*.jsx",
+				"*.lua",
+				"*.rs",
+				"*.swift",
+				"*.tsx",
+			},
 			callback = function(args)
 				require("conform").format({ bufnr = args.buf })
 			end,
