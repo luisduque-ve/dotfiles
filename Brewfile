@@ -45,7 +45,7 @@ cask "chatbox"
 cask "cursor"
 cask "digikam"
 cask "doll"
-cask "foxitreader" # pdf reader
+cask "adobe-acrobat-reader" # pdf reader
 cask "ghostty" # terminal emulator
 cask "mailspring"
 cask "notion"
