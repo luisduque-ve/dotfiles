@@ -82,6 +82,7 @@ vim.lsp.enable({
 	"json",
 	"luals",
 	"pyright",
+	"rust_analyzer",
 	"tsserver",
 })
 
