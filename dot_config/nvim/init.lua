@@ -55,7 +55,9 @@ vim.opt.statusline = status_line()
 
 require("autocmds")
 
-require("vim._extui").enable({}) -- enable experimental ui
+-- This disable press enter to continue, but is broken on master
+-- try enabling later
+-- require("vim._extui").enable({}) -- enable experimental ui
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
