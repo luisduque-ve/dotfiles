@@ -4,8 +4,12 @@ return {
 	config = function()
 		local actions = require("diffview.actions")
 		require("diffview").setup({
+			enhanced_diff_hl = true,
 			hooks = {
-				view_opened = function(view)
+				diff_buf_read = function()
+					vim.opt_local.wrap = false
+				end,
+				view_opened = function(_)
 					-- Hide the file panel when a Diffview is opened
 					vim.cmd("DiffviewToggleFiles")
 				end,
@@ -13,6 +17,8 @@ return {
 			view = {
 				merge_tool = {
 					layout = "diff4_mixed",
+					disable_diagnostics = true,
+					winbar_info = true,
 				},
 			},
 			keymaps = {
