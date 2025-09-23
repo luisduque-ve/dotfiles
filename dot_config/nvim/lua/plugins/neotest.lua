@@ -1,6 +1,6 @@
 return {
 	"nvim-neotest/neotest",
-	ft = "python", -- only working with python right now
+	lazy = false,
 	dependencies = {
 		"nvim-neotest/nvim-nio",
 		"nvim-neotest/neotest-python",
@@ -36,14 +36,33 @@ return {
 		vim.api.nvim_set_hl(0, "NeotestMarked", { fg = "#d79921", bold = true }) -- Gruvbox orange, for marked items
 		vim.api.nvim_set_hl(0, "NeotestTarget", { fg = "#cc241d" }) -- Gruvbox red, for targets
 		vim.api.nvim_set_hl(0, "NeotestTest", { fg = "#458588" }) -- Gruvbox blue, for tests
+
+		vim.keymap.set("n", "<leader>ta", "<CMD>lua require('neotest').run.run(vim.fn.getcwd())<CR>", { desc = "all" })
+		vim.keymap.set("n", "<leader>tn", "<CMD>lua require('neotest').run.run()<CR>", { desc = "nearest" })
+		vim.keymap.set("n", "<leader>tl", "<CMD>lua require('neotest').run.run_last()<CR>", { desc = "last" })
+		vim.keymap.set(
+			"n",
+			"<leader>tf",
+			"<CMD>lua require('neotest').run.run(vim.fn.expand('%'))<CR>",
+			{ desc = "file" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>td",
+			"<CMD>lua require('neotest').run.run({strategy = 'dap'})<CR>",
+			{ desc = "debug" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>tp",
+			"<CMD>lua require('neotest').summary.toggle()<CR>",
+			{ desc = "summary_panel" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>to",
+			"<CMD>lua require('neotest').output_panel.toggle()<CR>",
+			{ desc = "output_panel" }
+		)
 	end,
-	keys = {
-		{ "<leader>ta", "<CMD>lua require('neotest').run.run(vim.fn.getcwd())<CR>", desc = "all" },
-		{ "<leader>tn", "<CMD>lua require('neotest').run.run()<CR>", desc = "nearest" },
-		{ "<leader>tl", "<CMD>lua require('neotest').run.run_last()<CR>", desc = "last" },
-		{ "<leader>tf", "<CMD>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", desc = "file" },
-		{ "<leader>td", "<CMD>lua require('neotest').run.run({strategy = 'dap'})<CR>", desc = "debug" },
-		{ "<leader>tp", "<CMD>lua require('neotest').summary.toggle()<CR>", desc = "summary_panel" },
-		{ "<leader>to", "<CMD>lua require('neotest').output_panel.toggle()<CR>", desc = "output_panel" },
-	},
 }
