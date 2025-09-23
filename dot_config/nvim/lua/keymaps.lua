@@ -46,3 +46,5 @@ vim.keymap.set("i", "<D-BS>", "<C-u>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<M-o>", ":")
 vim.keymap.set("i", "<M-o>", "<Esc>:")
 vim.keymap.set({ "t" }, "<M-o>", "<C-\\><C-n>:")
+
+vim.keymap.set("n", "s", "<Nop>", { noremap = true, silent = true })
