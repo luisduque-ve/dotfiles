@@ -1,5 +1,6 @@
 return {
 	"unblevable/quick-scope",
+	lazy = false,
 	init = function()
 		-- uncomment the following will trigger quickscope only on f and t
 		-- vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
@@ -12,5 +13,4 @@ return {
     ]])
 		vim.g.qs_highlight_on_keys = { "f", "F" }
 	end,
-	event = "VeryLazy",
 }
