@@ -24,7 +24,7 @@ return {
 		{ "<leader>sh", "<CMD>FzfLua help_tags<CR>", desc = "help_tags" },
 		{ "<Leader>sm", "<CMD>FzfLua marks<CR>", desc = "marks" },
 		{ "<Leader>sr", "<CMD>FzfLua oldfiles<CR>", desc = "recent_files" },
-		{ "<leader>su", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
+		{ "<leader>s<leader>", "<CMD>FzfLua buffers<CR>", desc = "buffers" },
 		{ "<leader>sk", "<CMD>FzfLua keymaps<CR>", desc = "keymaps" },
 		{ "<leader>ss", "<CMD>FzfLua lsp_document_symbols<CR>", desc = "lsp_document_symbols" },
 		{ "<F4>", "<CMD>FzfLua dap_commands<CR>", desc = "dap_commands", mode = { "n", "i" } },
