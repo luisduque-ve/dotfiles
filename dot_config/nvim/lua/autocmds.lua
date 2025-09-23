@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 	callback = function(ctx)
 		-- avoid keep center in terminal, is distracting
 		if vim.bo[ctx.buf].buftype == "terminal" then
+			vim.keymap.set("n", "<C-c><C-c>", "a<C-c><C-c>")
 			return
 		end
 
